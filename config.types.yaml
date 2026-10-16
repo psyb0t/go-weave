@@ -1,0 +1,14 @@
+# Model half of the generated code. Keep output-options and compatibility in
+# sync with config.yaml, or the two files disagree on type names.
+package: weave
+generate:
+  models: true
+output: types.gen.go
+output-options:
+  resolve-type-name-collisions: true
+  type-mapping:
+    number:
+      default:
+        type: float64
+compatibility:
+  always-prefix-enum-values: true

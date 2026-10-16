@@ -1,0 +1,17 @@
+# Client half of the generated code. The models live in types.gen.go, from
+# config.types.yaml; one file would be about 850 KB.
+package: weave
+generate:
+  client: true
+output: client.gen.go
+output-options:
+  resolve-type-name-collisions: true
+  # Costs, token counts and scores are plain `type: number` without a format,
+  # which oapi-codegen maps to float32 by default. Map them to float64 so
+  # values keep full precision.
+  type-mapping:
+    number:
+      default:
+        type: float64
+compatibility:
+  always-prefix-enum-values: true
