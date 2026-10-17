@@ -1,6 +1,7 @@
 ---
 name: go-weave
-description: Unofficial Go client for the W&B Weave trace server API, generated with oapi-codegen. `weave.NewClientWithResponses(baseURL, auth)` from `github.com/psyb0t/go-weave` gives typed methods for all 74 endpoints of the Weave trace server (start, end, read and query calls, objects, tables, files, feedback, costs, refs, threads, annotation queues, evaluations, OTel trace export, and the v2 datasets, models, ops, scorers, scores, predictions and evaluation runs). Auth is HTTP Basic with the W&B username and API key, set in a request editor. Use when Go code needs to log traces to Weave or read them back, or the project already imports go-weave.
+description: Unofficial Go client for the W&B Weave trace server API, generated with oapi-codegen. `weave.NewClientWithResponses(baseURL, auth)` from `github.com/psyb0t/go-weave` gives typed methods for every endpoint of the Weave trace server (start, end, read and query calls, objects, tables, files, feedback, costs, refs, threads, annotation queues, evaluations, OTel trace export, and the v2 datasets, models, ops, scorers, scores, predictions and evaluation runs). Auth is HTTP Basic with the W&B username and API key, set in a request editor. Use when Go code needs to log traces to Weave or read them back, or the project already imports go-weave.
+license: MIT
 homepage: https://github.com/psyb0t/go-weave
 user-invocable: true
 metadata:
@@ -9,9 +10,6 @@ metadata:
     requires:
       bins:
         - go
-      env:
-        - WANDB_USERNAME
-        - WANDB_API_KEY
 permissions:
   filesystem: "Guides edits to the Go source of the current project. The library reads and writes no files."
   shell: "The Go toolchain (`go get`, `go build`, `go test`) to add and compile the dependency."
@@ -39,6 +37,20 @@ For install, the endpoint groups, streaming responses and errors, see [reference
 
 - The code is Python or TypeScript. Use the official `weave` package, which also wraps functions as ops automatically.
 - You only export OpenTelemetry spans. An OTLP exporter pointed at the Weave OTel endpoint does that without this client.
+
+## Finding endpoints and types
+
+The example below covers a few calls. Every operation in the spec has a generated method, and the spec's descriptions are on them as Go doc comments. Look names and fields up instead of guessing. After `go get github.com/psyb0t/go-weave`, from inside your module:
+
+```bash
+go doc github.com/psyb0t/go-weave ClientWithResponsesInterface  # every endpoint method
+go doc github.com/psyb0t/go-weave StartedCallSchemaForInsert     # one method, params type or model
+go doc -all github.com/psyb0t/go-weave                           # the whole package
+```
+
+The same documentation is at https://pkg.go.dev/github.com/psyb0t/go-weave.
+
+Method names come from the spec's operation IDs. `<OperationId>WithResponse` takes the context, then the path parameters in order, then `*<OperationId>Params` when the operation has query or header parameters, then the request body when it has one. The `JSON200` field (or `JSON201` and so on, per declared status) holds the decoded body; it is nil for any other status. The operation IDs are FastAPI's, so names repeat the handler, path and method, as described under the example.
 
 ## Usage
 
