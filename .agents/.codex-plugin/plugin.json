@@ -1,6 +1,6 @@
 {
   "name": "go-weave",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Unofficial Go client for the W&B Weave trace server API: typed methods to log and query calls, objects, tables, feedback, costs and evaluations.",
   "author": { "name": "psyb0t", "url": "https://github.com/psyb0t" },
   "homepage": "https://github.com/psyb0t/go-weave",
