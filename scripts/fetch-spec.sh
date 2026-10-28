@@ -1,17 +1,14 @@
 #!/bin/bash
 # Downloads the W&B Weave trace server OpenAPI spec into api/. The spec is not
-# committed; `go generate` fetches it as its first step. Stainless hosts the
-# spec under a URL with a content hash that changes on every update, so the
-# current URL is read from the openapi_spec_url field of the SDK repo's
-# .stats.yml first.
+# committed; `go generate` fetches it as its first step. The trace server
+# publishes its own spec at a fixed URL, so the script downloads it directly.
 set -euo pipefail
 trap 'on_error "$?" "$LINENO"' ERR
 
 LOG_FILE="${LOG_FILE:-/tmp/$(basename "$0" .sh).log}"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
-readonly STATS_URL="https://raw.githubusercontent.com/wandb/weave-stainless/main/.stats.yml"
-readonly SPEC_URL_PREFIX="https://storage.googleapis.com/stainless-sdk-openapi-specs/"
+readonly SPEC_URL="https://trace.wandb.ai/openapi.json"
 readonly DOWNLOAD_TIMEOUT_SECONDS=60
 readonly SPEC_NAME="openapi.json"
 SPEC_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/api"
@@ -39,36 +36,21 @@ log() {
 		'{time:$time,level:$level,file:$file,line:($line|tonumber),func:$func,msg:$msg}' >&2
 }
 
-# Prints the openapi_spec_url value from the SDK repo's .stats.yml. The file
-# is flat `key: value` YAML, so sed reads it without a YAML parser.
-spec_url() {
-	wget -q -T "$DOWNLOAD_TIMEOUT_SECONDS" -O - "$STATS_URL" |
-		sed -n 's/^openapi_spec_url:[[:space:]]*//p' |
-		tr -d "\"'\r"
-}
-
 main() {
 	mkdir -p "$SPEC_DIR"
-	local tmp url
+	local tmp
 	tmp="$(mktemp "${SPEC_DIR}/.${SPEC_NAME}.XXXXXX")"
 	# shellcheck disable=SC2064 # expand tmp now, the local is gone when EXIT fires
 	trap "rm -f -- '${tmp}'" EXIT
 
-	url="$(spec_url)"
-	if [[ "$url" != "$SPEC_URL_PREFIX"* ]]; then
-		log ERROR "unexpected openapi_spec_url in .stats.yml url=${url}"
-		exit 1
-	fi
-
-	log INFO "downloading spec=${SPEC_NAME} url=${url}"
+	log INFO "downloading spec=${SPEC_NAME} url=${SPEC_URL}"
 	wget -q \
 		-T "$DOWNLOAD_TIMEOUT_SECONDS" \
 		-O "$tmp" \
-		"$url"
+		"$SPEC_URL"
 
-	# The file name ends in .yml but the content is JSON.
-	if ! jq -e '.openapi | strings' "$tmp" >/dev/null; then
-		log ERROR "downloaded file is not an OpenAPI document spec=${SPEC_NAME}"
+	if ! jq -e '(.openapi | strings | startswith("3.")) and (.paths | objects)' "$tmp" >/dev/null; then
+		log ERROR "downloaded file is not an OpenAPI 3.x document spec=${SPEC_NAME}"
 		exit 1
 	fi
 

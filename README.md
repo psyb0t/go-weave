@@ -6,7 +6,7 @@
 [![license](https://raw.githubusercontent.com/psyb0t/go-weave/badges/license.svg)](LICENSE)
 [![imported by](https://raw.githubusercontent.com/psyb0t/go-weave/badges/importers.svg)](https://github.com/psyb0t/go-weave/blob/badges/importers.md)
 
-Unofficial Go client for the [W&B Weave](https://weave-docs.wandb.ai) trace server API, generated with [oapi-codegen](https://github.com/oapi-codegen/oapi-codegen) from the OpenAPI document that ships with W&B's [Weave Stainless SDK](https://github.com/wandb/weave-stainless). I am not affiliated with Weights & Biases.
+Unofficial Go client for the [W&B Weave](https://weave-docs.wandb.ai) trace server API, generated with [oapi-codegen](https://github.com/oapi-codegen/oapi-codegen) from the OpenAPI document the trace server publishes at `https://trace.wandb.ai/openapi.json`. I am not affiliated with Weights & Biases.
 
 The package is `weave`, in the repository root. Everything in `client.gen.go` and `types.gen.go` is generated. Don't edit it by hand, regenerate it.
 
@@ -58,7 +58,7 @@ Method names come from the spec's operation IDs, which FastAPI builds from the h
 
 ## Auth
 
-The spec declares HTTP Basic and HTTP Bearer. The official SDK uses Basic: the W&B username (`WANDB_USERNAME`) is the username and the W&B API key (`WANDB_API_KEY`) is the password. The API key comes from the user settings page on wandb.ai. For a dedicated or self-hosted W&B instance, swap `https://trace.wandb.ai` for that instance's trace server URL.
+The spec declares HTTP Bearer. The official SDK uses HTTP Basic: the W&B username (`WANDB_USERNAME`) is the username and the W&B API key (`WANDB_API_KEY`) is the password. The API key comes from the user settings page on wandb.ai. For a dedicated or self-hosted W&B instance, swap `https://trace.wandb.ai` for that instance's trace server URL.
 
 ## Agent integrations
 
@@ -98,10 +98,11 @@ make generate
 
 `gen.go` declares the steps, so `make generate` is just `go generate ./...`:
 
-- `scripts/fetch-spec.sh` reads `openapi_spec_url` from the `.stats.yml` of [wandb/weave-stainless](https://github.com/wandb/weave-stainless) and downloads that URL to `api/openapi.json`. Stainless hosts the spec under a URL with a content hash, which changes on every spec update, so the script looks it up each time. The file is JSON even though the URL ends in `.yml`.
+- `scripts/fetch-spec.sh` downloads `https://trace.wandb.ai/openapi.json` to `api/openapi.json` and checks that it is an OpenAPI 3.x document.
+- `scripts/patch-spec.sh` writes `api/openapi.patched.json`. The spec declares `POST /calls/stream_query` as `application/json` although the server streams JSONL, so the script declares `application/jsonl` there and the client leaves the stream in `Body` instead of failing to decode it.
 - oapi-codegen runs twice. `config.types.yaml` writes the models to `types.gen.go` and `config.yaml` writes the client to `client.gen.go`, because one file would be about 850 KB. Both map `number` to `float64`, because oapi-codegen would otherwise use `float32`.
 
-The spec needs no patching. It is OpenAPI 3.1, and oapi-codegen turns its `anyOf` with `null` fields into pointers.
+Apart from that patch, oapi-codegen reads the spec as is. It is OpenAPI 3.1, and oapi-codegen turns its `anyOf` with `null` fields into pointers.
 
 `.github/workflows/regen.yml` does the same every day in CI. When the new spec changes the client, it runs `make lint`, `make test` and `make sec`. If a check fails, Claude edits the code and the checks run again, up to three times, and a review step reads the result. A passing change is committed with a CHANGELOG entry and tagged as the next release: a patch version for fixes and additions, a minor version for breaking changes.
 
@@ -122,4 +123,4 @@ make generate  # download the spec and regenerate
 
 ## License
 
-[MIT](LICENSE). The generated code comes from the OpenAPI specification W&B publishes with its Apache-2.0 licensed Weave Stainless SDK. The specification itself is not redistributed here.
+[MIT](LICENSE). The generated code comes from the OpenAPI specification the W&B Weave trace server publishes. The specification itself is not redistributed here.

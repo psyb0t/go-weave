@@ -90,6 +90,158 @@ func WithRequestEditorFn(fn RequestEditorFn) ClientOption {
 // The interface specification for the client above.
 type ClientInterface interface {
 
+	// GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithBody Genai Agent Versions Query
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /agents/agent-versions/query (the `GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost` operationId).
+	GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost Genai Agent Versions Query
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /agents/agent-versions/query (the `GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost` operationId).
+	GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost(ctx context.Context, body GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiConversationChatAgentsConversationsChatPostWithBody Genai Conversation Chat
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /agents/conversations/chat (the `GenaiConversationChatAgentsConversationsChatPost` operationId).
+	GenaiConversationChatAgentsConversationsChatPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiConversationChatAgentsConversationsChatPost Genai Conversation Chat
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /agents/conversations/chat (the `GenaiConversationChatAgentsConversationsChatPost` operationId).
+	GenaiConversationChatAgentsConversationsChatPost(ctx context.Context, body GenaiConversationChatAgentsConversationsChatPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiConversationSpansAgentsConversationsSpansPostWithBody Genai Conversation Spans
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /agents/conversations/spans (the `GenaiConversationSpansAgentsConversationsSpansPost` operationId).
+	GenaiConversationSpansAgentsConversationsSpansPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiConversationSpansAgentsConversationsSpansPost Genai Conversation Spans
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /agents/conversations/spans (the `GenaiConversationSpansAgentsConversationsSpansPost` operationId).
+	GenaiConversationSpansAgentsConversationsSpansPost(ctx context.Context, body GenaiConversationSpansAgentsConversationsSpansPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ExportGenaiTraceAgentsOtelV1TracesPost Export Genai Trace
+	//
+	// Ingest OTel spans into the GenAI observability system.
+	//
+	// Corresponds with POST /agents/otel/v1/traces (the `ExportGenaiTraceAgentsOtelV1TracesPost` operationId).
+	ExportGenaiTraceAgentsOtelV1TracesPost(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiAgentsQueryAgentsQueryPostWithBody Genai Agents Query
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /agents/query (the `GenaiAgentsQueryAgentsQueryPost` operationId).
+	GenaiAgentsQueryAgentsQueryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiAgentsQueryAgentsQueryPost Genai Agents Query
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /agents/query (the `GenaiAgentsQueryAgentsQueryPost` operationId).
+	GenaiAgentsQueryAgentsQueryPost(ctx context.Context, body GenaiAgentsQueryAgentsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiSearchAgentsSearchPostWithBody Genai Search
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /agents/search (the `GenaiSearchAgentsSearchPost` operationId).
+	GenaiSearchAgentsSearchPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiSearchAgentsSearchPost Genai Search
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /agents/search (the `GenaiSearchAgentsSearchPost` operationId).
+	GenaiSearchAgentsSearchPost(ctx context.Context, body GenaiSearchAgentsSearchPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithBody Genai Custom Attrs Schema
+	//
+	// Discover typed custom attribute keys on matching agent spans.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
+	GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost Genai Custom Attrs Schema
+	//
+	// Discover typed custom attribute keys on matching agent spans.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
+	GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost(ctx context.Context, body GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiSpansQueryAgentsSpansQueryPostWithBody Genai Spans Query
+	//
+	// Query agent spans, either as raw rows or grouped aggregates.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /agents/spans/query (the `GenaiSpansQueryAgentsSpansQueryPost` operationId).
+	GenaiSpansQueryAgentsSpansQueryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiSpansQueryAgentsSpansQueryPost Genai Spans Query
+	//
+	// Query agent spans, either as raw rows or grouped aggregates.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /agents/spans/query (the `GenaiSpansQueryAgentsSpansQueryPost` operationId).
+	GenaiSpansQueryAgentsSpansQueryPost(ctx context.Context, body GenaiSpansQueryAgentsSpansQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiSpansStatsAgentsSpansStatsPostWithBody Genai Spans Stats
+	//
+	// Query chart-ready aggregations over agent spans.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /agents/spans/stats (the `GenaiSpansStatsAgentsSpansStatsPost` operationId).
+	GenaiSpansStatsAgentsSpansStatsPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiSpansStatsAgentsSpansStatsPost Genai Spans Stats
+	//
+	// Query chart-ready aggregations over agent spans.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /agents/spans/stats (the `GenaiSpansStatsAgentsSpansStatsPost` operationId).
+	GenaiSpansStatsAgentsSpansStatsPost(ctx context.Context, body GenaiSpansStatsAgentsSpansStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiTracesChatAgentsTracesChatPostWithBody Genai Traces Chat
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /agents/traces/chat (the `GenaiTracesChatAgentsTracesChatPost` operationId).
+	GenaiTracesChatAgentsTracesChatPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiTracesChatAgentsTracesChatPost Genai Traces Chat
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /agents/traces/chat (the `GenaiTracesChatAgentsTracesChatPost` operationId).
+	GenaiTracesChatAgentsTracesChatPost(ctx context.Context, body GenaiTracesChatAgentsTracesChatPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// AliasesListAliasesGet Aliases List
+	//
+	// List all aliases in a project.
+	//
+	// Corresponds with GET /aliases (the `AliasesListAliasesGet` operationId).
+	AliasesListAliasesGet(ctx context.Context, params *AliasesListAliasesGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// AnnotationQueueCreateAnnotationQueuesPostWithBody Annotation Queue Create
 	//
 	// Create a new annotation queue.
@@ -144,12 +296,37 @@ type ClientInterface interface {
 	// Corresponds with POST /annotation_queues/stats (the `AnnotationQueuesStatsAnnotationQueuesStatsPost` operationId).
 	AnnotationQueuesStatsAnnotationQueuesStatsPost(ctx context.Context, body AnnotationQueuesStatsAnnotationQueuesStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// AnnotationQueueDeleteAnnotationQueuesQueueIdDelete Annotation Queue Delete
+	//
+	// Delete (soft-delete) an annotation queue.
+	//
+	// Corresponds with DELETE /annotation_queues/{queue_id} (the `AnnotationQueueDeleteAnnotationQueuesQueueIdDelete` operationId).
+	AnnotationQueueDeleteAnnotationQueuesQueueIdDelete(ctx context.Context, queueId string, params *AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// AnnotationQueueReadAnnotationQueuesQueueIdGet Annotation Queue Read
 	//
 	// Read a specific annotation queue.
 	//
 	// Corresponds with GET /annotation_queues/{queue_id} (the `AnnotationQueueReadAnnotationQueuesQueueIdGet` operationId).
 	AnnotationQueueReadAnnotationQueuesQueueIdGet(ctx context.Context, queueId string, params *AnnotationQueueReadAnnotationQueuesQueueIdGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithBody Annotation Queue Update
+	//
+	// Update an annotation queue's metadata (name, description, scorer_refs).
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /annotation_queues/{queue_id} (the `AnnotationQueueUpdateAnnotationQueuesQueueIdPut` operationId).
+	AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithBody(ctx context.Context, queueId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// AnnotationQueueUpdateAnnotationQueuesQueueIdPut Annotation Queue Update
+	//
+	// Update an annotation queue's metadata (name, description, scorer_refs).
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /annotation_queues/{queue_id} (the `AnnotationQueueUpdateAnnotationQueuesQueueIdPut` operationId).
+	AnnotationQueueUpdateAnnotationQueuesQueueIdPut(ctx context.Context, queueId string, body AnnotationQueueUpdateAnnotationQueuesQueueIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// AnnotationQueueAddCallsAnnotationQueuesQueueIdItemsPostWithBody Annotation Queue Add Calls
 	//
@@ -303,6 +480,20 @@ type ClientInterface interface {
 	// Corresponds with POST /calls/query_stats (the `CallsQueryStatsCallsQueryStatsPost` operationId).
 	CallsQueryStatsCallsQueryStatsPost(ctx context.Context, body CallsQueryStatsCallsQueryStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// CallsScoreCallsScorePostWithBody Calls Score
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /calls/score (the `CallsScoreCallsScorePost` operationId).
+	CallsScoreCallsScorePostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CallsScoreCallsScorePost Calls Score
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /calls/score (the `CallsScoreCallsScorePost` operationId).
+	CallsScoreCallsScorePost(ctx context.Context, body CallsScoreCallsScorePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// CallStatsCallsStatsPostWithBody Call Stats
 	//
 	// Takes any type of body and a specified content type.
@@ -349,6 +540,34 @@ type ClientInterface interface {
 	// Corresponds with POST /calls/usage (the `CallsUsageCallsUsagePost` operationId).
 	CallsUsageCallsUsagePost(ctx context.Context, body CallsUsageCallsUsagePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// CompletionsCreateCompletionsCreatePostWithBody Completions Create
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /completions/create (the `CompletionsCreateCompletionsCreatePost` operationId).
+	CompletionsCreateCompletionsCreatePostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CompletionsCreateCompletionsCreatePost Completions Create
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /completions/create (the `CompletionsCreateCompletionsCreatePost` operationId).
+	CompletionsCreateCompletionsCreatePost(ctx context.Context, body CompletionsCreateCompletionsCreatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CompletionsCreateStreamCompletionsCreateStreamPostWithBody Completions Create Stream
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /completions/create_stream (the `CompletionsCreateStreamCompletionsCreateStreamPost` operationId).
+	CompletionsCreateStreamCompletionsCreateStreamPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CompletionsCreateStreamCompletionsCreateStreamPost Completions Create Stream
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /completions/create_stream (the `CompletionsCreateStreamCompletionsCreateStreamPost` operationId).
+	CompletionsCreateStreamCompletionsCreateStreamPost(ctx context.Context, body CompletionsCreateStreamCompletionsCreateStreamPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// CostCreateCostCreatePostWithBody Cost Create
 	//
 	// Takes any type of body and a specified content type.
@@ -391,6 +610,60 @@ type ClientInterface interface {
 	// Corresponds with POST /cost/query (the `CostQueryCostQueryPost` operationId).
 	CostQueryCostQueryPost(ctx context.Context, body CostQueryCostQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// DatasetSourcesLinkDatasetSourcesLinkPostWithBody Dataset Sources Link
+	//
+	// Link source calls/spans to dataset rows (batch, idempotent).
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /dataset_sources/link (the `DatasetSourcesLinkDatasetSourcesLinkPost` operationId).
+	DatasetSourcesLinkDatasetSourcesLinkPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DatasetSourcesLinkDatasetSourcesLinkPost Dataset Sources Link
+	//
+	// Link source calls/spans to dataset rows (batch, idempotent).
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /dataset_sources/link (the `DatasetSourcesLinkDatasetSourcesLinkPost` operationId).
+	DatasetSourcesLinkDatasetSourcesLinkPost(ctx context.Context, body DatasetSourcesLinkDatasetSourcesLinkPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DatasetSourcesQueryDatasetSourcesQueryPostWithBody Dataset Sources Query
+	//
+	// Forward provenance lookup: dataset (+ optional row digests) -> sources.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /dataset_sources/query (the `DatasetSourcesQueryDatasetSourcesQueryPost` operationId).
+	DatasetSourcesQueryDatasetSourcesQueryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// DatasetSourcesQueryDatasetSourcesQueryPost Dataset Sources Query
+	//
+	// Forward provenance lookup: dataset (+ optional row digests) -> sources.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /dataset_sources/query (the `DatasetSourcesQueryDatasetSourcesQueryPost` operationId).
+	DatasetSourcesQueryDatasetSourcesQueryPost(ctx context.Context, body DatasetSourcesQueryDatasetSourcesQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithBody Source Datasets Query
+	//
+	// Reverse provenance lookup: sources -> datasets they appear in.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /dataset_sources/source_datasets_query (the `SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost` operationId).
+	SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost Source Datasets Query
+	//
+	// Reverse provenance lookup: sources -> datasets they appear in.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /dataset_sources/source_datasets_query (the `SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost` operationId).
+	SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost(ctx context.Context, body SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// EvaluateModelEvaluationsEvaluateModelPostWithBody Evaluate Model
 	//
 	// Takes any type of body and a specified content type.
@@ -405,6 +678,30 @@ type ClientInterface interface {
 	// Corresponds with POST /evaluations/evaluate_model (the `EvaluateModelEvaluationsEvaluateModelPost` operationId).
 	EvaluateModelEvaluationsEvaluateModelPost(ctx context.Context, body EvaluateModelEvaluationsEvaluateModelPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// RescoreEvaluationEvaluationsRescorePostWithBody Rescore Evaluation
+	//
+	// Rescore an existing evaluation run with different scorer(s).
+	//
+	// Applies the provided scorer(s) to the predictions from source_evaluation_run_id
+	// and returns a new evaluation_run_id. Original prediction call IDs are preserved.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /evaluations/rescore (the `RescoreEvaluationEvaluationsRescorePost` operationId).
+	RescoreEvaluationEvaluationsRescorePostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// RescoreEvaluationEvaluationsRescorePost Rescore Evaluation
+	//
+	// Rescore an existing evaluation run with different scorer(s).
+	//
+	// Applies the provided scorer(s) to the predictions from source_evaluation_run_id
+	// and returns a new evaluation_run_id. Original prediction call IDs are preserved.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /evaluations/rescore (the `RescoreEvaluationEvaluationsRescorePost` operationId).
+	RescoreEvaluationEvaluationsRescorePost(ctx context.Context, body RescoreEvaluationEvaluationsRescorePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// EvaluationStatusEvaluationsStatusPostWithBody Evaluation Status
 	//
 	// Takes any type of body and a specified content type.
@@ -418,6 +715,24 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /evaluations/status (the `EvaluationStatusEvaluationsStatusPost` operationId).
 	EvaluationStatusEvaluationsStatusPost(ctx context.Context, body EvaluationStatusEvaluationsStatusPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FeedbackAggregateFeedbackAggregatePostWithBody Feedback Aggregate
+	//
+	// Aggregate typed scorer feedback (tags, ratings) over time buckets.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /feedback/aggregate (the `FeedbackAggregateFeedbackAggregatePost` operationId).
+	FeedbackAggregateFeedbackAggregatePostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FeedbackAggregateFeedbackAggregatePost Feedback Aggregate
+	//
+	// Aggregate typed scorer feedback (tags, ratings) over time buckets.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /feedback/aggregate (the `FeedbackAggregateFeedbackAggregatePost` operationId).
+	FeedbackAggregateFeedbackAggregatePost(ctx context.Context, body FeedbackAggregateFeedbackAggregatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FeedbackCreateBatchFeedbackBatchCreatePostWithBody Feedback Create Batch
 	//
@@ -454,6 +769,24 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /feedback/create (the `FeedbackCreateFeedbackCreatePost` operationId).
 	FeedbackCreateFeedbackCreatePost(ctx context.Context, body FeedbackCreateFeedbackCreatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithBody Feedback Payload Schema
+	//
+	// Discover feedback payload schema (paths and types) from sample rows.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /feedback/payload_schema (the `FeedbackPayloadSchemaFeedbackPayloadSchemaPost` operationId).
+	FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FeedbackPayloadSchemaFeedbackPayloadSchemaPost Feedback Payload Schema
+	//
+	// Discover feedback payload schema (paths and types) from sample rows.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /feedback/payload_schema (the `FeedbackPayloadSchemaFeedbackPayloadSchemaPost` operationId).
+	FeedbackPayloadSchemaFeedbackPayloadSchemaPost(ctx context.Context, body FeedbackPayloadSchemaFeedbackPayloadSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// FeedbackPurgeFeedbackPurgePostWithBody Feedback Purge
 	//
@@ -505,6 +838,24 @@ type ClientInterface interface {
 	// Corresponds with POST /feedback/replace (the `FeedbackReplaceFeedbackReplacePost` operationId).
 	FeedbackReplaceFeedbackReplacePost(ctx context.Context, body FeedbackReplaceFeedbackReplacePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FeedbackStatsFeedbackStatsPostWithBody Feedback Stats
+	//
+	// Return aggregated feedback statistics over time buckets.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /feedback/stats (the `FeedbackStatsFeedbackStatsPost` operationId).
+	FeedbackStatsFeedbackStatsPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FeedbackStatsFeedbackStatsPost Feedback Stats
+	//
+	// Return aggregated feedback statistics over time buckets.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /feedback/stats (the `FeedbackStatsFeedbackStatsPost` operationId).
+	FeedbackStatsFeedbackStatsPost(ctx context.Context, body FeedbackStatsFeedbackStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// FileContentFileContentPostWithBody File Content
 	//
 	// Takes any type of body and a specified content type.
@@ -540,6 +891,20 @@ type ClientInterface interface {
 	// Corresponds with POST /files/query_stats (the `FilesStatsFilesQueryStatsPost` operationId).
 	FilesStatsFilesQueryStatsPost(ctx context.Context, body FilesStatsFilesQueryStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// FilesResolveUrlFilesResolveUrlPostWithBody Files Resolve Url
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /files/resolve_url (the `FilesResolveUrlFilesResolveUrlPost` operationId).
+	FilesResolveUrlFilesResolveUrlPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// FilesResolveUrlFilesResolveUrlPost Files Resolve Url
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /files/resolve_url (the `FilesResolveUrlFilesResolveUrlPost` operationId).
+	FilesResolveUrlFilesResolveUrlPost(ctx context.Context, body FilesResolveUrlFilesResolveUrlPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetCallerLocationGeolocateGet Get Caller Location
 	//
 	// Lookup the geographic location of a user based on their IP address.
@@ -568,6 +933,43 @@ type ClientInterface interface {
 	// Corresponds with POST /image/create (the `ImageCreateImageCreatePost` operationId).
 	ImageCreateImageCreatePost(ctx context.Context, body ImageCreateImageCreatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGet Inference Analysis Artificialanalysis Models
+	//
+	// Returns a list of available models for Artificial Analysis.
+	//
+	// This API is available without authentication.
+	//
+	// Corresponds with GET /inference/analysis/artificialanalysis/models (the `InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGet` operationId).
+	InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGet(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// InferenceCatalogModelsInferenceCatalogModelsGet Inference Catalog Models
+	//
+	// Returns a list of available Serverless Inference models.
+	//
+	// This API is available without authentication.
+	//
+	// Corresponds with GET /inference/catalog/models (the `InferenceCatalogModelsInferenceCatalogModelsGet` operationId).
+	InferenceCatalogModelsInferenceCatalogModelsGet(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// InferenceModelsdevModelsInferenceModelsdevModelsGet Inference Modelsdev Models
+	//
+	// Returns the available models in the models.dev `api.json` schema.
+	//
+	// This API is available without authentication.
+	//
+	// Corresponds with GET /inference/modelsdev/models (the `InferenceModelsdevModelsInferenceModelsdevModelsGet` operationId).
+	InferenceModelsdevModelsInferenceModelsdevModelsGet(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// NvidiaHardwareInferenceNvidiaV2HardwareGet Nvidia Hardware
+	//
+	// Returns available hardware and pricing for a given model.
+	//
+	// Called by NVIDIA to show users their options and redirect them
+	// based on what we support.  Only serverless options are returned.
+	//
+	// Corresponds with GET /inference/nvidia/v2/hardware (the `NvidiaHardwareInferenceNvidiaV2HardwareGet` operationId).
+	NvidiaHardwareInferenceNvidiaV2HardwareGet(ctx context.Context, params *NvidiaHardwareInferenceNvidiaV2HardwareGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGet Inference Router Openrouter Models
 	//
 	// Returns a list of models that are available to be used with OpenRouter.
@@ -577,30 +979,19 @@ type ClientInterface interface {
 	// Corresponds with GET /inference/router/openrouter/models (the `InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGet` operationId).
 	InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGet(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// InferenceGetInferenceV1PathGet Inference Get
-	//
-	// OpenAI-compatible APIs.
-	//
-	// Corresponds with GET /inference/v1{path} (the `InferenceGetInferenceV1PathGet` operationId).
-	InferenceGetInferenceV1PathGet(ctx context.Context, path string, reqEditors ...RequestEditorFn) (*http.Response, error)
-
-	// InferencePostInferenceV1PathPostWithBody Inference Post
-	//
-	// OpenAI-compatible APIs.
+	// LinkToRegistryLinkToRegistryPostWithBody Link To Registry
 	//
 	// Takes any type of body and a specified content type.
 	//
-	// Corresponds with POST /inference/v1{path} (the `InferencePostInferenceV1PathPost` operationId).
-	InferencePostInferenceV1PathPostWithBody(ctx context.Context, path string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with POST /link_to_registry (the `LinkToRegistryLinkToRegistryPost` operationId).
+	LinkToRegistryLinkToRegistryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// InferencePostInferenceV1PathPost Inference Post
-	//
-	// OpenAI-compatible APIs.
+	// LinkToRegistryLinkToRegistryPost Link To Registry
 	//
 	// Takes a body of the `application/json` content type.
 	//
-	// Corresponds with POST /inference/v1{path} (the `InferencePostInferenceV1PathPost` operationId).
-	InferencePostInferenceV1PathPost(ctx context.Context, path string, body InferencePostInferenceV1PathPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	// Corresponds with POST /link_to_registry (the `LinkToRegistryLinkToRegistryPost` operationId).
+	LinkToRegistryLinkToRegistryPost(ctx context.Context, body LinkToRegistryLinkToRegistryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ObjCreateObjCreatePostWithBody Obj Create
 	//
@@ -658,10 +1049,145 @@ type ClientInterface interface {
 	// Corresponds with POST /objs/query (the `ObjsQueryObjsQueryPost` operationId).
 	ObjsQueryObjsQueryPost(ctx context.Context, body ObjsQueryObjsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ObjSetAliasesObjsObjectIdAliasesPutWithBody Obj Set Aliases
+	//
+	// Set aliases for an object version.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /objs/{object_id}/aliases (the `ObjSetAliasesObjsObjectIdAliasesPut` operationId).
+	ObjSetAliasesObjsObjectIdAliasesPutWithBody(ctx context.Context, objectId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ObjSetAliasesObjsObjectIdAliasesPut Obj Set Aliases
+	//
+	// Set aliases for an object version.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /objs/{object_id}/aliases (the `ObjSetAliasesObjsObjectIdAliasesPut` operationId).
+	ObjSetAliasesObjsObjectIdAliasesPut(ctx context.Context, objectId string, body ObjSetAliasesObjsObjectIdAliasesPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithBody Obj Remove Aliases
+	//
+	// Remove aliases from an object.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /objs/{object_id}/aliases/remove (the `ObjRemoveAliasesObjsObjectIdAliasesRemovePost` operationId).
+	ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithBody(ctx context.Context, objectId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ObjRemoveAliasesObjsObjectIdAliasesRemovePost Obj Remove Aliases
+	//
+	// Remove aliases from an object.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /objs/{object_id}/aliases/remove (the `ObjRemoveAliasesObjsObjectIdAliasesRemovePost` operationId).
+	ObjRemoveAliasesObjsObjectIdAliasesRemovePost(ctx context.Context, objectId string, body ObjRemoveAliasesObjsObjectIdAliasesRemovePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithBody Obj Add Tags
+	//
+	// Add tags to an object version.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /objs/{object_id}/versions/{digest}/tags (the `ObjAddTagsObjsObjectIdVersionsDigestTagsPut` operationId).
+	ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithBody(ctx context.Context, objectId string, digest string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ObjAddTagsObjsObjectIdVersionsDigestTagsPut Obj Add Tags
+	//
+	// Add tags to an object version.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /objs/{object_id}/versions/{digest}/tags (the `ObjAddTagsObjsObjectIdVersionsDigestTagsPut` operationId).
+	ObjAddTagsObjsObjectIdVersionsDigestTagsPut(ctx context.Context, objectId string, digest string, body ObjAddTagsObjsObjectIdVersionsDigestTagsPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithBody Obj Remove Tags
+	//
+	// Remove tags from an object version.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /objs/{object_id}/versions/{digest}/tags/remove (the `ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost` operationId).
+	ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithBody(ctx context.Context, objectId string, digest string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost Obj Remove Tags
+	//
+	// Remove tags from an object version.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /objs/{object_id}/versions/{digest}/tags/remove (the `ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost` operationId).
+	ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost(ctx context.Context, objectId string, digest string, body ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ExportTraceOtelV1TracesPost Export Trace
 	//
 	// Corresponds with POST /otel/v1/traces (the `ExportTraceOtelV1TracesPost` operationId).
 	ExportTraceOtelV1TracesPost(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithBody Project Ingest Sampling Settings Read
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /project/ingest_sampling_settings/read (the `ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost` operationId).
+	ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost Project Ingest Sampling Settings Read
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /project/ingest_sampling_settings/read (the `ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost` operationId).
+	ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost(ctx context.Context, body ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet Project Sensitive Data Settings Read
+	//
+	// Read the owning organization's sensitive-data policy for a project.
+	//
+	// Corresponds with GET /project/sensitive_data_settings (the `ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet` operationId).
+	ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet(ctx context.Context, params *ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectStatsProjectStatsPostWithBody Project Stats
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /project/stats (the `ProjectStatsProjectStatsPost` operationId).
+	ProjectStatsProjectStatsPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectStatsProjectStatsPost Project Stats
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /project/stats (the `ProjectStatsProjectStatsPost` operationId).
+	ProjectStatsProjectStatsPost(ctx context.Context, body ProjectStatsProjectStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectTtlSettingsReadProjectTtlSettingsReadPostWithBody Project Ttl Settings Read
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /project/ttl_settings/read (the `ProjectTtlSettingsReadProjectTtlSettingsReadPost` operationId).
+	ProjectTtlSettingsReadProjectTtlSettingsReadPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectTtlSettingsReadProjectTtlSettingsReadPost Project Ttl Settings Read
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /project/ttl_settings/read (the `ProjectTtlSettingsReadProjectTtlSettingsReadPost` operationId).
+	ProjectTtlSettingsReadProjectTtlSettingsReadPost(ctx context.Context, body ProjectTtlSettingsReadProjectTtlSettingsReadPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithBody Project Ttl Settings Update
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /project/ttl_settings/update (the `ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost` operationId).
+	ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost Project Ttl Settings Update
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /project/ttl_settings/update (the `ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost` operationId).
+	ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost(ctx context.Context, body ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// RefsReadBatchRefsReadBatchPostWithBody Refs Read Batch
 	//
@@ -681,6 +1207,20 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /server_info (the `ServerInfoServerInfoGet` operationId).
 	ServerInfoServerInfoGet(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectsInfoServiceProjectsInfoPostWithBody Projects Info
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /service/projects_info (the `ProjectsInfoServiceProjectsInfoPost` operationId).
+	ProjectsInfoServiceProjectsInfoPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ProjectsInfoServiceProjectsInfoPost Projects Info
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /service/projects_info (the `ProjectsInfoServiceProjectsInfoPost` operationId).
+	ProjectsInfoServiceProjectsInfoPost(ctx context.Context, body ProjectsInfoServiceProjectsInfoPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// TableCreateTableCreatePostWithBody Table Create
 	//
@@ -766,6 +1306,13 @@ type ClientInterface interface {
 	// Corresponds with POST /table/update (the `TableUpdateTableUpdatePost` operationId).
 	TableUpdateTableUpdatePost(ctx context.Context, body TableUpdateTableUpdatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// TagsListTagsGet Tags List
+	//
+	// List all tags in a project.
+	//
+	// Corresponds with GET /tags (the `TagsListTagsGet` operationId).
+	TagsListTagsGet(ctx context.Context, params *TagsListTagsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ThreadsQueryStreamThreadsStreamQueryPostWithBody Threads Query Stream
 	//
 	// Takes any type of body and a specified content type.
@@ -797,6 +1344,30 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /trace/usage (the `TraceUsageTraceUsagePost` operationId).
 	TraceUsageTraceUsagePost(ctx context.Context, body TraceUsageTraceUsagePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CallsCompleteV2EntityProjectCallsCompletePostWithBody Calls Complete
+	//
+	// Upsert a batch of completed calls directly to the calls_complete table.
+	//
+	// Each call in the batch contains both start and end information.
+	// This endpoint is used when calls are buffered client-side and sent as complete records.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v2/{entity}/{project}/calls/complete (the `CallsCompleteV2EntityProjectCallsCompletePost` operationId).
+	CallsCompleteV2EntityProjectCallsCompletePostWithBody(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CallsCompleteV2EntityProjectCallsCompletePost Calls Complete
+	//
+	// Upsert a batch of completed calls directly to the calls_complete table.
+	//
+	// Each call in the batch contains both start and end information.
+	// This endpoint is used when calls are buffered client-side and sent as complete records.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v2/{entity}/{project}/calls/complete (the `CallsCompleteV2EntityProjectCallsCompletePost` operationId).
+	CallsCompleteV2EntityProjectCallsCompletePost(ctx context.Context, entity string, project string, body CallsCompleteV2EntityProjectCallsCompletePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DatasetListV2EntityProjectDatasetsGet Dataset List
 	//
@@ -836,6 +1407,24 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /v2/{entity}/{project}/datasets/{object_id}/versions/{digest} (the `DatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGet` operationId).
 	DatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGet(ctx context.Context, entity string, project string, objectId string, digest string, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithBody Eval Results Query
+	//
+	// Read grouped evaluation result rows for one or more evaluations.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v2/{entity}/{project}/eval_results/query (the `EvalResultsQueryV2EntityProjectEvalResultsQueryPost` operationId).
+	EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithBody(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// EvalResultsQueryV2EntityProjectEvalResultsQueryPost Eval Results Query
+	//
+	// Read grouped evaluation result rows for one or more evaluations.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v2/{entity}/{project}/eval_results/query (the `EvalResultsQueryV2EntityProjectEvalResultsQueryPost` operationId).
+	EvalResultsQueryV2EntityProjectEvalResultsQueryPost(ctx context.Context, entity string, project string, body EvalResultsQueryV2EntityProjectEvalResultsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// EvaluationRunDeleteV2EntityProjectEvaluationRunsDelete Evaluation Run Delete
 	//
@@ -899,7 +1488,7 @@ type ClientInterface interface {
 	// List evaluation objects.
 	//
 	// Corresponds with GET /v2/{entity}/{project}/evaluations (the `EvaluationListV2EntityProjectEvaluationsGet` operationId).
-	EvaluationListV2EntityProjectEvaluationsGet(ctx context.Context, entity string, project string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	EvaluationListV2EntityProjectEvaluationsGet(ctx context.Context, entity string, project string, params *EvaluationListV2EntityProjectEvaluationsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// EvaluationCreateV2EntityProjectEvaluationsPostWithBody Evaluation Create
 	//
@@ -1057,12 +1646,30 @@ type ClientInterface interface {
 	// Corresponds with POST /v2/{entity}/{project}/predictions/{prediction_id}/finish (the `PredictionFinishV2EntityProjectPredictionsPredictionIdFinishPost` operationId).
 	PredictionFinishV2EntityProjectPredictionsPredictionIdFinishPost(ctx context.Context, entity string, project string, predictionId string, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithBody Custom Runtime Apply
+	//
+	// Create or replace a custom runtime configuration.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with PUT /v2/{entity}/{project}/runtimes/{runtime_name} (the `CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut` operationId).
+	CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithBody(ctx context.Context, entity string, project string, runtimeName string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut Custom Runtime Apply
+	//
+	// Create or replace a custom runtime configuration.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with PUT /v2/{entity}/{project}/runtimes/{runtime_name} (the `CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut` operationId).
+	CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut(ctx context.Context, entity string, project string, runtimeName string, body CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ScorerListV2EntityProjectScorersGet Scorer List
 	//
 	// List scorer objects.
 	//
 	// Corresponds with GET /v2/{entity}/{project}/scorers (the `ScorerListV2EntityProjectScorersGet` operationId).
-	ScorerListV2EntityProjectScorersGet(ctx context.Context, entity string, project string, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ScorerListV2EntityProjectScorersGet(ctx context.Context, entity string, project string, params *ScorerListV2EntityProjectScorersGetParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ScorerCreateV2EntityProjectScorersPostWithBody Scorer Create
 	//
@@ -1139,6 +1746,358 @@ type ClientInterface interface {
 	//
 	// Corresponds with GET /version (the `ReadVersionVersionGet` operationId).
 	ReadVersionVersionGet(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
+}
+
+// GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithBody Genai Agent Versions Query
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /agents/agent-versions/query (the `GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost` operationId).
+func (c *Client) GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost Genai Agent Versions Query
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /agents/agent-versions/query (the `GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost` operationId).
+func (c *Client) GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost(ctx context.Context, body GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiConversationChatAgentsConversationsChatPostWithBody Genai Conversation Chat
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /agents/conversations/chat (the `GenaiConversationChatAgentsConversationsChatPost` operationId).
+func (c *Client) GenaiConversationChatAgentsConversationsChatPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiConversationChatAgentsConversationsChatPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiConversationChatAgentsConversationsChatPost Genai Conversation Chat
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /agents/conversations/chat (the `GenaiConversationChatAgentsConversationsChatPost` operationId).
+func (c *Client) GenaiConversationChatAgentsConversationsChatPost(ctx context.Context, body GenaiConversationChatAgentsConversationsChatPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiConversationChatAgentsConversationsChatPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiConversationSpansAgentsConversationsSpansPostWithBody Genai Conversation Spans
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /agents/conversations/spans (the `GenaiConversationSpansAgentsConversationsSpansPost` operationId).
+func (c *Client) GenaiConversationSpansAgentsConversationsSpansPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiConversationSpansAgentsConversationsSpansPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiConversationSpansAgentsConversationsSpansPost Genai Conversation Spans
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /agents/conversations/spans (the `GenaiConversationSpansAgentsConversationsSpansPost` operationId).
+func (c *Client) GenaiConversationSpansAgentsConversationsSpansPost(ctx context.Context, body GenaiConversationSpansAgentsConversationsSpansPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiConversationSpansAgentsConversationsSpansPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ExportGenaiTraceAgentsOtelV1TracesPost Export Genai Trace
+//
+// Ingest OTel spans into the GenAI observability system.
+//
+// Corresponds with POST /agents/otel/v1/traces (the `ExportGenaiTraceAgentsOtelV1TracesPost` operationId).
+func (c *Client) ExportGenaiTraceAgentsOtelV1TracesPost(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewExportGenaiTraceAgentsOtelV1TracesPostRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiAgentsQueryAgentsQueryPostWithBody Genai Agents Query
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /agents/query (the `GenaiAgentsQueryAgentsQueryPost` operationId).
+func (c *Client) GenaiAgentsQueryAgentsQueryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiAgentsQueryAgentsQueryPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiAgentsQueryAgentsQueryPost Genai Agents Query
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /agents/query (the `GenaiAgentsQueryAgentsQueryPost` operationId).
+func (c *Client) GenaiAgentsQueryAgentsQueryPost(ctx context.Context, body GenaiAgentsQueryAgentsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiAgentsQueryAgentsQueryPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiSearchAgentsSearchPostWithBody Genai Search
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /agents/search (the `GenaiSearchAgentsSearchPost` operationId).
+func (c *Client) GenaiSearchAgentsSearchPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiSearchAgentsSearchPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiSearchAgentsSearchPost Genai Search
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /agents/search (the `GenaiSearchAgentsSearchPost` operationId).
+func (c *Client) GenaiSearchAgentsSearchPost(ctx context.Context, body GenaiSearchAgentsSearchPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiSearchAgentsSearchPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithBody Genai Custom Attrs Schema
+//
+// Discover typed custom attribute keys on matching agent spans.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
+func (c *Client) GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost Genai Custom Attrs Schema
+//
+// Discover typed custom attribute keys on matching agent spans.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
+func (c *Client) GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost(ctx context.Context, body GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiSpansQueryAgentsSpansQueryPostWithBody Genai Spans Query
+//
+// Query agent spans, either as raw rows or grouped aggregates.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /agents/spans/query (the `GenaiSpansQueryAgentsSpansQueryPost` operationId).
+func (c *Client) GenaiSpansQueryAgentsSpansQueryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiSpansQueryAgentsSpansQueryPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiSpansQueryAgentsSpansQueryPost Genai Spans Query
+//
+// Query agent spans, either as raw rows or grouped aggregates.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /agents/spans/query (the `GenaiSpansQueryAgentsSpansQueryPost` operationId).
+func (c *Client) GenaiSpansQueryAgentsSpansQueryPost(ctx context.Context, body GenaiSpansQueryAgentsSpansQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiSpansQueryAgentsSpansQueryPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiSpansStatsAgentsSpansStatsPostWithBody Genai Spans Stats
+//
+// Query chart-ready aggregations over agent spans.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /agents/spans/stats (the `GenaiSpansStatsAgentsSpansStatsPost` operationId).
+func (c *Client) GenaiSpansStatsAgentsSpansStatsPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiSpansStatsAgentsSpansStatsPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiSpansStatsAgentsSpansStatsPost Genai Spans Stats
+//
+// Query chart-ready aggregations over agent spans.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /agents/spans/stats (the `GenaiSpansStatsAgentsSpansStatsPost` operationId).
+func (c *Client) GenaiSpansStatsAgentsSpansStatsPost(ctx context.Context, body GenaiSpansStatsAgentsSpansStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiSpansStatsAgentsSpansStatsPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiTracesChatAgentsTracesChatPostWithBody Genai Traces Chat
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /agents/traces/chat (the `GenaiTracesChatAgentsTracesChatPost` operationId).
+func (c *Client) GenaiTracesChatAgentsTracesChatPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiTracesChatAgentsTracesChatPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiTracesChatAgentsTracesChatPost Genai Traces Chat
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /agents/traces/chat (the `GenaiTracesChatAgentsTracesChatPost` operationId).
+func (c *Client) GenaiTracesChatAgentsTracesChatPost(ctx context.Context, body GenaiTracesChatAgentsTracesChatPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiTracesChatAgentsTracesChatPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AliasesListAliasesGet Aliases List
+//
+// List all aliases in a project.
+//
+// Corresponds with GET /aliases (the `AliasesListAliasesGet` operationId).
+func (c *Client) AliasesListAliasesGet(ctx context.Context, params *AliasesListAliasesGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAliasesListAliasesGetRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
 }
 
 // AnnotationQueueCreateAnnotationQueuesPostWithBody Annotation Queue Create
@@ -1255,6 +2214,23 @@ func (c *Client) AnnotationQueuesStatsAnnotationQueuesStatsPost(ctx context.Cont
 	return c.Client.Do(req)
 }
 
+// AnnotationQueueDeleteAnnotationQueuesQueueIdDelete Annotation Queue Delete
+//
+// Delete (soft-delete) an annotation queue.
+//
+// Corresponds with DELETE /annotation_queues/{queue_id} (the `AnnotationQueueDeleteAnnotationQueuesQueueIdDelete` operationId).
+func (c *Client) AnnotationQueueDeleteAnnotationQueuesQueueIdDelete(ctx context.Context, queueId string, params *AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAnnotationQueueDeleteAnnotationQueuesQueueIdDeleteRequest(c.Server, queueId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // AnnotationQueueReadAnnotationQueuesQueueIdGet Annotation Queue Read
 //
 // Read a specific annotation queue.
@@ -1262,6 +2238,44 @@ func (c *Client) AnnotationQueuesStatsAnnotationQueuesStatsPost(ctx context.Cont
 // Corresponds with GET /annotation_queues/{queue_id} (the `AnnotationQueueReadAnnotationQueuesQueueIdGet` operationId).
 func (c *Client) AnnotationQueueReadAnnotationQueuesQueueIdGet(ctx context.Context, queueId string, params *AnnotationQueueReadAnnotationQueuesQueueIdGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewAnnotationQueueReadAnnotationQueuesQueueIdGetRequest(c.Server, queueId, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithBody Annotation Queue Update
+//
+// Update an annotation queue's metadata (name, description, scorer_refs).
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /annotation_queues/{queue_id} (the `AnnotationQueueUpdateAnnotationQueuesQueueIdPut` operationId).
+func (c *Client) AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithBody(ctx context.Context, queueId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAnnotationQueueUpdateAnnotationQueuesQueueIdPutRequestWithBody(c.Server, queueId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// AnnotationQueueUpdateAnnotationQueuesQueueIdPut Annotation Queue Update
+//
+// Update an annotation queue's metadata (name, description, scorer_refs).
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /annotation_queues/{queue_id} (the `AnnotationQueueUpdateAnnotationQueuesQueueIdPut` operationId).
+func (c *Client) AnnotationQueueUpdateAnnotationQueuesQueueIdPut(ctx context.Context, queueId string, body AnnotationQueueUpdateAnnotationQueuesQueueIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewAnnotationQueueUpdateAnnotationQueuesQueueIdPutRequest(c.Server, queueId, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1624,6 +2638,40 @@ func (c *Client) CallsQueryStatsCallsQueryStatsPost(ctx context.Context, body Ca
 	return c.Client.Do(req)
 }
 
+// CallsScoreCallsScorePostWithBody Calls Score
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /calls/score (the `CallsScoreCallsScorePost` operationId).
+func (c *Client) CallsScoreCallsScorePostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCallsScoreCallsScorePostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CallsScoreCallsScorePost Calls Score
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /calls/score (the `CallsScoreCallsScorePost` operationId).
+func (c *Client) CallsScoreCallsScorePost(ctx context.Context, body CallsScoreCallsScorePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCallsScoreCallsScorePostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // CallStatsCallsStatsPostWithBody Call Stats
 //
 // Takes any type of body and a specified content type.
@@ -1720,6 +2768,74 @@ func (c *Client) CallsUsageCallsUsagePostWithBody(ctx context.Context, contentTy
 // Corresponds with POST /calls/usage (the `CallsUsageCallsUsagePost` operationId).
 func (c *Client) CallsUsageCallsUsagePost(ctx context.Context, body CallsUsageCallsUsagePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCallsUsageCallsUsagePostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CompletionsCreateCompletionsCreatePostWithBody Completions Create
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /completions/create (the `CompletionsCreateCompletionsCreatePost` operationId).
+func (c *Client) CompletionsCreateCompletionsCreatePostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCompletionsCreateCompletionsCreatePostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CompletionsCreateCompletionsCreatePost Completions Create
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /completions/create (the `CompletionsCreateCompletionsCreatePost` operationId).
+func (c *Client) CompletionsCreateCompletionsCreatePost(ctx context.Context, body CompletionsCreateCompletionsCreatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCompletionsCreateCompletionsCreatePostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CompletionsCreateStreamCompletionsCreateStreamPostWithBody Completions Create Stream
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /completions/create_stream (the `CompletionsCreateStreamCompletionsCreateStreamPost` operationId).
+func (c *Client) CompletionsCreateStreamCompletionsCreateStreamPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCompletionsCreateStreamCompletionsCreateStreamPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CompletionsCreateStreamCompletionsCreateStreamPost Completions Create Stream
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /completions/create_stream (the `CompletionsCreateStreamCompletionsCreateStreamPost` operationId).
+func (c *Client) CompletionsCreateStreamCompletionsCreateStreamPost(ctx context.Context, body CompletionsCreateStreamCompletionsCreateStreamPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCompletionsCreateStreamCompletionsCreateStreamPostRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1832,6 +2948,120 @@ func (c *Client) CostQueryCostQueryPost(ctx context.Context, body CostQueryCostQ
 	return c.Client.Do(req)
 }
 
+// DatasetSourcesLinkDatasetSourcesLinkPostWithBody Dataset Sources Link
+//
+// Link source calls/spans to dataset rows (batch, idempotent).
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /dataset_sources/link (the `DatasetSourcesLinkDatasetSourcesLinkPost` operationId).
+func (c *Client) DatasetSourcesLinkDatasetSourcesLinkPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDatasetSourcesLinkDatasetSourcesLinkPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DatasetSourcesLinkDatasetSourcesLinkPost Dataset Sources Link
+//
+// Link source calls/spans to dataset rows (batch, idempotent).
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /dataset_sources/link (the `DatasetSourcesLinkDatasetSourcesLinkPost` operationId).
+func (c *Client) DatasetSourcesLinkDatasetSourcesLinkPost(ctx context.Context, body DatasetSourcesLinkDatasetSourcesLinkPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDatasetSourcesLinkDatasetSourcesLinkPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DatasetSourcesQueryDatasetSourcesQueryPostWithBody Dataset Sources Query
+//
+// Forward provenance lookup: dataset (+ optional row digests) -> sources.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /dataset_sources/query (the `DatasetSourcesQueryDatasetSourcesQueryPost` operationId).
+func (c *Client) DatasetSourcesQueryDatasetSourcesQueryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDatasetSourcesQueryDatasetSourcesQueryPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// DatasetSourcesQueryDatasetSourcesQueryPost Dataset Sources Query
+//
+// Forward provenance lookup: dataset (+ optional row digests) -> sources.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /dataset_sources/query (the `DatasetSourcesQueryDatasetSourcesQueryPost` operationId).
+func (c *Client) DatasetSourcesQueryDatasetSourcesQueryPost(ctx context.Context, body DatasetSourcesQueryDatasetSourcesQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewDatasetSourcesQueryDatasetSourcesQueryPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithBody Source Datasets Query
+//
+// Reverse provenance lookup: sources -> datasets they appear in.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /dataset_sources/source_datasets_query (the `SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost` operationId).
+func (c *Client) SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost Source Datasets Query
+//
+// Reverse provenance lookup: sources -> datasets they appear in.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /dataset_sources/source_datasets_query (the `SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost` operationId).
+func (c *Client) SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost(ctx context.Context, body SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // EvaluateModelEvaluationsEvaluateModelPostWithBody Evaluate Model
 //
 // Takes any type of body and a specified content type.
@@ -1866,6 +3096,50 @@ func (c *Client) EvaluateModelEvaluationsEvaluateModelPost(ctx context.Context, 
 	return c.Client.Do(req)
 }
 
+// RescoreEvaluationEvaluationsRescorePostWithBody Rescore Evaluation
+//
+// Rescore an existing evaluation run with different scorer(s).
+//
+// Applies the provided scorer(s) to the predictions from source_evaluation_run_id
+// and returns a new evaluation_run_id. Original prediction call IDs are preserved.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /evaluations/rescore (the `RescoreEvaluationEvaluationsRescorePost` operationId).
+func (c *Client) RescoreEvaluationEvaluationsRescorePostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRescoreEvaluationEvaluationsRescorePostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// RescoreEvaluationEvaluationsRescorePost Rescore Evaluation
+//
+// Rescore an existing evaluation run with different scorer(s).
+//
+// Applies the provided scorer(s) to the predictions from source_evaluation_run_id
+// and returns a new evaluation_run_id. Original prediction call IDs are preserved.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /evaluations/rescore (the `RescoreEvaluationEvaluationsRescorePost` operationId).
+func (c *Client) RescoreEvaluationEvaluationsRescorePost(ctx context.Context, body RescoreEvaluationEvaluationsRescorePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewRescoreEvaluationEvaluationsRescorePostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // EvaluationStatusEvaluationsStatusPostWithBody Evaluation Status
 //
 // Takes any type of body and a specified content type.
@@ -1890,6 +3164,44 @@ func (c *Client) EvaluationStatusEvaluationsStatusPostWithBody(ctx context.Conte
 // Corresponds with POST /evaluations/status (the `EvaluationStatusEvaluationsStatusPost` operationId).
 func (c *Client) EvaluationStatusEvaluationsStatusPost(ctx context.Context, body EvaluationStatusEvaluationsStatusPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewEvaluationStatusEvaluationsStatusPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// FeedbackAggregateFeedbackAggregatePostWithBody Feedback Aggregate
+//
+// Aggregate typed scorer feedback (tags, ratings) over time buckets.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /feedback/aggregate (the `FeedbackAggregateFeedbackAggregatePost` operationId).
+func (c *Client) FeedbackAggregateFeedbackAggregatePostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFeedbackAggregateFeedbackAggregatePostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// FeedbackAggregateFeedbackAggregatePost Feedback Aggregate
+//
+// Aggregate typed scorer feedback (tags, ratings) over time buckets.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /feedback/aggregate (the `FeedbackAggregateFeedbackAggregatePost` operationId).
+func (c *Client) FeedbackAggregateFeedbackAggregatePost(ctx context.Context, body FeedbackAggregateFeedbackAggregatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFeedbackAggregateFeedbackAggregatePostRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -1966,6 +3278,44 @@ func (c *Client) FeedbackCreateFeedbackCreatePostWithBody(ctx context.Context, c
 // Corresponds with POST /feedback/create (the `FeedbackCreateFeedbackCreatePost` operationId).
 func (c *Client) FeedbackCreateFeedbackCreatePost(ctx context.Context, body FeedbackCreateFeedbackCreatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewFeedbackCreateFeedbackCreatePostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithBody Feedback Payload Schema
+//
+// Discover feedback payload schema (paths and types) from sample rows.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /feedback/payload_schema (the `FeedbackPayloadSchemaFeedbackPayloadSchemaPost` operationId).
+func (c *Client) FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFeedbackPayloadSchemaFeedbackPayloadSchemaPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// FeedbackPayloadSchemaFeedbackPayloadSchemaPost Feedback Payload Schema
+//
+// Discover feedback payload schema (paths and types) from sample rows.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /feedback/payload_schema (the `FeedbackPayloadSchemaFeedbackPayloadSchemaPost` operationId).
+func (c *Client) FeedbackPayloadSchemaFeedbackPayloadSchemaPost(ctx context.Context, body FeedbackPayloadSchemaFeedbackPayloadSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFeedbackPayloadSchemaFeedbackPayloadSchemaPostRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2086,6 +3436,44 @@ func (c *Client) FeedbackReplaceFeedbackReplacePost(ctx context.Context, body Fe
 	return c.Client.Do(req)
 }
 
+// FeedbackStatsFeedbackStatsPostWithBody Feedback Stats
+//
+// Return aggregated feedback statistics over time buckets.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /feedback/stats (the `FeedbackStatsFeedbackStatsPost` operationId).
+func (c *Client) FeedbackStatsFeedbackStatsPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFeedbackStatsFeedbackStatsPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// FeedbackStatsFeedbackStatsPost Feedback Stats
+//
+// Return aggregated feedback statistics over time buckets.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /feedback/stats (the `FeedbackStatsFeedbackStatsPost` operationId).
+func (c *Client) FeedbackStatsFeedbackStatsPost(ctx context.Context, body FeedbackStatsFeedbackStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFeedbackStatsFeedbackStatsPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // FileContentFileContentPostWithBody File Content
 //
 // Takes any type of body and a specified content type.
@@ -2171,6 +3559,40 @@ func (c *Client) FilesStatsFilesQueryStatsPost(ctx context.Context, body FilesSt
 	return c.Client.Do(req)
 }
 
+// FilesResolveUrlFilesResolveUrlPostWithBody Files Resolve Url
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /files/resolve_url (the `FilesResolveUrlFilesResolveUrlPost` operationId).
+func (c *Client) FilesResolveUrlFilesResolveUrlPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFilesResolveUrlFilesResolveUrlPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// FilesResolveUrlFilesResolveUrlPost Files Resolve Url
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /files/resolve_url (the `FilesResolveUrlFilesResolveUrlPost` operationId).
+func (c *Client) FilesResolveUrlFilesResolveUrlPost(ctx context.Context, body FilesResolveUrlFilesResolveUrlPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewFilesResolveUrlFilesResolveUrlPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GetCallerLocationGeolocateGet Get Caller Location
 //
 // Lookup the geographic location of a user based on their IP address.
@@ -2239,6 +3661,83 @@ func (c *Client) ImageCreateImageCreatePost(ctx context.Context, body ImageCreat
 	return c.Client.Do(req)
 }
 
+// InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGet Inference Analysis Artificialanalysis Models
+//
+// Returns a list of available models for Artificial Analysis.
+//
+// This API is available without authentication.
+//
+// Corresponds with GET /inference/analysis/artificialanalysis/models (the `InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGet` operationId).
+func (c *Client) InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGet(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewInferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// InferenceCatalogModelsInferenceCatalogModelsGet Inference Catalog Models
+//
+// Returns a list of available Serverless Inference models.
+//
+// This API is available without authentication.
+//
+// Corresponds with GET /inference/catalog/models (the `InferenceCatalogModelsInferenceCatalogModelsGet` operationId).
+func (c *Client) InferenceCatalogModelsInferenceCatalogModelsGet(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewInferenceCatalogModelsInferenceCatalogModelsGetRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// InferenceModelsdevModelsInferenceModelsdevModelsGet Inference Modelsdev Models
+//
+// Returns the available models in the models.dev `api.json` schema.
+//
+// This API is available without authentication.
+//
+// Corresponds with GET /inference/modelsdev/models (the `InferenceModelsdevModelsInferenceModelsdevModelsGet` operationId).
+func (c *Client) InferenceModelsdevModelsInferenceModelsdevModelsGet(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewInferenceModelsdevModelsInferenceModelsdevModelsGetRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// NvidiaHardwareInferenceNvidiaV2HardwareGet Nvidia Hardware
+//
+// Returns available hardware and pricing for a given model.
+//
+// Called by NVIDIA to show users their options and redirect them
+// based on what we support.  Only serverless options are returned.
+//
+// Corresponds with GET /inference/nvidia/v2/hardware (the `NvidiaHardwareInferenceNvidiaV2HardwareGet` operationId).
+func (c *Client) NvidiaHardwareInferenceNvidiaV2HardwareGet(ctx context.Context, params *NvidiaHardwareInferenceNvidiaV2HardwareGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewNvidiaHardwareInferenceNvidiaV2HardwareGetRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGet Inference Router Openrouter Models
 //
 // Returns a list of models that are available to be used with OpenRouter.
@@ -2258,32 +3757,13 @@ func (c *Client) InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsG
 	return c.Client.Do(req)
 }
 
-// InferenceGetInferenceV1PathGet Inference Get
-//
-// OpenAI-compatible APIs.
-//
-// Corresponds with GET /inference/v1{path} (the `InferenceGetInferenceV1PathGet` operationId).
-func (c *Client) InferenceGetInferenceV1PathGet(ctx context.Context, path string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewInferenceGetInferenceV1PathGetRequest(c.Server, path)
-	if err != nil {
-		return nil, err
-	}
-	req = req.WithContext(ctx)
-	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
-		return nil, err
-	}
-	return c.Client.Do(req)
-}
-
-// InferencePostInferenceV1PathPostWithBody Inference Post
-//
-// OpenAI-compatible APIs.
+// LinkToRegistryLinkToRegistryPostWithBody Link To Registry
 //
 // Takes any type of body and a specified content type.
 //
-// Corresponds with POST /inference/v1{path} (the `InferencePostInferenceV1PathPost` operationId).
-func (c *Client) InferencePostInferenceV1PathPostWithBody(ctx context.Context, path string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewInferencePostInferenceV1PathPostRequestWithBody(c.Server, path, contentType, body)
+// Corresponds with POST /link_to_registry (the `LinkToRegistryLinkToRegistryPost` operationId).
+func (c *Client) LinkToRegistryLinkToRegistryPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewLinkToRegistryLinkToRegistryPostRequestWithBody(c.Server, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2294,15 +3774,13 @@ func (c *Client) InferencePostInferenceV1PathPostWithBody(ctx context.Context, p
 	return c.Client.Do(req)
 }
 
-// InferencePostInferenceV1PathPost Inference Post
-//
-// OpenAI-compatible APIs.
+// LinkToRegistryLinkToRegistryPost Link To Registry
 //
 // Takes a body of the `application/json` content type.
 //
-// Corresponds with POST /inference/v1{path} (the `InferencePostInferenceV1PathPost` operationId).
-func (c *Client) InferencePostInferenceV1PathPost(ctx context.Context, path string, body InferencePostInferenceV1PathPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewInferencePostInferenceV1PathPostRequest(c.Server, path, body)
+// Corresponds with POST /link_to_registry (the `LinkToRegistryLinkToRegistryPost` operationId).
+func (c *Client) LinkToRegistryLinkToRegistryPost(ctx context.Context, body LinkToRegistryLinkToRegistryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewLinkToRegistryLinkToRegistryPostRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2449,11 +3927,316 @@ func (c *Client) ObjsQueryObjsQueryPost(ctx context.Context, body ObjsQueryObjsQ
 	return c.Client.Do(req)
 }
 
+// ObjSetAliasesObjsObjectIdAliasesPutWithBody Obj Set Aliases
+//
+// Set aliases for an object version.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /objs/{object_id}/aliases (the `ObjSetAliasesObjsObjectIdAliasesPut` operationId).
+func (c *Client) ObjSetAliasesObjsObjectIdAliasesPutWithBody(ctx context.Context, objectId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewObjSetAliasesObjsObjectIdAliasesPutRequestWithBody(c.Server, objectId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ObjSetAliasesObjsObjectIdAliasesPut Obj Set Aliases
+//
+// Set aliases for an object version.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /objs/{object_id}/aliases (the `ObjSetAliasesObjsObjectIdAliasesPut` operationId).
+func (c *Client) ObjSetAliasesObjsObjectIdAliasesPut(ctx context.Context, objectId string, body ObjSetAliasesObjsObjectIdAliasesPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewObjSetAliasesObjsObjectIdAliasesPutRequest(c.Server, objectId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithBody Obj Remove Aliases
+//
+// Remove aliases from an object.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /objs/{object_id}/aliases/remove (the `ObjRemoveAliasesObjsObjectIdAliasesRemovePost` operationId).
+func (c *Client) ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithBody(ctx context.Context, objectId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewObjRemoveAliasesObjsObjectIdAliasesRemovePostRequestWithBody(c.Server, objectId, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ObjRemoveAliasesObjsObjectIdAliasesRemovePost Obj Remove Aliases
+//
+// Remove aliases from an object.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /objs/{object_id}/aliases/remove (the `ObjRemoveAliasesObjsObjectIdAliasesRemovePost` operationId).
+func (c *Client) ObjRemoveAliasesObjsObjectIdAliasesRemovePost(ctx context.Context, objectId string, body ObjRemoveAliasesObjsObjectIdAliasesRemovePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewObjRemoveAliasesObjsObjectIdAliasesRemovePostRequest(c.Server, objectId, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithBody Obj Add Tags
+//
+// Add tags to an object version.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /objs/{object_id}/versions/{digest}/tags (the `ObjAddTagsObjsObjectIdVersionsDigestTagsPut` operationId).
+func (c *Client) ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithBody(ctx context.Context, objectId string, digest string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewObjAddTagsObjsObjectIdVersionsDigestTagsPutRequestWithBody(c.Server, objectId, digest, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ObjAddTagsObjsObjectIdVersionsDigestTagsPut Obj Add Tags
+//
+// Add tags to an object version.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /objs/{object_id}/versions/{digest}/tags (the `ObjAddTagsObjsObjectIdVersionsDigestTagsPut` operationId).
+func (c *Client) ObjAddTagsObjsObjectIdVersionsDigestTagsPut(ctx context.Context, objectId string, digest string, body ObjAddTagsObjsObjectIdVersionsDigestTagsPutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewObjAddTagsObjsObjectIdVersionsDigestTagsPutRequest(c.Server, objectId, digest, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithBody Obj Remove Tags
+//
+// Remove tags from an object version.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /objs/{object_id}/versions/{digest}/tags/remove (the `ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost` operationId).
+func (c *Client) ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithBody(ctx context.Context, objectId string, digest string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostRequestWithBody(c.Server, objectId, digest, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost Obj Remove Tags
+//
+// Remove tags from an object version.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /objs/{object_id}/versions/{digest}/tags/remove (the `ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost` operationId).
+func (c *Client) ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost(ctx context.Context, objectId string, digest string, body ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostRequest(c.Server, objectId, digest, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ExportTraceOtelV1TracesPost Export Trace
 //
 // Corresponds with POST /otel/v1/traces (the `ExportTraceOtelV1TracesPost` operationId).
 func (c *Client) ExportTraceOtelV1TracesPost(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewExportTraceOtelV1TracesPostRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithBody Project Ingest Sampling Settings Read
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /project/ingest_sampling_settings/read (the `ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost` operationId).
+func (c *Client) ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost Project Ingest Sampling Settings Read
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /project/ingest_sampling_settings/read (the `ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost` operationId).
+func (c *Client) ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost(ctx context.Context, body ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet Project Sensitive Data Settings Read
+//
+// Read the owning organization's sensitive-data policy for a project.
+//
+// Corresponds with GET /project/sensitive_data_settings (the `ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet` operationId).
+func (c *Client) ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet(ctx context.Context, params *ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectStatsProjectStatsPostWithBody Project Stats
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /project/stats (the `ProjectStatsProjectStatsPost` operationId).
+func (c *Client) ProjectStatsProjectStatsPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectStatsProjectStatsPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectStatsProjectStatsPost Project Stats
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /project/stats (the `ProjectStatsProjectStatsPost` operationId).
+func (c *Client) ProjectStatsProjectStatsPost(ctx context.Context, body ProjectStatsProjectStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectStatsProjectStatsPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectTtlSettingsReadProjectTtlSettingsReadPostWithBody Project Ttl Settings Read
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /project/ttl_settings/read (the `ProjectTtlSettingsReadProjectTtlSettingsReadPost` operationId).
+func (c *Client) ProjectTtlSettingsReadProjectTtlSettingsReadPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectTtlSettingsReadProjectTtlSettingsReadPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectTtlSettingsReadProjectTtlSettingsReadPost Project Ttl Settings Read
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /project/ttl_settings/read (the `ProjectTtlSettingsReadProjectTtlSettingsReadPost` operationId).
+func (c *Client) ProjectTtlSettingsReadProjectTtlSettingsReadPost(ctx context.Context, body ProjectTtlSettingsReadProjectTtlSettingsReadPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectTtlSettingsReadProjectTtlSettingsReadPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithBody Project Ttl Settings Update
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /project/ttl_settings/update (the `ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost` operationId).
+func (c *Client) ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost Project Ttl Settings Update
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /project/ttl_settings/update (the `ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost` operationId).
+func (c *Client) ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost(ctx context.Context, body ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2503,6 +4286,40 @@ func (c *Client) RefsReadBatchRefsReadBatchPost(ctx context.Context, body RefsRe
 // Corresponds with GET /server_info (the `ServerInfoServerInfoGet` operationId).
 func (c *Client) ServerInfoServerInfoGet(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewServerInfoServerInfoGetRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectsInfoServiceProjectsInfoPostWithBody Projects Info
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /service/projects_info (the `ProjectsInfoServiceProjectsInfoPost` operationId).
+func (c *Client) ProjectsInfoServiceProjectsInfoPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectsInfoServiceProjectsInfoPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ProjectsInfoServiceProjectsInfoPost Projects Info
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /service/projects_info (the `ProjectsInfoServiceProjectsInfoPost` operationId).
+func (c *Client) ProjectsInfoServiceProjectsInfoPost(ctx context.Context, body ProjectsInfoServiceProjectsInfoPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewProjectsInfoServiceProjectsInfoPostRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2717,6 +4534,23 @@ func (c *Client) TableUpdateTableUpdatePost(ctx context.Context, body TableUpdat
 	return c.Client.Do(req)
 }
 
+// TagsListTagsGet Tags List
+//
+// List all tags in a project.
+//
+// Corresponds with GET /tags (the `TagsListTagsGet` operationId).
+func (c *Client) TagsListTagsGet(ctx context.Context, params *TagsListTagsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewTagsListTagsGetRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ThreadsQueryStreamThreadsStreamQueryPostWithBody Threads Query Stream
 //
 // Takes any type of body and a specified content type.
@@ -2779,6 +4613,50 @@ func (c *Client) TraceUsageTraceUsagePostWithBody(ctx context.Context, contentTy
 // Corresponds with POST /trace/usage (the `TraceUsageTraceUsagePost` operationId).
 func (c *Client) TraceUsageTraceUsagePost(ctx context.Context, body TraceUsageTraceUsagePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewTraceUsageTraceUsagePostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CallsCompleteV2EntityProjectCallsCompletePostWithBody Calls Complete
+//
+// Upsert a batch of completed calls directly to the calls_complete table.
+//
+// Each call in the batch contains both start and end information.
+// This endpoint is used when calls are buffered client-side and sent as complete records.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v2/{entity}/{project}/calls/complete (the `CallsCompleteV2EntityProjectCallsCompletePost` operationId).
+func (c *Client) CallsCompleteV2EntityProjectCallsCompletePostWithBody(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCallsCompleteV2EntityProjectCallsCompletePostRequestWithBody(c.Server, entity, project, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CallsCompleteV2EntityProjectCallsCompletePost Calls Complete
+//
+// Upsert a batch of completed calls directly to the calls_complete table.
+//
+// Each call in the batch contains both start and end information.
+// This endpoint is used when calls are buffered client-side and sent as complete records.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v2/{entity}/{project}/calls/complete (the `CallsCompleteV2EntityProjectCallsCompletePost` operationId).
+func (c *Client) CallsCompleteV2EntityProjectCallsCompletePost(ctx context.Context, entity string, project string, body CallsCompleteV2EntityProjectCallsCompletePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCallsCompleteV2EntityProjectCallsCompletePostRequest(c.Server, entity, project, body)
 	if err != nil {
 		return nil, err
 	}
@@ -2868,6 +4746,44 @@ func (c *Client) DatasetDeleteV2EntityProjectDatasetsObjectIdDelete(ctx context.
 // Corresponds with GET /v2/{entity}/{project}/datasets/{object_id}/versions/{digest} (the `DatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGet` operationId).
 func (c *Client) DatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGet(ctx context.Context, entity string, project string, objectId string, digest string, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewDatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGetRequest(c.Server, entity, project, objectId, digest)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithBody Eval Results Query
+//
+// Read grouped evaluation result rows for one or more evaluations.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v2/{entity}/{project}/eval_results/query (the `EvalResultsQueryV2EntityProjectEvalResultsQueryPost` operationId).
+func (c *Client) EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithBody(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewEvalResultsQueryV2EntityProjectEvalResultsQueryPostRequestWithBody(c.Server, entity, project, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// EvalResultsQueryV2EntityProjectEvalResultsQueryPost Eval Results Query
+//
+// Read grouped evaluation result rows for one or more evaluations.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v2/{entity}/{project}/eval_results/query (the `EvalResultsQueryV2EntityProjectEvalResultsQueryPost` operationId).
+func (c *Client) EvalResultsQueryV2EntityProjectEvalResultsQueryPost(ctx context.Context, entity string, project string, body EvalResultsQueryV2EntityProjectEvalResultsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewEvalResultsQueryV2EntityProjectEvalResultsQueryPostRequest(c.Server, entity, project, body)
 	if err != nil {
 		return nil, err
 	}
@@ -3010,8 +4926,8 @@ func (c *Client) EvaluationRunFinishV2EntityProjectEvaluationRunsEvaluationRunId
 // List evaluation objects.
 //
 // Corresponds with GET /v2/{entity}/{project}/evaluations (the `EvaluationListV2EntityProjectEvaluationsGet` operationId).
-func (c *Client) EvaluationListV2EntityProjectEvaluationsGet(ctx context.Context, entity string, project string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewEvaluationListV2EntityProjectEvaluationsGetRequest(c.Server, entity, project)
+func (c *Client) EvaluationListV2EntityProjectEvaluationsGet(ctx context.Context, entity string, project string, params *EvaluationListV2EntityProjectEvaluationsGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewEvaluationListV2EntityProjectEvaluationsGetRequest(c.Server, entity, project, params)
 	if err != nil {
 		return nil, err
 	}
@@ -3378,13 +5294,51 @@ func (c *Client) PredictionFinishV2EntityProjectPredictionsPredictionIdFinishPos
 	return c.Client.Do(req)
 }
 
+// CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithBody Custom Runtime Apply
+//
+// Create or replace a custom runtime configuration.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with PUT /v2/{entity}/{project}/runtimes/{runtime_name} (the `CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut` operationId).
+func (c *Client) CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithBody(ctx context.Context, entity string, project string, runtimeName string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutRequestWithBody(c.Server, entity, project, runtimeName, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut Custom Runtime Apply
+//
+// Create or replace a custom runtime configuration.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with PUT /v2/{entity}/{project}/runtimes/{runtime_name} (the `CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut` operationId).
+func (c *Client) CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut(ctx context.Context, entity string, project string, runtimeName string, body CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutRequest(c.Server, entity, project, runtimeName, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // ScorerListV2EntityProjectScorersGet Scorer List
 //
 // List scorer objects.
 //
 // Corresponds with GET /v2/{entity}/{project}/scorers (the `ScorerListV2EntityProjectScorersGet` operationId).
-func (c *Client) ScorerListV2EntityProjectScorersGet(ctx context.Context, entity string, project string, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewScorerListV2EntityProjectScorersGetRequest(c.Server, entity, project)
+func (c *Client) ScorerListV2EntityProjectScorersGet(ctx context.Context, entity string, project string, params *ScorerListV2EntityProjectScorersGetParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewScorerListV2EntityProjectScorersGetRequest(c.Server, entity, project, params)
 	if err != nil {
 		return nil, err
 	}
@@ -3571,6 +5525,443 @@ func (c *Client) ReadVersionVersionGet(ctx context.Context, reqEditors ...Reques
 	return c.Client.Do(req)
 }
 
+// NewGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostRequest calls the generic GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost builder with application/json body
+func NewGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostRequest(server string, body GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostRequestWithBody constructs an http.Request for the GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost method, with any body, and a specified content type
+func NewGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/agent-versions/query")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenaiConversationChatAgentsConversationsChatPostRequest calls the generic GenaiConversationChatAgentsConversationsChatPost builder with application/json body
+func NewGenaiConversationChatAgentsConversationsChatPostRequest(server string, body GenaiConversationChatAgentsConversationsChatPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenaiConversationChatAgentsConversationsChatPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGenaiConversationChatAgentsConversationsChatPostRequestWithBody constructs an http.Request for the GenaiConversationChatAgentsConversationsChatPost method, with any body, and a specified content type
+func NewGenaiConversationChatAgentsConversationsChatPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/conversations/chat")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenaiConversationSpansAgentsConversationsSpansPostRequest calls the generic GenaiConversationSpansAgentsConversationsSpansPost builder with application/json body
+func NewGenaiConversationSpansAgentsConversationsSpansPostRequest(server string, body GenaiConversationSpansAgentsConversationsSpansPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenaiConversationSpansAgentsConversationsSpansPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGenaiConversationSpansAgentsConversationsSpansPostRequestWithBody constructs an http.Request for the GenaiConversationSpansAgentsConversationsSpansPost method, with any body, and a specified content type
+func NewGenaiConversationSpansAgentsConversationsSpansPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/conversations/spans")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewExportGenaiTraceAgentsOtelV1TracesPostRequest constructs an http.Request for the ExportGenaiTraceAgentsOtelV1TracesPost method
+func NewExportGenaiTraceAgentsOtelV1TracesPostRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/otel/v1/traces")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGenaiAgentsQueryAgentsQueryPostRequest calls the generic GenaiAgentsQueryAgentsQueryPost builder with application/json body
+func NewGenaiAgentsQueryAgentsQueryPostRequest(server string, body GenaiAgentsQueryAgentsQueryPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenaiAgentsQueryAgentsQueryPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGenaiAgentsQueryAgentsQueryPostRequestWithBody constructs an http.Request for the GenaiAgentsQueryAgentsQueryPost method, with any body, and a specified content type
+func NewGenaiAgentsQueryAgentsQueryPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/query")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenaiSearchAgentsSearchPostRequest calls the generic GenaiSearchAgentsSearchPost builder with application/json body
+func NewGenaiSearchAgentsSearchPostRequest(server string, body GenaiSearchAgentsSearchPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenaiSearchAgentsSearchPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGenaiSearchAgentsSearchPostRequestWithBody constructs an http.Request for the GenaiSearchAgentsSearchPost method, with any body, and a specified content type
+func NewGenaiSearchAgentsSearchPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/search")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostRequest calls the generic GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost builder with application/json body
+func NewGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostRequest(server string, body GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostRequestWithBody constructs an http.Request for the GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost method, with any body, and a specified content type
+func NewGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/spans/custom-attrs/schema")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenaiSpansQueryAgentsSpansQueryPostRequest calls the generic GenaiSpansQueryAgentsSpansQueryPost builder with application/json body
+func NewGenaiSpansQueryAgentsSpansQueryPostRequest(server string, body GenaiSpansQueryAgentsSpansQueryPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenaiSpansQueryAgentsSpansQueryPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGenaiSpansQueryAgentsSpansQueryPostRequestWithBody constructs an http.Request for the GenaiSpansQueryAgentsSpansQueryPost method, with any body, and a specified content type
+func NewGenaiSpansQueryAgentsSpansQueryPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/spans/query")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenaiSpansStatsAgentsSpansStatsPostRequest calls the generic GenaiSpansStatsAgentsSpansStatsPost builder with application/json body
+func NewGenaiSpansStatsAgentsSpansStatsPostRequest(server string, body GenaiSpansStatsAgentsSpansStatsPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenaiSpansStatsAgentsSpansStatsPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGenaiSpansStatsAgentsSpansStatsPostRequestWithBody constructs an http.Request for the GenaiSpansStatsAgentsSpansStatsPost method, with any body, and a specified content type
+func NewGenaiSpansStatsAgentsSpansStatsPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/spans/stats")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenaiTracesChatAgentsTracesChatPostRequest calls the generic GenaiTracesChatAgentsTracesChatPost builder with application/json body
+func NewGenaiTracesChatAgentsTracesChatPostRequest(server string, body GenaiTracesChatAgentsTracesChatPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenaiTracesChatAgentsTracesChatPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGenaiTracesChatAgentsTracesChatPostRequestWithBody constructs an http.Request for the GenaiTracesChatAgentsTracesChatPost method, with any body, and a specified content type
+func NewGenaiTracesChatAgentsTracesChatPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/traces/chat")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewAliasesListAliasesGetRequest constructs an http.Request for the AliasesListAliasesGet method
+func NewAliasesListAliasesGetRequest(server string, params *AliasesListAliasesGetParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/aliases")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "project_id", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewAnnotationQueueCreateAnnotationQueuesPostRequest calls the generic AnnotationQueueCreateAnnotationQueuesPost builder with application/json body
 func NewAnnotationQueueCreateAnnotationQueuesPostRequest(server string, body AnnotationQueueCreateAnnotationQueuesPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -3691,6 +6082,63 @@ func NewAnnotationQueuesStatsAnnotationQueuesStatsPostRequestWithBody(server str
 	return req, nil
 }
 
+// NewAnnotationQueueDeleteAnnotationQueuesQueueIdDeleteRequest constructs an http.Request for the AnnotationQueueDeleteAnnotationQueuesQueueIdDelete method
+func NewAnnotationQueueDeleteAnnotationQueuesQueueIdDeleteRequest(server string, queueId string, params *AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "queue_id", queueId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/annotation_queues/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "project_id", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodDelete, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewAnnotationQueueReadAnnotationQueuesQueueIdGetRequest constructs an http.Request for the AnnotationQueueReadAnnotationQueuesQueueIdGet method
 func NewAnnotationQueueReadAnnotationQueuesQueueIdGetRequest(server string, queueId string, params *AnnotationQueueReadAnnotationQueuesQueueIdGetParams) (*http.Request, error) {
 	var err error
@@ -3744,6 +6192,53 @@ func NewAnnotationQueueReadAnnotationQueuesQueueIdGetRequest(server string, queu
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewAnnotationQueueUpdateAnnotationQueuesQueueIdPutRequest calls the generic AnnotationQueueUpdateAnnotationQueuesQueueIdPut builder with application/json body
+func NewAnnotationQueueUpdateAnnotationQueuesQueueIdPutRequest(server string, queueId string, body AnnotationQueueUpdateAnnotationQueuesQueueIdPutJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewAnnotationQueueUpdateAnnotationQueuesQueueIdPutRequestWithBody(server, queueId, "application/json", bodyReader)
+}
+
+// NewAnnotationQueueUpdateAnnotationQueuesQueueIdPutRequestWithBody constructs an http.Request for the AnnotationQueueUpdateAnnotationQueuesQueueIdPut method, with any body, and a specified content type
+func NewAnnotationQueueUpdateAnnotationQueuesQueueIdPutRequestWithBody(server string, queueId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "queue_id", queueId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/annotation_queues/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -4176,6 +6671,46 @@ func NewCallsQueryStatsCallsQueryStatsPostRequestWithBody(server string, content
 	return req, nil
 }
 
+// NewCallsScoreCallsScorePostRequest calls the generic CallsScoreCallsScorePost builder with application/json body
+func NewCallsScoreCallsScorePostRequest(server string, body CallsScoreCallsScorePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCallsScoreCallsScorePostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCallsScoreCallsScorePostRequestWithBody constructs an http.Request for the CallsScoreCallsScorePost method, with any body, and a specified content type
+func NewCallsScoreCallsScorePostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/calls/score")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewCallStatsCallsStatsPostRequest calls the generic CallStatsCallsStatsPost builder with application/json body
 func NewCallStatsCallsStatsPostRequest(server string, body CallStatsCallsStatsPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -4292,6 +6827,86 @@ func NewCallsUsageCallsUsagePostRequestWithBody(server string, contentType strin
 	}
 
 	operationPath := fmt.Sprintf("/calls/usage")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCompletionsCreateCompletionsCreatePostRequest calls the generic CompletionsCreateCompletionsCreatePost builder with application/json body
+func NewCompletionsCreateCompletionsCreatePostRequest(server string, body CompletionsCreateCompletionsCreatePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCompletionsCreateCompletionsCreatePostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCompletionsCreateCompletionsCreatePostRequestWithBody constructs an http.Request for the CompletionsCreateCompletionsCreatePost method, with any body, and a specified content type
+func NewCompletionsCreateCompletionsCreatePostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/completions/create")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCompletionsCreateStreamCompletionsCreateStreamPostRequest calls the generic CompletionsCreateStreamCompletionsCreateStreamPost builder with application/json body
+func NewCompletionsCreateStreamCompletionsCreateStreamPostRequest(server string, body CompletionsCreateStreamCompletionsCreateStreamPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCompletionsCreateStreamCompletionsCreateStreamPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewCompletionsCreateStreamCompletionsCreateStreamPostRequestWithBody constructs an http.Request for the CompletionsCreateStreamCompletionsCreateStreamPost method, with any body, and a specified content type
+func NewCompletionsCreateStreamCompletionsCreateStreamPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/completions/create_stream")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4431,6 +7046,126 @@ func NewCostQueryCostQueryPostRequestWithBody(server string, contentType string,
 	return req, nil
 }
 
+// NewDatasetSourcesLinkDatasetSourcesLinkPostRequest calls the generic DatasetSourcesLinkDatasetSourcesLinkPost builder with application/json body
+func NewDatasetSourcesLinkDatasetSourcesLinkPostRequest(server string, body DatasetSourcesLinkDatasetSourcesLinkPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewDatasetSourcesLinkDatasetSourcesLinkPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewDatasetSourcesLinkDatasetSourcesLinkPostRequestWithBody constructs an http.Request for the DatasetSourcesLinkDatasetSourcesLinkPost method, with any body, and a specified content type
+func NewDatasetSourcesLinkDatasetSourcesLinkPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/dataset_sources/link")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewDatasetSourcesQueryDatasetSourcesQueryPostRequest calls the generic DatasetSourcesQueryDatasetSourcesQueryPost builder with application/json body
+func NewDatasetSourcesQueryDatasetSourcesQueryPostRequest(server string, body DatasetSourcesQueryDatasetSourcesQueryPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewDatasetSourcesQueryDatasetSourcesQueryPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewDatasetSourcesQueryDatasetSourcesQueryPostRequestWithBody constructs an http.Request for the DatasetSourcesQueryDatasetSourcesQueryPost method, with any body, and a specified content type
+func NewDatasetSourcesQueryDatasetSourcesQueryPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/dataset_sources/query")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostRequest calls the generic SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost builder with application/json body
+func NewSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostRequest(server string, body SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostRequestWithBody constructs an http.Request for the SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost method, with any body, and a specified content type
+func NewSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/dataset_sources/source_datasets_query")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewEvaluateModelEvaluationsEvaluateModelPostRequest calls the generic EvaluateModelEvaluationsEvaluateModelPost builder with application/json body
 func NewEvaluateModelEvaluationsEvaluateModelPostRequest(server string, body EvaluateModelEvaluationsEvaluateModelPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -4471,6 +7206,46 @@ func NewEvaluateModelEvaluationsEvaluateModelPostRequestWithBody(server string, 
 	return req, nil
 }
 
+// NewRescoreEvaluationEvaluationsRescorePostRequest calls the generic RescoreEvaluationEvaluationsRescorePost builder with application/json body
+func NewRescoreEvaluationEvaluationsRescorePostRequest(server string, body RescoreEvaluationEvaluationsRescorePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewRescoreEvaluationEvaluationsRescorePostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewRescoreEvaluationEvaluationsRescorePostRequestWithBody constructs an http.Request for the RescoreEvaluationEvaluationsRescorePost method, with any body, and a specified content type
+func NewRescoreEvaluationEvaluationsRescorePostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/evaluations/rescore")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewEvaluationStatusEvaluationsStatusPostRequest calls the generic EvaluationStatusEvaluationsStatusPost builder with application/json body
 func NewEvaluationStatusEvaluationsStatusPostRequest(server string, body EvaluationStatusEvaluationsStatusPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -4492,6 +7267,46 @@ func NewEvaluationStatusEvaluationsStatusPostRequestWithBody(server string, cont
 	}
 
 	operationPath := fmt.Sprintf("/evaluations/status")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFeedbackAggregateFeedbackAggregatePostRequest calls the generic FeedbackAggregateFeedbackAggregatePost builder with application/json body
+func NewFeedbackAggregateFeedbackAggregatePostRequest(server string, body FeedbackAggregateFeedbackAggregatePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFeedbackAggregateFeedbackAggregatePostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewFeedbackAggregateFeedbackAggregatePostRequestWithBody constructs an http.Request for the FeedbackAggregateFeedbackAggregatePost method, with any body, and a specified content type
+func NewFeedbackAggregateFeedbackAggregatePostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/feedback/aggregate")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4572,6 +7387,46 @@ func NewFeedbackCreateFeedbackCreatePostRequestWithBody(server string, contentTy
 	}
 
 	operationPath := fmt.Sprintf("/feedback/create")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFeedbackPayloadSchemaFeedbackPayloadSchemaPostRequest calls the generic FeedbackPayloadSchemaFeedbackPayloadSchemaPost builder with application/json body
+func NewFeedbackPayloadSchemaFeedbackPayloadSchemaPostRequest(server string, body FeedbackPayloadSchemaFeedbackPayloadSchemaPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFeedbackPayloadSchemaFeedbackPayloadSchemaPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewFeedbackPayloadSchemaFeedbackPayloadSchemaPostRequestWithBody constructs an http.Request for the FeedbackPayloadSchemaFeedbackPayloadSchemaPost method, with any body, and a specified content type
+func NewFeedbackPayloadSchemaFeedbackPayloadSchemaPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/feedback/payload_schema")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4711,6 +7566,46 @@ func NewFeedbackReplaceFeedbackReplacePostRequestWithBody(server string, content
 	return req, nil
 }
 
+// NewFeedbackStatsFeedbackStatsPostRequest calls the generic FeedbackStatsFeedbackStatsPost builder with application/json body
+func NewFeedbackStatsFeedbackStatsPostRequest(server string, body FeedbackStatsFeedbackStatsPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFeedbackStatsFeedbackStatsPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewFeedbackStatsFeedbackStatsPostRequestWithBody constructs an http.Request for the FeedbackStatsFeedbackStatsPost method, with any body, and a specified content type
+func NewFeedbackStatsFeedbackStatsPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/feedback/stats")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewFileContentFileContentPostRequest calls the generic FileContentFileContentPost builder with application/json body
 func NewFileContentFileContentPostRequest(server string, body FileContentFileContentPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -4801,6 +7696,46 @@ func NewFilesStatsFilesQueryStatsPostRequestWithBody(server string, contentType 
 	}
 
 	operationPath := fmt.Sprintf("/files/query_stats")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewFilesResolveUrlFilesResolveUrlPostRequest calls the generic FilesResolveUrlFilesResolveUrlPost builder with application/json body
+func NewFilesResolveUrlFilesResolveUrlPostRequest(server string, body FilesResolveUrlFilesResolveUrlPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewFilesResolveUrlFilesResolveUrlPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewFilesResolveUrlFilesResolveUrlPostRequestWithBody constructs an http.Request for the FilesResolveUrlFilesResolveUrlPost method, with any body, and a specified content type
+func NewFilesResolveUrlFilesResolveUrlPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/files/resolve_url")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -4941,6 +7876,137 @@ func NewImageCreateImageCreatePostRequestWithBody(server string, contentType str
 	return req, nil
 }
 
+// NewInferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetRequest constructs an http.Request for the InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGet method
+func NewInferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/inference/analysis/artificialanalysis/models")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewInferenceCatalogModelsInferenceCatalogModelsGetRequest constructs an http.Request for the InferenceCatalogModelsInferenceCatalogModelsGet method
+func NewInferenceCatalogModelsInferenceCatalogModelsGetRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/inference/catalog/models")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewInferenceModelsdevModelsInferenceModelsdevModelsGetRequest constructs an http.Request for the InferenceModelsdevModelsInferenceModelsdevModelsGet method
+func NewInferenceModelsdevModelsInferenceModelsdevModelsGetRequest(server string) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/inference/modelsdev/models")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewNvidiaHardwareInferenceNvidiaV2HardwareGetRequest constructs an http.Request for the NvidiaHardwareInferenceNvidiaV2HardwareGet method
+func NewNvidiaHardwareInferenceNvidiaV2HardwareGetRequest(server string, params *NvidiaHardwareInferenceNvidiaV2HardwareGetParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/inference/nvidia/v2/hardware")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "model", params.Model, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewInferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetRequest constructs an http.Request for the InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGet method
 func NewInferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetRequest(server string) (*http.Request, error) {
 	var err error
@@ -4968,68 +8034,27 @@ func NewInferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetRequest
 	return req, nil
 }
 
-// NewInferenceGetInferenceV1PathGetRequest constructs an http.Request for the InferenceGetInferenceV1PathGet method
-func NewInferenceGetInferenceV1PathGetRequest(server string, path string) (*http.Request, error) {
-	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "path", path, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
-
-	serverURL, err := url.Parse(server)
-	if err != nil {
-		return nil, err
-	}
-
-	operationPath := fmt.Sprintf("/inference/v1%s", pathParam0)
-	if operationPath[0] == '/' {
-		operationPath = "." + operationPath
-	}
-
-	queryURL, err := serverURL.Parse(operationPath)
-	if err != nil {
-		return nil, err
-	}
-
-	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
-	if err != nil {
-		return nil, err
-	}
-
-	return req, nil
-}
-
-// NewInferencePostInferenceV1PathPostRequest calls the generic InferencePostInferenceV1PathPost builder with application/json body
-func NewInferencePostInferenceV1PathPostRequest(server string, path string, body InferencePostInferenceV1PathPostJSONRequestBody) (*http.Request, error) {
+// NewLinkToRegistryLinkToRegistryPostRequest calls the generic LinkToRegistryLinkToRegistryPost builder with application/json body
+func NewLinkToRegistryLinkToRegistryPostRequest(server string, body LinkToRegistryLinkToRegistryPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewInferencePostInferenceV1PathPostRequestWithBody(server, path, "application/json", bodyReader)
+	return NewLinkToRegistryLinkToRegistryPostRequestWithBody(server, "application/json", bodyReader)
 }
 
-// NewInferencePostInferenceV1PathPostRequestWithBody constructs an http.Request for the InferencePostInferenceV1PathPost method, with any body, and a specified content type
-func NewInferencePostInferenceV1PathPostRequestWithBody(server string, path string, contentType string, body io.Reader) (*http.Request, error) {
+// NewLinkToRegistryLinkToRegistryPostRequestWithBody constructs an http.Request for the LinkToRegistryLinkToRegistryPost method, with any body, and a specified content type
+func NewLinkToRegistryLinkToRegistryPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
-
-	var pathParam0 string
-
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "path", path, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
-	if err != nil {
-		return nil, err
-	}
 
 	serverURL, err := url.Parse(server)
 	if err != nil {
 		return nil, err
 	}
 
-	operationPath := fmt.Sprintf("/inference/v1%s", pathParam0)
+	operationPath := fmt.Sprintf("/link_to_registry")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5209,6 +8234,208 @@ func NewObjsQueryObjsQueryPostRequestWithBody(server string, contentType string,
 	return req, nil
 }
 
+// NewObjSetAliasesObjsObjectIdAliasesPutRequest calls the generic ObjSetAliasesObjsObjectIdAliasesPut builder with application/json body
+func NewObjSetAliasesObjsObjectIdAliasesPutRequest(server string, objectId string, body ObjSetAliasesObjsObjectIdAliasesPutJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewObjSetAliasesObjsObjectIdAliasesPutRequestWithBody(server, objectId, "application/json", bodyReader)
+}
+
+// NewObjSetAliasesObjsObjectIdAliasesPutRequestWithBody constructs an http.Request for the ObjSetAliasesObjsObjectIdAliasesPut method, with any body, and a specified content type
+func NewObjSetAliasesObjsObjectIdAliasesPutRequestWithBody(server string, objectId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "object_id", objectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/objs/%s/aliases", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewObjRemoveAliasesObjsObjectIdAliasesRemovePostRequest calls the generic ObjRemoveAliasesObjsObjectIdAliasesRemovePost builder with application/json body
+func NewObjRemoveAliasesObjsObjectIdAliasesRemovePostRequest(server string, objectId string, body ObjRemoveAliasesObjsObjectIdAliasesRemovePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewObjRemoveAliasesObjsObjectIdAliasesRemovePostRequestWithBody(server, objectId, "application/json", bodyReader)
+}
+
+// NewObjRemoveAliasesObjsObjectIdAliasesRemovePostRequestWithBody constructs an http.Request for the ObjRemoveAliasesObjsObjectIdAliasesRemovePost method, with any body, and a specified content type
+func NewObjRemoveAliasesObjsObjectIdAliasesRemovePostRequestWithBody(server string, objectId string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "object_id", objectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/objs/%s/aliases/remove", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewObjAddTagsObjsObjectIdVersionsDigestTagsPutRequest calls the generic ObjAddTagsObjsObjectIdVersionsDigestTagsPut builder with application/json body
+func NewObjAddTagsObjsObjectIdVersionsDigestTagsPutRequest(server string, objectId string, digest string, body ObjAddTagsObjsObjectIdVersionsDigestTagsPutJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewObjAddTagsObjsObjectIdVersionsDigestTagsPutRequestWithBody(server, objectId, digest, "application/json", bodyReader)
+}
+
+// NewObjAddTagsObjsObjectIdVersionsDigestTagsPutRequestWithBody constructs an http.Request for the ObjAddTagsObjsObjectIdVersionsDigestTagsPut method, with any body, and a specified content type
+func NewObjAddTagsObjsObjectIdVersionsDigestTagsPutRequestWithBody(server string, objectId string, digest string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "object_id", objectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "digest", digest, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/objs/%s/versions/%s/tags", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostRequest calls the generic ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost builder with application/json body
+func NewObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostRequest(server string, objectId string, digest string, body ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostRequestWithBody(server, objectId, digest, "application/json", bodyReader)
+}
+
+// NewObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostRequestWithBody constructs an http.Request for the ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost method, with any body, and a specified content type
+func NewObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostRequestWithBody(server string, objectId string, digest string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "object_id", objectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "digest", digest, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/objs/%s/versions/%s/tags/remove", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewExportTraceOtelV1TracesPostRequest constructs an http.Request for the ExportTraceOtelV1TracesPost method
 func NewExportTraceOtelV1TracesPostRequest(server string) (*http.Request, error) {
 	var err error
@@ -5232,6 +8459,216 @@ func NewExportTraceOtelV1TracesPostRequest(server string) (*http.Request, error)
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostRequest calls the generic ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost builder with application/json body
+func NewProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostRequest(server string, body ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostRequestWithBody constructs an http.Request for the ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost method, with any body, and a specified content type
+func NewProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/project/ingest_sampling_settings/read")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetRequest constructs an http.Request for the ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet method
+func NewProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetRequest(server string, params *ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/project/sensitive_data_settings")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "project_id", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewProjectStatsProjectStatsPostRequest calls the generic ProjectStatsProjectStatsPost builder with application/json body
+func NewProjectStatsProjectStatsPostRequest(server string, body ProjectStatsProjectStatsPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewProjectStatsProjectStatsPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewProjectStatsProjectStatsPostRequestWithBody constructs an http.Request for the ProjectStatsProjectStatsPost method, with any body, and a specified content type
+func NewProjectStatsProjectStatsPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/project/stats")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewProjectTtlSettingsReadProjectTtlSettingsReadPostRequest calls the generic ProjectTtlSettingsReadProjectTtlSettingsReadPost builder with application/json body
+func NewProjectTtlSettingsReadProjectTtlSettingsReadPostRequest(server string, body ProjectTtlSettingsReadProjectTtlSettingsReadPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewProjectTtlSettingsReadProjectTtlSettingsReadPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewProjectTtlSettingsReadProjectTtlSettingsReadPostRequestWithBody constructs an http.Request for the ProjectTtlSettingsReadProjectTtlSettingsReadPost method, with any body, and a specified content type
+func NewProjectTtlSettingsReadProjectTtlSettingsReadPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/project/ttl_settings/read")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostRequest calls the generic ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost builder with application/json body
+func NewProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostRequest(server string, body ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostRequestWithBody constructs an http.Request for the ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost method, with any body, and a specified content type
+func NewProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/project/ttl_settings/update")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -5299,6 +8736,46 @@ func NewServerInfoServerInfoGetRequest(server string) (*http.Request, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewProjectsInfoServiceProjectsInfoPostRequest calls the generic ProjectsInfoServiceProjectsInfoPost builder with application/json body
+func NewProjectsInfoServiceProjectsInfoPostRequest(server string, body ProjectsInfoServiceProjectsInfoPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewProjectsInfoServiceProjectsInfoPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewProjectsInfoServiceProjectsInfoPostRequestWithBody constructs an http.Request for the ProjectsInfoServiceProjectsInfoPost method, with any body, and a specified content type
+func NewProjectsInfoServiceProjectsInfoPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/service/projects_info")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -5543,6 +9020,56 @@ func NewTableUpdateTableUpdatePostRequestWithBody(server string, contentType str
 	return req, nil
 }
 
+// NewTagsListTagsGetRequest constructs an http.Request for the TagsListTagsGet method
+func NewTagsListTagsGetRequest(server string, params *TagsListTagsGetParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/tags")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "project_id", params.ProjectId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
+			}
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewThreadsQueryStreamThreadsStreamQueryPostRequest calls the generic ThreadsQueryStreamThreadsStreamQueryPost builder with application/json body
 func NewThreadsQueryStreamThreadsStreamQueryPostRequest(server string, body ThreadsQueryStreamThreadsStreamQueryPostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -5604,6 +9131,60 @@ func NewTraceUsageTraceUsagePostRequestWithBody(server string, contentType strin
 	}
 
 	operationPath := fmt.Sprintf("/trace/usage")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCallsCompleteV2EntityProjectCallsCompletePostRequest calls the generic CallsCompleteV2EntityProjectCallsCompletePost builder with application/json body
+func NewCallsCompleteV2EntityProjectCallsCompletePostRequest(server string, entity string, project string, body CallsCompleteV2EntityProjectCallsCompletePostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCallsCompleteV2EntityProjectCallsCompletePostRequestWithBody(server, entity, project, "application/json", bodyReader)
+}
+
+// NewCallsCompleteV2EntityProjectCallsCompletePostRequestWithBody constructs an http.Request for the CallsCompleteV2EntityProjectCallsCompletePost method, with any body, and a specified content type
+func NewCallsCompleteV2EntityProjectCallsCompletePostRequestWithBody(server string, entity string, project string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "entity", entity, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "project", project, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/calls/complete", pathParam0, pathParam1)
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -5883,6 +9464,60 @@ func NewDatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGetRequest(serve
 	if err != nil {
 		return nil, err
 	}
+
+	return req, nil
+}
+
+// NewEvalResultsQueryV2EntityProjectEvalResultsQueryPostRequest calls the generic EvalResultsQueryV2EntityProjectEvalResultsQueryPost builder with application/json body
+func NewEvalResultsQueryV2EntityProjectEvalResultsQueryPostRequest(server string, entity string, project string, body EvalResultsQueryV2EntityProjectEvalResultsQueryPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewEvalResultsQueryV2EntityProjectEvalResultsQueryPostRequestWithBody(server, entity, project, "application/json", bodyReader)
+}
+
+// NewEvalResultsQueryV2EntityProjectEvalResultsQueryPostRequestWithBody constructs an http.Request for the EvalResultsQueryV2EntityProjectEvalResultsQueryPost method, with any body, and a specified content type
+func NewEvalResultsQueryV2EntityProjectEvalResultsQueryPostRequestWithBody(server string, entity string, project string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "entity", entity, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "project", project, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/eval_results/query", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
 
 	return req, nil
 }
@@ -6235,7 +9870,7 @@ func NewEvaluationRunFinishV2EntityProjectEvaluationRunsEvaluationRunIdFinishPos
 }
 
 // NewEvaluationListV2EntityProjectEvaluationsGetRequest constructs an http.Request for the EvaluationListV2EntityProjectEvaluationsGet method
-func NewEvaluationListV2EntityProjectEvaluationsGetRequest(server string, entity string, project string) (*http.Request, error) {
+func NewEvaluationListV2EntityProjectEvaluationsGetRequest(server string, entity string, project string, params *EvaluationListV2EntityProjectEvaluationsGetParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -6265,6 +9900,45 @@ func NewEvaluationListV2EntityProjectEvaluationsGetRequest(server string, entity
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "offset", *params.Offset, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
@@ -7324,8 +10998,69 @@ func NewPredictionFinishV2EntityProjectPredictionsPredictionIdFinishPostRequest(
 	return req, nil
 }
 
+// NewCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutRequest calls the generic CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut builder with application/json body
+func NewCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutRequest(server string, entity string, project string, runtimeName string, body CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutRequestWithBody(server, entity, project, runtimeName, "application/json", bodyReader)
+}
+
+// NewCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutRequestWithBody constructs an http.Request for the CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut method, with any body, and a specified content type
+func NewCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutRequestWithBody(server string, entity string, project string, runtimeName string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "entity", entity, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "project", project, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "runtime_name", runtimeName, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v2/%s/%s/runtimes/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPut, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewScorerListV2EntityProjectScorersGetRequest constructs an http.Request for the ScorerListV2EntityProjectScorersGet method
-func NewScorerListV2EntityProjectScorersGetRequest(server string, entity string, project string) (*http.Request, error) {
+func NewScorerListV2EntityProjectScorersGetRequest(server string, entity string, project string, params *ScorerListV2EntityProjectScorersGetParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
@@ -7355,6 +11090,45 @@ func NewScorerListV2EntityProjectScorersGetRequest(server string, entity string,
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Limit != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "limit", *params.Limit, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Offset != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "offset", *params.Offset, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
@@ -7882,6 +11656,162 @@ func WithBaseURL(baseURL string) ClientOption {
 // ClientWithResponsesInterface is the interface specification for the client with responses above.
 type ClientWithResponsesInterface interface {
 
+	// GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithBodyWithResponse Genai Agent Versions Query
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/agent-versions/query (the `GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost` operationId).
+	GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse, error)
+
+	// GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithResponse Genai Agent Versions Query
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/agent-versions/query (the `GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost` operationId).
+	GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithResponse(ctx context.Context, body GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse, error)
+
+	// GenaiConversationChatAgentsConversationsChatPostWithBodyWithResponse Genai Conversation Chat
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/conversations/chat (the `GenaiConversationChatAgentsConversationsChatPost` operationId).
+	GenaiConversationChatAgentsConversationsChatPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiConversationChatAgentsConversationsChatPostResponse, error)
+
+	// GenaiConversationChatAgentsConversationsChatPostWithResponse Genai Conversation Chat
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/conversations/chat (the `GenaiConversationChatAgentsConversationsChatPost` operationId).
+	GenaiConversationChatAgentsConversationsChatPostWithResponse(ctx context.Context, body GenaiConversationChatAgentsConversationsChatPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiConversationChatAgentsConversationsChatPostResponse, error)
+
+	// GenaiConversationSpansAgentsConversationsSpansPostWithBodyWithResponse Genai Conversation Spans
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/conversations/spans (the `GenaiConversationSpansAgentsConversationsSpansPost` operationId).
+	GenaiConversationSpansAgentsConversationsSpansPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiConversationSpansAgentsConversationsSpansPostResponse, error)
+
+	// GenaiConversationSpansAgentsConversationsSpansPostWithResponse Genai Conversation Spans
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/conversations/spans (the `GenaiConversationSpansAgentsConversationsSpansPost` operationId).
+	GenaiConversationSpansAgentsConversationsSpansPostWithResponse(ctx context.Context, body GenaiConversationSpansAgentsConversationsSpansPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiConversationSpansAgentsConversationsSpansPostResponse, error)
+
+	// ExportGenaiTraceAgentsOtelV1TracesPostWithResponse Export Genai Trace
+	//
+	// Ingest OTel spans into the GenAI observability system.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/otel/v1/traces (the `ExportGenaiTraceAgentsOtelV1TracesPost` operationId).
+	ExportGenaiTraceAgentsOtelV1TracesPostWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ExportGenaiTraceAgentsOtelV1TracesPostResponse, error)
+
+	// GenaiAgentsQueryAgentsQueryPostWithBodyWithResponse Genai Agents Query
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/query (the `GenaiAgentsQueryAgentsQueryPost` operationId).
+	GenaiAgentsQueryAgentsQueryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiAgentsQueryAgentsQueryPostResponse, error)
+
+	// GenaiAgentsQueryAgentsQueryPostWithResponse Genai Agents Query
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/query (the `GenaiAgentsQueryAgentsQueryPost` operationId).
+	GenaiAgentsQueryAgentsQueryPostWithResponse(ctx context.Context, body GenaiAgentsQueryAgentsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiAgentsQueryAgentsQueryPostResponse, error)
+
+	// GenaiSearchAgentsSearchPostWithBodyWithResponse Genai Search
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/search (the `GenaiSearchAgentsSearchPost` operationId).
+	GenaiSearchAgentsSearchPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiSearchAgentsSearchPostResponse, error)
+
+	// GenaiSearchAgentsSearchPostWithResponse Genai Search
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/search (the `GenaiSearchAgentsSearchPost` operationId).
+	GenaiSearchAgentsSearchPostWithResponse(ctx context.Context, body GenaiSearchAgentsSearchPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiSearchAgentsSearchPostResponse, error)
+
+	// GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithBodyWithResponse Genai Custom Attrs Schema
+	//
+	// Discover typed custom attribute keys on matching agent spans.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
+	GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse, error)
+
+	// GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithResponse Genai Custom Attrs Schema
+	//
+	// Discover typed custom attribute keys on matching agent spans.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
+	GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithResponse(ctx context.Context, body GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse, error)
+
+	// GenaiSpansQueryAgentsSpansQueryPostWithBodyWithResponse Genai Spans Query
+	//
+	// Query agent spans, either as raw rows or grouped aggregates.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/spans/query (the `GenaiSpansQueryAgentsSpansQueryPost` operationId).
+	GenaiSpansQueryAgentsSpansQueryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiSpansQueryAgentsSpansQueryPostResponse, error)
+
+	// GenaiSpansQueryAgentsSpansQueryPostWithResponse Genai Spans Query
+	//
+	// Query agent spans, either as raw rows or grouped aggregates.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/spans/query (the `GenaiSpansQueryAgentsSpansQueryPost` operationId).
+	GenaiSpansQueryAgentsSpansQueryPostWithResponse(ctx context.Context, body GenaiSpansQueryAgentsSpansQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiSpansQueryAgentsSpansQueryPostResponse, error)
+
+	// GenaiSpansStatsAgentsSpansStatsPostWithBodyWithResponse Genai Spans Stats
+	//
+	// Query chart-ready aggregations over agent spans.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/spans/stats (the `GenaiSpansStatsAgentsSpansStatsPost` operationId).
+	GenaiSpansStatsAgentsSpansStatsPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiSpansStatsAgentsSpansStatsPostResponse, error)
+
+	// GenaiSpansStatsAgentsSpansStatsPostWithResponse Genai Spans Stats
+	//
+	// Query chart-ready aggregations over agent spans.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/spans/stats (the `GenaiSpansStatsAgentsSpansStatsPost` operationId).
+	GenaiSpansStatsAgentsSpansStatsPostWithResponse(ctx context.Context, body GenaiSpansStatsAgentsSpansStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiSpansStatsAgentsSpansStatsPostResponse, error)
+
+	// GenaiTracesChatAgentsTracesChatPostWithBodyWithResponse Genai Traces Chat
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/traces/chat (the `GenaiTracesChatAgentsTracesChatPost` operationId).
+	GenaiTracesChatAgentsTracesChatPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiTracesChatAgentsTracesChatPostResponse, error)
+
+	// GenaiTracesChatAgentsTracesChatPostWithResponse Genai Traces Chat
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/traces/chat (the `GenaiTracesChatAgentsTracesChatPost` operationId).
+	GenaiTracesChatAgentsTracesChatPostWithResponse(ctx context.Context, body GenaiTracesChatAgentsTracesChatPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiTracesChatAgentsTracesChatPostResponse, error)
+
+	// AliasesListAliasesGetWithResponse Aliases List
+	//
+	// List all aliases in a project.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /aliases (the `AliasesListAliasesGet` operationId).
+	AliasesListAliasesGetWithResponse(ctx context.Context, params *AliasesListAliasesGetParams, reqEditors ...RequestEditorFn) (*AliasesListAliasesGetResponse, error)
+
 	// AnnotationQueueCreateAnnotationQueuesPostWithBodyWithResponse Annotation Queue Create
 	//
 	// Create a new annotation queue.
@@ -7936,6 +11866,15 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /annotation_queues/stats (the `AnnotationQueuesStatsAnnotationQueuesStatsPost` operationId).
 	AnnotationQueuesStatsAnnotationQueuesStatsPostWithResponse(ctx context.Context, body AnnotationQueuesStatsAnnotationQueuesStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*AnnotationQueuesStatsAnnotationQueuesStatsPostResponse, error)
 
+	// AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteWithResponse Annotation Queue Delete
+	//
+	// Delete (soft-delete) an annotation queue.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with DELETE /annotation_queues/{queue_id} (the `AnnotationQueueDeleteAnnotationQueuesQueueIdDelete` operationId).
+	AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteWithResponse(ctx context.Context, queueId string, params *AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteParams, reqEditors ...RequestEditorFn) (*AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse, error)
+
 	// AnnotationQueueReadAnnotationQueuesQueueIdGetWithResponse Annotation Queue Read
 	//
 	// Read a specific annotation queue.
@@ -7944,6 +11883,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /annotation_queues/{queue_id} (the `AnnotationQueueReadAnnotationQueuesQueueIdGet` operationId).
 	AnnotationQueueReadAnnotationQueuesQueueIdGetWithResponse(ctx context.Context, queueId string, params *AnnotationQueueReadAnnotationQueuesQueueIdGetParams, reqEditors ...RequestEditorFn) (*AnnotationQueueReadAnnotationQueuesQueueIdGetResponse, error)
+
+	// AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithBodyWithResponse Annotation Queue Update
+	//
+	// Update an annotation queue's metadata (name, description, scorer_refs).
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /annotation_queues/{queue_id} (the `AnnotationQueueUpdateAnnotationQueuesQueueIdPut` operationId).
+	AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithBodyWithResponse(ctx context.Context, queueId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse, error)
+
+	// AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithResponse Annotation Queue Update
+	//
+	// Update an annotation queue's metadata (name, description, scorer_refs).
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /annotation_queues/{queue_id} (the `AnnotationQueueUpdateAnnotationQueuesQueueIdPut` operationId).
+	AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithResponse(ctx context.Context, queueId string, body AnnotationQueueUpdateAnnotationQueuesQueueIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse, error)
 
 	// AnnotationQueueAddCallsAnnotationQueuesQueueIdItemsPostWithBodyWithResponse Annotation Queue Add Calls
 	//
@@ -8097,6 +12054,20 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /calls/query_stats (the `CallsQueryStatsCallsQueryStatsPost` operationId).
 	CallsQueryStatsCallsQueryStatsPostWithResponse(ctx context.Context, body CallsQueryStatsCallsQueryStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*CallsQueryStatsCallsQueryStatsPostResponse, error)
 
+	// CallsScoreCallsScorePostWithBodyWithResponse Calls Score
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /calls/score (the `CallsScoreCallsScorePost` operationId).
+	CallsScoreCallsScorePostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CallsScoreCallsScorePostResponse, error)
+
+	// CallsScoreCallsScorePostWithResponse Calls Score
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /calls/score (the `CallsScoreCallsScorePost` operationId).
+	CallsScoreCallsScorePostWithResponse(ctx context.Context, body CallsScoreCallsScorePostJSONRequestBody, reqEditors ...RequestEditorFn) (*CallsScoreCallsScorePostResponse, error)
+
 	// CallStatsCallsStatsPostWithBodyWithResponse Call Stats
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -8143,6 +12114,34 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /calls/usage (the `CallsUsageCallsUsagePost` operationId).
 	CallsUsageCallsUsagePostWithResponse(ctx context.Context, body CallsUsageCallsUsagePostJSONRequestBody, reqEditors ...RequestEditorFn) (*CallsUsageCallsUsagePostResponse, error)
 
+	// CompletionsCreateCompletionsCreatePostWithBodyWithResponse Completions Create
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /completions/create (the `CompletionsCreateCompletionsCreatePost` operationId).
+	CompletionsCreateCompletionsCreatePostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CompletionsCreateCompletionsCreatePostResponse, error)
+
+	// CompletionsCreateCompletionsCreatePostWithResponse Completions Create
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /completions/create (the `CompletionsCreateCompletionsCreatePost` operationId).
+	CompletionsCreateCompletionsCreatePostWithResponse(ctx context.Context, body CompletionsCreateCompletionsCreatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*CompletionsCreateCompletionsCreatePostResponse, error)
+
+	// CompletionsCreateStreamCompletionsCreateStreamPostWithBodyWithResponse Completions Create Stream
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /completions/create_stream (the `CompletionsCreateStreamCompletionsCreateStreamPost` operationId).
+	CompletionsCreateStreamCompletionsCreateStreamPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CompletionsCreateStreamCompletionsCreateStreamPostResponse, error)
+
+	// CompletionsCreateStreamCompletionsCreateStreamPostWithResponse Completions Create Stream
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /completions/create_stream (the `CompletionsCreateStreamCompletionsCreateStreamPost` operationId).
+	CompletionsCreateStreamCompletionsCreateStreamPostWithResponse(ctx context.Context, body CompletionsCreateStreamCompletionsCreateStreamPostJSONRequestBody, reqEditors ...RequestEditorFn) (*CompletionsCreateStreamCompletionsCreateStreamPostResponse, error)
+
 	// CostCreateCostCreatePostWithBodyWithResponse Cost Create
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -8185,6 +12184,60 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /cost/query (the `CostQueryCostQueryPost` operationId).
 	CostQueryCostQueryPostWithResponse(ctx context.Context, body CostQueryCostQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*CostQueryCostQueryPostResponse, error)
 
+	// DatasetSourcesLinkDatasetSourcesLinkPostWithBodyWithResponse Dataset Sources Link
+	//
+	// Link source calls/spans to dataset rows (batch, idempotent).
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /dataset_sources/link (the `DatasetSourcesLinkDatasetSourcesLinkPost` operationId).
+	DatasetSourcesLinkDatasetSourcesLinkPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DatasetSourcesLinkDatasetSourcesLinkPostResponse, error)
+
+	// DatasetSourcesLinkDatasetSourcesLinkPostWithResponse Dataset Sources Link
+	//
+	// Link source calls/spans to dataset rows (batch, idempotent).
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /dataset_sources/link (the `DatasetSourcesLinkDatasetSourcesLinkPost` operationId).
+	DatasetSourcesLinkDatasetSourcesLinkPostWithResponse(ctx context.Context, body DatasetSourcesLinkDatasetSourcesLinkPostJSONRequestBody, reqEditors ...RequestEditorFn) (*DatasetSourcesLinkDatasetSourcesLinkPostResponse, error)
+
+	// DatasetSourcesQueryDatasetSourcesQueryPostWithBodyWithResponse Dataset Sources Query
+	//
+	// Forward provenance lookup: dataset (+ optional row digests) -> sources.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /dataset_sources/query (the `DatasetSourcesQueryDatasetSourcesQueryPost` operationId).
+	DatasetSourcesQueryDatasetSourcesQueryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DatasetSourcesQueryDatasetSourcesQueryPostResponse, error)
+
+	// DatasetSourcesQueryDatasetSourcesQueryPostWithResponse Dataset Sources Query
+	//
+	// Forward provenance lookup: dataset (+ optional row digests) -> sources.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /dataset_sources/query (the `DatasetSourcesQueryDatasetSourcesQueryPost` operationId).
+	DatasetSourcesQueryDatasetSourcesQueryPostWithResponse(ctx context.Context, body DatasetSourcesQueryDatasetSourcesQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*DatasetSourcesQueryDatasetSourcesQueryPostResponse, error)
+
+	// SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithBodyWithResponse Source Datasets Query
+	//
+	// Reverse provenance lookup: sources -> datasets they appear in.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /dataset_sources/source_datasets_query (the `SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost` operationId).
+	SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse, error)
+
+	// SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithResponse Source Datasets Query
+	//
+	// Reverse provenance lookup: sources -> datasets they appear in.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /dataset_sources/source_datasets_query (the `SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost` operationId).
+	SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithResponse(ctx context.Context, body SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse, error)
+
 	// EvaluateModelEvaluationsEvaluateModelPostWithBodyWithResponse Evaluate Model
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -8199,6 +12252,30 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /evaluations/evaluate_model (the `EvaluateModelEvaluationsEvaluateModelPost` operationId).
 	EvaluateModelEvaluationsEvaluateModelPostWithResponse(ctx context.Context, body EvaluateModelEvaluationsEvaluateModelPostJSONRequestBody, reqEditors ...RequestEditorFn) (*EvaluateModelEvaluationsEvaluateModelPostResponse, error)
 
+	// RescoreEvaluationEvaluationsRescorePostWithBodyWithResponse Rescore Evaluation
+	//
+	// Rescore an existing evaluation run with different scorer(s).
+	//
+	// Applies the provided scorer(s) to the predictions from source_evaluation_run_id
+	// and returns a new evaluation_run_id. Original prediction call IDs are preserved.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /evaluations/rescore (the `RescoreEvaluationEvaluationsRescorePost` operationId).
+	RescoreEvaluationEvaluationsRescorePostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RescoreEvaluationEvaluationsRescorePostResponse, error)
+
+	// RescoreEvaluationEvaluationsRescorePostWithResponse Rescore Evaluation
+	//
+	// Rescore an existing evaluation run with different scorer(s).
+	//
+	// Applies the provided scorer(s) to the predictions from source_evaluation_run_id
+	// and returns a new evaluation_run_id. Original prediction call IDs are preserved.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /evaluations/rescore (the `RescoreEvaluationEvaluationsRescorePost` operationId).
+	RescoreEvaluationEvaluationsRescorePostWithResponse(ctx context.Context, body RescoreEvaluationEvaluationsRescorePostJSONRequestBody, reqEditors ...RequestEditorFn) (*RescoreEvaluationEvaluationsRescorePostResponse, error)
+
 	// EvaluationStatusEvaluationsStatusPostWithBodyWithResponse Evaluation Status
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -8212,6 +12289,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /evaluations/status (the `EvaluationStatusEvaluationsStatusPost` operationId).
 	EvaluationStatusEvaluationsStatusPostWithResponse(ctx context.Context, body EvaluationStatusEvaluationsStatusPostJSONRequestBody, reqEditors ...RequestEditorFn) (*EvaluationStatusEvaluationsStatusPostResponse, error)
+
+	// FeedbackAggregateFeedbackAggregatePostWithBodyWithResponse Feedback Aggregate
+	//
+	// Aggregate typed scorer feedback (tags, ratings) over time buckets.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /feedback/aggregate (the `FeedbackAggregateFeedbackAggregatePost` operationId).
+	FeedbackAggregateFeedbackAggregatePostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FeedbackAggregateFeedbackAggregatePostResponse, error)
+
+	// FeedbackAggregateFeedbackAggregatePostWithResponse Feedback Aggregate
+	//
+	// Aggregate typed scorer feedback (tags, ratings) over time buckets.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /feedback/aggregate (the `FeedbackAggregateFeedbackAggregatePost` operationId).
+	FeedbackAggregateFeedbackAggregatePostWithResponse(ctx context.Context, body FeedbackAggregateFeedbackAggregatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*FeedbackAggregateFeedbackAggregatePostResponse, error)
 
 	// FeedbackCreateBatchFeedbackBatchCreatePostWithBodyWithResponse Feedback Create Batch
 	//
@@ -8248,6 +12343,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /feedback/create (the `FeedbackCreateFeedbackCreatePost` operationId).
 	FeedbackCreateFeedbackCreatePostWithResponse(ctx context.Context, body FeedbackCreateFeedbackCreatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*FeedbackCreateFeedbackCreatePostResponse, error)
+
+	// FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithBodyWithResponse Feedback Payload Schema
+	//
+	// Discover feedback payload schema (paths and types) from sample rows.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /feedback/payload_schema (the `FeedbackPayloadSchemaFeedbackPayloadSchemaPost` operationId).
+	FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse, error)
+
+	// FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithResponse Feedback Payload Schema
+	//
+	// Discover feedback payload schema (paths and types) from sample rows.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /feedback/payload_schema (the `FeedbackPayloadSchemaFeedbackPayloadSchemaPost` operationId).
+	FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithResponse(ctx context.Context, body FeedbackPayloadSchemaFeedbackPayloadSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse, error)
 
 	// FeedbackPurgeFeedbackPurgePostWithBodyWithResponse Feedback Purge
 	//
@@ -8299,6 +12412,24 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /feedback/replace (the `FeedbackReplaceFeedbackReplacePost` operationId).
 	FeedbackReplaceFeedbackReplacePostWithResponse(ctx context.Context, body FeedbackReplaceFeedbackReplacePostJSONRequestBody, reqEditors ...RequestEditorFn) (*FeedbackReplaceFeedbackReplacePostResponse, error)
 
+	// FeedbackStatsFeedbackStatsPostWithBodyWithResponse Feedback Stats
+	//
+	// Return aggregated feedback statistics over time buckets.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /feedback/stats (the `FeedbackStatsFeedbackStatsPost` operationId).
+	FeedbackStatsFeedbackStatsPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FeedbackStatsFeedbackStatsPostResponse, error)
+
+	// FeedbackStatsFeedbackStatsPostWithResponse Feedback Stats
+	//
+	// Return aggregated feedback statistics over time buckets.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /feedback/stats (the `FeedbackStatsFeedbackStatsPost` operationId).
+	FeedbackStatsFeedbackStatsPostWithResponse(ctx context.Context, body FeedbackStatsFeedbackStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*FeedbackStatsFeedbackStatsPostResponse, error)
+
 	// FileContentFileContentPostWithBodyWithResponse File Content
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -8334,6 +12465,20 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /files/query_stats (the `FilesStatsFilesQueryStatsPost` operationId).
 	FilesStatsFilesQueryStatsPostWithResponse(ctx context.Context, body FilesStatsFilesQueryStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*FilesStatsFilesQueryStatsPostResponse, error)
 
+	// FilesResolveUrlFilesResolveUrlPostWithBodyWithResponse Files Resolve Url
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /files/resolve_url (the `FilesResolveUrlFilesResolveUrlPost` operationId).
+	FilesResolveUrlFilesResolveUrlPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FilesResolveUrlFilesResolveUrlPostResponse, error)
+
+	// FilesResolveUrlFilesResolveUrlPostWithResponse Files Resolve Url
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /files/resolve_url (the `FilesResolveUrlFilesResolveUrlPost` operationId).
+	FilesResolveUrlFilesResolveUrlPostWithResponse(ctx context.Context, body FilesResolveUrlFilesResolveUrlPostJSONRequestBody, reqEditors ...RequestEditorFn) (*FilesResolveUrlFilesResolveUrlPostResponse, error)
+
 	// GetCallerLocationGeolocateGetWithResponse Get Caller Location
 	//
 	// Lookup the geographic location of a user based on their IP address.
@@ -8366,6 +12511,51 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /image/create (the `ImageCreateImageCreatePost` operationId).
 	ImageCreateImageCreatePostWithResponse(ctx context.Context, body ImageCreateImageCreatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*ImageCreateImageCreatePostResponse, error)
 
+	// InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetWithResponse Inference Analysis Artificialanalysis Models
+	//
+	// Returns a list of available models for Artificial Analysis.
+	//
+	// This API is available without authentication.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /inference/analysis/artificialanalysis/models (the `InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGet` operationId).
+	InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse, error)
+
+	// InferenceCatalogModelsInferenceCatalogModelsGetWithResponse Inference Catalog Models
+	//
+	// Returns a list of available Serverless Inference models.
+	//
+	// This API is available without authentication.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /inference/catalog/models (the `InferenceCatalogModelsInferenceCatalogModelsGet` operationId).
+	InferenceCatalogModelsInferenceCatalogModelsGetWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*InferenceCatalogModelsInferenceCatalogModelsGetResponse, error)
+
+	// InferenceModelsdevModelsInferenceModelsdevModelsGetWithResponse Inference Modelsdev Models
+	//
+	// Returns the available models in the models.dev `api.json` schema.
+	//
+	// This API is available without authentication.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /inference/modelsdev/models (the `InferenceModelsdevModelsInferenceModelsdevModelsGet` operationId).
+	InferenceModelsdevModelsInferenceModelsdevModelsGetWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*InferenceModelsdevModelsInferenceModelsdevModelsGetResponse, error)
+
+	// NvidiaHardwareInferenceNvidiaV2HardwareGetWithResponse Nvidia Hardware
+	//
+	// Returns available hardware and pricing for a given model.
+	//
+	// Called by NVIDIA to show users their options and redirect them
+	// based on what we support.  Only serverless options are returned.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /inference/nvidia/v2/hardware (the `NvidiaHardwareInferenceNvidiaV2HardwareGet` operationId).
+	NvidiaHardwareInferenceNvidiaV2HardwareGetWithResponse(ctx context.Context, params *NvidiaHardwareInferenceNvidiaV2HardwareGetParams, reqEditors ...RequestEditorFn) (*NvidiaHardwareInferenceNvidiaV2HardwareGetResponse, error)
+
 	// InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetWithResponse Inference Router Openrouter Models
 	//
 	// Returns a list of models that are available to be used with OpenRouter.
@@ -8377,32 +12567,19 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /inference/router/openrouter/models (the `InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGet` operationId).
 	InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetResponse, error)
 
-	// InferenceGetInferenceV1PathGetWithResponse Inference Get
-	//
-	// OpenAI-compatible APIs.
-	//
-	// Returns a wrapper object for the known response body format(s).
-	//
-	// Corresponds with GET /inference/v1{path} (the `InferenceGetInferenceV1PathGet` operationId).
-	InferenceGetInferenceV1PathGetWithResponse(ctx context.Context, path string, reqEditors ...RequestEditorFn) (*InferenceGetInferenceV1PathGetResponse, error)
-
-	// InferencePostInferenceV1PathPostWithBodyWithResponse Inference Post
-	//
-	// OpenAI-compatible APIs.
+	// LinkToRegistryLinkToRegistryPostWithBodyWithResponse Link To Registry
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with POST /inference/v1{path} (the `InferencePostInferenceV1PathPost` operationId).
-	InferencePostInferenceV1PathPostWithBodyWithResponse(ctx context.Context, path string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*InferencePostInferenceV1PathPostResponse, error)
+	// Corresponds with POST /link_to_registry (the `LinkToRegistryLinkToRegistryPost` operationId).
+	LinkToRegistryLinkToRegistryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*LinkToRegistryLinkToRegistryPostResponse, error)
 
-	// InferencePostInferenceV1PathPostWithResponse Inference Post
-	//
-	// OpenAI-compatible APIs.
+	// LinkToRegistryLinkToRegistryPostWithResponse Link To Registry
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
-	// Corresponds with POST /inference/v1{path} (the `InferencePostInferenceV1PathPost` operationId).
-	InferencePostInferenceV1PathPostWithResponse(ctx context.Context, path string, body InferencePostInferenceV1PathPostJSONRequestBody, reqEditors ...RequestEditorFn) (*InferencePostInferenceV1PathPostResponse, error)
+	// Corresponds with POST /link_to_registry (the `LinkToRegistryLinkToRegistryPost` operationId).
+	LinkToRegistryLinkToRegistryPostWithResponse(ctx context.Context, body LinkToRegistryLinkToRegistryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*LinkToRegistryLinkToRegistryPostResponse, error)
 
 	// ObjCreateObjCreatePostWithBodyWithResponse Obj Create
 	//
@@ -8460,12 +12637,149 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /objs/query (the `ObjsQueryObjsQueryPost` operationId).
 	ObjsQueryObjsQueryPostWithResponse(ctx context.Context, body ObjsQueryObjsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*ObjsQueryObjsQueryPostResponse, error)
 
+	// ObjSetAliasesObjsObjectIdAliasesPutWithBodyWithResponse Obj Set Aliases
+	//
+	// Set aliases for an object version.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /objs/{object_id}/aliases (the `ObjSetAliasesObjsObjectIdAliasesPut` operationId).
+	ObjSetAliasesObjsObjectIdAliasesPutWithBodyWithResponse(ctx context.Context, objectId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ObjSetAliasesObjsObjectIdAliasesPutResponse, error)
+
+	// ObjSetAliasesObjsObjectIdAliasesPutWithResponse Obj Set Aliases
+	//
+	// Set aliases for an object version.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /objs/{object_id}/aliases (the `ObjSetAliasesObjsObjectIdAliasesPut` operationId).
+	ObjSetAliasesObjsObjectIdAliasesPutWithResponse(ctx context.Context, objectId string, body ObjSetAliasesObjsObjectIdAliasesPutJSONRequestBody, reqEditors ...RequestEditorFn) (*ObjSetAliasesObjsObjectIdAliasesPutResponse, error)
+
+	// ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithBodyWithResponse Obj Remove Aliases
+	//
+	// Remove aliases from an object.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /objs/{object_id}/aliases/remove (the `ObjRemoveAliasesObjsObjectIdAliasesRemovePost` operationId).
+	ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithBodyWithResponse(ctx context.Context, objectId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse, error)
+
+	// ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithResponse Obj Remove Aliases
+	//
+	// Remove aliases from an object.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /objs/{object_id}/aliases/remove (the `ObjRemoveAliasesObjsObjectIdAliasesRemovePost` operationId).
+	ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithResponse(ctx context.Context, objectId string, body ObjRemoveAliasesObjsObjectIdAliasesRemovePostJSONRequestBody, reqEditors ...RequestEditorFn) (*ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse, error)
+
+	// ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithBodyWithResponse Obj Add Tags
+	//
+	// Add tags to an object version.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /objs/{object_id}/versions/{digest}/tags (the `ObjAddTagsObjsObjectIdVersionsDigestTagsPut` operationId).
+	ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithBodyWithResponse(ctx context.Context, objectId string, digest string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse, error)
+
+	// ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithResponse Obj Add Tags
+	//
+	// Add tags to an object version.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /objs/{object_id}/versions/{digest}/tags (the `ObjAddTagsObjsObjectIdVersionsDigestTagsPut` operationId).
+	ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithResponse(ctx context.Context, objectId string, digest string, body ObjAddTagsObjsObjectIdVersionsDigestTagsPutJSONRequestBody, reqEditors ...RequestEditorFn) (*ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse, error)
+
+	// ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithBodyWithResponse Obj Remove Tags
+	//
+	// Remove tags from an object version.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /objs/{object_id}/versions/{digest}/tags/remove (the `ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost` operationId).
+	ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithBodyWithResponse(ctx context.Context, objectId string, digest string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse, error)
+
+	// ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithResponse Obj Remove Tags
+	//
+	// Remove tags from an object version.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /objs/{object_id}/versions/{digest}/tags/remove (the `ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost` operationId).
+	ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithResponse(ctx context.Context, objectId string, digest string, body ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostJSONRequestBody, reqEditors ...RequestEditorFn) (*ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse, error)
+
 	// ExportTraceOtelV1TracesPostWithResponse Export Trace
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /otel/v1/traces (the `ExportTraceOtelV1TracesPost` operationId).
 	ExportTraceOtelV1TracesPostWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ExportTraceOtelV1TracesPostResponse, error)
+
+	// ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithBodyWithResponse Project Ingest Sampling Settings Read
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /project/ingest_sampling_settings/read (the `ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost` operationId).
+	ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse, error)
+
+	// ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithResponse Project Ingest Sampling Settings Read
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /project/ingest_sampling_settings/read (the `ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost` operationId).
+	ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithResponse(ctx context.Context, body ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostJSONRequestBody, reqEditors ...RequestEditorFn) (*ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse, error)
+
+	// ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetWithResponse Project Sensitive Data Settings Read
+	//
+	// Read the owning organization's sensitive-data policy for a project.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /project/sensitive_data_settings (the `ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet` operationId).
+	ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetWithResponse(ctx context.Context, params *ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetParams, reqEditors ...RequestEditorFn) (*ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse, error)
+
+	// ProjectStatsProjectStatsPostWithBodyWithResponse Project Stats
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /project/stats (the `ProjectStatsProjectStatsPost` operationId).
+	ProjectStatsProjectStatsPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ProjectStatsProjectStatsPostResponse, error)
+
+	// ProjectStatsProjectStatsPostWithResponse Project Stats
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /project/stats (the `ProjectStatsProjectStatsPost` operationId).
+	ProjectStatsProjectStatsPostWithResponse(ctx context.Context, body ProjectStatsProjectStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*ProjectStatsProjectStatsPostResponse, error)
+
+	// ProjectTtlSettingsReadProjectTtlSettingsReadPostWithBodyWithResponse Project Ttl Settings Read
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /project/ttl_settings/read (the `ProjectTtlSettingsReadProjectTtlSettingsReadPost` operationId).
+	ProjectTtlSettingsReadProjectTtlSettingsReadPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse, error)
+
+	// ProjectTtlSettingsReadProjectTtlSettingsReadPostWithResponse Project Ttl Settings Read
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /project/ttl_settings/read (the `ProjectTtlSettingsReadProjectTtlSettingsReadPost` operationId).
+	ProjectTtlSettingsReadProjectTtlSettingsReadPostWithResponse(ctx context.Context, body ProjectTtlSettingsReadProjectTtlSettingsReadPostJSONRequestBody, reqEditors ...RequestEditorFn) (*ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse, error)
+
+	// ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithBodyWithResponse Project Ttl Settings Update
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /project/ttl_settings/update (the `ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost` operationId).
+	ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse, error)
+
+	// ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithResponse Project Ttl Settings Update
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /project/ttl_settings/update (the `ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost` operationId).
+	ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithResponse(ctx context.Context, body ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse, error)
 
 	// RefsReadBatchRefsReadBatchPostWithBodyWithResponse Refs Read Batch
 	//
@@ -8487,6 +12801,20 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /server_info (the `ServerInfoServerInfoGet` operationId).
 	ServerInfoServerInfoGetWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ServerInfoServerInfoGetResponse, error)
+
+	// ProjectsInfoServiceProjectsInfoPostWithBodyWithResponse Projects Info
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /service/projects_info (the `ProjectsInfoServiceProjectsInfoPost` operationId).
+	ProjectsInfoServiceProjectsInfoPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ProjectsInfoServiceProjectsInfoPostResponse, error)
+
+	// ProjectsInfoServiceProjectsInfoPostWithResponse Projects Info
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /service/projects_info (the `ProjectsInfoServiceProjectsInfoPost` operationId).
+	ProjectsInfoServiceProjectsInfoPostWithResponse(ctx context.Context, body ProjectsInfoServiceProjectsInfoPostJSONRequestBody, reqEditors ...RequestEditorFn) (*ProjectsInfoServiceProjectsInfoPostResponse, error)
 
 	// TableCreateTableCreatePostWithBodyWithResponse Table Create
 	//
@@ -8572,6 +12900,15 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /table/update (the `TableUpdateTableUpdatePost` operationId).
 	TableUpdateTableUpdatePostWithResponse(ctx context.Context, body TableUpdateTableUpdatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*TableUpdateTableUpdatePostResponse, error)
 
+	// TagsListTagsGetWithResponse Tags List
+	//
+	// List all tags in a project.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /tags (the `TagsListTagsGet` operationId).
+	TagsListTagsGetWithResponse(ctx context.Context, params *TagsListTagsGetParams, reqEditors ...RequestEditorFn) (*TagsListTagsGetResponse, error)
+
 	// ThreadsQueryStreamThreadsStreamQueryPostWithBodyWithResponse Threads Query Stream
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -8603,6 +12940,30 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /trace/usage (the `TraceUsageTraceUsagePost` operationId).
 	TraceUsageTraceUsagePostWithResponse(ctx context.Context, body TraceUsageTraceUsagePostJSONRequestBody, reqEditors ...RequestEditorFn) (*TraceUsageTraceUsagePostResponse, error)
+
+	// CallsCompleteV2EntityProjectCallsCompletePostWithBodyWithResponse Calls Complete
+	//
+	// Upsert a batch of completed calls directly to the calls_complete table.
+	//
+	// Each call in the batch contains both start and end information.
+	// This endpoint is used when calls are buffered client-side and sent as complete records.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v2/{entity}/{project}/calls/complete (the `CallsCompleteV2EntityProjectCallsCompletePost` operationId).
+	CallsCompleteV2EntityProjectCallsCompletePostWithBodyWithResponse(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CallsCompleteV2EntityProjectCallsCompletePostResponse, error)
+
+	// CallsCompleteV2EntityProjectCallsCompletePostWithResponse Calls Complete
+	//
+	// Upsert a batch of completed calls directly to the calls_complete table.
+	//
+	// Each call in the batch contains both start and end information.
+	// This endpoint is used when calls are buffered client-side and sent as complete records.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v2/{entity}/{project}/calls/complete (the `CallsCompleteV2EntityProjectCallsCompletePost` operationId).
+	CallsCompleteV2EntityProjectCallsCompletePostWithResponse(ctx context.Context, entity string, project string, body CallsCompleteV2EntityProjectCallsCompletePostJSONRequestBody, reqEditors ...RequestEditorFn) (*CallsCompleteV2EntityProjectCallsCompletePostResponse, error)
 
 	// DatasetListV2EntityProjectDatasetsGetWithResponse Dataset List
 	//
@@ -8648,6 +13009,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with GET /v2/{entity}/{project}/datasets/{object_id}/versions/{digest} (the `DatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGet` operationId).
 	DatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGetWithResponse(ctx context.Context, entity string, project string, objectId string, digest string, reqEditors ...RequestEditorFn) (*DatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGetResponse, error)
+
+	// EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithBodyWithResponse Eval Results Query
+	//
+	// Read grouped evaluation result rows for one or more evaluations.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v2/{entity}/{project}/eval_results/query (the `EvalResultsQueryV2EntityProjectEvalResultsQueryPost` operationId).
+	EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithBodyWithResponse(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse, error)
+
+	// EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithResponse Eval Results Query
+	//
+	// Read grouped evaluation result rows for one or more evaluations.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v2/{entity}/{project}/eval_results/query (the `EvalResultsQueryV2EntityProjectEvalResultsQueryPost` operationId).
+	EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithResponse(ctx context.Context, entity string, project string, body EvalResultsQueryV2EntityProjectEvalResultsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse, error)
 
 	// EvaluationRunDeleteV2EntityProjectEvaluationRunsDeleteWithResponse Evaluation Run Delete
 	//
@@ -8719,7 +13098,7 @@ type ClientWithResponsesInterface interface {
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /v2/{entity}/{project}/evaluations (the `EvaluationListV2EntityProjectEvaluationsGet` operationId).
-	EvaluationListV2EntityProjectEvaluationsGetWithResponse(ctx context.Context, entity string, project string, reqEditors ...RequestEditorFn) (*EvaluationListV2EntityProjectEvaluationsGetResponse, error)
+	EvaluationListV2EntityProjectEvaluationsGetWithResponse(ctx context.Context, entity string, project string, params *EvaluationListV2EntityProjectEvaluationsGetParams, reqEditors ...RequestEditorFn) (*EvaluationListV2EntityProjectEvaluationsGetResponse, error)
 
 	// EvaluationCreateV2EntityProjectEvaluationsPostWithBodyWithResponse Evaluation Create
 	//
@@ -8901,6 +13280,24 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /v2/{entity}/{project}/predictions/{prediction_id}/finish (the `PredictionFinishV2EntityProjectPredictionsPredictionIdFinishPost` operationId).
 	PredictionFinishV2EntityProjectPredictionsPredictionIdFinishPostWithResponse(ctx context.Context, entity string, project string, predictionId string, reqEditors ...RequestEditorFn) (*PredictionFinishV2EntityProjectPredictionsPredictionIdFinishPostResponse, error)
 
+	// CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithBodyWithResponse Custom Runtime Apply
+	//
+	// Create or replace a custom runtime configuration.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v2/{entity}/{project}/runtimes/{runtime_name} (the `CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut` operationId).
+	CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithBodyWithResponse(ctx context.Context, entity string, project string, runtimeName string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse, error)
+
+	// CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithResponse Custom Runtime Apply
+	//
+	// Create or replace a custom runtime configuration.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with PUT /v2/{entity}/{project}/runtimes/{runtime_name} (the `CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut` operationId).
+	CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithResponse(ctx context.Context, entity string, project string, runtimeName string, body CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse, error)
+
 	// ScorerListV2EntityProjectScorersGetWithResponse Scorer List
 	//
 	// List scorer objects.
@@ -8908,7 +13305,7 @@ type ClientWithResponsesInterface interface {
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /v2/{entity}/{project}/scorers (the `ScorerListV2EntityProjectScorersGet` operationId).
-	ScorerListV2EntityProjectScorersGetWithResponse(ctx context.Context, entity string, project string, reqEditors ...RequestEditorFn) (*ScorerListV2EntityProjectScorersGetResponse, error)
+	ScorerListV2EntityProjectScorersGetWithResponse(ctx context.Context, entity string, project string, params *ScorerListV2EntityProjectScorersGetParams, reqEditors ...RequestEditorFn) (*ScorerListV2EntityProjectScorersGetResponse, error)
 
 	// ScorerCreateV2EntityProjectScorersPostWithBodyWithResponse Scorer Create
 	//
@@ -8999,6 +13396,527 @@ type ClientWithResponsesInterface interface {
 	ReadVersionVersionGetWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ReadVersionVersionGetResponse, error)
 }
 
+type GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AgentVersionsQueryRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse) GetJSON200() *AgentVersionsQueryRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GenaiConversationChatAgentsConversationsChatPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AgentConversationChatRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenaiConversationChatAgentsConversationsChatPostResponse) GetJSON200() *AgentConversationChatRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GenaiConversationChatAgentsConversationsChatPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r GenaiConversationChatAgentsConversationsChatPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenaiConversationChatAgentsConversationsChatPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenaiConversationChatAgentsConversationsChatPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenaiConversationChatAgentsConversationsChatPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GenaiConversationSpansAgentsConversationsSpansPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AgentConversationSpansRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenaiConversationSpansAgentsConversationsSpansPostResponse) GetJSON200() *AgentConversationSpansRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GenaiConversationSpansAgentsConversationsSpansPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r GenaiConversationSpansAgentsConversationsSpansPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenaiConversationSpansAgentsConversationsSpansPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenaiConversationSpansAgentsConversationsSpansPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenaiConversationSpansAgentsConversationsSpansPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ExportGenaiTraceAgentsOtelV1TracesPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *interface{}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ExportGenaiTraceAgentsOtelV1TracesPostResponse) GetJSON200() *interface{} {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r ExportGenaiTraceAgentsOtelV1TracesPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ExportGenaiTraceAgentsOtelV1TracesPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ExportGenaiTraceAgentsOtelV1TracesPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ExportGenaiTraceAgentsOtelV1TracesPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GenaiAgentsQueryAgentsQueryPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AgentsQueryRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenaiAgentsQueryAgentsQueryPostResponse) GetJSON200() *AgentsQueryRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GenaiAgentsQueryAgentsQueryPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r GenaiAgentsQueryAgentsQueryPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenaiAgentsQueryAgentsQueryPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenaiAgentsQueryAgentsQueryPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenaiAgentsQueryAgentsQueryPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GenaiSearchAgentsSearchPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AgentSearchRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenaiSearchAgentsSearchPostResponse) GetJSON200() *AgentSearchRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GenaiSearchAgentsSearchPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r GenaiSearchAgentsSearchPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenaiSearchAgentsSearchPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenaiSearchAgentsSearchPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenaiSearchAgentsSearchPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AgentCustomAttrsSchemaRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse) GetJSON200() *AgentCustomAttrsSchemaRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GenaiSpansQueryAgentsSpansQueryPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AgentSpansQueryRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenaiSpansQueryAgentsSpansQueryPostResponse) GetJSON200() *AgentSpansQueryRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GenaiSpansQueryAgentsSpansQueryPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r GenaiSpansQueryAgentsSpansQueryPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenaiSpansQueryAgentsSpansQueryPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenaiSpansQueryAgentsSpansQueryPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenaiSpansQueryAgentsSpansQueryPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GenaiSpansStatsAgentsSpansStatsPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AgentSpanStatsRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenaiSpansStatsAgentsSpansStatsPostResponse) GetJSON200() *AgentSpanStatsRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GenaiSpansStatsAgentsSpansStatsPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r GenaiSpansStatsAgentsSpansStatsPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenaiSpansStatsAgentsSpansStatsPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenaiSpansStatsAgentsSpansStatsPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenaiSpansStatsAgentsSpansStatsPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GenaiTracesChatAgentsTracesChatPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AgentTraceChatRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenaiTracesChatAgentsTracesChatPostResponse) GetJSON200() *AgentTraceChatRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GenaiTracesChatAgentsTracesChatPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r GenaiTracesChatAgentsTracesChatPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenaiTracesChatAgentsTracesChatPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenaiTracesChatAgentsTracesChatPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenaiTracesChatAgentsTracesChatPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type AliasesListAliasesGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AliasesListRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r AliasesListAliasesGetResponse) GetJSON200() *AliasesListRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r AliasesListAliasesGetResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r AliasesListAliasesGetResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r AliasesListAliasesGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r AliasesListAliasesGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r AliasesListAliasesGetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type AnnotationQueueCreateAnnotationQueuesPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -9050,15 +13968,8 @@ func (r AnnotationQueueCreateAnnotationQueuesPostResponse) ContentType() string 
 type AnnotationQueuesQueryStreamAnnotationQueuesQueryPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *HTTPValidationError
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r AnnotationQueuesQueryStreamAnnotationQueuesQueryPostResponse) GetJSON200() *interface{} {
-	return r.JSON200
 }
 
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
@@ -9143,6 +14054,54 @@ func (r AnnotationQueuesStatsAnnotationQueuesStatsPostResponse) ContentType() st
 	return ""
 }
 
+type AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AnnotationQueueDeleteRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse) GetJSON200() *AnnotationQueueDeleteRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type AnnotationQueueReadAnnotationQueuesQueueIdGetResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -9185,6 +14144,54 @@ func (r AnnotationQueueReadAnnotationQueuesQueueIdGetResponse) StatusCode() int 
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r AnnotationQueueReadAnnotationQueuesQueueIdGetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AnnotationQueueUpdateRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse) GetJSON200() *AnnotationQueueUpdateRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -9671,6 +14678,54 @@ func (r CallsQueryStatsCallsQueryStatsPostResponse) ContentType() string {
 	return ""
 }
 
+type CallsScoreCallsScorePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *CallsScoreRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CallsScoreCallsScorePostResponse) GetJSON200() *CallsScoreRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r CallsScoreCallsScorePostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r CallsScoreCallsScorePostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CallsScoreCallsScorePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CallsScoreCallsScorePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CallsScoreCallsScorePostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type CallStatsCallsStatsPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -9802,6 +14857,95 @@ func (r CallsUsageCallsUsagePostResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CallsUsageCallsUsagePostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CompletionsCreateCompletionsCreatePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *CompletionsCreateRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CompletionsCreateCompletionsCreatePostResponse) GetJSON200() *CompletionsCreateRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r CompletionsCreateCompletionsCreatePostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r CompletionsCreateCompletionsCreatePostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CompletionsCreateCompletionsCreatePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CompletionsCreateCompletionsCreatePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CompletionsCreateCompletionsCreatePostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CompletionsCreateStreamCompletionsCreateStreamPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r CompletionsCreateStreamCompletionsCreateStreamPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r CompletionsCreateStreamCompletionsCreateStreamPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CompletionsCreateStreamCompletionsCreateStreamPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CompletionsCreateStreamCompletionsCreateStreamPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CompletionsCreateStreamCompletionsCreateStreamPostResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -9952,6 +15096,150 @@ func (r CostQueryCostQueryPostResponse) ContentType() string {
 	return ""
 }
 
+type DatasetSourcesLinkDatasetSourcesLinkPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *DatasetSourcesLinkRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DatasetSourcesLinkDatasetSourcesLinkPostResponse) GetJSON200() *DatasetSourcesLinkRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r DatasetSourcesLinkDatasetSourcesLinkPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r DatasetSourcesLinkDatasetSourcesLinkPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DatasetSourcesLinkDatasetSourcesLinkPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DatasetSourcesLinkDatasetSourcesLinkPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DatasetSourcesLinkDatasetSourcesLinkPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DatasetSourcesQueryDatasetSourcesQueryPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *DatasetSourcesQueryRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r DatasetSourcesQueryDatasetSourcesQueryPostResponse) GetJSON200() *DatasetSourcesQueryRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r DatasetSourcesQueryDatasetSourcesQueryPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r DatasetSourcesQueryDatasetSourcesQueryPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r DatasetSourcesQueryDatasetSourcesQueryPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r DatasetSourcesQueryDatasetSourcesQueryPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r DatasetSourcesQueryDatasetSourcesQueryPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *SourceDatasetsQueryRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse) GetJSON200() *SourceDatasetsQueryRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type EvaluateModelEvaluationsEvaluateModelPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -10000,6 +15288,54 @@ func (r EvaluateModelEvaluationsEvaluateModelPostResponse) ContentType() string 
 	return ""
 }
 
+type RescoreEvaluationEvaluationsRescorePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *RescoreRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r RescoreEvaluationEvaluationsRescorePostResponse) GetJSON200() *RescoreRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r RescoreEvaluationEvaluationsRescorePostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r RescoreEvaluationEvaluationsRescorePostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r RescoreEvaluationEvaluationsRescorePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r RescoreEvaluationEvaluationsRescorePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r RescoreEvaluationEvaluationsRescorePostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type EvaluationStatusEvaluationsStatusPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -10042,6 +15378,54 @@ func (r EvaluationStatusEvaluationsStatusPostResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r EvaluationStatusEvaluationsStatusPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FeedbackAggregateFeedbackAggregatePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *FeedbackAggregateRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r FeedbackAggregateFeedbackAggregatePostResponse) GetJSON200() *FeedbackAggregateRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r FeedbackAggregateFeedbackAggregatePostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r FeedbackAggregateFeedbackAggregatePostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r FeedbackAggregateFeedbackAggregatePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FeedbackAggregateFeedbackAggregatePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FeedbackAggregateFeedbackAggregatePostResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -10138,6 +15522,54 @@ func (r FeedbackCreateFeedbackCreatePostResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r FeedbackCreateFeedbackCreatePostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *FeedbackPayloadSchemaRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse) GetJSON200() *FeedbackPayloadSchemaRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -10288,6 +15720,54 @@ func (r FeedbackReplaceFeedbackReplacePostResponse) ContentType() string {
 	return ""
 }
 
+type FeedbackStatsFeedbackStatsPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *FeedbackStatsRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r FeedbackStatsFeedbackStatsPostResponse) GetJSON200() *FeedbackStatsRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r FeedbackStatsFeedbackStatsPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r FeedbackStatsFeedbackStatsPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r FeedbackStatsFeedbackStatsPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FeedbackStatsFeedbackStatsPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FeedbackStatsFeedbackStatsPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type FileContentFileContentPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -10432,6 +15912,54 @@ func (r FilesStatsFilesQueryStatsPostResponse) ContentType() string {
 	return ""
 }
 
+type FilesResolveUrlFilesResolveUrlPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ReferenceResolveRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r FilesResolveUrlFilesResolveUrlPostResponse) GetJSON200() *ReferenceResolveRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r FilesResolveUrlFilesResolveUrlPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r FilesResolveUrlFilesResolveUrlPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r FilesResolveUrlFilesResolveUrlPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r FilesResolveUrlFilesResolveUrlPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r FilesResolveUrlFilesResolveUrlPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GetCallerLocationGeolocateGetResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -10569,6 +16097,177 @@ func (r ImageCreateImageCreatePostResponse) ContentType() string {
 	return ""
 }
 
+type InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *RouterOpenRouterModelsRes
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse) GetJSON200() *RouterOpenRouterModelsRes {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type InferenceCatalogModelsInferenceCatalogModelsGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *CatalogModelsRes
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r InferenceCatalogModelsInferenceCatalogModelsGetResponse) GetJSON200() *CatalogModelsRes {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r InferenceCatalogModelsInferenceCatalogModelsGetResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r InferenceCatalogModelsInferenceCatalogModelsGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r InferenceCatalogModelsInferenceCatalogModelsGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r InferenceCatalogModelsInferenceCatalogModelsGetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type InferenceModelsdevModelsInferenceModelsdevModelsGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *map[string]ModelsDevProvider
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r InferenceModelsdevModelsInferenceModelsdevModelsGetResponse) GetJSON200() *map[string]ModelsDevProvider {
+	return r.JSON200
+}
+
+// GetBody returns the raw response body bytes
+func (r InferenceModelsdevModelsInferenceModelsdevModelsGetResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r InferenceModelsdevModelsInferenceModelsdevModelsGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r InferenceModelsdevModelsInferenceModelsdevModelsGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r InferenceModelsdevModelsInferenceModelsdevModelsGetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type NvidiaHardwareInferenceNvidiaV2HardwareGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *NvidiaHardwareRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r NvidiaHardwareInferenceNvidiaV2HardwareGetResponse) GetJSON200() *NvidiaHardwareRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r NvidiaHardwareInferenceNvidiaV2HardwareGetResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r NvidiaHardwareInferenceNvidiaV2HardwareGetResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r NvidiaHardwareInferenceNvidiaV2HardwareGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r NvidiaHardwareInferenceNvidiaV2HardwareGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r NvidiaHardwareInferenceNvidiaV2HardwareGetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -10610,32 +16309,32 @@ func (r InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetRespons
 	return ""
 }
 
-type InferenceGetInferenceV1PathGetResponse struct {
+type LinkToRegistryLinkToRegistryPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
+	JSON200 *CreateAndLinkWeaveAssetRes
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *HTTPValidationError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r InferenceGetInferenceV1PathGetResponse) GetJSON200() *interface{} {
+func (r LinkToRegistryLinkToRegistryPostResponse) GetJSON200() *CreateAndLinkWeaveAssetRes {
 	return r.JSON200
 }
 
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
-func (r InferenceGetInferenceV1PathGetResponse) GetJSON422() *HTTPValidationError {
+func (r LinkToRegistryLinkToRegistryPostResponse) GetJSON422() *HTTPValidationError {
 	return r.JSON422
 }
 
 // GetBody returns the raw response body bytes
-func (r InferenceGetInferenceV1PathGetResponse) GetBody() []byte {
+func (r LinkToRegistryLinkToRegistryPostResponse) GetBody() []byte {
 	return r.Body
 }
 
 // Status returns HTTPResponse.Status
-func (r InferenceGetInferenceV1PathGetResponse) Status() string {
+func (r LinkToRegistryLinkToRegistryPostResponse) Status() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Status
 	}
@@ -10643,7 +16342,7 @@ func (r InferenceGetInferenceV1PathGetResponse) Status() string {
 }
 
 // StatusCode returns HTTPResponse.StatusCode
-func (r InferenceGetInferenceV1PathGetResponse) StatusCode() int {
+func (r LinkToRegistryLinkToRegistryPostResponse) StatusCode() int {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.StatusCode
 	}
@@ -10651,55 +16350,7 @@ func (r InferenceGetInferenceV1PathGetResponse) StatusCode() int {
 }
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r InferenceGetInferenceV1PathGetResponse) ContentType() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Header.Get("Content-Type")
-	}
-	return ""
-}
-
-type InferencePostInferenceV1PathPostResponse struct {
-	Body         []byte
-	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
-	// JSON422 the response for an HTTP 422 `application/json` response
-	JSON422 *HTTPValidationError
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r InferencePostInferenceV1PathPostResponse) GetJSON200() *interface{} {
-	return r.JSON200
-}
-
-// GetJSON422 returns the response for an HTTP 422 `application/json` response
-func (r InferencePostInferenceV1PathPostResponse) GetJSON422() *HTTPValidationError {
-	return r.JSON422
-}
-
-// GetBody returns the raw response body bytes
-func (r InferencePostInferenceV1PathPostResponse) GetBody() []byte {
-	return r.Body
-}
-
-// Status returns HTTPResponse.Status
-func (r InferencePostInferenceV1PathPostResponse) Status() string {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.Status
-	}
-	return http.StatusText(0)
-}
-
-// StatusCode returns HTTPResponse.StatusCode
-func (r InferencePostInferenceV1PathPostResponse) StatusCode() int {
-	if r.HTTPResponse != nil {
-		return r.HTTPResponse.StatusCode
-	}
-	return 0
-}
-
-// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
-func (r InferencePostInferenceV1PathPostResponse) ContentType() string {
+func (r LinkToRegistryLinkToRegistryPostResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -10898,23 +16549,208 @@ func (r ObjsQueryObjsQueryPostResponse) ContentType() string {
 	return ""
 }
 
-type ExportTraceOtelV1TracesPostResponse struct {
+type ObjSetAliasesObjsObjectIdAliasesPutResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
+	JSON200 *ObjSetAliasesRes
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *HTTPValidationError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ExportTraceOtelV1TracesPostResponse) GetJSON200() *interface{} {
+func (r ObjSetAliasesObjsObjectIdAliasesPutResponse) GetJSON200() *ObjSetAliasesRes {
 	return r.JSON200
 }
 
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
-func (r ExportTraceOtelV1TracesPostResponse) GetJSON422() *HTTPValidationError {
+func (r ObjSetAliasesObjsObjectIdAliasesPutResponse) GetJSON422() *HTTPValidationError {
 	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r ObjSetAliasesObjsObjectIdAliasesPutResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ObjSetAliasesObjsObjectIdAliasesPutResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ObjSetAliasesObjsObjectIdAliasesPutResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ObjSetAliasesObjsObjectIdAliasesPutResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ObjRemoveAliasesRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse) GetJSON200() *ObjRemoveAliasesRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ObjAddTagsRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse) GetJSON200() *ObjAddTagsRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ObjRemoveTagsRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse) GetJSON200() *ObjRemoveTagsRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ExportTraceOtelV1TracesPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *interface{}
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ExportTraceOtelV1TracesPostResponse) GetJSON200() *interface{} {
+	return r.JSON200
 }
 
 // GetBody returns the raw response body bytes
@@ -10940,6 +16776,246 @@ func (r ExportTraceOtelV1TracesPostResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r ExportTraceOtelV1TracesPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ProjectIngestSamplingSettingsReadRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse) GetJSON200() *ProjectIngestSamplingSettingsReadRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ProjectSensitiveDataSettingsReadRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse) GetJSON200() *ProjectSensitiveDataSettingsReadRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ProjectStatsProjectStatsPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ProjectStatsRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ProjectStatsProjectStatsPostResponse) GetJSON200() *ProjectStatsRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r ProjectStatsProjectStatsPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r ProjectStatsProjectStatsPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ProjectStatsProjectStatsPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ProjectStatsProjectStatsPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ProjectStatsProjectStatsPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ProjectTTLSettingsReadRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse) GetJSON200() *ProjectTTLSettingsReadRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ProjectTTLSettingsUpdateRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse) GetJSON200() *ProjectTTLSettingsUpdateRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -11029,6 +17105,54 @@ func (r ServerInfoServerInfoGetResponse) StatusCode() int {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r ServerInfoServerInfoGetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ProjectsInfoServiceProjectsInfoPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *[]ProjectsInfoRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r ProjectsInfoServiceProjectsInfoPostResponse) GetJSON200() *[]ProjectsInfoRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r ProjectsInfoServiceProjectsInfoPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r ProjectsInfoServiceProjectsInfoPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ProjectsInfoServiceProjectsInfoPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ProjectsInfoServiceProjectsInfoPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ProjectsInfoServiceProjectsInfoPostResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -11323,18 +17447,59 @@ func (r TableUpdateTableUpdatePostResponse) ContentType() string {
 	return ""
 }
 
-type ThreadsQueryStreamThreadsStreamQueryPostResponse struct {
+type TagsListTagsGetResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
+	JSON200 *TagsListRes
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *HTTPValidationError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ThreadsQueryStreamThreadsStreamQueryPostResponse) GetJSON200() *interface{} {
+func (r TagsListTagsGetResponse) GetJSON200() *TagsListRes {
 	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r TagsListTagsGetResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r TagsListTagsGetResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r TagsListTagsGetResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r TagsListTagsGetResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r TagsListTagsGetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ThreadsQueryStreamThreadsStreamQueryPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
 }
 
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
@@ -11419,18 +17584,59 @@ func (r TraceUsageTraceUsagePostResponse) ContentType() string {
 	return ""
 }
 
-type DatasetListV2EntityProjectDatasetsGetResponse struct {
+type CallsCompleteV2EntityProjectCallsCompletePostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
+	JSON200 *CallsUpsertCompleteRes
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *HTTPValidationError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r DatasetListV2EntityProjectDatasetsGetResponse) GetJSON200() *interface{} {
+func (r CallsCompleteV2EntityProjectCallsCompletePostResponse) GetJSON200() *CallsUpsertCompleteRes {
 	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r CallsCompleteV2EntityProjectCallsCompletePostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r CallsCompleteV2EntityProjectCallsCompletePostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CallsCompleteV2EntityProjectCallsCompletePostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CallsCompleteV2EntityProjectCallsCompletePostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CallsCompleteV2EntityProjectCallsCompletePostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type DatasetListV2EntityProjectDatasetsGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
 }
 
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
@@ -11605,6 +17811,54 @@ func (r DatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGetResponse) Sta
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r DatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGetResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *EvalResultsQueryRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse) GetJSON200() *EvalResultsQueryRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -11847,15 +18101,8 @@ func (r EvaluationRunFinishV2EntityProjectEvaluationRunsEvaluationRunIdFinishPos
 type EvaluationListV2EntityProjectEvaluationsGetResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *HTTPValidationError
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r EvaluationListV2EntityProjectEvaluationsGetResponse) GetJSON200() *interface{} {
-	return r.JSON200
 }
 
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
@@ -12039,15 +18286,8 @@ func (r EvaluationReadV2EntityProjectEvaluationsObjectIdVersionsDigestGetRespons
 type ModelListV2EntityProjectModelsGetResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *HTTPValidationError
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ModelListV2EntityProjectModelsGetResponse) GetJSON200() *interface{} {
-	return r.JSON200
 }
 
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
@@ -12231,15 +18471,8 @@ func (r ModelReadV2EntityProjectModelsObjectIdVersionsDigestGetResponse) Content
 type OpListV2EntityProjectOpsGetResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *HTTPValidationError
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r OpListV2EntityProjectOpsGetResponse) GetJSON200() *interface{} {
-	return r.JSON200
 }
 
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
@@ -12653,18 +18886,59 @@ func (r PredictionFinishV2EntityProjectPredictionsPredictionIdFinishPostResponse
 	return ""
 }
 
-type ScorerListV2EntityProjectScorersGetResponse struct {
+type CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
+	JSON200 *CustomRuntimeApplyRes
 	// JSON422 the response for an HTTP 422 `application/json` response
 	JSON422 *HTTPValidationError
 }
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ScorerListV2EntityProjectScorersGetResponse) GetJSON200() *interface{} {
+func (r CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse) GetJSON200() *CustomRuntimeApplyRes {
 	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ScorerListV2EntityProjectScorersGetResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
 }
 
 // GetJSON422 returns the response for an HTTP 422 `application/json` response
@@ -13071,6 +19345,282 @@ func (r ReadVersionVersionGetResponse) ContentType() string {
 	return ""
 }
 
+// GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithBodyWithResponse Genai Agent Versions Query
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/agent-versions/query (the `GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost` operationId).
+func (c *ClientWithResponses) GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse, error) {
+	rsp, err := c.GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse(rsp)
+}
+
+// GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithResponse Genai Agent Versions Query
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/agent-versions/query (the `GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost` operationId).
+func (c *ClientWithResponses) GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithResponse(ctx context.Context, body GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse, error) {
+	rsp, err := c.GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse(rsp)
+}
+
+// GenaiConversationChatAgentsConversationsChatPostWithBodyWithResponse Genai Conversation Chat
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/conversations/chat (the `GenaiConversationChatAgentsConversationsChatPost` operationId).
+func (c *ClientWithResponses) GenaiConversationChatAgentsConversationsChatPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiConversationChatAgentsConversationsChatPostResponse, error) {
+	rsp, err := c.GenaiConversationChatAgentsConversationsChatPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiConversationChatAgentsConversationsChatPostResponse(rsp)
+}
+
+// GenaiConversationChatAgentsConversationsChatPostWithResponse Genai Conversation Chat
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/conversations/chat (the `GenaiConversationChatAgentsConversationsChatPost` operationId).
+func (c *ClientWithResponses) GenaiConversationChatAgentsConversationsChatPostWithResponse(ctx context.Context, body GenaiConversationChatAgentsConversationsChatPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiConversationChatAgentsConversationsChatPostResponse, error) {
+	rsp, err := c.GenaiConversationChatAgentsConversationsChatPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiConversationChatAgentsConversationsChatPostResponse(rsp)
+}
+
+// GenaiConversationSpansAgentsConversationsSpansPostWithBodyWithResponse Genai Conversation Spans
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/conversations/spans (the `GenaiConversationSpansAgentsConversationsSpansPost` operationId).
+func (c *ClientWithResponses) GenaiConversationSpansAgentsConversationsSpansPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiConversationSpansAgentsConversationsSpansPostResponse, error) {
+	rsp, err := c.GenaiConversationSpansAgentsConversationsSpansPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiConversationSpansAgentsConversationsSpansPostResponse(rsp)
+}
+
+// GenaiConversationSpansAgentsConversationsSpansPostWithResponse Genai Conversation Spans
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/conversations/spans (the `GenaiConversationSpansAgentsConversationsSpansPost` operationId).
+func (c *ClientWithResponses) GenaiConversationSpansAgentsConversationsSpansPostWithResponse(ctx context.Context, body GenaiConversationSpansAgentsConversationsSpansPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiConversationSpansAgentsConversationsSpansPostResponse, error) {
+	rsp, err := c.GenaiConversationSpansAgentsConversationsSpansPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiConversationSpansAgentsConversationsSpansPostResponse(rsp)
+}
+
+// ExportGenaiTraceAgentsOtelV1TracesPostWithResponse Export Genai Trace
+//
+// Ingest OTel spans into the GenAI observability system.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/otel/v1/traces (the `ExportGenaiTraceAgentsOtelV1TracesPost` operationId).
+func (c *ClientWithResponses) ExportGenaiTraceAgentsOtelV1TracesPostWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ExportGenaiTraceAgentsOtelV1TracesPostResponse, error) {
+	rsp, err := c.ExportGenaiTraceAgentsOtelV1TracesPost(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseExportGenaiTraceAgentsOtelV1TracesPostResponse(rsp)
+}
+
+// GenaiAgentsQueryAgentsQueryPostWithBodyWithResponse Genai Agents Query
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/query (the `GenaiAgentsQueryAgentsQueryPost` operationId).
+func (c *ClientWithResponses) GenaiAgentsQueryAgentsQueryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiAgentsQueryAgentsQueryPostResponse, error) {
+	rsp, err := c.GenaiAgentsQueryAgentsQueryPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiAgentsQueryAgentsQueryPostResponse(rsp)
+}
+
+// GenaiAgentsQueryAgentsQueryPostWithResponse Genai Agents Query
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/query (the `GenaiAgentsQueryAgentsQueryPost` operationId).
+func (c *ClientWithResponses) GenaiAgentsQueryAgentsQueryPostWithResponse(ctx context.Context, body GenaiAgentsQueryAgentsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiAgentsQueryAgentsQueryPostResponse, error) {
+	rsp, err := c.GenaiAgentsQueryAgentsQueryPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiAgentsQueryAgentsQueryPostResponse(rsp)
+}
+
+// GenaiSearchAgentsSearchPostWithBodyWithResponse Genai Search
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/search (the `GenaiSearchAgentsSearchPost` operationId).
+func (c *ClientWithResponses) GenaiSearchAgentsSearchPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiSearchAgentsSearchPostResponse, error) {
+	rsp, err := c.GenaiSearchAgentsSearchPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiSearchAgentsSearchPostResponse(rsp)
+}
+
+// GenaiSearchAgentsSearchPostWithResponse Genai Search
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/search (the `GenaiSearchAgentsSearchPost` operationId).
+func (c *ClientWithResponses) GenaiSearchAgentsSearchPostWithResponse(ctx context.Context, body GenaiSearchAgentsSearchPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiSearchAgentsSearchPostResponse, error) {
+	rsp, err := c.GenaiSearchAgentsSearchPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiSearchAgentsSearchPostResponse(rsp)
+}
+
+// GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithBodyWithResponse Genai Custom Attrs Schema
+//
+// Discover typed custom attribute keys on matching agent spans.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
+func (c *ClientWithResponses) GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse, error) {
+	rsp, err := c.GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse(rsp)
+}
+
+// GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithResponse Genai Custom Attrs Schema
+//
+// Discover typed custom attribute keys on matching agent spans.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
+func (c *ClientWithResponses) GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithResponse(ctx context.Context, body GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse, error) {
+	rsp, err := c.GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse(rsp)
+}
+
+// GenaiSpansQueryAgentsSpansQueryPostWithBodyWithResponse Genai Spans Query
+//
+// Query agent spans, either as raw rows or grouped aggregates.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/spans/query (the `GenaiSpansQueryAgentsSpansQueryPost` operationId).
+func (c *ClientWithResponses) GenaiSpansQueryAgentsSpansQueryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiSpansQueryAgentsSpansQueryPostResponse, error) {
+	rsp, err := c.GenaiSpansQueryAgentsSpansQueryPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiSpansQueryAgentsSpansQueryPostResponse(rsp)
+}
+
+// GenaiSpansQueryAgentsSpansQueryPostWithResponse Genai Spans Query
+//
+// Query agent spans, either as raw rows or grouped aggregates.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/spans/query (the `GenaiSpansQueryAgentsSpansQueryPost` operationId).
+func (c *ClientWithResponses) GenaiSpansQueryAgentsSpansQueryPostWithResponse(ctx context.Context, body GenaiSpansQueryAgentsSpansQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiSpansQueryAgentsSpansQueryPostResponse, error) {
+	rsp, err := c.GenaiSpansQueryAgentsSpansQueryPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiSpansQueryAgentsSpansQueryPostResponse(rsp)
+}
+
+// GenaiSpansStatsAgentsSpansStatsPostWithBodyWithResponse Genai Spans Stats
+//
+// Query chart-ready aggregations over agent spans.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/spans/stats (the `GenaiSpansStatsAgentsSpansStatsPost` operationId).
+func (c *ClientWithResponses) GenaiSpansStatsAgentsSpansStatsPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiSpansStatsAgentsSpansStatsPostResponse, error) {
+	rsp, err := c.GenaiSpansStatsAgentsSpansStatsPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiSpansStatsAgentsSpansStatsPostResponse(rsp)
+}
+
+// GenaiSpansStatsAgentsSpansStatsPostWithResponse Genai Spans Stats
+//
+// Query chart-ready aggregations over agent spans.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/spans/stats (the `GenaiSpansStatsAgentsSpansStatsPost` operationId).
+func (c *ClientWithResponses) GenaiSpansStatsAgentsSpansStatsPostWithResponse(ctx context.Context, body GenaiSpansStatsAgentsSpansStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiSpansStatsAgentsSpansStatsPostResponse, error) {
+	rsp, err := c.GenaiSpansStatsAgentsSpansStatsPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiSpansStatsAgentsSpansStatsPostResponse(rsp)
+}
+
+// GenaiTracesChatAgentsTracesChatPostWithBodyWithResponse Genai Traces Chat
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/traces/chat (the `GenaiTracesChatAgentsTracesChatPost` operationId).
+func (c *ClientWithResponses) GenaiTracesChatAgentsTracesChatPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiTracesChatAgentsTracesChatPostResponse, error) {
+	rsp, err := c.GenaiTracesChatAgentsTracesChatPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiTracesChatAgentsTracesChatPostResponse(rsp)
+}
+
+// GenaiTracesChatAgentsTracesChatPostWithResponse Genai Traces Chat
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/traces/chat (the `GenaiTracesChatAgentsTracesChatPost` operationId).
+func (c *ClientWithResponses) GenaiTracesChatAgentsTracesChatPostWithResponse(ctx context.Context, body GenaiTracesChatAgentsTracesChatPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiTracesChatAgentsTracesChatPostResponse, error) {
+	rsp, err := c.GenaiTracesChatAgentsTracesChatPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiTracesChatAgentsTracesChatPostResponse(rsp)
+}
+
+// AliasesListAliasesGetWithResponse Aliases List
+//
+// List all aliases in a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /aliases (the `AliasesListAliasesGet` operationId).
+func (c *ClientWithResponses) AliasesListAliasesGetWithResponse(ctx context.Context, params *AliasesListAliasesGetParams, reqEditors ...RequestEditorFn) (*AliasesListAliasesGetResponse, error) {
+	rsp, err := c.AliasesListAliasesGet(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAliasesListAliasesGetResponse(rsp)
+}
+
 // AnnotationQueueCreateAnnotationQueuesPostWithBodyWithResponse Annotation Queue Create
 //
 // Create a new annotation queue.
@@ -13161,6 +19711,21 @@ func (c *ClientWithResponses) AnnotationQueuesStatsAnnotationQueuesStatsPostWith
 	return ParseAnnotationQueuesStatsAnnotationQueuesStatsPostResponse(rsp)
 }
 
+// AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteWithResponse Annotation Queue Delete
+//
+// Delete (soft-delete) an annotation queue.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with DELETE /annotation_queues/{queue_id} (the `AnnotationQueueDeleteAnnotationQueuesQueueIdDelete` operationId).
+func (c *ClientWithResponses) AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteWithResponse(ctx context.Context, queueId string, params *AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteParams, reqEditors ...RequestEditorFn) (*AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse, error) {
+	rsp, err := c.AnnotationQueueDeleteAnnotationQueuesQueueIdDelete(ctx, queueId, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse(rsp)
+}
+
 // AnnotationQueueReadAnnotationQueuesQueueIdGetWithResponse Annotation Queue Read
 //
 // Read a specific annotation queue.
@@ -13174,6 +19739,36 @@ func (c *ClientWithResponses) AnnotationQueueReadAnnotationQueuesQueueIdGetWithR
 		return nil, err
 	}
 	return ParseAnnotationQueueReadAnnotationQueuesQueueIdGetResponse(rsp)
+}
+
+// AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithBodyWithResponse Annotation Queue Update
+//
+// Update an annotation queue's metadata (name, description, scorer_refs).
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /annotation_queues/{queue_id} (the `AnnotationQueueUpdateAnnotationQueuesQueueIdPut` operationId).
+func (c *ClientWithResponses) AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithBodyWithResponse(ctx context.Context, queueId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse, error) {
+	rsp, err := c.AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithBody(ctx, queueId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse(rsp)
+}
+
+// AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithResponse Annotation Queue Update
+//
+// Update an annotation queue's metadata (name, description, scorer_refs).
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /annotation_queues/{queue_id} (the `AnnotationQueueUpdateAnnotationQueuesQueueIdPut` operationId).
+func (c *ClientWithResponses) AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithResponse(ctx context.Context, queueId string, body AnnotationQueueUpdateAnnotationQueuesQueueIdPutJSONRequestBody, reqEditors ...RequestEditorFn) (*AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse, error) {
+	rsp, err := c.AnnotationQueueUpdateAnnotationQueuesQueueIdPut(ctx, queueId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseAnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse(rsp)
 }
 
 // AnnotationQueueAddCallsAnnotationQueuesQueueIdItemsPostWithBodyWithResponse Annotation Queue Add Calls
@@ -13448,6 +20043,32 @@ func (c *ClientWithResponses) CallsQueryStatsCallsQueryStatsPostWithResponse(ctx
 	return ParseCallsQueryStatsCallsQueryStatsPostResponse(rsp)
 }
 
+// CallsScoreCallsScorePostWithBodyWithResponse Calls Score
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /calls/score (the `CallsScoreCallsScorePost` operationId).
+func (c *ClientWithResponses) CallsScoreCallsScorePostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CallsScoreCallsScorePostResponse, error) {
+	rsp, err := c.CallsScoreCallsScorePostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCallsScoreCallsScorePostResponse(rsp)
+}
+
+// CallsScoreCallsScorePostWithResponse Calls Score
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /calls/score (the `CallsScoreCallsScorePost` operationId).
+func (c *ClientWithResponses) CallsScoreCallsScorePostWithResponse(ctx context.Context, body CallsScoreCallsScorePostJSONRequestBody, reqEditors ...RequestEditorFn) (*CallsScoreCallsScorePostResponse, error) {
+	rsp, err := c.CallsScoreCallsScorePost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCallsScoreCallsScorePostResponse(rsp)
+}
+
 // CallStatsCallsStatsPostWithBodyWithResponse Call Stats
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -13530,6 +20151,58 @@ func (c *ClientWithResponses) CallsUsageCallsUsagePostWithResponse(ctx context.C
 	return ParseCallsUsageCallsUsagePostResponse(rsp)
 }
 
+// CompletionsCreateCompletionsCreatePostWithBodyWithResponse Completions Create
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /completions/create (the `CompletionsCreateCompletionsCreatePost` operationId).
+func (c *ClientWithResponses) CompletionsCreateCompletionsCreatePostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CompletionsCreateCompletionsCreatePostResponse, error) {
+	rsp, err := c.CompletionsCreateCompletionsCreatePostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCompletionsCreateCompletionsCreatePostResponse(rsp)
+}
+
+// CompletionsCreateCompletionsCreatePostWithResponse Completions Create
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /completions/create (the `CompletionsCreateCompletionsCreatePost` operationId).
+func (c *ClientWithResponses) CompletionsCreateCompletionsCreatePostWithResponse(ctx context.Context, body CompletionsCreateCompletionsCreatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*CompletionsCreateCompletionsCreatePostResponse, error) {
+	rsp, err := c.CompletionsCreateCompletionsCreatePost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCompletionsCreateCompletionsCreatePostResponse(rsp)
+}
+
+// CompletionsCreateStreamCompletionsCreateStreamPostWithBodyWithResponse Completions Create Stream
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /completions/create_stream (the `CompletionsCreateStreamCompletionsCreateStreamPost` operationId).
+func (c *ClientWithResponses) CompletionsCreateStreamCompletionsCreateStreamPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CompletionsCreateStreamCompletionsCreateStreamPostResponse, error) {
+	rsp, err := c.CompletionsCreateStreamCompletionsCreateStreamPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCompletionsCreateStreamCompletionsCreateStreamPostResponse(rsp)
+}
+
+// CompletionsCreateStreamCompletionsCreateStreamPostWithResponse Completions Create Stream
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /completions/create_stream (the `CompletionsCreateStreamCompletionsCreateStreamPost` operationId).
+func (c *ClientWithResponses) CompletionsCreateStreamCompletionsCreateStreamPostWithResponse(ctx context.Context, body CompletionsCreateStreamCompletionsCreateStreamPostJSONRequestBody, reqEditors ...RequestEditorFn) (*CompletionsCreateStreamCompletionsCreateStreamPostResponse, error) {
+	rsp, err := c.CompletionsCreateStreamCompletionsCreateStreamPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCompletionsCreateStreamCompletionsCreateStreamPostResponse(rsp)
+}
+
 // CostCreateCostCreatePostWithBodyWithResponse Cost Create
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -13608,6 +20281,96 @@ func (c *ClientWithResponses) CostQueryCostQueryPostWithResponse(ctx context.Con
 	return ParseCostQueryCostQueryPostResponse(rsp)
 }
 
+// DatasetSourcesLinkDatasetSourcesLinkPostWithBodyWithResponse Dataset Sources Link
+//
+// Link source calls/spans to dataset rows (batch, idempotent).
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /dataset_sources/link (the `DatasetSourcesLinkDatasetSourcesLinkPost` operationId).
+func (c *ClientWithResponses) DatasetSourcesLinkDatasetSourcesLinkPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DatasetSourcesLinkDatasetSourcesLinkPostResponse, error) {
+	rsp, err := c.DatasetSourcesLinkDatasetSourcesLinkPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDatasetSourcesLinkDatasetSourcesLinkPostResponse(rsp)
+}
+
+// DatasetSourcesLinkDatasetSourcesLinkPostWithResponse Dataset Sources Link
+//
+// Link source calls/spans to dataset rows (batch, idempotent).
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /dataset_sources/link (the `DatasetSourcesLinkDatasetSourcesLinkPost` operationId).
+func (c *ClientWithResponses) DatasetSourcesLinkDatasetSourcesLinkPostWithResponse(ctx context.Context, body DatasetSourcesLinkDatasetSourcesLinkPostJSONRequestBody, reqEditors ...RequestEditorFn) (*DatasetSourcesLinkDatasetSourcesLinkPostResponse, error) {
+	rsp, err := c.DatasetSourcesLinkDatasetSourcesLinkPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDatasetSourcesLinkDatasetSourcesLinkPostResponse(rsp)
+}
+
+// DatasetSourcesQueryDatasetSourcesQueryPostWithBodyWithResponse Dataset Sources Query
+//
+// Forward provenance lookup: dataset (+ optional row digests) -> sources.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /dataset_sources/query (the `DatasetSourcesQueryDatasetSourcesQueryPost` operationId).
+func (c *ClientWithResponses) DatasetSourcesQueryDatasetSourcesQueryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*DatasetSourcesQueryDatasetSourcesQueryPostResponse, error) {
+	rsp, err := c.DatasetSourcesQueryDatasetSourcesQueryPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDatasetSourcesQueryDatasetSourcesQueryPostResponse(rsp)
+}
+
+// DatasetSourcesQueryDatasetSourcesQueryPostWithResponse Dataset Sources Query
+//
+// Forward provenance lookup: dataset (+ optional row digests) -> sources.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /dataset_sources/query (the `DatasetSourcesQueryDatasetSourcesQueryPost` operationId).
+func (c *ClientWithResponses) DatasetSourcesQueryDatasetSourcesQueryPostWithResponse(ctx context.Context, body DatasetSourcesQueryDatasetSourcesQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*DatasetSourcesQueryDatasetSourcesQueryPostResponse, error) {
+	rsp, err := c.DatasetSourcesQueryDatasetSourcesQueryPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseDatasetSourcesQueryDatasetSourcesQueryPostResponse(rsp)
+}
+
+// SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithBodyWithResponse Source Datasets Query
+//
+// Reverse provenance lookup: sources -> datasets they appear in.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /dataset_sources/source_datasets_query (the `SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost` operationId).
+func (c *ClientWithResponses) SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse, error) {
+	rsp, err := c.SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse(rsp)
+}
+
+// SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithResponse Source Datasets Query
+//
+// Reverse provenance lookup: sources -> datasets they appear in.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /dataset_sources/source_datasets_query (the `SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost` operationId).
+func (c *ClientWithResponses) SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithResponse(ctx context.Context, body SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse, error) {
+	rsp, err := c.SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse(rsp)
+}
+
 // EvaluateModelEvaluationsEvaluateModelPostWithBodyWithResponse Evaluate Model
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -13634,6 +20397,42 @@ func (c *ClientWithResponses) EvaluateModelEvaluationsEvaluateModelPostWithRespo
 	return ParseEvaluateModelEvaluationsEvaluateModelPostResponse(rsp)
 }
 
+// RescoreEvaluationEvaluationsRescorePostWithBodyWithResponse Rescore Evaluation
+//
+// Rescore an existing evaluation run with different scorer(s).
+//
+// Applies the provided scorer(s) to the predictions from source_evaluation_run_id
+// and returns a new evaluation_run_id. Original prediction call IDs are preserved.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /evaluations/rescore (the `RescoreEvaluationEvaluationsRescorePost` operationId).
+func (c *ClientWithResponses) RescoreEvaluationEvaluationsRescorePostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*RescoreEvaluationEvaluationsRescorePostResponse, error) {
+	rsp, err := c.RescoreEvaluationEvaluationsRescorePostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRescoreEvaluationEvaluationsRescorePostResponse(rsp)
+}
+
+// RescoreEvaluationEvaluationsRescorePostWithResponse Rescore Evaluation
+//
+// Rescore an existing evaluation run with different scorer(s).
+//
+// Applies the provided scorer(s) to the predictions from source_evaluation_run_id
+// and returns a new evaluation_run_id. Original prediction call IDs are preserved.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /evaluations/rescore (the `RescoreEvaluationEvaluationsRescorePost` operationId).
+func (c *ClientWithResponses) RescoreEvaluationEvaluationsRescorePostWithResponse(ctx context.Context, body RescoreEvaluationEvaluationsRescorePostJSONRequestBody, reqEditors ...RequestEditorFn) (*RescoreEvaluationEvaluationsRescorePostResponse, error) {
+	rsp, err := c.RescoreEvaluationEvaluationsRescorePost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseRescoreEvaluationEvaluationsRescorePostResponse(rsp)
+}
+
 // EvaluationStatusEvaluationsStatusPostWithBodyWithResponse Evaluation Status
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -13658,6 +20457,36 @@ func (c *ClientWithResponses) EvaluationStatusEvaluationsStatusPostWithResponse(
 		return nil, err
 	}
 	return ParseEvaluationStatusEvaluationsStatusPostResponse(rsp)
+}
+
+// FeedbackAggregateFeedbackAggregatePostWithBodyWithResponse Feedback Aggregate
+//
+// Aggregate typed scorer feedback (tags, ratings) over time buckets.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /feedback/aggregate (the `FeedbackAggregateFeedbackAggregatePost` operationId).
+func (c *ClientWithResponses) FeedbackAggregateFeedbackAggregatePostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FeedbackAggregateFeedbackAggregatePostResponse, error) {
+	rsp, err := c.FeedbackAggregateFeedbackAggregatePostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFeedbackAggregateFeedbackAggregatePostResponse(rsp)
+}
+
+// FeedbackAggregateFeedbackAggregatePostWithResponse Feedback Aggregate
+//
+// Aggregate typed scorer feedback (tags, ratings) over time buckets.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /feedback/aggregate (the `FeedbackAggregateFeedbackAggregatePost` operationId).
+func (c *ClientWithResponses) FeedbackAggregateFeedbackAggregatePostWithResponse(ctx context.Context, body FeedbackAggregateFeedbackAggregatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*FeedbackAggregateFeedbackAggregatePostResponse, error) {
+	rsp, err := c.FeedbackAggregateFeedbackAggregatePost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFeedbackAggregateFeedbackAggregatePostResponse(rsp)
 }
 
 // FeedbackCreateBatchFeedbackBatchCreatePostWithBodyWithResponse Feedback Create Batch
@@ -13718,6 +20547,36 @@ func (c *ClientWithResponses) FeedbackCreateFeedbackCreatePostWithResponse(ctx c
 		return nil, err
 	}
 	return ParseFeedbackCreateFeedbackCreatePostResponse(rsp)
+}
+
+// FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithBodyWithResponse Feedback Payload Schema
+//
+// Discover feedback payload schema (paths and types) from sample rows.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /feedback/payload_schema (the `FeedbackPayloadSchemaFeedbackPayloadSchemaPost` operationId).
+func (c *ClientWithResponses) FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse, error) {
+	rsp, err := c.FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse(rsp)
+}
+
+// FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithResponse Feedback Payload Schema
+//
+// Discover feedback payload schema (paths and types) from sample rows.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /feedback/payload_schema (the `FeedbackPayloadSchemaFeedbackPayloadSchemaPost` operationId).
+func (c *ClientWithResponses) FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithResponse(ctx context.Context, body FeedbackPayloadSchemaFeedbackPayloadSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse, error) {
+	rsp, err := c.FeedbackPayloadSchemaFeedbackPayloadSchemaPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse(rsp)
 }
 
 // FeedbackPurgeFeedbackPurgePostWithBodyWithResponse Feedback Purge
@@ -13806,6 +20665,36 @@ func (c *ClientWithResponses) FeedbackReplaceFeedbackReplacePostWithResponse(ctx
 	return ParseFeedbackReplaceFeedbackReplacePostResponse(rsp)
 }
 
+// FeedbackStatsFeedbackStatsPostWithBodyWithResponse Feedback Stats
+//
+// Return aggregated feedback statistics over time buckets.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /feedback/stats (the `FeedbackStatsFeedbackStatsPost` operationId).
+func (c *ClientWithResponses) FeedbackStatsFeedbackStatsPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FeedbackStatsFeedbackStatsPostResponse, error) {
+	rsp, err := c.FeedbackStatsFeedbackStatsPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFeedbackStatsFeedbackStatsPostResponse(rsp)
+}
+
+// FeedbackStatsFeedbackStatsPostWithResponse Feedback Stats
+//
+// Return aggregated feedback statistics over time buckets.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /feedback/stats (the `FeedbackStatsFeedbackStatsPost` operationId).
+func (c *ClientWithResponses) FeedbackStatsFeedbackStatsPostWithResponse(ctx context.Context, body FeedbackStatsFeedbackStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*FeedbackStatsFeedbackStatsPostResponse, error) {
+	rsp, err := c.FeedbackStatsFeedbackStatsPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFeedbackStatsFeedbackStatsPostResponse(rsp)
+}
+
 // FileContentFileContentPostWithBodyWithResponse File Content
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -13871,6 +20760,32 @@ func (c *ClientWithResponses) FilesStatsFilesQueryStatsPostWithResponse(ctx cont
 	return ParseFilesStatsFilesQueryStatsPostResponse(rsp)
 }
 
+// FilesResolveUrlFilesResolveUrlPostWithBodyWithResponse Files Resolve Url
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /files/resolve_url (the `FilesResolveUrlFilesResolveUrlPost` operationId).
+func (c *ClientWithResponses) FilesResolveUrlFilesResolveUrlPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*FilesResolveUrlFilesResolveUrlPostResponse, error) {
+	rsp, err := c.FilesResolveUrlFilesResolveUrlPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFilesResolveUrlFilesResolveUrlPostResponse(rsp)
+}
+
+// FilesResolveUrlFilesResolveUrlPostWithResponse Files Resolve Url
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /files/resolve_url (the `FilesResolveUrlFilesResolveUrlPost` operationId).
+func (c *ClientWithResponses) FilesResolveUrlFilesResolveUrlPostWithResponse(ctx context.Context, body FilesResolveUrlFilesResolveUrlPostJSONRequestBody, reqEditors ...RequestEditorFn) (*FilesResolveUrlFilesResolveUrlPostResponse, error) {
+	rsp, err := c.FilesResolveUrlFilesResolveUrlPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseFilesResolveUrlFilesResolveUrlPostResponse(rsp)
+}
+
 // GetCallerLocationGeolocateGetWithResponse Get Caller Location
 //
 // Lookup the geographic location of a user based on their IP address.
@@ -13927,6 +20842,75 @@ func (c *ClientWithResponses) ImageCreateImageCreatePostWithResponse(ctx context
 	return ParseImageCreateImageCreatePostResponse(rsp)
 }
 
+// InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetWithResponse Inference Analysis Artificialanalysis Models
+//
+// Returns a list of available models for Artificial Analysis.
+//
+// This API is available without authentication.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /inference/analysis/artificialanalysis/models (the `InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGet` operationId).
+func (c *ClientWithResponses) InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse, error) {
+	rsp, err := c.InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGet(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseInferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse(rsp)
+}
+
+// InferenceCatalogModelsInferenceCatalogModelsGetWithResponse Inference Catalog Models
+//
+// Returns a list of available Serverless Inference models.
+//
+// This API is available without authentication.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /inference/catalog/models (the `InferenceCatalogModelsInferenceCatalogModelsGet` operationId).
+func (c *ClientWithResponses) InferenceCatalogModelsInferenceCatalogModelsGetWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*InferenceCatalogModelsInferenceCatalogModelsGetResponse, error) {
+	rsp, err := c.InferenceCatalogModelsInferenceCatalogModelsGet(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseInferenceCatalogModelsInferenceCatalogModelsGetResponse(rsp)
+}
+
+// InferenceModelsdevModelsInferenceModelsdevModelsGetWithResponse Inference Modelsdev Models
+//
+// Returns the available models in the models.dev `api.json` schema.
+//
+// This API is available without authentication.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /inference/modelsdev/models (the `InferenceModelsdevModelsInferenceModelsdevModelsGet` operationId).
+func (c *ClientWithResponses) InferenceModelsdevModelsInferenceModelsdevModelsGetWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*InferenceModelsdevModelsInferenceModelsdevModelsGetResponse, error) {
+	rsp, err := c.InferenceModelsdevModelsInferenceModelsdevModelsGet(ctx, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseInferenceModelsdevModelsInferenceModelsdevModelsGetResponse(rsp)
+}
+
+// NvidiaHardwareInferenceNvidiaV2HardwareGetWithResponse Nvidia Hardware
+//
+// Returns available hardware and pricing for a given model.
+//
+// Called by NVIDIA to show users their options and redirect them
+// based on what we support.  Only serverless options are returned.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /inference/nvidia/v2/hardware (the `NvidiaHardwareInferenceNvidiaV2HardwareGet` operationId).
+func (c *ClientWithResponses) NvidiaHardwareInferenceNvidiaV2HardwareGetWithResponse(ctx context.Context, params *NvidiaHardwareInferenceNvidiaV2HardwareGetParams, reqEditors ...RequestEditorFn) (*NvidiaHardwareInferenceNvidiaV2HardwareGetResponse, error) {
+	rsp, err := c.NvidiaHardwareInferenceNvidiaV2HardwareGet(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseNvidiaHardwareInferenceNvidiaV2HardwareGetResponse(rsp)
+}
+
 // InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetWithResponse Inference Router Openrouter Models
 //
 // Returns a list of models that are available to be used with OpenRouter.
@@ -13944,49 +20928,30 @@ func (c *ClientWithResponses) InferenceRouterOpenrouterModelsInferenceRouterOpen
 	return ParseInferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetResponse(rsp)
 }
 
-// InferenceGetInferenceV1PathGetWithResponse Inference Get
-//
-// OpenAI-compatible APIs.
-//
-// Returns a wrapper object for the known response body format(s).
-//
-// Corresponds with GET /inference/v1{path} (the `InferenceGetInferenceV1PathGet` operationId).
-func (c *ClientWithResponses) InferenceGetInferenceV1PathGetWithResponse(ctx context.Context, path string, reqEditors ...RequestEditorFn) (*InferenceGetInferenceV1PathGetResponse, error) {
-	rsp, err := c.InferenceGetInferenceV1PathGet(ctx, path, reqEditors...)
-	if err != nil {
-		return nil, err
-	}
-	return ParseInferenceGetInferenceV1PathGetResponse(rsp)
-}
-
-// InferencePostInferenceV1PathPostWithBodyWithResponse Inference Post
-//
-// OpenAI-compatible APIs.
+// LinkToRegistryLinkToRegistryPostWithBodyWithResponse Link To Registry
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with POST /inference/v1{path} (the `InferencePostInferenceV1PathPost` operationId).
-func (c *ClientWithResponses) InferencePostInferenceV1PathPostWithBodyWithResponse(ctx context.Context, path string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*InferencePostInferenceV1PathPostResponse, error) {
-	rsp, err := c.InferencePostInferenceV1PathPostWithBody(ctx, path, contentType, body, reqEditors...)
+// Corresponds with POST /link_to_registry (the `LinkToRegistryLinkToRegistryPost` operationId).
+func (c *ClientWithResponses) LinkToRegistryLinkToRegistryPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*LinkToRegistryLinkToRegistryPostResponse, error) {
+	rsp, err := c.LinkToRegistryLinkToRegistryPostWithBody(ctx, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseInferencePostInferenceV1PathPostResponse(rsp)
+	return ParseLinkToRegistryLinkToRegistryPostResponse(rsp)
 }
 
-// InferencePostInferenceV1PathPostWithResponse Inference Post
-//
-// OpenAI-compatible APIs.
+// LinkToRegistryLinkToRegistryPostWithResponse Link To Registry
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
-// Corresponds with POST /inference/v1{path} (the `InferencePostInferenceV1PathPost` operationId).
-func (c *ClientWithResponses) InferencePostInferenceV1PathPostWithResponse(ctx context.Context, path string, body InferencePostInferenceV1PathPostJSONRequestBody, reqEditors ...RequestEditorFn) (*InferencePostInferenceV1PathPostResponse, error) {
-	rsp, err := c.InferencePostInferenceV1PathPost(ctx, path, body, reqEditors...)
+// Corresponds with POST /link_to_registry (the `LinkToRegistryLinkToRegistryPost` operationId).
+func (c *ClientWithResponses) LinkToRegistryLinkToRegistryPostWithResponse(ctx context.Context, body LinkToRegistryLinkToRegistryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*LinkToRegistryLinkToRegistryPostResponse, error) {
+	rsp, err := c.LinkToRegistryLinkToRegistryPost(ctx, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
-	return ParseInferencePostInferenceV1PathPostResponse(rsp)
+	return ParseLinkToRegistryLinkToRegistryPostResponse(rsp)
 }
 
 // ObjCreateObjCreatePostWithBodyWithResponse Obj Create
@@ -14093,6 +21058,126 @@ func (c *ClientWithResponses) ObjsQueryObjsQueryPostWithResponse(ctx context.Con
 	return ParseObjsQueryObjsQueryPostResponse(rsp)
 }
 
+// ObjSetAliasesObjsObjectIdAliasesPutWithBodyWithResponse Obj Set Aliases
+//
+// Set aliases for an object version.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /objs/{object_id}/aliases (the `ObjSetAliasesObjsObjectIdAliasesPut` operationId).
+func (c *ClientWithResponses) ObjSetAliasesObjsObjectIdAliasesPutWithBodyWithResponse(ctx context.Context, objectId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ObjSetAliasesObjsObjectIdAliasesPutResponse, error) {
+	rsp, err := c.ObjSetAliasesObjsObjectIdAliasesPutWithBody(ctx, objectId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseObjSetAliasesObjsObjectIdAliasesPutResponse(rsp)
+}
+
+// ObjSetAliasesObjsObjectIdAliasesPutWithResponse Obj Set Aliases
+//
+// Set aliases for an object version.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /objs/{object_id}/aliases (the `ObjSetAliasesObjsObjectIdAliasesPut` operationId).
+func (c *ClientWithResponses) ObjSetAliasesObjsObjectIdAliasesPutWithResponse(ctx context.Context, objectId string, body ObjSetAliasesObjsObjectIdAliasesPutJSONRequestBody, reqEditors ...RequestEditorFn) (*ObjSetAliasesObjsObjectIdAliasesPutResponse, error) {
+	rsp, err := c.ObjSetAliasesObjsObjectIdAliasesPut(ctx, objectId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseObjSetAliasesObjsObjectIdAliasesPutResponse(rsp)
+}
+
+// ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithBodyWithResponse Obj Remove Aliases
+//
+// Remove aliases from an object.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /objs/{object_id}/aliases/remove (the `ObjRemoveAliasesObjsObjectIdAliasesRemovePost` operationId).
+func (c *ClientWithResponses) ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithBodyWithResponse(ctx context.Context, objectId string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse, error) {
+	rsp, err := c.ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithBody(ctx, objectId, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse(rsp)
+}
+
+// ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithResponse Obj Remove Aliases
+//
+// Remove aliases from an object.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /objs/{object_id}/aliases/remove (the `ObjRemoveAliasesObjsObjectIdAliasesRemovePost` operationId).
+func (c *ClientWithResponses) ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithResponse(ctx context.Context, objectId string, body ObjRemoveAliasesObjsObjectIdAliasesRemovePostJSONRequestBody, reqEditors ...RequestEditorFn) (*ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse, error) {
+	rsp, err := c.ObjRemoveAliasesObjsObjectIdAliasesRemovePost(ctx, objectId, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse(rsp)
+}
+
+// ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithBodyWithResponse Obj Add Tags
+//
+// Add tags to an object version.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /objs/{object_id}/versions/{digest}/tags (the `ObjAddTagsObjsObjectIdVersionsDigestTagsPut` operationId).
+func (c *ClientWithResponses) ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithBodyWithResponse(ctx context.Context, objectId string, digest string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse, error) {
+	rsp, err := c.ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithBody(ctx, objectId, digest, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse(rsp)
+}
+
+// ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithResponse Obj Add Tags
+//
+// Add tags to an object version.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /objs/{object_id}/versions/{digest}/tags (the `ObjAddTagsObjsObjectIdVersionsDigestTagsPut` operationId).
+func (c *ClientWithResponses) ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithResponse(ctx context.Context, objectId string, digest string, body ObjAddTagsObjsObjectIdVersionsDigestTagsPutJSONRequestBody, reqEditors ...RequestEditorFn) (*ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse, error) {
+	rsp, err := c.ObjAddTagsObjsObjectIdVersionsDigestTagsPut(ctx, objectId, digest, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse(rsp)
+}
+
+// ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithBodyWithResponse Obj Remove Tags
+//
+// Remove tags from an object version.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /objs/{object_id}/versions/{digest}/tags/remove (the `ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost` operationId).
+func (c *ClientWithResponses) ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithBodyWithResponse(ctx context.Context, objectId string, digest string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse, error) {
+	rsp, err := c.ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithBody(ctx, objectId, digest, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse(rsp)
+}
+
+// ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithResponse Obj Remove Tags
+//
+// Remove tags from an object version.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /objs/{object_id}/versions/{digest}/tags/remove (the `ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost` operationId).
+func (c *ClientWithResponses) ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithResponse(ctx context.Context, objectId string, digest string, body ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostJSONRequestBody, reqEditors ...RequestEditorFn) (*ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse, error) {
+	rsp, err := c.ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost(ctx, objectId, digest, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse(rsp)
+}
+
 // ExportTraceOtelV1TracesPostWithResponse Export Trace
 //
 // Returns a wrapper object for the known response body format(s).
@@ -14104,6 +21189,125 @@ func (c *ClientWithResponses) ExportTraceOtelV1TracesPostWithResponse(ctx contex
 		return nil, err
 	}
 	return ParseExportTraceOtelV1TracesPostResponse(rsp)
+}
+
+// ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithBodyWithResponse Project Ingest Sampling Settings Read
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /project/ingest_sampling_settings/read (the `ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost` operationId).
+func (c *ClientWithResponses) ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse, error) {
+	rsp, err := c.ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse(rsp)
+}
+
+// ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithResponse Project Ingest Sampling Settings Read
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /project/ingest_sampling_settings/read (the `ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost` operationId).
+func (c *ClientWithResponses) ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithResponse(ctx context.Context, body ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostJSONRequestBody, reqEditors ...RequestEditorFn) (*ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse, error) {
+	rsp, err := c.ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse(rsp)
+}
+
+// ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetWithResponse Project Sensitive Data Settings Read
+//
+// Read the owning organization's sensitive-data policy for a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /project/sensitive_data_settings (the `ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet` operationId).
+func (c *ClientWithResponses) ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetWithResponse(ctx context.Context, params *ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetParams, reqEditors ...RequestEditorFn) (*ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse, error) {
+	rsp, err := c.ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse(rsp)
+}
+
+// ProjectStatsProjectStatsPostWithBodyWithResponse Project Stats
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /project/stats (the `ProjectStatsProjectStatsPost` operationId).
+func (c *ClientWithResponses) ProjectStatsProjectStatsPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ProjectStatsProjectStatsPostResponse, error) {
+	rsp, err := c.ProjectStatsProjectStatsPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectStatsProjectStatsPostResponse(rsp)
+}
+
+// ProjectStatsProjectStatsPostWithResponse Project Stats
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /project/stats (the `ProjectStatsProjectStatsPost` operationId).
+func (c *ClientWithResponses) ProjectStatsProjectStatsPostWithResponse(ctx context.Context, body ProjectStatsProjectStatsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*ProjectStatsProjectStatsPostResponse, error) {
+	rsp, err := c.ProjectStatsProjectStatsPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectStatsProjectStatsPostResponse(rsp)
+}
+
+// ProjectTtlSettingsReadProjectTtlSettingsReadPostWithBodyWithResponse Project Ttl Settings Read
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /project/ttl_settings/read (the `ProjectTtlSettingsReadProjectTtlSettingsReadPost` operationId).
+func (c *ClientWithResponses) ProjectTtlSettingsReadProjectTtlSettingsReadPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse, error) {
+	rsp, err := c.ProjectTtlSettingsReadProjectTtlSettingsReadPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectTtlSettingsReadProjectTtlSettingsReadPostResponse(rsp)
+}
+
+// ProjectTtlSettingsReadProjectTtlSettingsReadPostWithResponse Project Ttl Settings Read
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /project/ttl_settings/read (the `ProjectTtlSettingsReadProjectTtlSettingsReadPost` operationId).
+func (c *ClientWithResponses) ProjectTtlSettingsReadProjectTtlSettingsReadPostWithResponse(ctx context.Context, body ProjectTtlSettingsReadProjectTtlSettingsReadPostJSONRequestBody, reqEditors ...RequestEditorFn) (*ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse, error) {
+	rsp, err := c.ProjectTtlSettingsReadProjectTtlSettingsReadPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectTtlSettingsReadProjectTtlSettingsReadPostResponse(rsp)
+}
+
+// ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithBodyWithResponse Project Ttl Settings Update
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /project/ttl_settings/update (the `ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost` operationId).
+func (c *ClientWithResponses) ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse, error) {
+	rsp, err := c.ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse(rsp)
+}
+
+// ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithResponse Project Ttl Settings Update
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /project/ttl_settings/update (the `ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost` operationId).
+func (c *ClientWithResponses) ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithResponse(ctx context.Context, body ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostJSONRequestBody, reqEditors ...RequestEditorFn) (*ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse, error) {
+	rsp, err := c.ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse(rsp)
 }
 
 // RefsReadBatchRefsReadBatchPostWithBodyWithResponse Refs Read Batch
@@ -14143,6 +21347,32 @@ func (c *ClientWithResponses) ServerInfoServerInfoGetWithResponse(ctx context.Co
 		return nil, err
 	}
 	return ParseServerInfoServerInfoGetResponse(rsp)
+}
+
+// ProjectsInfoServiceProjectsInfoPostWithBodyWithResponse Projects Info
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /service/projects_info (the `ProjectsInfoServiceProjectsInfoPost` operationId).
+func (c *ClientWithResponses) ProjectsInfoServiceProjectsInfoPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ProjectsInfoServiceProjectsInfoPostResponse, error) {
+	rsp, err := c.ProjectsInfoServiceProjectsInfoPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectsInfoServiceProjectsInfoPostResponse(rsp)
+}
+
+// ProjectsInfoServiceProjectsInfoPostWithResponse Projects Info
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /service/projects_info (the `ProjectsInfoServiceProjectsInfoPost` operationId).
+func (c *ClientWithResponses) ProjectsInfoServiceProjectsInfoPostWithResponse(ctx context.Context, body ProjectsInfoServiceProjectsInfoPostJSONRequestBody, reqEditors ...RequestEditorFn) (*ProjectsInfoServiceProjectsInfoPostResponse, error) {
+	rsp, err := c.ProjectsInfoServiceProjectsInfoPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseProjectsInfoServiceProjectsInfoPostResponse(rsp)
 }
 
 // TableCreateTableCreatePostWithBodyWithResponse Table Create
@@ -14301,6 +21531,21 @@ func (c *ClientWithResponses) TableUpdateTableUpdatePostWithResponse(ctx context
 	return ParseTableUpdateTableUpdatePostResponse(rsp)
 }
 
+// TagsListTagsGetWithResponse Tags List
+//
+// List all tags in a project.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /tags (the `TagsListTagsGet` operationId).
+func (c *ClientWithResponses) TagsListTagsGetWithResponse(ctx context.Context, params *TagsListTagsGetParams, reqEditors ...RequestEditorFn) (*TagsListTagsGetResponse, error) {
+	rsp, err := c.TagsListTagsGet(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseTagsListTagsGetResponse(rsp)
+}
+
 // ThreadsQueryStreamThreadsStreamQueryPostWithBodyWithResponse Threads Query Stream
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
@@ -14355,6 +21600,42 @@ func (c *ClientWithResponses) TraceUsageTraceUsagePostWithResponse(ctx context.C
 		return nil, err
 	}
 	return ParseTraceUsageTraceUsagePostResponse(rsp)
+}
+
+// CallsCompleteV2EntityProjectCallsCompletePostWithBodyWithResponse Calls Complete
+//
+// Upsert a batch of completed calls directly to the calls_complete table.
+//
+// Each call in the batch contains both start and end information.
+// This endpoint is used when calls are buffered client-side and sent as complete records.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/{entity}/{project}/calls/complete (the `CallsCompleteV2EntityProjectCallsCompletePost` operationId).
+func (c *ClientWithResponses) CallsCompleteV2EntityProjectCallsCompletePostWithBodyWithResponse(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CallsCompleteV2EntityProjectCallsCompletePostResponse, error) {
+	rsp, err := c.CallsCompleteV2EntityProjectCallsCompletePostWithBody(ctx, entity, project, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCallsCompleteV2EntityProjectCallsCompletePostResponse(rsp)
+}
+
+// CallsCompleteV2EntityProjectCallsCompletePostWithResponse Calls Complete
+//
+// Upsert a batch of completed calls directly to the calls_complete table.
+//
+// Each call in the batch contains both start and end information.
+// This endpoint is used when calls are buffered client-side and sent as complete records.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/{entity}/{project}/calls/complete (the `CallsCompleteV2EntityProjectCallsCompletePost` operationId).
+func (c *ClientWithResponses) CallsCompleteV2EntityProjectCallsCompletePostWithResponse(ctx context.Context, entity string, project string, body CallsCompleteV2EntityProjectCallsCompletePostJSONRequestBody, reqEditors ...RequestEditorFn) (*CallsCompleteV2EntityProjectCallsCompletePostResponse, error) {
+	rsp, err := c.CallsCompleteV2EntityProjectCallsCompletePost(ctx, entity, project, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCallsCompleteV2EntityProjectCallsCompletePostResponse(rsp)
 }
 
 // DatasetListV2EntityProjectDatasetsGetWithResponse Dataset List
@@ -14430,6 +21711,36 @@ func (c *ClientWithResponses) DatasetReadV2EntityProjectDatasetsObjectIdVersions
 		return nil, err
 	}
 	return ParseDatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGetResponse(rsp)
+}
+
+// EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithBodyWithResponse Eval Results Query
+//
+// Read grouped evaluation result rows for one or more evaluations.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/{entity}/{project}/eval_results/query (the `EvalResultsQueryV2EntityProjectEvalResultsQueryPost` operationId).
+func (c *ClientWithResponses) EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithBodyWithResponse(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse, error) {
+	rsp, err := c.EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithBody(ctx, entity, project, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseEvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse(rsp)
+}
+
+// EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithResponse Eval Results Query
+//
+// Read grouped evaluation result rows for one or more evaluations.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v2/{entity}/{project}/eval_results/query (the `EvalResultsQueryV2EntityProjectEvalResultsQueryPost` operationId).
+func (c *ClientWithResponses) EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithResponse(ctx context.Context, entity string, project string, body EvalResultsQueryV2EntityProjectEvalResultsQueryPostJSONRequestBody, reqEditors ...RequestEditorFn) (*EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse, error) {
+	rsp, err := c.EvalResultsQueryV2EntityProjectEvalResultsQueryPost(ctx, entity, project, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseEvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse(rsp)
 }
 
 // EvaluationRunDeleteV2EntityProjectEvaluationRunsDeleteWithResponse Evaluation Run Delete
@@ -14544,8 +21855,8 @@ func (c *ClientWithResponses) EvaluationRunFinishV2EntityProjectEvaluationRunsEv
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /v2/{entity}/{project}/evaluations (the `EvaluationListV2EntityProjectEvaluationsGet` operationId).
-func (c *ClientWithResponses) EvaluationListV2EntityProjectEvaluationsGetWithResponse(ctx context.Context, entity string, project string, reqEditors ...RequestEditorFn) (*EvaluationListV2EntityProjectEvaluationsGetResponse, error) {
-	rsp, err := c.EvaluationListV2EntityProjectEvaluationsGet(ctx, entity, project, reqEditors...)
+func (c *ClientWithResponses) EvaluationListV2EntityProjectEvaluationsGetWithResponse(ctx context.Context, entity string, project string, params *EvaluationListV2EntityProjectEvaluationsGetParams, reqEditors ...RequestEditorFn) (*EvaluationListV2EntityProjectEvaluationsGetResponse, error) {
+	rsp, err := c.EvaluationListV2EntityProjectEvaluationsGet(ctx, entity, project, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -14852,6 +22163,36 @@ func (c *ClientWithResponses) PredictionFinishV2EntityProjectPredictionsPredicti
 	return ParsePredictionFinishV2EntityProjectPredictionsPredictionIdFinishPostResponse(rsp)
 }
 
+// CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithBodyWithResponse Custom Runtime Apply
+//
+// Create or replace a custom runtime configuration.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v2/{entity}/{project}/runtimes/{runtime_name} (the `CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut` operationId).
+func (c *ClientWithResponses) CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithBodyWithResponse(ctx context.Context, entity string, project string, runtimeName string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse, error) {
+	rsp, err := c.CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithBody(ctx, entity, project, runtimeName, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse(rsp)
+}
+
+// CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithResponse Custom Runtime Apply
+//
+// Create or replace a custom runtime configuration.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with PUT /v2/{entity}/{project}/runtimes/{runtime_name} (the `CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut` operationId).
+func (c *ClientWithResponses) CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithResponse(ctx context.Context, entity string, project string, runtimeName string, body CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutJSONRequestBody, reqEditors ...RequestEditorFn) (*CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse, error) {
+	rsp, err := c.CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut(ctx, entity, project, runtimeName, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse(rsp)
+}
+
 // ScorerListV2EntityProjectScorersGetWithResponse Scorer List
 //
 // List scorer objects.
@@ -14859,8 +22200,8 @@ func (c *ClientWithResponses) PredictionFinishV2EntityProjectPredictionsPredicti
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /v2/{entity}/{project}/scorers (the `ScorerListV2EntityProjectScorersGet` operationId).
-func (c *ClientWithResponses) ScorerListV2EntityProjectScorersGetWithResponse(ctx context.Context, entity string, project string, reqEditors ...RequestEditorFn) (*ScorerListV2EntityProjectScorersGetResponse, error) {
-	rsp, err := c.ScorerListV2EntityProjectScorersGet(ctx, entity, project, reqEditors...)
+func (c *ClientWithResponses) ScorerListV2EntityProjectScorersGetWithResponse(ctx context.Context, entity string, project string, params *ScorerListV2EntityProjectScorersGetParams, reqEditors ...RequestEditorFn) (*ScorerListV2EntityProjectScorersGetResponse, error) {
+	rsp, err := c.ScorerListV2EntityProjectScorersGet(ctx, entity, project, params, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -15015,6 +22356,362 @@ func (c *ClientWithResponses) ReadVersionVersionGetWithResponse(ctx context.Cont
 	return ParseReadVersionVersionGetResponse(rsp)
 }
 
+// ParseGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse parses an HTTP response from a GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostWithResponse call
+func ParseGenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse(rsp *http.Response) (*GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AgentVersionsQueryRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGenaiConversationChatAgentsConversationsChatPostResponse parses an HTTP response from a GenaiConversationChatAgentsConversationsChatPostWithResponse call
+func ParseGenaiConversationChatAgentsConversationsChatPostResponse(rsp *http.Response) (*GenaiConversationChatAgentsConversationsChatPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenaiConversationChatAgentsConversationsChatPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AgentConversationChatRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGenaiConversationSpansAgentsConversationsSpansPostResponse parses an HTTP response from a GenaiConversationSpansAgentsConversationsSpansPostWithResponse call
+func ParseGenaiConversationSpansAgentsConversationsSpansPostResponse(rsp *http.Response) (*GenaiConversationSpansAgentsConversationsSpansPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenaiConversationSpansAgentsConversationsSpansPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AgentConversationSpansRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseExportGenaiTraceAgentsOtelV1TracesPostResponse parses an HTTP response from a ExportGenaiTraceAgentsOtelV1TracesPostWithResponse call
+func ParseExportGenaiTraceAgentsOtelV1TracesPostResponse(rsp *http.Response) (*ExportGenaiTraceAgentsOtelV1TracesPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ExportGenaiTraceAgentsOtelV1TracesPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGenaiAgentsQueryAgentsQueryPostResponse parses an HTTP response from a GenaiAgentsQueryAgentsQueryPostWithResponse call
+func ParseGenaiAgentsQueryAgentsQueryPostResponse(rsp *http.Response) (*GenaiAgentsQueryAgentsQueryPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenaiAgentsQueryAgentsQueryPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AgentsQueryRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGenaiSearchAgentsSearchPostResponse parses an HTTP response from a GenaiSearchAgentsSearchPostWithResponse call
+func ParseGenaiSearchAgentsSearchPostResponse(rsp *http.Response) (*GenaiSearchAgentsSearchPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenaiSearchAgentsSearchPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AgentSearchRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse parses an HTTP response from a GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithResponse call
+func ParseGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse(rsp *http.Response) (*GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AgentCustomAttrsSchemaRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGenaiSpansQueryAgentsSpansQueryPostResponse parses an HTTP response from a GenaiSpansQueryAgentsSpansQueryPostWithResponse call
+func ParseGenaiSpansQueryAgentsSpansQueryPostResponse(rsp *http.Response) (*GenaiSpansQueryAgentsSpansQueryPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenaiSpansQueryAgentsSpansQueryPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AgentSpansQueryRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGenaiSpansStatsAgentsSpansStatsPostResponse parses an HTTP response from a GenaiSpansStatsAgentsSpansStatsPostWithResponse call
+func ParseGenaiSpansStatsAgentsSpansStatsPostResponse(rsp *http.Response) (*GenaiSpansStatsAgentsSpansStatsPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenaiSpansStatsAgentsSpansStatsPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AgentSpanStatsRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGenaiTracesChatAgentsTracesChatPostResponse parses an HTTP response from a GenaiTracesChatAgentsTracesChatPostWithResponse call
+func ParseGenaiTracesChatAgentsTracesChatPostResponse(rsp *http.Response) (*GenaiTracesChatAgentsTracesChatPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenaiTracesChatAgentsTracesChatPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AgentTraceChatRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseAliasesListAliasesGetResponse parses an HTTP response from a AliasesListAliasesGetWithResponse call
+func ParseAliasesListAliasesGetResponse(rsp *http.Response) (*AliasesListAliasesGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AliasesListAliasesGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AliasesListRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseAnnotationQueueCreateAnnotationQueuesPostResponse parses an HTTP response from a AnnotationQueueCreateAnnotationQueuesPostWithResponse call
 func ParseAnnotationQueueCreateAnnotationQueuesPostResponse(rsp *http.Response) (*AnnotationQueueCreateAnnotationQueuesPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -15062,13 +22759,6 @@ func ParseAnnotationQueuesQueryStreamAnnotationQueuesQueryPostResponse(rsp *http
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest HTTPValidationError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -15114,6 +22804,39 @@ func ParseAnnotationQueuesStatsAnnotationQueuesStatsPostResponse(rsp *http.Respo
 	return response, nil
 }
 
+// ParseAnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse parses an HTTP response from a AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteWithResponse call
+func ParseAnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse(rsp *http.Response) (*AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AnnotationQueueDeleteRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseAnnotationQueueReadAnnotationQueuesQueueIdGetResponse parses an HTTP response from a AnnotationQueueReadAnnotationQueuesQueueIdGetWithResponse call
 func ParseAnnotationQueueReadAnnotationQueuesQueueIdGetResponse(rsp *http.Response) (*AnnotationQueueReadAnnotationQueuesQueueIdGetResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -15130,6 +22853,39 @@ func ParseAnnotationQueueReadAnnotationQueuesQueueIdGetResponse(rsp *http.Respon
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest AnnotationQueueReadRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseAnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse parses an HTTP response from a AnnotationQueueUpdateAnnotationQueuesQueueIdPutWithResponse call
+func ParseAnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse(rsp *http.Response) (*AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &AnnotationQueueUpdateAnnotationQueuesQueueIdPutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AnnotationQueueUpdateRes
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15477,6 +23233,39 @@ func ParseCallsQueryStatsCallsQueryStatsPostResponse(rsp *http.Response) (*Calls
 	return response, nil
 }
 
+// ParseCallsScoreCallsScorePostResponse parses an HTTP response from a CallsScoreCallsScorePostWithResponse call
+func ParseCallsScoreCallsScorePostResponse(rsp *http.Response) (*CallsScoreCallsScorePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CallsScoreCallsScorePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CallsScoreRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseCallStatsCallsStatsPostResponse parses an HTTP response from a CallStatsCallsStatsPostWithResponse call
 func ParseCallStatsCallsStatsPostResponse(rsp *http.Response) (*CallStatsCallsStatsPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -15557,6 +23346,65 @@ func ParseCallsUsageCallsUsagePostResponse(rsp *http.Response) (*CallsUsageCalls
 		}
 		response.JSON200 = &dest
 
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCompletionsCreateCompletionsCreatePostResponse parses an HTTP response from a CompletionsCreateCompletionsCreatePostWithResponse call
+func ParseCompletionsCreateCompletionsCreatePostResponse(rsp *http.Response) (*CompletionsCreateCompletionsCreatePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CompletionsCreateCompletionsCreatePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CompletionsCreateRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCompletionsCreateStreamCompletionsCreateStreamPostResponse parses an HTTP response from a CompletionsCreateStreamCompletionsCreateStreamPostWithResponse call
+func ParseCompletionsCreateStreamCompletionsCreateStreamPostResponse(rsp *http.Response) (*CompletionsCreateStreamCompletionsCreateStreamPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CompletionsCreateStreamCompletionsCreateStreamPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest HTTPValidationError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -15668,6 +23516,105 @@ func ParseCostQueryCostQueryPostResponse(rsp *http.Response) (*CostQueryCostQuer
 	return response, nil
 }
 
+// ParseDatasetSourcesLinkDatasetSourcesLinkPostResponse parses an HTTP response from a DatasetSourcesLinkDatasetSourcesLinkPostWithResponse call
+func ParseDatasetSourcesLinkDatasetSourcesLinkPostResponse(rsp *http.Response) (*DatasetSourcesLinkDatasetSourcesLinkPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DatasetSourcesLinkDatasetSourcesLinkPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatasetSourcesLinkRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseDatasetSourcesQueryDatasetSourcesQueryPostResponse parses an HTTP response from a DatasetSourcesQueryDatasetSourcesQueryPostWithResponse call
+func ParseDatasetSourcesQueryDatasetSourcesQueryPostResponse(rsp *http.Response) (*DatasetSourcesQueryDatasetSourcesQueryPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &DatasetSourcesQueryDatasetSourcesQueryPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DatasetSourcesQueryRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse parses an HTTP response from a SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostWithResponse call
+func ParseSourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse(rsp *http.Response) (*SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest SourceDatasetsQueryRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseEvaluateModelEvaluationsEvaluateModelPostResponse parses an HTTP response from a EvaluateModelEvaluationsEvaluateModelPostWithResponse call
 func ParseEvaluateModelEvaluationsEvaluateModelPostResponse(rsp *http.Response) (*EvaluateModelEvaluationsEvaluateModelPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -15701,6 +23648,39 @@ func ParseEvaluateModelEvaluationsEvaluateModelPostResponse(rsp *http.Response) 
 	return response, nil
 }
 
+// ParseRescoreEvaluationEvaluationsRescorePostResponse parses an HTTP response from a RescoreEvaluationEvaluationsRescorePostWithResponse call
+func ParseRescoreEvaluationEvaluationsRescorePostResponse(rsp *http.Response) (*RescoreEvaluationEvaluationsRescorePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &RescoreEvaluationEvaluationsRescorePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest RescoreRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseEvaluationStatusEvaluationsStatusPostResponse parses an HTTP response from a EvaluationStatusEvaluationsStatusPostWithResponse call
 func ParseEvaluationStatusEvaluationsStatusPostResponse(rsp *http.Response) (*EvaluationStatusEvaluationsStatusPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -15717,6 +23697,39 @@ func ParseEvaluationStatusEvaluationsStatusPostResponse(rsp *http.Response) (*Ev
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest EvaluationStatusRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFeedbackAggregateFeedbackAggregatePostResponse parses an HTTP response from a FeedbackAggregateFeedbackAggregatePostWithResponse call
+func ParseFeedbackAggregateFeedbackAggregatePostResponse(rsp *http.Response) (*FeedbackAggregateFeedbackAggregatePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FeedbackAggregateFeedbackAggregatePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FeedbackAggregateRes
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15783,6 +23796,39 @@ func ParseFeedbackCreateFeedbackCreatePostResponse(rsp *http.Response) (*Feedbac
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest FeedbackCreateRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse parses an HTTP response from a FeedbackPayloadSchemaFeedbackPayloadSchemaPostWithResponse call
+func ParseFeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse(rsp *http.Response) (*FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FeedbackPayloadSchemaFeedbackPayloadSchemaPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FeedbackPayloadSchemaRes
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -15899,6 +23945,39 @@ func ParseFeedbackReplaceFeedbackReplacePostResponse(rsp *http.Response) (*Feedb
 	return response, nil
 }
 
+// ParseFeedbackStatsFeedbackStatsPostResponse parses an HTTP response from a FeedbackStatsFeedbackStatsPostWithResponse call
+func ParseFeedbackStatsFeedbackStatsPostResponse(rsp *http.Response) (*FeedbackStatsFeedbackStatsPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FeedbackStatsFeedbackStatsPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest FeedbackStatsRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseFileContentFileContentPostResponse parses an HTTP response from a FileContentFileContentPostWithResponse call
 func ParseFileContentFileContentPostResponse(rsp *http.Response) (*FileContentFileContentPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -15981,6 +24060,39 @@ func ParseFilesStatsFilesQueryStatsPostResponse(rsp *http.Response) (*FilesStats
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest FilesStatsRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseFilesResolveUrlFilesResolveUrlPostResponse parses an HTTP response from a FilesResolveUrlFilesResolveUrlPostWithResponse call
+func ParseFilesResolveUrlFilesResolveUrlPostResponse(rsp *http.Response) (*FilesResolveUrlFilesResolveUrlPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &FilesResolveUrlFilesResolveUrlPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ReferenceResolveRes
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16090,6 +24202,117 @@ func ParseImageCreateImageCreatePostResponse(rsp *http.Response) (*ImageCreateIm
 	return response, nil
 }
 
+// ParseInferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse parses an HTTP response from a InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetWithResponse call
+func ParseInferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse(rsp *http.Response) (*InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &InferenceAnalysisArtificialanalysisModelsInferenceAnalysisArtificialanalysisModelsGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest RouterOpenRouterModelsRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseInferenceCatalogModelsInferenceCatalogModelsGetResponse parses an HTTP response from a InferenceCatalogModelsInferenceCatalogModelsGetWithResponse call
+func ParseInferenceCatalogModelsInferenceCatalogModelsGetResponse(rsp *http.Response) (*InferenceCatalogModelsInferenceCatalogModelsGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &InferenceCatalogModelsInferenceCatalogModelsGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CatalogModelsRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseInferenceModelsdevModelsInferenceModelsdevModelsGetResponse parses an HTTP response from a InferenceModelsdevModelsInferenceModelsdevModelsGetWithResponse call
+func ParseInferenceModelsdevModelsInferenceModelsdevModelsGetResponse(rsp *http.Response) (*InferenceModelsdevModelsInferenceModelsdevModelsGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &InferenceModelsdevModelsInferenceModelsdevModelsGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest map[string]ModelsDevProvider
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseNvidiaHardwareInferenceNvidiaV2HardwareGetResponse parses an HTTP response from a NvidiaHardwareInferenceNvidiaV2HardwareGetWithResponse call
+func ParseNvidiaHardwareInferenceNvidiaV2HardwareGetResponse(rsp *http.Response) (*NvidiaHardwareInferenceNvidiaV2HardwareGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &NvidiaHardwareInferenceNvidiaV2HardwareGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest NvidiaHardwareRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseInferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetResponse parses an HTTP response from a InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetWithResponse call
 func ParseInferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetResponse(rsp *http.Response) (*InferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -16116,55 +24339,22 @@ func ParseInferenceRouterOpenrouterModelsInferenceRouterOpenrouterModelsGetRespo
 	return response, nil
 }
 
-// ParseInferenceGetInferenceV1PathGetResponse parses an HTTP response from a InferenceGetInferenceV1PathGetWithResponse call
-func ParseInferenceGetInferenceV1PathGetResponse(rsp *http.Response) (*InferenceGetInferenceV1PathGetResponse, error) {
+// ParseLinkToRegistryLinkToRegistryPostResponse parses an HTTP response from a LinkToRegistryLinkToRegistryPostWithResponse call
+func ParseLinkToRegistryLinkToRegistryPostResponse(rsp *http.Response) (*LinkToRegistryLinkToRegistryPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
 	defer func() { _ = rsp.Body.Close() }()
 	if err != nil {
 		return nil, err
 	}
 
-	response := &InferenceGetInferenceV1PathGetResponse{
+	response := &LinkToRegistryLinkToRegistryPostResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
 	}
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
-		var dest HTTPValidationError
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON422 = &dest
-
-	}
-
-	return response, nil
-}
-
-// ParseInferencePostInferenceV1PathPostResponse parses an HTTP response from a InferencePostInferenceV1PathPostWithResponse call
-func ParseInferencePostInferenceV1PathPostResponse(rsp *http.Response) (*InferencePostInferenceV1PathPostResponse, error) {
-	bodyBytes, err := io.ReadAll(rsp.Body)
-	defer func() { _ = rsp.Body.Close() }()
-	if err != nil {
-		return nil, err
-	}
-
-	response := &InferencePostInferenceV1PathPostResponse{
-		Body:         bodyBytes,
-		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
+		var dest CreateAndLinkWeaveAssetRes
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16314,6 +24504,138 @@ func ParseObjsQueryObjsQueryPostResponse(rsp *http.Response) (*ObjsQueryObjsQuer
 	return response, nil
 }
 
+// ParseObjSetAliasesObjsObjectIdAliasesPutResponse parses an HTTP response from a ObjSetAliasesObjsObjectIdAliasesPutWithResponse call
+func ParseObjSetAliasesObjsObjectIdAliasesPutResponse(rsp *http.Response) (*ObjSetAliasesObjsObjectIdAliasesPutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ObjSetAliasesObjsObjectIdAliasesPutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ObjSetAliasesRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse parses an HTTP response from a ObjRemoveAliasesObjsObjectIdAliasesRemovePostWithResponse call
+func ParseObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse(rsp *http.Response) (*ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ObjRemoveAliasesObjsObjectIdAliasesRemovePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ObjRemoveAliasesRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse parses an HTTP response from a ObjAddTagsObjsObjectIdVersionsDigestTagsPutWithResponse call
+func ParseObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse(rsp *http.Response) (*ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ObjAddTagsObjsObjectIdVersionsDigestTagsPutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ObjAddTagsRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse parses an HTTP response from a ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostWithResponse call
+func ParseObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse(rsp *http.Response) (*ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ObjRemoveTagsRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseExportTraceOtelV1TracesPostResponse parses an HTTP response from a ExportTraceOtelV1TracesPostWithResponse call
 func ParseExportTraceOtelV1TracesPostResponse(rsp *http.Response) (*ExportTraceOtelV1TracesPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -16330,6 +24652,164 @@ func ParseExportTraceOtelV1TracesPostResponse(rsp *http.Response) (*ExportTraceO
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest interface{}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse parses an HTTP response from a ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostWithResponse call
+func ParseProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse(rsp *http.Response) (*ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ProjectIngestSamplingSettingsReadRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse parses an HTTP response from a ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetWithResponse call
+func ParseProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse(rsp *http.Response) (*ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ProjectSensitiveDataSettingsReadRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseProjectStatsProjectStatsPostResponse parses an HTTP response from a ProjectStatsProjectStatsPostWithResponse call
+func ParseProjectStatsProjectStatsPostResponse(rsp *http.Response) (*ProjectStatsProjectStatsPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ProjectStatsProjectStatsPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ProjectStatsRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseProjectTtlSettingsReadProjectTtlSettingsReadPostResponse parses an HTTP response from a ProjectTtlSettingsReadProjectTtlSettingsReadPostWithResponse call
+func ParseProjectTtlSettingsReadProjectTtlSettingsReadPostResponse(rsp *http.Response) (*ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ProjectTtlSettingsReadProjectTtlSettingsReadPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ProjectTTLSettingsReadRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse parses an HTTP response from a ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostWithResponse call
+func ParseProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse(rsp *http.Response) (*ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ProjectTTLSettingsUpdateRes
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16400,6 +24880,39 @@ func ParseServerInfoServerInfoGetResponse(rsp *http.Response) (*ServerInfoServer
 			return nil, err
 		}
 		response.JSON200 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseProjectsInfoServiceProjectsInfoPostResponse parses an HTTP response from a ProjectsInfoServiceProjectsInfoPostWithResponse call
+func ParseProjectsInfoServiceProjectsInfoPostResponse(rsp *http.Response) (*ProjectsInfoServiceProjectsInfoPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ProjectsInfoServiceProjectsInfoPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest []ProjectsInfoRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
 
 	}
 
@@ -16604,6 +25117,39 @@ func ParseTableUpdateTableUpdatePostResponse(rsp *http.Response) (*TableUpdateTa
 	return response, nil
 }
 
+// ParseTagsListTagsGetResponse parses an HTTP response from a TagsListTagsGetWithResponse call
+func ParseTagsListTagsGetResponse(rsp *http.Response) (*TagsListTagsGetResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &TagsListTagsGetResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest TagsListRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseThreadsQueryStreamThreadsStreamQueryPostResponse parses an HTTP response from a ThreadsQueryStreamThreadsStreamQueryPostWithResponse call
 func ParseThreadsQueryStreamThreadsStreamQueryPostResponse(rsp *http.Response) (*ThreadsQueryStreamThreadsStreamQueryPostResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -16618,13 +25164,6 @@ func ParseThreadsQueryStreamThreadsStreamQueryPostResponse(rsp *http.Response) (
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest HTTPValidationError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -16670,6 +25209,39 @@ func ParseTraceUsageTraceUsagePostResponse(rsp *http.Response) (*TraceUsageTrace
 	return response, nil
 }
 
+// ParseCallsCompleteV2EntityProjectCallsCompletePostResponse parses an HTTP response from a CallsCompleteV2EntityProjectCallsCompletePostWithResponse call
+func ParseCallsCompleteV2EntityProjectCallsCompletePostResponse(rsp *http.Response) (*CallsCompleteV2EntityProjectCallsCompletePostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CallsCompleteV2EntityProjectCallsCompletePostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CallsUpsertCompleteRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseDatasetListV2EntityProjectDatasetsGetResponse parses an HTTP response from a DatasetListV2EntityProjectDatasetsGetWithResponse call
 func ParseDatasetListV2EntityProjectDatasetsGetResponse(rsp *http.Response) (*DatasetListV2EntityProjectDatasetsGetResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -16684,13 +25256,6 @@ func ParseDatasetListV2EntityProjectDatasetsGetResponse(rsp *http.Response) (*Da
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest HTTPValidationError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -16785,6 +25350,39 @@ func ParseDatasetReadV2EntityProjectDatasetsObjectIdVersionsDigestGetResponse(rs
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest DatasetReadRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseEvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse parses an HTTP response from a EvalResultsQueryV2EntityProjectEvalResultsQueryPostWithResponse call
+func ParseEvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse(rsp *http.Response) (*EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &EvalResultsQueryV2EntityProjectEvalResultsQueryPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest EvalResultsQueryRes
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -16974,13 +25572,6 @@ func ParseEvaluationListV2EntityProjectEvaluationsGetResponse(rsp *http.Response
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest HTTPValidationError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -17106,13 +25697,6 @@ func ParseModelListV2EntityProjectModelsGetResponse(rsp *http.Response) (*ModelL
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest HTTPValidationError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -17238,13 +25822,6 @@ func ParseOpListV2EntityProjectOpsGetResponse(rsp *http.Response) (*OpListV2Enti
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest HTTPValidationError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -17514,6 +26091,39 @@ func ParsePredictionFinishV2EntityProjectPredictionsPredictionIdFinishPostRespon
 	return response, nil
 }
 
+// ParseCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse parses an HTTP response from a CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutWithResponse call
+func ParseCustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse(rsp *http.Response) (*CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CustomRuntimeApplyRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseScorerListV2EntityProjectScorersGetResponse parses an HTTP response from a ScorerListV2EntityProjectScorersGetWithResponse call
 func ParseScorerListV2EntityProjectScorersGetResponse(rsp *http.Response) (*ScorerListV2EntityProjectScorersGetResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -17528,13 +26138,6 @@ func ParseScorerListV2EntityProjectScorersGetResponse(rsp *http.Response) (*Scor
 	}
 
 	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
 		var dest HTTPValidationError
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {

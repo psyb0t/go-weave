@@ -12,13 +12,744 @@ import (
 	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
+// Defines values for AgentChatAgentStartStatus.
+const (
+	AgentChatAgentStartStatusERROR AgentChatAgentStartStatus = "ERROR"
+	AgentChatAgentStartStatusOK    AgentChatAgentStartStatus = "OK"
+	AgentChatAgentStartStatusUNSET AgentChatAgentStartStatus = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the AgentChatAgentStartStatus enum.
+func (e AgentChatAgentStartStatus) Valid() bool {
+	switch e {
+	case AgentChatAgentStartStatusERROR:
+		return true
+	case AgentChatAgentStartStatusOK:
+		return true
+	case AgentChatAgentStartStatusUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentChatAssistantMessageStatus.
+const (
+	AgentChatAssistantMessageStatusERROR AgentChatAssistantMessageStatus = "ERROR"
+	AgentChatAssistantMessageStatusOK    AgentChatAssistantMessageStatus = "OK"
+	AgentChatAssistantMessageStatusUNSET AgentChatAssistantMessageStatus = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the AgentChatAssistantMessageStatus enum.
+func (e AgentChatAssistantMessageStatus) Valid() bool {
+	switch e {
+	case AgentChatAssistantMessageStatusERROR:
+		return true
+	case AgentChatAssistantMessageStatusOK:
+		return true
+	case AgentChatAssistantMessageStatusUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentChatMessageStatusCode.
+const (
+	AgentChatMessageStatusCodeERROR AgentChatMessageStatusCode = "ERROR"
+	AgentChatMessageStatusCodeOK    AgentChatMessageStatusCode = "OK"
+	AgentChatMessageStatusCodeUNSET AgentChatMessageStatusCode = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the AgentChatMessageStatusCode enum.
+func (e AgentChatMessageStatusCode) Valid() bool {
+	switch e {
+	case AgentChatMessageStatusCodeERROR:
+		return true
+	case AgentChatMessageStatusCodeOK:
+		return true
+	case AgentChatMessageStatusCodeUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentChatMessageType.
+const (
+	AgentChatMessageTypeAgentHandoff     AgentChatMessageType = "agent_handoff"
+	AgentChatMessageTypeAgentStart       AgentChatMessageType = "agent_start"
+	AgentChatMessageTypeAssistantMessage AgentChatMessageType = "assistant_message"
+	AgentChatMessageTypeContextCompacted AgentChatMessageType = "context_compacted"
+	AgentChatMessageTypeToolCall         AgentChatMessageType = "tool_call"
+	AgentChatMessageTypeUserMessage      AgentChatMessageType = "user_message"
+)
+
+// Valid indicates whether the value is a known member of the AgentChatMessageType enum.
+func (e AgentChatMessageType) Valid() bool {
+	switch e {
+	case AgentChatMessageTypeAgentHandoff:
+		return true
+	case AgentChatMessageTypeAgentStart:
+		return true
+	case AgentChatMessageTypeAssistantMessage:
+		return true
+	case AgentChatMessageTypeContextCompacted:
+		return true
+	case AgentChatMessageTypeToolCall:
+		return true
+	case AgentChatMessageTypeUserMessage:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentChatToolCallStatus.
+const (
+	AgentChatToolCallStatusERROR AgentChatToolCallStatus = "ERROR"
+	AgentChatToolCallStatusOK    AgentChatToolCallStatus = "OK"
+	AgentChatToolCallStatusUNSET AgentChatToolCallStatus = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the AgentChatToolCallStatus enum.
+func (e AgentChatToolCallStatus) Valid() bool {
+	switch e {
+	case AgentChatToolCallStatusERROR:
+		return true
+	case AgentChatToolCallStatusOK:
+		return true
+	case AgentChatToolCallStatusUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentConversationMessagePreviewRole.
+const (
+	AgentConversationMessagePreviewRoleAssistantMessage AgentConversationMessagePreviewRole = "assistant_message"
+	AgentConversationMessagePreviewRoleUserMessage      AgentConversationMessagePreviewRole = "user_message"
+)
+
+// Valid indicates whether the value is a known member of the AgentConversationMessagePreviewRole enum.
+func (e AgentConversationMessagePreviewRole) Valid() bool {
+	switch e {
+	case AgentConversationMessagePreviewRoleAssistantMessage:
+		return true
+	case AgentConversationMessagePreviewRoleUserMessage:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentConversationSpanStatus.
+const (
+	AgentConversationSpanStatusERROR AgentConversationSpanStatus = "ERROR"
+	AgentConversationSpanStatusOK    AgentConversationSpanStatus = "OK"
+	AgentConversationSpanStatusUNSET AgentConversationSpanStatus = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the AgentConversationSpanStatus enum.
+func (e AgentConversationSpanStatus) Valid() bool {
+	switch e {
+	case AgentConversationSpanStatusERROR:
+		return true
+	case AgentConversationSpanStatusOK:
+		return true
+	case AgentConversationSpanStatusUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentConversationSpanFeedbackFeedbackType.
+const (
+	AgentConversationSpanFeedbackFeedbackTypeWandbAgentMonitor      AgentConversationSpanFeedbackFeedbackType = "wandb.agent_monitor"
+	AgentConversationSpanFeedbackFeedbackTypeWandbAgentUserFeedback AgentConversationSpanFeedbackFeedbackType = "wandb.agent_user_feedback"
+)
+
+// Valid indicates whether the value is a known member of the AgentConversationSpanFeedbackFeedbackType enum.
+func (e AgentConversationSpanFeedbackFeedbackType) Valid() bool {
+	switch e {
+	case AgentConversationSpanFeedbackFeedbackTypeWandbAgentMonitor:
+		return true
+	case AgentConversationSpanFeedbackFeedbackTypeWandbAgentUserFeedback:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentCustomAttrSchemaItemSource.
+const (
+	AgentCustomAttrSchemaItemSourceCustomAttrsBool   AgentCustomAttrSchemaItemSource = "custom_attrs_bool"
+	AgentCustomAttrSchemaItemSourceCustomAttrsFloat  AgentCustomAttrSchemaItemSource = "custom_attrs_float"
+	AgentCustomAttrSchemaItemSourceCustomAttrsInt    AgentCustomAttrSchemaItemSource = "custom_attrs_int"
+	AgentCustomAttrSchemaItemSourceCustomAttrsString AgentCustomAttrSchemaItemSource = "custom_attrs_string"
+)
+
+// Valid indicates whether the value is a known member of the AgentCustomAttrSchemaItemSource enum.
+func (e AgentCustomAttrSchemaItemSource) Valid() bool {
+	switch e {
+	case AgentCustomAttrSchemaItemSourceCustomAttrsBool:
+		return true
+	case AgentCustomAttrSchemaItemSourceCustomAttrsFloat:
+		return true
+	case AgentCustomAttrSchemaItemSourceCustomAttrsInt:
+		return true
+	case AgentCustomAttrSchemaItemSourceCustomAttrsString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentCustomAttrSchemaItemValueType.
+const (
+	AgentCustomAttrSchemaItemValueTypeBool   AgentCustomAttrSchemaItemValueType = "bool"
+	AgentCustomAttrSchemaItemValueTypeFloat  AgentCustomAttrSchemaItemValueType = "float"
+	AgentCustomAttrSchemaItemValueTypeInt    AgentCustomAttrSchemaItemValueType = "int"
+	AgentCustomAttrSchemaItemValueTypeString AgentCustomAttrSchemaItemValueType = "string"
+)
+
+// Valid indicates whether the value is a known member of the AgentCustomAttrSchemaItemValueType enum.
+func (e AgentCustomAttrSchemaItemValueType) Valid() bool {
+	switch e {
+	case AgentCustomAttrSchemaItemValueTypeBool:
+		return true
+	case AgentCustomAttrSchemaItemValueTypeFloat:
+		return true
+	case AgentCustomAttrSchemaItemValueTypeInt:
+		return true
+	case AgentCustomAttrSchemaItemValueTypeString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentGroupByRefSource.
+const (
+	AgentGroupByRefSourceColumn            AgentGroupByRefSource = "column"
+	AgentGroupByRefSourceCustomAttrsBool   AgentGroupByRefSource = "custom_attrs_bool"
+	AgentGroupByRefSourceCustomAttrsFloat  AgentGroupByRefSource = "custom_attrs_float"
+	AgentGroupByRefSourceCustomAttrsInt    AgentGroupByRefSource = "custom_attrs_int"
+	AgentGroupByRefSourceCustomAttrsString AgentGroupByRefSource = "custom_attrs_string"
+	AgentGroupByRefSourceField             AgentGroupByRefSource = "field"
+)
+
+// Valid indicates whether the value is a known member of the AgentGroupByRefSource enum.
+func (e AgentGroupByRefSource) Valid() bool {
+	switch e {
+	case AgentGroupByRefSourceColumn:
+		return true
+	case AgentGroupByRefSourceCustomAttrsBool:
+		return true
+	case AgentGroupByRefSourceCustomAttrsFloat:
+		return true
+	case AgentGroupByRefSourceCustomAttrsInt:
+		return true
+	case AgentGroupByRefSourceCustomAttrsString:
+		return true
+	case AgentGroupByRefSourceField:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentInsightFilterField.
+const (
+	AgentInsightFilterFieldFailureCategory AgentInsightFilterField = "failure_category"
+	AgentInsightFilterFieldFailureSeverity AgentInsightFilterField = "failure_severity"
+	AgentInsightFilterFieldFailureTopicId  AgentInsightFilterField = "failure_topic_id"
+	AgentInsightFilterFieldIntentCategory  AgentInsightFilterField = "intent_category"
+	AgentInsightFilterFieldIntentSentiment AgentInsightFilterField = "intent_sentiment"
+	AgentInsightFilterFieldIntentTopicId   AgentInsightFilterField = "intent_topic_id"
+)
+
+// Valid indicates whether the value is a known member of the AgentInsightFilterField enum.
+func (e AgentInsightFilterField) Valid() bool {
+	switch e {
+	case AgentInsightFilterFieldFailureCategory:
+		return true
+	case AgentInsightFilterFieldFailureSeverity:
+		return true
+	case AgentInsightFilterFieldFailureTopicId:
+		return true
+	case AgentInsightFilterFieldIntentCategory:
+		return true
+	case AgentInsightFilterFieldIntentSentiment:
+		return true
+	case AgentInsightFilterFieldIntentTopicId:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSearchMatchedMessageRole0.
+const (
+	AgentSearchMatchedMessageRole0Assistant  AgentSearchMatchedMessageRole0 = "assistant"
+	AgentSearchMatchedMessageRole0Empty      AgentSearchMatchedMessageRole0 = ""
+	AgentSearchMatchedMessageRole0System     AgentSearchMatchedMessageRole0 = "system"
+	AgentSearchMatchedMessageRole0Tool       AgentSearchMatchedMessageRole0 = "tool"
+	AgentSearchMatchedMessageRole0ToolCall   AgentSearchMatchedMessageRole0 = "tool_call"
+	AgentSearchMatchedMessageRole0ToolResult AgentSearchMatchedMessageRole0 = "tool_result"
+	AgentSearchMatchedMessageRole0User       AgentSearchMatchedMessageRole0 = "user"
+)
+
+// Valid indicates whether the value is a known member of the AgentSearchMatchedMessageRole0 enum.
+func (e AgentSearchMatchedMessageRole0) Valid() bool {
+	switch e {
+	case AgentSearchMatchedMessageRole0Assistant:
+		return true
+	case AgentSearchMatchedMessageRole0Empty:
+		return true
+	case AgentSearchMatchedMessageRole0System:
+		return true
+	case AgentSearchMatchedMessageRole0Tool:
+		return true
+	case AgentSearchMatchedMessageRole0ToolCall:
+		return true
+	case AgentSearchMatchedMessageRole0ToolResult:
+		return true
+	case AgentSearchMatchedMessageRole0User:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSearchReqRoles.
+const (
+	AgentSearchReqRolesAssistant  AgentSearchReqRoles = "assistant"
+	AgentSearchReqRolesEmpty      AgentSearchReqRoles = ""
+	AgentSearchReqRolesSystem     AgentSearchReqRoles = "system"
+	AgentSearchReqRolesTool       AgentSearchReqRoles = "tool"
+	AgentSearchReqRolesToolCall   AgentSearchReqRoles = "tool_call"
+	AgentSearchReqRolesToolResult AgentSearchReqRoles = "tool_result"
+	AgentSearchReqRolesUser       AgentSearchReqRoles = "user"
+)
+
+// Valid indicates whether the value is a known member of the AgentSearchReqRoles enum.
+func (e AgentSearchReqRoles) Valid() bool {
+	switch e {
+	case AgentSearchReqRolesAssistant:
+		return true
+	case AgentSearchReqRolesEmpty:
+		return true
+	case AgentSearchReqRolesSystem:
+		return true
+	case AgentSearchReqRolesTool:
+		return true
+	case AgentSearchReqRolesToolCall:
+		return true
+	case AgentSearchReqRolesToolResult:
+		return true
+	case AgentSearchReqRolesUser:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSortByDirection.
+const (
+	AgentSortByDirectionAsc  AgentSortByDirection = "asc"
+	AgentSortByDirectionDesc AgentSortByDirection = "desc"
+)
+
+// Valid indicates whether the value is a known member of the AgentSortByDirection enum.
+func (e AgentSortByDirection) Valid() bool {
+	switch e {
+	case AgentSortByDirectionAsc:
+		return true
+	case AgentSortByDirectionDesc:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanGroupDistributionItemSource.
+const (
+	AgentSpanGroupDistributionItemSourceCustomAttrsBool   AgentSpanGroupDistributionItemSource = "custom_attrs_bool"
+	AgentSpanGroupDistributionItemSourceCustomAttrsFloat  AgentSpanGroupDistributionItemSource = "custom_attrs_float"
+	AgentSpanGroupDistributionItemSourceCustomAttrsInt    AgentSpanGroupDistributionItemSource = "custom_attrs_int"
+	AgentSpanGroupDistributionItemSourceCustomAttrsString AgentSpanGroupDistributionItemSource = "custom_attrs_string"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanGroupDistributionItemSource enum.
+func (e AgentSpanGroupDistributionItemSource) Valid() bool {
+	switch e {
+	case AgentSpanGroupDistributionItemSourceCustomAttrsBool:
+		return true
+	case AgentSpanGroupDistributionItemSourceCustomAttrsFloat:
+		return true
+	case AgentSpanGroupDistributionItemSourceCustomAttrsInt:
+		return true
+	case AgentSpanGroupDistributionItemSourceCustomAttrsString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanGroupDistributionItemValueType.
+const (
+	AgentSpanGroupDistributionItemValueTypeBool   AgentSpanGroupDistributionItemValueType = "bool"
+	AgentSpanGroupDistributionItemValueTypeFloat  AgentSpanGroupDistributionItemValueType = "float"
+	AgentSpanGroupDistributionItemValueTypeInt    AgentSpanGroupDistributionItemValueType = "int"
+	AgentSpanGroupDistributionItemValueTypeString AgentSpanGroupDistributionItemValueType = "string"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanGroupDistributionItemValueType enum.
+func (e AgentSpanGroupDistributionItemValueType) Valid() bool {
+	switch e {
+	case AgentSpanGroupDistributionItemValueTypeBool:
+		return true
+	case AgentSpanGroupDistributionItemValueTypeFloat:
+		return true
+	case AgentSpanGroupDistributionItemValueTypeInt:
+		return true
+	case AgentSpanGroupDistributionItemValueTypeString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanMeasureSpecAggregation.
+const (
+	AgentSpanMeasureSpecAggregationAvg           AgentSpanMeasureSpecAggregation = "avg"
+	AgentSpanMeasureSpecAggregationCount         AgentSpanMeasureSpecAggregation = "count"
+	AgentSpanMeasureSpecAggregationCountDistinct AgentSpanMeasureSpecAggregation = "count_distinct"
+	AgentSpanMeasureSpecAggregationCountFalse    AgentSpanMeasureSpecAggregation = "count_false"
+	AgentSpanMeasureSpecAggregationCountTrue     AgentSpanMeasureSpecAggregation = "count_true"
+	AgentSpanMeasureSpecAggregationMax           AgentSpanMeasureSpecAggregation = "max"
+	AgentSpanMeasureSpecAggregationMin           AgentSpanMeasureSpecAggregation = "min"
+	AgentSpanMeasureSpecAggregationSum           AgentSpanMeasureSpecAggregation = "sum"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanMeasureSpecAggregation enum.
+func (e AgentSpanMeasureSpecAggregation) Valid() bool {
+	switch e {
+	case AgentSpanMeasureSpecAggregationAvg:
+		return true
+	case AgentSpanMeasureSpecAggregationCount:
+		return true
+	case AgentSpanMeasureSpecAggregationCountDistinct:
+		return true
+	case AgentSpanMeasureSpecAggregationCountFalse:
+		return true
+	case AgentSpanMeasureSpecAggregationCountTrue:
+		return true
+	case AgentSpanMeasureSpecAggregationMax:
+		return true
+	case AgentSpanMeasureSpecAggregationMin:
+		return true
+	case AgentSpanMeasureSpecAggregationSum:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanMeasureSpecValueType.
+const (
+	AgentSpanMeasureSpecValueTypeBoolean  AgentSpanMeasureSpecValueType = "boolean"
+	AgentSpanMeasureSpecValueTypeDatetime AgentSpanMeasureSpecValueType = "datetime"
+	AgentSpanMeasureSpecValueTypeNumber   AgentSpanMeasureSpecValueType = "number"
+	AgentSpanMeasureSpecValueTypeString   AgentSpanMeasureSpecValueType = "string"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanMeasureSpecValueType enum.
+func (e AgentSpanMeasureSpecValueType) Valid() bool {
+	switch e {
+	case AgentSpanMeasureSpecValueTypeBoolean:
+		return true
+	case AgentSpanMeasureSpecValueTypeDatetime:
+		return true
+	case AgentSpanMeasureSpecValueTypeNumber:
+		return true
+	case AgentSpanMeasureSpecValueTypeString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanSchemaSpanKind.
+const (
+	AgentSpanSchemaSpanKindCLIENT      AgentSpanSchemaSpanKind = "CLIENT"
+	AgentSpanSchemaSpanKindCONSUMER    AgentSpanSchemaSpanKind = "CONSUMER"
+	AgentSpanSchemaSpanKindINTERNAL    AgentSpanSchemaSpanKind = "INTERNAL"
+	AgentSpanSchemaSpanKindPRODUCER    AgentSpanSchemaSpanKind = "PRODUCER"
+	AgentSpanSchemaSpanKindSERVER      AgentSpanSchemaSpanKind = "SERVER"
+	AgentSpanSchemaSpanKindUNSPECIFIED AgentSpanSchemaSpanKind = "UNSPECIFIED"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanSchemaSpanKind enum.
+func (e AgentSpanSchemaSpanKind) Valid() bool {
+	switch e {
+	case AgentSpanSchemaSpanKindCLIENT:
+		return true
+	case AgentSpanSchemaSpanKindCONSUMER:
+		return true
+	case AgentSpanSchemaSpanKindINTERNAL:
+		return true
+	case AgentSpanSchemaSpanKindPRODUCER:
+		return true
+	case AgentSpanSchemaSpanKindSERVER:
+		return true
+	case AgentSpanSchemaSpanKindUNSPECIFIED:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanSchemaStatusCode.
+const (
+	AgentSpanSchemaStatusCodeERROR AgentSpanSchemaStatusCode = "ERROR"
+	AgentSpanSchemaStatusCodeOK    AgentSpanSchemaStatusCode = "OK"
+	AgentSpanSchemaStatusCodeUNSET AgentSpanSchemaStatusCode = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanSchemaStatusCode enum.
+func (e AgentSpanSchemaStatusCode) Valid() bool {
+	switch e {
+	case AgentSpanSchemaStatusCodeERROR:
+		return true
+	case AgentSpanSchemaStatusCodeOK:
+		return true
+	case AgentSpanSchemaStatusCodeUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanStatsColumnRole.
+const (
+	AgentSpanStatsColumnRoleBucket AgentSpanStatsColumnRole = "bucket"
+	AgentSpanStatsColumnRoleGroup  AgentSpanStatsColumnRole = "group"
+	AgentSpanStatsColumnRoleMetric AgentSpanStatsColumnRole = "metric"
+	AgentSpanStatsColumnRoleTime   AgentSpanStatsColumnRole = "time"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanStatsColumnRole enum.
+func (e AgentSpanStatsColumnRole) Valid() bool {
+	switch e {
+	case AgentSpanStatsColumnRoleBucket:
+		return true
+	case AgentSpanStatsColumnRoleGroup:
+		return true
+	case AgentSpanStatsColumnRoleMetric:
+		return true
+	case AgentSpanStatsColumnRoleTime:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanStatsColumnValueType.
+const (
+	AgentSpanStatsColumnValueTypeBoolean  AgentSpanStatsColumnValueType = "boolean"
+	AgentSpanStatsColumnValueTypeDatetime AgentSpanStatsColumnValueType = "datetime"
+	AgentSpanStatsColumnValueTypeNumber   AgentSpanStatsColumnValueType = "number"
+	AgentSpanStatsColumnValueTypeString   AgentSpanStatsColumnValueType = "string"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanStatsColumnValueType enum.
+func (e AgentSpanStatsColumnValueType) Valid() bool {
+	switch e {
+	case AgentSpanStatsColumnValueTypeBoolean:
+		return true
+	case AgentSpanStatsColumnValueTypeDatetime:
+		return true
+	case AgentSpanStatsColumnValueTypeNumber:
+		return true
+	case AgentSpanStatsColumnValueTypeString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanStatsMetricSpecAggregations.
+const (
+	AgentSpanStatsMetricSpecAggregationsAvg           AgentSpanStatsMetricSpecAggregations = "avg"
+	AgentSpanStatsMetricSpecAggregationsCount         AgentSpanStatsMetricSpecAggregations = "count"
+	AgentSpanStatsMetricSpecAggregationsCountDistinct AgentSpanStatsMetricSpecAggregations = "count_distinct"
+	AgentSpanStatsMetricSpecAggregationsCountFalse    AgentSpanStatsMetricSpecAggregations = "count_false"
+	AgentSpanStatsMetricSpecAggregationsCountTrue     AgentSpanStatsMetricSpecAggregations = "count_true"
+	AgentSpanStatsMetricSpecAggregationsMax           AgentSpanStatsMetricSpecAggregations = "max"
+	AgentSpanStatsMetricSpecAggregationsMin           AgentSpanStatsMetricSpecAggregations = "min"
+	AgentSpanStatsMetricSpecAggregationsSum           AgentSpanStatsMetricSpecAggregations = "sum"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanStatsMetricSpecAggregations enum.
+func (e AgentSpanStatsMetricSpecAggregations) Valid() bool {
+	switch e {
+	case AgentSpanStatsMetricSpecAggregationsAvg:
+		return true
+	case AgentSpanStatsMetricSpecAggregationsCount:
+		return true
+	case AgentSpanStatsMetricSpecAggregationsCountDistinct:
+		return true
+	case AgentSpanStatsMetricSpecAggregationsCountFalse:
+		return true
+	case AgentSpanStatsMetricSpecAggregationsCountTrue:
+		return true
+	case AgentSpanStatsMetricSpecAggregationsMax:
+		return true
+	case AgentSpanStatsMetricSpecAggregationsMin:
+		return true
+	case AgentSpanStatsMetricSpecAggregationsSum:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanStatsMetricSpecValueType.
+const (
+	AgentSpanStatsMetricSpecValueTypeBoolean  AgentSpanStatsMetricSpecValueType = "boolean"
+	AgentSpanStatsMetricSpecValueTypeDatetime AgentSpanStatsMetricSpecValueType = "datetime"
+	AgentSpanStatsMetricSpecValueTypeNumber   AgentSpanStatsMetricSpecValueType = "number"
+	AgentSpanStatsMetricSpecValueTypeString   AgentSpanStatsMetricSpecValueType = "string"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanStatsMetricSpecValueType enum.
+func (e AgentSpanStatsMetricSpecValueType) Valid() bool {
+	switch e {
+	case AgentSpanStatsMetricSpecValueTypeBoolean:
+		return true
+	case AgentSpanStatsMetricSpecValueTypeDatetime:
+		return true
+	case AgentSpanStatsMetricSpecValueTypeNumber:
+		return true
+	case AgentSpanStatsMetricSpecValueTypeString:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanStatsNumericBucketSpecType.
+const (
+	AgentSpanStatsNumericBucketSpecTypeNumber AgentSpanStatsNumericBucketSpecType = "number"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanStatsNumericBucketSpecType enum.
+func (e AgentSpanStatsNumericBucketSpecType) Valid() bool {
+	switch e {
+	case AgentSpanStatsNumericBucketSpecTypeNumber:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanStatsResBucketType.
+const (
+	AgentSpanStatsResBucketTypeNumber AgentSpanStatsResBucketType = "number"
+	AgentSpanStatsResBucketTypeTime   AgentSpanStatsResBucketType = "time"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanStatsResBucketType enum.
+func (e AgentSpanStatsResBucketType) Valid() bool {
+	switch e {
+	case AgentSpanStatsResBucketTypeNumber:
+		return true
+	case AgentSpanStatsResBucketTypeTime:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanStatsTimeBucketSpecType.
+const (
+	AgentSpanStatsTimeBucketSpecTypeTime AgentSpanStatsTimeBucketSpecType = "time"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanStatsTimeBucketSpecType enum.
+func (e AgentSpanStatsTimeBucketSpecType) Valid() bool {
+	switch e {
+	case AgentSpanStatsTimeBucketSpecTypeTime:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentSpanValueRefSource.
+const (
+	AgentSpanValueRefSourceCustomAttrsBool   AgentSpanValueRefSource = "custom_attrs_bool"
+	AgentSpanValueRefSourceCustomAttrsFloat  AgentSpanValueRefSource = "custom_attrs_float"
+	AgentSpanValueRefSourceCustomAttrsInt    AgentSpanValueRefSource = "custom_attrs_int"
+	AgentSpanValueRefSourceCustomAttrsString AgentSpanValueRefSource = "custom_attrs_string"
+	AgentSpanValueRefSourceDerived           AgentSpanValueRefSource = "derived"
+	AgentSpanValueRefSourceField             AgentSpanValueRefSource = "field"
+)
+
+// Valid indicates whether the value is a known member of the AgentSpanValueRefSource enum.
+func (e AgentSpanValueRefSource) Valid() bool {
+	switch e {
+	case AgentSpanValueRefSourceCustomAttrsBool:
+		return true
+	case AgentSpanValueRefSourceCustomAttrsFloat:
+		return true
+	case AgentSpanValueRefSourceCustomAttrsInt:
+		return true
+	case AgentSpanValueRefSourceCustomAttrsString:
+		return true
+	case AgentSpanValueRefSourceDerived:
+		return true
+	case AgentSpanValueRefSourceField:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AgentTraceChatResStatusCode.
+const (
+	AgentTraceChatResStatusCodeERROR AgentTraceChatResStatusCode = "ERROR"
+	AgentTraceChatResStatusCodeOK    AgentTraceChatResStatusCode = "OK"
+	AgentTraceChatResStatusCodeUNSET AgentTraceChatResStatusCode = "UNSET"
+)
+
+// Valid indicates whether the value is a known member of the AgentTraceChatResStatusCode enum.
+func (e AgentTraceChatResStatusCode) Valid() bool {
+	switch e {
+	case AgentTraceChatResStatusCodeERROR:
+		return true
+	case AgentTraceChatResStatusCodeOK:
+		return true
+	case AgentTraceChatResStatusCodeUNSET:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for AggregationType.
 const (
-	AggregationTypeAvg   AggregationType = "avg"
-	AggregationTypeCount AggregationType = "count"
-	AggregationTypeMax   AggregationType = "max"
-	AggregationTypeMin   AggregationType = "min"
-	AggregationTypeSum   AggregationType = "sum"
+	AggregationTypeAvg        AggregationType = "avg"
+	AggregationTypeCount      AggregationType = "count"
+	AggregationTypeCountFalse AggregationType = "count_false"
+	AggregationTypeCountTrue  AggregationType = "count_true"
+	AggregationTypeMax        AggregationType = "max"
+	AggregationTypeMin        AggregationType = "min"
+	AggregationTypeSum        AggregationType = "sum"
 )
 
 // Valid indicates whether the value is a known member of the AggregationType enum.
@@ -27,6 +758,10 @@ func (e AggregationType) Valid() bool {
 	case AggregationTypeAvg:
 		return true
 	case AggregationTypeCount:
+		return true
+	case AggregationTypeCountFalse:
+		return true
+	case AggregationTypeCountTrue:
 		return true
 	case AggregationTypeMax:
 		return true
@@ -135,6 +870,96 @@ func (e ConvertSpecTo) Valid() bool {
 	}
 }
 
+// Defines values for DedicatedInferenceRouteConnectionType.
+const (
+	DedicatedInferenceRouteConnectionTypeDedicated DedicatedInferenceRouteConnectionType = "dedicated"
+)
+
+// Valid indicates whether the value is a known member of the DedicatedInferenceRouteConnectionType enum.
+func (e DedicatedInferenceRouteConnectionType) Valid() bool {
+	switch e {
+	case DedicatedInferenceRouteConnectionTypeDedicated:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for EvalResultsQueryBodyFilterLogicOperator.
+const (
+	EvalResultsQueryBodyFilterLogicOperatorAnd EvalResultsQueryBodyFilterLogicOperator = "and"
+	EvalResultsQueryBodyFilterLogicOperatorOr  EvalResultsQueryBodyFilterLogicOperator = "or"
+)
+
+// Valid indicates whether the value is a known member of the EvalResultsQueryBodyFilterLogicOperator enum.
+func (e EvalResultsQueryBodyFilterLogicOperator) Valid() bool {
+	switch e {
+	case EvalResultsQueryBodyFilterLogicOperatorAnd:
+		return true
+	case EvalResultsQueryBodyFilterLogicOperatorOr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for EvalResultsScorerStatsValueType.
+const (
+	EvalResultsScorerStatsValueTypeBinary     EvalResultsScorerStatsValueType = "binary"
+	EvalResultsScorerStatsValueTypeContinuous EvalResultsScorerStatsValueType = "continuous"
+	EvalResultsScorerStatsValueTypeText       EvalResultsScorerStatsValueType = "text"
+)
+
+// Valid indicates whether the value is a known member of the EvalResultsScorerStatsValueType enum.
+func (e EvalResultsScorerStatsValueType) Valid() bool {
+	switch e {
+	case EvalResultsScorerStatsValueTypeBinary:
+		return true
+	case EvalResultsScorerStatsValueTypeContinuous:
+		return true
+	case EvalResultsScorerStatsValueTypeText:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for EvalResultsSortByDirection.
+const (
+	EvalResultsSortByDirectionAsc  EvalResultsSortByDirection = "asc"
+	EvalResultsSortByDirectionDesc EvalResultsSortByDirection = "desc"
+)
+
+// Valid indicates whether the value is a known member of the EvalResultsSortByDirection enum.
+func (e EvalResultsSortByDirection) Valid() bool {
+	switch e {
+	case EvalResultsSortByDirectionAsc:
+		return true
+	case EvalResultsSortByDirectionDesc:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for EvalResultsSortByMode.
+const (
+	EvalResultsSortByModeDifference EvalResultsSortByMode = "difference"
+	EvalResultsSortByModeValue      EvalResultsSortByMode = "value"
+)
+
+// Valid indicates whether the value is a known member of the EvalResultsSortByMode enum.
+func (e EvalResultsSortByMode) Valid() bool {
+	switch e {
+	case EvalResultsSortByModeDifference:
+		return true
+	case EvalResultsSortByModeValue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for EvaluationStatusCompleteCode.
 const (
 	EvaluationStatusCompleteCodeComplete EvaluationStatusCompleteCode = "complete"
@@ -195,16 +1020,389 @@ func (e EvaluationStatusRunningCode) Valid() bool {
 	}
 }
 
+// Defines values for FeedbackAggregateReqGroupBy.
+const (
+	FeedbackAggregateReqGroupByScorerId         FeedbackAggregateReqGroupBy = "scorer_id"
+	FeedbackAggregateReqGroupBySpanAgentName    FeedbackAggregateReqGroupBy = "span_agent_name"
+	FeedbackAggregateReqGroupBySpanAgentVersion FeedbackAggregateReqGroupBy = "span_agent_version"
+	FeedbackAggregateReqGroupBySpanStatusCode   FeedbackAggregateReqGroupBy = "span_status_code"
+)
+
+// Valid indicates whether the value is a known member of the FeedbackAggregateReqGroupBy enum.
+func (e FeedbackAggregateReqGroupBy) Valid() bool {
+	switch e {
+	case FeedbackAggregateReqGroupByScorerId:
+		return true
+	case FeedbackAggregateReqGroupBySpanAgentName:
+		return true
+	case FeedbackAggregateReqGroupBySpanAgentVersion:
+		return true
+	case FeedbackAggregateReqGroupBySpanStatusCode:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FeedbackAggregateReqSpanTypes.
+const (
+	FeedbackAggregateReqSpanTypesAgentConversation FeedbackAggregateReqSpanTypes = "agent_conversation"
+	FeedbackAggregateReqSpanTypesAgentTurn         FeedbackAggregateReqSpanTypes = "agent_turn"
+)
+
+// Valid indicates whether the value is a known member of the FeedbackAggregateReqSpanTypes enum.
+func (e FeedbackAggregateReqSpanTypes) Valid() bool {
+	switch e {
+	case FeedbackAggregateReqSpanTypesAgentConversation:
+		return true
+	case FeedbackAggregateReqSpanTypesAgentTurn:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FeedbackMetricSpecValueType.
+const (
+	FeedbackMetricSpecValueTypeBoolean     FeedbackMetricSpecValueType = "boolean"
+	FeedbackMetricSpecValueTypeCategorical FeedbackMetricSpecValueType = "categorical"
+	FeedbackMetricSpecValueTypeNumeric     FeedbackMetricSpecValueType = "numeric"
+)
+
+// Valid indicates whether the value is a known member of the FeedbackMetricSpecValueType enum.
+func (e FeedbackMetricSpecValueType) Valid() bool {
+	switch e {
+	case FeedbackMetricSpecValueTypeBoolean:
+		return true
+	case FeedbackMetricSpecValueTypeCategorical:
+		return true
+	case FeedbackMetricSpecValueTypeNumeric:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for FeedbackPayloadPathValueType.
+const (
+	FeedbackPayloadPathValueTypeBoolean     FeedbackPayloadPathValueType = "boolean"
+	FeedbackPayloadPathValueTypeCategorical FeedbackPayloadPathValueType = "categorical"
+	FeedbackPayloadPathValueTypeNumeric     FeedbackPayloadPathValueType = "numeric"
+)
+
+// Valid indicates whether the value is a known member of the FeedbackPayloadPathValueType enum.
+func (e FeedbackPayloadPathValueType) Valid() bool {
+	switch e {
+	case FeedbackPayloadPathValueTypeBoolean:
+		return true
+	case FeedbackPayloadPathValueTypeCategorical:
+		return true
+	case FeedbackPayloadPathValueTypeNumeric:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for InterleavedField.
+const (
+	InterleavedFieldReasoningContent InterleavedField = "reasoning_content"
+	InterleavedFieldReasoningDetails InterleavedField = "reasoning_details"
+)
+
+// Valid indicates whether the value is a known member of the InterleavedField enum.
+func (e InterleavedField) Valid() bool {
+	switch e {
+	case InterleavedFieldReasoningContent:
+		return true
+	case InterleavedFieldReasoningDetails:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LLMModelDetailsAvailableIn.
+const (
+	LLMModelDetailsAvailableInCwProd LLMModelDetailsAvailableIn = "cw-prod"
+	LLMModelDetailsAvailableInCwQa   LLMModelDetailsAvailableIn = "cw-qa"
+)
+
+// Valid indicates whether the value is a known member of the LLMModelDetailsAvailableIn enum.
+func (e LLMModelDetailsAvailableIn) Valid() bool {
+	switch e {
+	case LLMModelDetailsAvailableInCwProd:
+		return true
+	case LLMModelDetailsAvailableInCwQa:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LLMModelDetailsLifecycleStage.
+const (
+	LLMModelDetailsLifecycleStageDeprecated          LLMModelDetailsLifecycleStage = "deprecated"
+	LLMModelDetailsLifecycleStageExperimental        LLMModelDetailsLifecycleStage = "experimental"
+	LLMModelDetailsLifecycleStageGeneralAvailability LLMModelDetailsLifecycleStage = "general-availability"
+	LLMModelDetailsLifecycleStageRetired             LLMModelDetailsLifecycleStage = "retired"
+)
+
+// Valid indicates whether the value is a known member of the LLMModelDetailsLifecycleStage enum.
+func (e LLMModelDetailsLifecycleStage) Valid() bool {
+	switch e {
+	case LLMModelDetailsLifecycleStageDeprecated:
+		return true
+	case LLMModelDetailsLifecycleStageExperimental:
+		return true
+	case LLMModelDetailsLifecycleStageGeneralAvailability:
+		return true
+	case LLMModelDetailsLifecycleStageRetired:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LLMModelDetailsQuantization.
+const (
+	LLMModelDetailsQuantizationBf16  LLMModelDetailsQuantization = "bf16"
+	LLMModelDetailsQuantizationFp16  LLMModelDetailsQuantization = "fp16"
+	LLMModelDetailsQuantizationFp32  LLMModelDetailsQuantization = "fp32"
+	LLMModelDetailsQuantizationFp4   LLMModelDetailsQuantization = "fp4"
+	LLMModelDetailsQuantizationFp6   LLMModelDetailsQuantization = "fp6"
+	LLMModelDetailsQuantizationFp8   LLMModelDetailsQuantization = "fp8"
+	LLMModelDetailsQuantizationInt4  LLMModelDetailsQuantization = "int4"
+	LLMModelDetailsQuantizationInt8  LLMModelDetailsQuantization = "int8"
+	LLMModelDetailsQuantizationNvfp4 LLMModelDetailsQuantization = "nvfp4"
+)
+
+// Valid indicates whether the value is a known member of the LLMModelDetailsQuantization enum.
+func (e LLMModelDetailsQuantization) Valid() bool {
+	switch e {
+	case LLMModelDetailsQuantizationBf16:
+		return true
+	case LLMModelDetailsQuantizationFp16:
+		return true
+	case LLMModelDetailsQuantizationFp32:
+		return true
+	case LLMModelDetailsQuantizationFp4:
+		return true
+	case LLMModelDetailsQuantizationFp6:
+		return true
+	case LLMModelDetailsQuantizationFp8:
+		return true
+	case LLMModelDetailsQuantizationInt4:
+		return true
+	case LLMModelDetailsQuantizationInt8:
+		return true
+	case LLMModelDetailsQuantizationNvfp4:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LLMModelDetailsReasoningEfforts.
+const (
+	LLMModelDetailsReasoningEffortsHigh    LLMModelDetailsReasoningEfforts = "high"
+	LLMModelDetailsReasoningEffortsLow     LLMModelDetailsReasoningEfforts = "low"
+	LLMModelDetailsReasoningEffortsMax     LLMModelDetailsReasoningEfforts = "max"
+	LLMModelDetailsReasoningEffortsMedium  LLMModelDetailsReasoningEfforts = "medium"
+	LLMModelDetailsReasoningEffortsMinimal LLMModelDetailsReasoningEfforts = "minimal"
+	LLMModelDetailsReasoningEffortsNone    LLMModelDetailsReasoningEfforts = "none"
+	LLMModelDetailsReasoningEffortsXhigh   LLMModelDetailsReasoningEfforts = "xhigh"
+)
+
+// Valid indicates whether the value is a known member of the LLMModelDetailsReasoningEfforts enum.
+func (e LLMModelDetailsReasoningEfforts) Valid() bool {
+	switch e {
+	case LLMModelDetailsReasoningEffortsHigh:
+		return true
+	case LLMModelDetailsReasoningEffortsLow:
+		return true
+	case LLMModelDetailsReasoningEffortsMax:
+		return true
+	case LLMModelDetailsReasoningEffortsMedium:
+		return true
+	case LLMModelDetailsReasoningEffortsMinimal:
+		return true
+	case LLMModelDetailsReasoningEffortsNone:
+		return true
+	case LLMModelDetailsReasoningEffortsXhigh:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LLMModelDetailsReasoningSupport.
+const (
+	LLMModelDetailsReasoningSupportAdaptive    LLMModelDetailsReasoningSupport = "adaptive"
+	LLMModelDetailsReasoningSupportAlwaysOn    LLMModelDetailsReasoningSupport = "always-on"
+	LLMModelDetailsReasoningSupportDefaultOff  LLMModelDetailsReasoningSupport = "default-off"
+	LLMModelDetailsReasoningSupportDefaultOn   LLMModelDetailsReasoningSupport = "default-on"
+	LLMModelDetailsReasoningSupportUnsupported LLMModelDetailsReasoningSupport = "unsupported"
+)
+
+// Valid indicates whether the value is a known member of the LLMModelDetailsReasoningSupport enum.
+func (e LLMModelDetailsReasoningSupport) Valid() bool {
+	switch e {
+	case LLMModelDetailsReasoningSupportAdaptive:
+		return true
+	case LLMModelDetailsReasoningSupportAlwaysOn:
+		return true
+	case LLMModelDetailsReasoningSupportDefaultOff:
+		return true
+	case LLMModelDetailsReasoningSupportDefaultOn:
+		return true
+	case LLMModelDetailsReasoningSupportUnsupported:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ModelsDevModelStatus.
+const (
+	ModelsDevModelStatusAlpha      ModelsDevModelStatus = "alpha"
+	ModelsDevModelStatusBeta       ModelsDevModelStatus = "beta"
+	ModelsDevModelStatusDeprecated ModelsDevModelStatus = "deprecated"
+)
+
+// Valid indicates whether the value is a known member of the ModelsDevModelStatus enum.
+func (e ModelsDevModelStatus) Valid() bool {
+	switch e {
+	case ModelsDevModelStatusAlpha:
+		return true
+	case ModelsDevModelStatusBeta:
+		return true
+	case ModelsDevModelStatusDeprecated:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for RatingConditionOp.
+const (
+	RatingConditionOpEq  RatingConditionOp = "eq"
+	RatingConditionOpGt  RatingConditionOp = "gt"
+	RatingConditionOpGte RatingConditionOp = "gte"
+	RatingConditionOpLt  RatingConditionOp = "lt"
+	RatingConditionOpLte RatingConditionOp = "lte"
+)
+
+// Valid indicates whether the value is a known member of the RatingConditionOp enum.
+func (e RatingConditionOp) Valid() bool {
+	switch e {
+	case RatingConditionOpEq:
+		return true
+	case RatingConditionOpGt:
+		return true
+	case RatingConditionOpGte:
+		return true
+	case RatingConditionOpLt:
+		return true
+	case RatingConditionOpLte:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ReasoningBudgetTokensType.
+const (
+	ReasoningBudgetTokensTypeBudgetTokens ReasoningBudgetTokensType = "budget_tokens"
+)
+
+// Valid indicates whether the value is a known member of the ReasoningBudgetTokensType enum.
+func (e ReasoningBudgetTokensType) Valid() bool {
+	switch e {
+	case ReasoningBudgetTokensTypeBudgetTokens:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ReasoningEffortOptionType.
+const (
+	ReasoningEffortOptionTypeEffort ReasoningEffortOptionType = "effort"
+)
+
+// Valid indicates whether the value is a known member of the ReasoningEffortOptionType enum.
+func (e ReasoningEffortOptionType) Valid() bool {
+	switch e {
+	case ReasoningEffortOptionTypeEffort:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ReasoningEffortOptionValues.
+const (
+	ReasoningEffortOptionValuesDefault ReasoningEffortOptionValues = "default"
+	ReasoningEffortOptionValuesHigh    ReasoningEffortOptionValues = "high"
+	ReasoningEffortOptionValuesLow     ReasoningEffortOptionValues = "low"
+	ReasoningEffortOptionValuesMax     ReasoningEffortOptionValues = "max"
+	ReasoningEffortOptionValuesMedium  ReasoningEffortOptionValues = "medium"
+	ReasoningEffortOptionValuesMinimal ReasoningEffortOptionValues = "minimal"
+	ReasoningEffortOptionValuesNone    ReasoningEffortOptionValues = "none"
+	ReasoningEffortOptionValuesXhigh   ReasoningEffortOptionValues = "xhigh"
+)
+
+// Valid indicates whether the value is a known member of the ReasoningEffortOptionValues enum.
+func (e ReasoningEffortOptionValues) Valid() bool {
+	switch e {
+	case ReasoningEffortOptionValuesDefault:
+		return true
+	case ReasoningEffortOptionValuesHigh:
+		return true
+	case ReasoningEffortOptionValuesLow:
+		return true
+	case ReasoningEffortOptionValuesMax:
+		return true
+	case ReasoningEffortOptionValuesMedium:
+		return true
+	case ReasoningEffortOptionValuesMinimal:
+		return true
+	case ReasoningEffortOptionValuesNone:
+		return true
+	case ReasoningEffortOptionValuesXhigh:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ReasoningToggleType.
+const (
+	ReasoningToggleTypeToggle ReasoningToggleType = "toggle"
+)
+
+// Valid indicates whether the value is a known member of the ReasoningToggleType enum.
+func (e ReasoningToggleType) Valid() bool {
+	switch e {
+	case ReasoningToggleTypeToggle:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for RouterOpenRouterModelQuantization.
 const (
-	RouterOpenRouterModelQuantizationBf16 RouterOpenRouterModelQuantization = "bf16"
-	RouterOpenRouterModelQuantizationFp16 RouterOpenRouterModelQuantization = "fp16"
-	RouterOpenRouterModelQuantizationFp32 RouterOpenRouterModelQuantization = "fp32"
-	RouterOpenRouterModelQuantizationFp4  RouterOpenRouterModelQuantization = "fp4"
-	RouterOpenRouterModelQuantizationFp6  RouterOpenRouterModelQuantization = "fp6"
-	RouterOpenRouterModelQuantizationFp8  RouterOpenRouterModelQuantization = "fp8"
-	RouterOpenRouterModelQuantizationInt4 RouterOpenRouterModelQuantization = "int4"
-	RouterOpenRouterModelQuantizationInt8 RouterOpenRouterModelQuantization = "int8"
+	RouterOpenRouterModelQuantizationBf16  RouterOpenRouterModelQuantization = "bf16"
+	RouterOpenRouterModelQuantizationFp16  RouterOpenRouterModelQuantization = "fp16"
+	RouterOpenRouterModelQuantizationFp32  RouterOpenRouterModelQuantization = "fp32"
+	RouterOpenRouterModelQuantizationFp4   RouterOpenRouterModelQuantization = "fp4"
+	RouterOpenRouterModelQuantizationFp6   RouterOpenRouterModelQuantization = "fp6"
+	RouterOpenRouterModelQuantizationFp8   RouterOpenRouterModelQuantization = "fp8"
+	RouterOpenRouterModelQuantizationInt4  RouterOpenRouterModelQuantization = "int4"
+	RouterOpenRouterModelQuantizationInt8  RouterOpenRouterModelQuantization = "int8"
+	RouterOpenRouterModelQuantizationNvfp4 RouterOpenRouterModelQuantization = "nvfp4"
 )
 
 // Valid indicates whether the value is a known member of the RouterOpenRouterModelQuantization enum.
@@ -225,6 +1423,8 @@ func (e RouterOpenRouterModelQuantization) Valid() bool {
 	case RouterOpenRouterModelQuantizationInt4:
 		return true
 	case RouterOpenRouterModelQuantizationInt8:
+		return true
+	case RouterOpenRouterModelQuantizationNvfp4:
 		return true
 	default:
 		return false
@@ -294,6 +1494,24 @@ func (e RouterOpenRouterModelSupportedSamplingParameters) Valid() bool {
 	}
 }
 
+// Defines values for SensitiveDataPolicy.
+const (
+	SensitiveDataPolicyOff   SensitiveDataPolicy = "off"
+	SensitiveDataPolicyPiiV1 SensitiveDataPolicy = "pii-v1"
+)
+
+// Valid indicates whether the value is a known member of the SensitiveDataPolicy enum.
+func (e SensitiveDataPolicy) Valid() bool {
+	switch e {
+	case SensitiveDataPolicyOff:
+		return true
+	case SensitiveDataPolicyPiiV1:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for SortByDirection.
 const (
 	SortByDirectionAsc  SortByDirection = "asc"
@@ -312,19 +1530,46 @@ func (e SortByDirection) Valid() bool {
 	}
 }
 
+// Defines values for SourceKind.
+const (
+	SourceKindCall         SourceKind = "call"
+	SourceKindConversation SourceKind = "conversation"
+	SourceKindSpan         SourceKind = "span"
+)
+
+// Valid indicates whether the value is a known member of the SourceKind enum.
+func (e SourceKind) Valid() bool {
+	switch e {
+	case SourceKindCall:
+		return true
+	case SourceKindConversation:
+		return true
+	case SourceKindSpan:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for UsageMetricSpecMetric.
 const (
-	UsageMetricSpecMetricInputCost    UsageMetricSpecMetric = "input_cost"
-	UsageMetricSpecMetricInputTokens  UsageMetricSpecMetric = "input_tokens"
-	UsageMetricSpecMetricOutputCost   UsageMetricSpecMetric = "output_cost"
-	UsageMetricSpecMetricOutputTokens UsageMetricSpecMetric = "output_tokens"
-	UsageMetricSpecMetricTotalCost    UsageMetricSpecMetric = "total_cost"
-	UsageMetricSpecMetricTotalTokens  UsageMetricSpecMetric = "total_tokens"
+	UsageMetricSpecMetricCacheCreationInputTokens UsageMetricSpecMetric = "cache_creation_input_tokens"
+	UsageMetricSpecMetricCacheReadInputTokens     UsageMetricSpecMetric = "cache_read_input_tokens"
+	UsageMetricSpecMetricInputCost                UsageMetricSpecMetric = "input_cost"
+	UsageMetricSpecMetricInputTokens              UsageMetricSpecMetric = "input_tokens"
+	UsageMetricSpecMetricOutputCost               UsageMetricSpecMetric = "output_cost"
+	UsageMetricSpecMetricOutputTokens             UsageMetricSpecMetric = "output_tokens"
+	UsageMetricSpecMetricTotalCost                UsageMetricSpecMetric = "total_cost"
+	UsageMetricSpecMetricTotalTokens              UsageMetricSpecMetric = "total_tokens"
 )
 
 // Valid indicates whether the value is a known member of the UsageMetricSpecMetric enum.
 func (e UsageMetricSpecMetric) Valid() bool {
 	switch e {
+	case UsageMetricSpecMetricCacheCreationInputTokens:
+		return true
+	case UsageMetricSpecMetricCacheReadInputTokens:
+		return true
 	case UsageMetricSpecMetricInputCost:
 		return true
 	case UsageMetricSpecMetricInputTokens:
@@ -342,8 +1587,896 @@ func (e UsageMetricSpecMetric) Valid() bool {
 	}
 }
 
-// AggregationType Basic aggregation functions for metrics.
+// AgentChatAgentHandoff Payload for a future agent-to-agent handoff event.
+type AgentChatAgentHandoff = map[string]interface{}
+
+// AgentChatAgentStart Payload for an agent lifecycle boundary.
+type AgentChatAgentStart struct {
+	Model              *string                    `json:"model"`
+	Status             *AgentChatAgentStartStatus `json:"status"`
+	SystemInstructions *string                    `json:"system_instructions"`
+	ToolDefinitions    *string                    `json:"tool_definitions"`
+}
+
+// AgentChatAgentStartStatus defines model for AgentChatAgentStart.Status.
+type AgentChatAgentStartStatus string
+
+// AgentChatAssistantMessage Payload for assistant text emitted by an agent or LLM span.
+type AgentChatAssistantMessage struct {
+	ContentRefs      []string                         `json:"content_refs"`
+	DurationMs       *int                             `json:"duration_ms"`
+	InputCostUsd     *float64                         `json:"input_cost_usd"`
+	InputTokens      *int                             `json:"input_tokens"`
+	Model            *string                          `json:"model"`
+	OutputCostUsd    *float64                         `json:"output_cost_usd"`
+	OutputTokens     *int                             `json:"output_tokens"`
+	ReasoningContent *string                          `json:"reasoning_content"`
+	ReasoningTokens  *int                             `json:"reasoning_tokens"`
+	Status           *AgentChatAssistantMessageStatus `json:"status"`
+	Text             string                           `json:"text"`
+	TotalCostUsd     *float64                         `json:"total_cost_usd"`
+}
+
+// AgentChatAssistantMessageStatus defines model for AgentChatAssistantMessage.Status.
+type AgentChatAssistantMessageStatus string
+
+// AgentChatContextCompacted Payload for a context-window compaction event.
+type AgentChatContextCompacted struct {
+	CompactionItemsAfter  *int    `json:"compaction_items_after"`
+	CompactionItemsBefore *int    `json:"compaction_items_before"`
+	CompactionSummary     *string `json:"compaction_summary"`
+}
+
+// AgentChatFeedback Feedback row from the agent chat `include_feedback` projection.
+//
+// Field names match FEEDBACK_QUERY_FIELDS. This is not the feedback
+// table row and not FeedbackCreateReq: project_id and span_* are not
+// selected.
+type AgentChatFeedback struct {
+	AnnotationRef           *string                `json:"annotation_ref"`
+	CallRef                 *string                `json:"call_ref"`
+	CreatedAt               *time.Time             `json:"created_at"`
+	Creator                 *string                `json:"creator"`
+	FeedbackType            string                 `json:"feedback_type"`
+	Id                      string                 `json:"id"`
+	Payload                 map[string]interface{} `json:"payload"`
+	RunnableRef             *string                `json:"runnable_ref"`
+	ScorerRatingConfidences map[string]float64     `json:"scorer_rating_confidences"`
+	ScorerRatingReasons     map[string]string      `json:"scorer_rating_reasons"`
+	ScorerRatings           map[string]float64     `json:"scorer_ratings"`
+	ScorerTagConfidences    map[string]float64     `json:"scorer_tag_confidences"`
+	ScorerTagReasons        map[string]string      `json:"scorer_tag_reasons"`
+	ScorerTags              []string               `json:"scorer_tags"`
+	TriggerRef              *string                `json:"trigger_ref"`
+	WbUserId                *string                `json:"wb_user_id"`
+	WeaveRef                string                 `json:"weave_ref"`
+}
+
+// AgentChatMessage A single element in the structured agent trajectory / chat view.
+//
+// Common event fields live at the top level. Type-specific fields are
+// grouped under the payload matching `type`, and exactly one payload must be
+// set. This keeps subtype nullability explicit while preserving a single
+// ordered timeline model for callers.
+type AgentChatMessage struct {
+	AgentHandoff     *AgentChatAgentHandoff      `json:"agent_handoff"`
+	AgentName        *string                     `json:"agent_name"`
+	AgentStart       *AgentChatAgentStart        `json:"agent_start"`
+	AgentVersion     *string                     `json:"agent_version"`
+	AssistantMessage *AgentChatAssistantMessage  `json:"assistant_message"`
+	ContextCompacted *AgentChatContextCompacted  `json:"context_compacted"`
+	ErrorType        *string                     `json:"error_type"`
+	Feedback         *[]AgentChatFeedback        `json:"feedback"`
+	SpanId           *string                     `json:"span_id"`
+	StartedAt        *time.Time                  `json:"started_at"`
+	StatusCode       *AgentChatMessageStatusCode `json:"status_code"`
+	StatusMessage    *string                     `json:"status_message"`
+	ToolCall         *AgentChatToolCall          `json:"tool_call"`
+	Type             AgentChatMessageType        `json:"type"`
+	UserMessage      *AgentChatUserMessage       `json:"user_message"`
+}
+
+// AgentChatMessageStatusCode defines model for AgentChatMessage.StatusCode.
+type AgentChatMessageStatusCode string
+
+// AgentChatMessageType defines model for AgentChatMessage.Type.
+type AgentChatMessageType string
+
+// AgentChatToolCall Payload for a tool call timeline event.
+type AgentChatToolCall struct {
+	ContentRefs   []string                 `json:"content_refs"`
+	DurationMs    *int                     `json:"duration_ms"`
+	Status        *AgentChatToolCallStatus `json:"status"`
+	ToolArguments *string                  `json:"tool_arguments"`
+	ToolName      *string                  `json:"tool_name"`
+	ToolResult    *string                  `json:"tool_result"`
+}
+
+// AgentChatToolCallStatus defines model for AgentChatToolCall.Status.
+type AgentChatToolCallStatus string
+
+// AgentChatUserMessage Payload for a user prompt in the chat timeline.
+type AgentChatUserMessage struct {
+	ContentRefs []string `json:"content_refs"`
+	Text        string   `json:"text"`
+}
+
+// AgentConversationChatReq Request to get the multi-turn chat view for a conversation.
+type AgentConversationChatReq struct {
+	ConversationId  string `json:"conversation_id"`
+	IncludeFeedback *bool  `json:"include_feedback,omitempty"`
+
+	// IncludeModelToolCalls Include tool calls requested in model outputs, even when no execution span was recorded, and place each execution span after the model span that requested it. Requests without execution evidence have no status, duration, or result. Defaults to false.
+	IncludeModelToolCalls *bool `json:"include_model_tool_calls,omitempty"`
+
+	// Limit Maximum number of conversation turns to return.
+	Limit *int `json:"limit,omitempty"`
+
+	// Offset Number of most-recent turns to skip. Results are returned in chronological order within the selected page.
+	Offset    *int   `json:"offset,omitempty"`
+	ProjectId string `json:"project_id"`
+}
+
+// AgentConversationChatRes Multi-turn chat view: an ordered list of per-turn chat responses.
+//
+// Each entry in `turns` corresponds to one trace_id, which Weave treats as
+// one conversation turn. This is not necessarily one `invoke_agent` span:
+// a turn can contain zero, one, or many agent invocations. The frontend can
+// render turn-number dividers between entries and still reuse
+// `AgentTraceChatRes` rendering for each individual turn.
+type AgentConversationChatRes struct {
+	ConversationId string               `json:"conversation_id"`
+	Feedback       *[]AgentChatFeedback `json:"feedback"`
+	HasMore        bool                 `json:"has_more"`
+	Limit          int                  `json:"limit"`
+	Offset         int                  `json:"offset"`
+	TotalCostUsd   *float64             `json:"total_cost_usd"`
+	TotalTurns     int                  `json:"total_turns"`
+	Turns          []AgentTraceChatRes  `json:"turns"`
+}
+
+// AgentConversationMessagePreview A truncated first/last message snippet for a grouped conversation row.
+//
+// `role` is the chat-timeline message type (e.g. "user_message",
+// "assistant_message") so clients can style it consistently with the full
+// chat view; `text` is the trimmed, length-capped preview content.
+type AgentConversationMessagePreview struct {
+	Role AgentConversationMessagePreviewRole `json:"role"`
+	Text string                              `json:"text"`
+}
+
+// AgentConversationMessagePreviewRole defines model for AgentConversationMessagePreview.Role.
+type AgentConversationMessagePreviewRole string
+
+// AgentConversationSpan One span in a conversation's trace.
+//
+// Returned by `agent_conversation_spans`, which reads span scalar columns
+// only (no message bodies). Spans are ordered by `started_at`, which
+// approximates — but does not exactly match — the detail chat view's
+// parent/child tree-walk order. `operation_name` is the raw OTel value; the
+// client maps it to a display category.
+type AgentConversationSpan struct {
+	DurationMs    int                         `json:"duration_ms"`
+	OperationName string                      `json:"operation_name"`
+	SpanId        string                      `json:"span_id"`
+	Status        AgentConversationSpanStatus `json:"status"`
+	TraceId       string                      `json:"trace_id"`
+}
+
+// AgentConversationSpanStatus defines model for AgentConversationSpan.Status.
+type AgentConversationSpanStatus string
+
+// AgentConversationSpanFeedback Tags and ratings applied to a conversation's turn (or the conversation).
+//
+// Positioned client-side by matching `trace_id` (turn) against the spans;
+// `trace_id` is None for conversation-level feedback.
+type AgentConversationSpanFeedback struct {
+	FeedbackType AgentConversationSpanFeedbackFeedbackType `json:"feedback_type"`
+
+	// Ratings Numeric scorer ratings applied to this feedback.
+	Ratings []AgentConversationSpanRating `json:"ratings"`
+
+	// Tags Arbitrary descriptive tags applied to this feedback.
+	//
+	// Examples: ["👍","needs-review"]
+	Tags []string `json:"tags"`
+
+	// TraceId The turn this feedback is anchored to; None for conversation-level.
+	TraceId *string `json:"trace_id"`
+}
+
+// AgentConversationSpanFeedbackFeedbackType defines model for AgentConversationSpanFeedback.FeedbackType.
+type AgentConversationSpanFeedbackFeedbackType string
+
+// AgentConversationSpanRating One numeric rating (a scorer score) applied to a turn or conversation.
+type AgentConversationSpanRating struct {
+	Confidence *float64 `json:"confidence"`
+	Name       string   `json:"name"`
+	Reason     *string  `json:"reason"`
+	Value      float64  `json:"value"`
+}
+
+// AgentConversationSpans One conversation's span sequence and its feedback markers.
+type AgentConversationSpans struct {
+	ConversationId string                          `json:"conversation_id"`
+	Spans          []AgentConversationSpan         `json:"spans"`
+	SpansFeedback  []AgentConversationSpanFeedback `json:"spans_feedback"`
+}
+
+// AgentConversationSpansReq Request the span sequences for an explicit set of conversations.
+//
+// Reads span scalar columns only (no message bodies) for the given
+// `conversation_ids`. Powers the conversations-list spans minimap.
+type AgentConversationSpansReq struct {
+	ConversationIds *[]string  `json:"conversation_ids,omitempty"`
+	ProjectId       string     `json:"project_id"`
+	StartedAfter    *time.Time `json:"started_after,omitempty"`
+	StartedBefore   *time.Time `json:"started_before,omitempty"`
+}
+
+// AgentConversationSpansRes Span sequences + feedback markers, one entry per requested conversation.
+type AgentConversationSpansRes struct {
+	Conversations []AgentConversationSpans `json:"conversations"`
+}
+
+// AgentCustomAttrSchemaItem One custom attribute key/type observed in the matching spans.
+type AgentCustomAttrSchemaItem struct {
+	Key       string                             `json:"key"`
+	Source    AgentCustomAttrSchemaItemSource    `json:"source"`
+	SpanCount int                                `json:"span_count"`
+	ValueType AgentCustomAttrSchemaItemValueType `json:"value_type"`
+}
+
+// AgentCustomAttrSchemaItemSource defines model for AgentCustomAttrSchemaItem.Source.
+type AgentCustomAttrSchemaItemSource string
+
+// AgentCustomAttrSchemaItemValueType defines model for AgentCustomAttrSchemaItem.ValueType.
+type AgentCustomAttrSchemaItemValueType string
+
+// AgentCustomAttrsSchemaReq Request to discover typed custom attribute keys for matching spans.
+type AgentCustomAttrsSchemaReq struct {
+	Limit         *int       `json:"limit,omitempty"`
+	Offset        *int       `json:"offset,omitempty"`
+	ProjectId     string     `json:"project_id"`
+	Query         *Query     `json:"query,omitempty"`
+	StartedAfter  *time.Time `json:"started_after,omitempty"`
+	StartedBefore *time.Time `json:"started_before,omitempty"`
+}
+
+// AgentCustomAttrsSchemaRes Typed custom attribute keys available for spans query/group/stats APIs.
+type AgentCustomAttrsSchemaRes struct {
+	Attributes []AgentCustomAttrSchemaItem `json:"attributes"`
+	HasMore    bool                        `json:"has_more"`
+	Limit      int                         `json:"limit"`
+	Offset     int                         `json:"offset"`
+}
+
+// AgentGroupByRef Reference to a field or map-key that spans should be grouped by.
+//
+// `source="field"` targets a semantic span field (`agent.name`) or direct
+// span column (`agent_name`), allowlisted server-side. `source="column"` is
+// accepted for existing callers.
+// The other sources target keys inside the typed custom attribute Map columns,
+// which accept arbitrary user-defined keys.
+type AgentGroupByRef struct {
+	Alias  *string                `json:"alias,omitempty"`
+	Key    string                 `json:"key"`
+	Source *AgentGroupByRefSource `json:"source,omitempty"`
+}
+
+// AgentGroupByRefSource defines model for AgentGroupByRef.Source.
+type AgentGroupByRefSource string
+
+// AgentInsightFilter Conversation filter backed by extracted Insights data in ClickHouse.
+//
+// Values within one filter are ORed, while multiple filters are ANDed. Topic
+// filters use stable topic IDs that span successful clustering runs.
+type AgentInsightFilter struct {
+	// Exclude Exclude conversations matching any value in this filter.
+	Exclude *bool                   `json:"exclude,omitempty"`
+	Field   AgentInsightFilterField `json:"field"`
+
+	// Values Values to match. intent_sentiment accepts only frustrated, dissatisfied, neutral, satisfied, delighted; failure_severity accepts only info, major, or minor.
+	Values []string `json:"values"`
+}
+
+// AgentInsightFilterField defines model for AgentInsightFilter.Field.
+type AgentInsightFilterField string
+
+// AgentSchema Aggregated per-agent stats from the agents table.
+type AgentSchema struct {
+	AgentName         string     `json:"agent_name"`
+	ErrorCount        int        `json:"error_count"`
+	FirstSeen         *time.Time `json:"first_seen"`
+	InvocationCount   int        `json:"invocation_count"`
+	LastSeen          *time.Time `json:"last_seen"`
+	ProjectId         string     `json:"project_id"`
+	SpanCount         int        `json:"span_count"`
+	TotalCostUsd      *float64   `json:"total_cost_usd"`
+	TotalDurationMs   int        `json:"total_duration_ms"`
+	TotalInputTokens  int        `json:"total_input_tokens"`
+	TotalOutputTokens int        `json:"total_output_tokens"`
+}
+
+// AgentSearchConversationResult A conversation containing messages that matched the search query.
+type AgentSearchConversationResult struct {
+	AgentName        string                      `json:"agent_name"`
+	ConversationId   string                      `json:"conversation_id"`
+	ConversationName string                      `json:"conversation_name"`
+	LastActivity     time.Time                   `json:"last_activity"`
+	MatchedMessages  []AgentSearchMatchedMessage `json:"matched_messages"`
+}
+
+// AgentSearchMatchedMessage A single message that matched the search query.
+type AgentSearchMatchedMessage struct {
+	ContentDigest  string                         `json:"content_digest"`
+	ContentPreview string                         `json:"content_preview"`
+	Role           AgentSearchMatchedMessage_Role `json:"role"`
+	SpanId         string                         `json:"span_id"`
+	StartedAt      time.Time                      `json:"started_at"`
+	TraceId        string                         `json:"trace_id"`
+}
+
+// AgentSearchMatchedMessageRole0 defines model for AgentSearchMatchedMessage.Role.0.
+type AgentSearchMatchedMessageRole0 string
+
+// AgentSearchMatchedMessageRole1 defines model for AgentSearchMatchedMessage.Role.1.
+type AgentSearchMatchedMessageRole1 = string
+
+// AgentSearchMatchedMessage_Role defines model for AgentSearchMatchedMessage.Role.
+type AgentSearchMatchedMessage_Role struct {
+	union json.RawMessage
+}
+
+// AgentSearchReq Query the `messages` table by content and/or span-level filters.
+//
+// Scans the `messages` table (one row per message occurrence, populated by an
+// MV from spans) and returns matching span-level hits. Full-text search sets
+// `query`; structured retrieval (e.g. all messages in a trace) leaves `query`
+// empty and uses the filters below. The caller groups by conversation for the
+// response shape.
+type AgentSearchReq struct {
+	AgentName       *string                `json:"agent_name,omitempty"`
+	ConversationId  *string                `json:"conversation_id,omitempty"`
+	Limit           *int                   `json:"limit,omitempty"`
+	Offset          *int                   `json:"offset,omitempty"`
+	ProjectId       string                 `json:"project_id"`
+	ProviderName    *string                `json:"provider_name,omitempty"`
+	Query           *string                `json:"query,omitempty"`
+	RequestModel    *string                `json:"request_model,omitempty"`
+	Roles           *[]AgentSearchReqRoles `json:"roles,omitempty"`
+	StartedAfter    *time.Time             `json:"started_after,omitempty"`
+	StartedBefore   *time.Time             `json:"started_before,omitempty"`
+	TraceId         *string                `json:"trace_id,omitempty"`
+	TruncateContent *bool                  `json:"truncate_content,omitempty"`
+}
+
+// AgentSearchReqRoles defines model for AgentSearchReq.Roles.
+type AgentSearchReqRoles string
+
+// AgentSearchRes Response from a full-text search across agent messages.
+type AgentSearchRes struct {
+	Results            []AgentSearchConversationResult `json:"results"`
+	TotalConversations int                             `json:"total_conversations"`
+}
+
+// AgentSignalFilter defines model for AgentSignalFilter.
+type AgentSignalFilter struct {
+	Ratings *[]RatingCondition `json:"ratings,omitempty"`
+	Tags    *[]string          `json:"tags,omitempty"`
+}
+
+// AgentSortBy Sort specification for agent query endpoints.
+type AgentSortBy struct {
+	Direction *AgentSortByDirection `json:"direction,omitempty"`
+	Field     string                `json:"field"`
+}
+
+// AgentSortByDirection defines model for AgentSortBy.Direction.
+type AgentSortByDirection string
+
+// AgentSpanGroupDistributionBin One numeric histogram bin for a custom attribute in a span group.
+type AgentSpanGroupDistributionBin struct {
+	Count int     `json:"count"`
+	Index int     `json:"index"`
+	Max   float64 `json:"max"`
+	Min   float64 `json:"min"`
+}
+
+// AgentSpanGroupDistributionItem Distribution data for one span-group/custom-attribute pair.
+type AgentSpanGroupDistributionItem struct {
+	Alias        string                                  `json:"alias"`
+	Bins         []AgentSpanGroupDistributionBin         `json:"bins"`
+	Key          string                                  `json:"key"`
+	MissingCount int                                     `json:"missing_count"`
+	OtherCount   int                                     `json:"other_count"`
+	PresentCount int                                     `json:"present_count"`
+	Source       AgentSpanGroupDistributionItemSource    `json:"source"`
+	TotalCount   int                                     `json:"total_count"`
+	ValueType    AgentSpanGroupDistributionItemValueType `json:"value_type"`
+	Values       []AgentSpanGroupDistributionValue       `json:"values"`
+}
+
+// AgentSpanGroupDistributionItemSource defines model for AgentSpanGroupDistributionItem.Source.
+type AgentSpanGroupDistributionItemSource string
+
+// AgentSpanGroupDistributionItemValueType defines model for AgentSpanGroupDistributionItem.ValueType.
+type AgentSpanGroupDistributionItemValueType string
+
+// AgentSpanGroupDistributionSpec One custom attribute distribution to compute per returned span group.
+type AgentSpanGroupDistributionSpec struct {
+	Alias string `json:"alias"`
+	Bins  *int   `json:"bins,omitempty"`
+	TopN  *int   `json:"top_n,omitempty"`
+
+	// Value Reference to a span field or typed custom attribute map value.
+	Value AgentSpanValueRef `json:"value"`
+}
+
+// AgentSpanGroupDistributionValue One categorical custom attribute value count in a span group.
+type AgentSpanGroupDistributionValue struct {
+	Count int    `json:"count"`
+	Value string `json:"value"`
+}
+
+// AgentSpanGroupFilter Range filter over one grouped span measure.
+type AgentSpanGroupFilter struct {
+	GroupBy *[]AgentGroupByRef        `json:"group_by,omitempty"`
+	Max     *AgentSpanGroupFilter_Max `json:"max,omitempty"`
+
+	// Measure One aggregate measure computed over spans in a group or bucket.
+	Measure AgentSpanMeasureSpec      `json:"measure"`
+	Min     *AgentSpanGroupFilter_Min `json:"min,omitempty"`
+}
+
+// AgentSpanGroupFilterMax0 defines model for AgentSpanGroupFilter.Max.0.
+type AgentSpanGroupFilterMax0 = float64
+
+// AgentSpanGroupFilterMax1 defines model for AgentSpanGroupFilter.Max.1.
+type AgentSpanGroupFilterMax1 = time.Time
+
+// AgentSpanGroupFilter_Max defines model for AgentSpanGroupFilter.Max.
+type AgentSpanGroupFilter_Max struct {
+	union json.RawMessage
+}
+
+// AgentSpanGroupFilterMin0 defines model for AgentSpanGroupFilter.Min.0.
+type AgentSpanGroupFilterMin0 = float64
+
+// AgentSpanGroupFilterMin1 defines model for AgentSpanGroupFilter.Min.1.
+type AgentSpanGroupFilterMin1 = time.Time
+
+// AgentSpanGroupFilter_Min defines model for AgentSpanGroupFilter.Min.
+type AgentSpanGroupFilter_Min struct {
+	union json.RawMessage
+}
+
+// AgentSpanGroupRow A single row in a grouped spans query response.
+//
+// `group_keys` maps each group_by ref's alias to its value for this row.
+// The remaining fields are a fixed aggregate bundle computed per group.
+type AgentSpanGroupRow struct {
+	AgentNames                    []string                                                     `json:"agent_names"`
+	AgentVersions                 []string                                                     `json:"agent_versions"`
+	ConversationCount             int                                                          `json:"conversation_count"`
+	ConversationNames             []string                                                     `json:"conversation_names"`
+	Distributions                 map[string]AgentSpanGroupDistributionItem                    `json:"distributions"`
+	ErrorCount                    int                                                          `json:"error_count"`
+	FirstMessage                  *AgentConversationMessagePreview                             `json:"first_message"`
+	FirstSeen                     *time.Time                                                   `json:"first_seen"`
+	GroupKeys                     map[string]*AgentSpanGroupRow_GroupKeys_AdditionalProperties `json:"group_keys"`
+	InvocationCount               int                                                          `json:"invocation_count"`
+	LastMessage                   *AgentConversationMessagePreview                             `json:"last_message"`
+	LastSeen                      *time.Time                                                   `json:"last_seen"`
+	Metrics                       map[string]*AgentSpanGroupRow_Metrics_AdditionalProperties   `json:"metrics"`
+	ProviderNames                 []string                                                     `json:"provider_names"`
+	RequestModels                 []string                                                     `json:"request_models"`
+	SpanCount                     int                                                          `json:"span_count"`
+	TotalCacheCreationInputTokens int                                                          `json:"total_cache_creation_input_tokens"`
+	TotalCacheReadInputTokens     int                                                          `json:"total_cache_read_input_tokens"`
+	TotalCostUsd                  *float64                                                     `json:"total_cost_usd"`
+	TotalDurationMs               int                                                          `json:"total_duration_ms"`
+	TotalInputCostUsd             *float64                                                     `json:"total_input_cost_usd"`
+	TotalInputTokens              int                                                          `json:"total_input_tokens"`
+	TotalOutputCostUsd            *float64                                                     `json:"total_output_cost_usd"`
+	TotalOutputTokens             int                                                          `json:"total_output_tokens"`
+	TotalReasoningTokens          int                                                          `json:"total_reasoning_tokens"`
+}
+
+// AgentSpanGroupRowGroupKeys0 defines model for AgentSpanGroupRow.GroupKeys.0.
+type AgentSpanGroupRowGroupKeys0 = string
+
+// AgentSpanGroupRowGroupKeys1 defines model for AgentSpanGroupRow.GroupKeys.1.
+type AgentSpanGroupRowGroupKeys1 = int
+
+// AgentSpanGroupRowGroupKeys2 defines model for AgentSpanGroupRow.GroupKeys.2.
+type AgentSpanGroupRowGroupKeys2 = float64
+
+// AgentSpanGroupRowGroupKeys3 defines model for AgentSpanGroupRow.GroupKeys.3.
+type AgentSpanGroupRowGroupKeys3 = bool
+
+// AgentSpanGroupRow_GroupKeys_AdditionalProperties defines model for AgentSpanGroupRow.group_keys.AdditionalProperties.
+type AgentSpanGroupRow_GroupKeys_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// AgentSpanGroupRowMetrics0 defines model for AgentSpanGroupRow.Metrics.0.
+type AgentSpanGroupRowMetrics0 = time.Time
+
+// AgentSpanGroupRowMetrics1 defines model for AgentSpanGroupRow.Metrics.1.
+type AgentSpanGroupRowMetrics1 = string
+
+// AgentSpanGroupRowMetrics2 defines model for AgentSpanGroupRow.Metrics.2.
+type AgentSpanGroupRowMetrics2 = int
+
+// AgentSpanGroupRowMetrics3 defines model for AgentSpanGroupRow.Metrics.3.
+type AgentSpanGroupRowMetrics3 = float64
+
+// AgentSpanGroupRowMetrics4 defines model for AgentSpanGroupRow.Metrics.4.
+type AgentSpanGroupRowMetrics4 = bool
+
+// AgentSpanGroupRow_Metrics_AdditionalProperties defines model for AgentSpanGroupRow.metrics.AdditionalProperties.
+type AgentSpanGroupRow_Metrics_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// AgentSpanMeasureSpec One aggregate measure computed over spans in a group or bucket.
+type AgentSpanMeasureSpec struct {
+	Aggregation AgentSpanMeasureSpecAggregation `json:"aggregation"`
+	Alias       string                          `json:"alias"`
+	Filter      *Query                          `json:"filter,omitempty"`
+	Value       *AgentSpanValueRef              `json:"value,omitempty"`
+	ValueType   *AgentSpanMeasureSpecValueType  `json:"value_type,omitempty"`
+}
+
+// AgentSpanMeasureSpecAggregation defines model for AgentSpanMeasureSpec.Aggregation.
+type AgentSpanMeasureSpecAggregation string
+
+// AgentSpanMeasureSpecValueType defines model for AgentSpanMeasureSpec.ValueType.
+type AgentSpanMeasureSpecValueType string
+
+// AgentSpanSchema A normalized agent span returned by query APIs.
+type AgentSpanSchema struct {
+	AgentDescription          *string                    `json:"agent_description"`
+	AgentId                   *string                    `json:"agent_id"`
+	AgentName                 *string                    `json:"agent_name"`
+	AgentVersion              *string                    `json:"agent_version"`
+	ArtifactRefs              []string                   `json:"artifact_refs"`
+	CacheCreationCostUsd      *float64                   `json:"cache_creation_cost_usd"`
+	CacheCreationInputTokens  *int                       `json:"cache_creation_input_tokens"`
+	CacheReadCostUsd          *float64                   `json:"cache_read_cost_usd"`
+	CacheReadInputTokens      *int                       `json:"cache_read_input_tokens"`
+	CompactionItemsAfter      *int                       `json:"compaction_items_after"`
+	CompactionItemsBefore     *int                       `json:"compaction_items_before"`
+	CompactionSummary         *string                    `json:"compaction_summary"`
+	ContentRefs               []string                   `json:"content_refs"`
+	ConversationId            *string                    `json:"conversation_id"`
+	ConversationName          *string                    `json:"conversation_name"`
+	CustomAttrsBool           map[string]bool            `json:"custom_attrs_bool"`
+	CustomAttrsFloat          map[string]float64         `json:"custom_attrs_float"`
+	CustomAttrsInt            map[string]int             `json:"custom_attrs_int"`
+	CustomAttrsString         map[string]string          `json:"custom_attrs_string"`
+	EndedAt                   *time.Time                 `json:"ended_at"`
+	ErrorType                 *string                    `json:"error_type"`
+	EvalEvaluationName        *string                    `json:"eval_evaluation_name"`
+	EvalExampleId             *string                    `json:"eval_example_id"`
+	EvalKind                  *string                    `json:"eval_kind"`
+	EvalPredictAndScoreCallId *string                    `json:"eval_predict_and_score_call_id"`
+	EvalRowDigest             *string                    `json:"eval_row_digest"`
+	EvalRunId                 *string                    `json:"eval_run_id"`
+	EvalTrialIndex            *int                       `json:"eval_trial_index"`
+	FinishReasons             []string                   `json:"finish_reasons"`
+	InputCostUsd              *float64                   `json:"input_cost_usd"`
+	InputMessages             []NormalizedMessage        `json:"input_messages"`
+	InputTokens               *int                       `json:"input_tokens"`
+	MainAgentId               *string                    `json:"main_agent_id"`
+	MainAgentName             *string                    `json:"main_agent_name"`
+	ObjectRefs                []string                   `json:"object_refs"`
+	OperationName             *string                    `json:"operation_name"`
+	OutputCostUsd             *float64                   `json:"output_cost_usd"`
+	OutputMessages            []NormalizedMessage        `json:"output_messages"`
+	OutputTokens              *int                       `json:"output_tokens"`
+	OutputType                *string                    `json:"output_type"`
+	ParentCallId              *string                    `json:"parent_call_id"`
+	ParentCallTraceId         *string                    `json:"parent_call_trace_id"`
+	ParentSpanId              *string                    `json:"parent_span_id"`
+	ProjectId                 string                     `json:"project_id"`
+	ProviderName              *string                    `json:"provider_name"`
+	RawSpanDump               *string                    `json:"raw_span_dump"`
+	ReasoningContent          *string                    `json:"reasoning_content"`
+	ReasoningTokens           *int                       `json:"reasoning_tokens"`
+	RequestChoiceCount        *int                       `json:"request_choice_count"`
+	RequestFrequencyPenalty   *float64                   `json:"request_frequency_penalty"`
+	RequestMaxTokens          *int                       `json:"request_max_tokens"`
+	RequestModel              *string                    `json:"request_model"`
+	RequestPresencePenalty    *float64                   `json:"request_presence_penalty"`
+	RequestSeed               *int                       `json:"request_seed"`
+	RequestStopSequences      []string                   `json:"request_stop_sequences"`
+	RequestTemperature        *float64                   `json:"request_temperature"`
+	RequestTopP               *float64                   `json:"request_top_p"`
+	ResponseId                *string                    `json:"response_id"`
+	ResponseModel             *string                    `json:"response_model"`
+	ResponseTimeToFirstChunk  *float64                   `json:"response_time_to_first_chunk"`
+	ServerAddress             *string                    `json:"server_address"`
+	ServerPort                *int                       `json:"server_port"`
+	SpanId                    string                     `json:"span_id"`
+	SpanKind                  *AgentSpanSchemaSpanKind   `json:"span_kind"`
+	SpanName                  *string                    `json:"span_name"`
+	StartedAt                 *time.Time                 `json:"started_at"`
+	StatusCode                *AgentSpanSchemaStatusCode `json:"status_code"`
+	StatusMessage             *string                    `json:"status_message"`
+	SystemInstructions        []string                   `json:"system_instructions"`
+	ToolCallArguments         *string                    `json:"tool_call_arguments"`
+	ToolCallId                *string                    `json:"tool_call_id"`
+	ToolCallResult            *string                    `json:"tool_call_result"`
+	ToolDefinitions           *string                    `json:"tool_definitions"`
+	ToolDescription           *string                    `json:"tool_description"`
+	ToolName                  *string                    `json:"tool_name"`
+	ToolType                  *string                    `json:"tool_type"`
+	TotalCostUsd              *float64                   `json:"total_cost_usd"`
+	TraceId                   string                     `json:"trace_id"`
+	WbRunId                   *string                    `json:"wb_run_id"`
+	WbRunStep                 *int                       `json:"wb_run_step"`
+	WbRunStepEnd              *int                       `json:"wb_run_step_end"`
+	WbUserId                  *string                    `json:"wb_user_id"`
+	WorkflowName              *string                    `json:"workflow_name"`
+}
+
+// AgentSpanSchemaSpanKind defines model for AgentSpanSchema.SpanKind.
+type AgentSpanSchemaSpanKind string
+
+// AgentSpanSchemaStatusCode defines model for AgentSpanSchema.StatusCode.
+type AgentSpanSchemaStatusCode string
+
+// AgentSpanStatsColumn Metadata describing one column in an agent span stats result row.
+type AgentSpanStatsColumn struct {
+	Aggregation *string                       `json:"aggregation"`
+	Metric      *string                       `json:"metric"`
+	Name        string                        `json:"name"`
+	Role        AgentSpanStatsColumnRole      `json:"role"`
+	ValueType   AgentSpanStatsColumnValueType `json:"value_type"`
+}
+
+// AgentSpanStatsColumnRole defines model for AgentSpanStatsColumn.Role.
+type AgentSpanStatsColumnRole string
+
+// AgentSpanStatsColumnValueType defines model for AgentSpanStatsColumn.ValueType.
+type AgentSpanStatsColumnValueType string
+
+// AgentSpanStatsMetricSpec Metric to extract from each matching span and aggregate into chart rows.
+type AgentSpanStatsMetricSpec struct {
+	Aggregations *[]AgentSpanStatsMetricSpecAggregations `json:"aggregations,omitempty"`
+	Alias        string                                  `json:"alias"`
+	Percentiles  *[]float64                              `json:"percentiles,omitempty"`
+
+	// Value Reference to a span field or typed custom attribute map value.
+	Value     AgentSpanValueRef                 `json:"value"`
+	ValueType AgentSpanStatsMetricSpecValueType `json:"value_type"`
+}
+
+// AgentSpanStatsMetricSpecAggregations defines model for AgentSpanStatsMetricSpec.Aggregations.
+type AgentSpanStatsMetricSpecAggregations string
+
+// AgentSpanStatsMetricSpecValueType defines model for AgentSpanStatsMetricSpec.ValueType.
+type AgentSpanStatsMetricSpecValueType string
+
+// AgentSpanStatsNumericBucketSpec Bucket stats rows by ranges of one numeric span or grouped value.
+type AgentSpanStatsNumericBucketSpec struct {
+	Alias   *string                              `json:"alias,omitempty"`
+	Bins    *int                                 `json:"bins,omitempty"`
+	GroupBy *[]AgentGroupByRef                   `json:"group_by,omitempty"`
+	Max     *float64                             `json:"max,omitempty"`
+	Measure *AgentSpanMeasureSpec                `json:"measure,omitempty"`
+	Min     *float64                             `json:"min,omitempty"`
+	Type    *AgentSpanStatsNumericBucketSpecType `json:"type,omitempty"`
+	Value   *AgentSpanValueRef                   `json:"value,omitempty"`
+}
+
+// AgentSpanStatsNumericBucketSpecType defines model for AgentSpanStatsNumericBucketSpec.Type.
+type AgentSpanStatsNumericBucketSpecType string
+
+// AgentSpanStatsReq Request chart-ready aggregations over GenAI agent spans.
+type AgentSpanStatsReq struct {
+	BucketBy *struct {
+		union json.RawMessage
+	} `json:"bucket_by,omitempty"`
+	End            *time.Time                  `json:"end,omitempty"`
+	Granularity    *int                        `json:"granularity,omitempty"`
+	GroupBy        *[]AgentGroupByRef          `json:"group_by,omitempty"`
+	GroupFilters   *[]AgentSpanGroupFilter     `json:"group_filters,omitempty"`
+	GroupLimit     *int                        `json:"group_limit,omitempty"`
+	InsightFilters *[]AgentInsightFilter       `json:"insight_filters,omitempty"`
+	Metrics        *[]AgentSpanStatsMetricSpec `json:"metrics,omitempty"`
+	ProjectId      string                      `json:"project_id"`
+	Query          *Query                      `json:"query,omitempty"`
+	SignalFilters  *AgentSignalFilter          `json:"signal_filters,omitempty"`
+	Start          time.Time                   `json:"start"`
+	Timezone       *string                     `json:"timezone,omitempty"`
+}
+
+// AgentSpanStatsRes Response containing chart-ready agent span stats rows.
+type AgentSpanStatsRes struct {
+	BucketType  AgentSpanStatsResBucketType                               `json:"bucket_type"`
+	Columns     []AgentSpanStatsColumn                                    `json:"columns"`
+	End         time.Time                                                 `json:"end"`
+	Granularity *int                                                      `json:"granularity"`
+	Rows        []map[string]*AgentSpanStatsRes_Rows_AdditionalProperties `json:"rows"`
+	Start       time.Time                                                 `json:"start"`
+	Timezone    string                                                    `json:"timezone"`
+}
+
+// AgentSpanStatsResBucketType defines model for AgentSpanStatsRes.BucketType.
+type AgentSpanStatsResBucketType string
+
+// AgentSpanStatsResRows0 defines model for AgentSpanStatsRes.Rows.0.
+type AgentSpanStatsResRows0 = time.Time
+
+// AgentSpanStatsResRows1 defines model for AgentSpanStatsRes.Rows.1.
+type AgentSpanStatsResRows1 = string
+
+// AgentSpanStatsResRows2 defines model for AgentSpanStatsRes.Rows.2.
+type AgentSpanStatsResRows2 = int
+
+// AgentSpanStatsResRows3 defines model for AgentSpanStatsRes.Rows.3.
+type AgentSpanStatsResRows3 = float64
+
+// AgentSpanStatsResRows4 defines model for AgentSpanStatsRes.Rows.4.
+type AgentSpanStatsResRows4 = bool
+
+// AgentSpanStatsRes_Rows_AdditionalProperties defines model for AgentSpanStatsRes.rows.AdditionalProperties.
+type AgentSpanStatsRes_Rows_AdditionalProperties struct {
+	union json.RawMessage
+}
+
+// AgentSpanStatsTimeBucketSpec Bucket stats rows by started_at time intervals.
+type AgentSpanStatsTimeBucketSpec struct {
+	Type *AgentSpanStatsTimeBucketSpecType `json:"type,omitempty"`
+}
+
+// AgentSpanStatsTimeBucketSpecType defines model for AgentSpanStatsTimeBucketSpec.Type.
+type AgentSpanStatsTimeBucketSpecType string
+
+// AgentSpanValueRef Reference to a span field or typed custom attribute map value.
+type AgentSpanValueRef struct {
+	Key    string                   `json:"key"`
+	Source *AgentSpanValueRefSource `json:"source,omitempty"`
+}
+
+// AgentSpanValueRefSource defines model for AgentSpanValueRef.Source.
+type AgentSpanValueRefSource string
+
+// AgentSpansQueryReq Request to query agent spans for a project.
+//
+// When `group_by` is empty (or omitted), returns raw span rows in the
+// response's `spans` field. When `group_by` is non-empty, returns
+// aggregate group rows in the response's `groups` field.
+type AgentSpansQueryReq struct {
+	CustomAttrColumns  *[]AgentSpanValueRef              `json:"custom_attr_columns,omitempty"`
+	GroupBy            *[]AgentGroupByRef                `json:"group_by,omitempty"`
+	GroupDistributions *[]AgentSpanGroupDistributionSpec `json:"group_distributions,omitempty"`
+	GroupFilters       *[]AgentSpanGroupFilter           `json:"group_filters,omitempty"`
+	IncludeCosts       *bool                             `json:"include_costs,omitempty"`
+	IncludeDetails     *bool                             `json:"include_details,omitempty"`
+	InsightFilters     *[]AgentInsightFilter             `json:"insight_filters,omitempty"`
+	Limit              *int                              `json:"limit,omitempty"`
+	Measures           *[]AgentSpanMeasureSpec           `json:"measures,omitempty"`
+	Offset             *int                              `json:"offset,omitempty"`
+	ProjectId          string                            `json:"project_id"`
+	Query              *Query                            `json:"query,omitempty"`
+	SignalFilters      *AgentSignalFilter                `json:"signal_filters,omitempty"`
+	SortBy             *[]AgentSortBy                    `json:"sort_by,omitempty"`
+	StartedAfter       *time.Time                        `json:"started_after,omitempty"`
+	StartedBefore      *time.Time                        `json:"started_before,omitempty"`
+}
+
+// AgentSpansQueryRes Response from a spans query.
+//
+// Exactly one of `spans` or `groups` will be populated, based on
+// whether the request specified `group_by`.
+type AgentSpansQueryRes struct {
+	Groups     []AgentSpanGroupRow `json:"groups"`
+	Spans      []AgentSpanSchema   `json:"spans"`
+	TotalCount int                 `json:"total_count"`
+}
+
+// AgentTraceChatReq Request to get the structured chat / trajectory view for a trace.
+type AgentTraceChatReq struct {
+	IncludeFeedback *bool `json:"include_feedback,omitempty"`
+
+	// IncludeModelToolCalls Include tool calls requested in model outputs, even when no execution span was recorded, and place each execution span after the model span that requested it. Requests without execution evidence have no status, duration, or result. Defaults to false.
+	IncludeModelToolCalls *bool  `json:"include_model_tool_calls,omitempty"`
+	ProjectId             string `json:"project_id"`
+	TraceId               string `json:"trace_id"`
+}
+
+// AgentTraceChatRes Structured chat view: a linear sequence of messages representing
+// the agent trajectory for a single trace.
+type AgentTraceChatRes struct {
+	AgentName                     *string                      `json:"agent_name"`
+	AgentVersion                  *string                      `json:"agent_version"`
+	EndedAt                       *time.Time                   `json:"ended_at"`
+	Feedback                      *[]AgentChatFeedback         `json:"feedback"`
+	Messages                      []AgentChatMessage           `json:"messages"`
+	Provider                      *string                      `json:"provider"`
+	RootSpanName                  *string                      `json:"root_span_name"`
+	StartedAt                     *time.Time                   `json:"started_at"`
+	StatusCode                    *AgentTraceChatResStatusCode `json:"status_code"`
+	TotalCacheCreationInputTokens int                          `json:"total_cache_creation_input_tokens"`
+	TotalCacheReadInputTokens     int                          `json:"total_cache_read_input_tokens"`
+	TotalCostUsd                  *float64                     `json:"total_cost_usd"`
+
+	// TotalDurationMs Wall-clock duration of the trace root span in milliseconds. This is not a sum of child span durations.
+	TotalDurationMs      *int    `json:"total_duration_ms"`
+	TotalInputTokens     int     `json:"total_input_tokens"`
+	TotalOutputTokens    int     `json:"total_output_tokens"`
+	TotalReasoningTokens int     `json:"total_reasoning_tokens"`
+	TraceId              string  `json:"trace_id"`
+	WbUserId             *string `json:"wb_user_id"`
+}
+
+// AgentTraceChatResStatusCode defines model for AgentTraceChatRes.StatusCode.
+type AgentTraceChatResStatusCode string
+
+// AgentVersionSchema Aggregated per-version stats from the agent_versions AMT.
+type AgentVersionSchema struct {
+	AgentName         string     `json:"agent_name"`
+	AgentVersion      string     `json:"agent_version"`
+	ErrorCount        int        `json:"error_count"`
+	FirstSeen         *time.Time `json:"first_seen"`
+	InvocationCount   int        `json:"invocation_count"`
+	LastSeen          *time.Time `json:"last_seen"`
+	ProjectId         string     `json:"project_id"`
+	SpanCount         int        `json:"span_count"`
+	TotalCostUsd      *float64   `json:"total_cost_usd"`
+	TotalDurationMs   int        `json:"total_duration_ms"`
+	TotalInputTokens  int        `json:"total_input_tokens"`
+	TotalOutputTokens int        `json:"total_output_tokens"`
+}
+
+// AgentVersionsQueryReq Request to list versions for an agent.
+type AgentVersionsQueryReq struct {
+	AgentName    string         `json:"agent_name"`
+	IncludeCosts *bool          `json:"include_costs,omitempty"`
+	Limit        *int           `json:"limit,omitempty"`
+	Offset       *int           `json:"offset,omitempty"`
+	ProjectId    string         `json:"project_id"`
+	SortBy       *[]AgentSortBy `json:"sort_by,omitempty"`
+}
+
+// AgentVersionsQueryRes Response containing agent version stats.
+type AgentVersionsQueryRes struct {
+	TotalCount int                  `json:"total_count"`
+	Versions   []AgentVersionSchema `json:"versions"`
+}
+
+// AgentsQueryFilters Optional filters for querying agents.
+type AgentsQueryFilters struct {
+	AgentName *string `json:"agent_name,omitempty"`
+}
+
+// AgentsQueryReq Request to list agents with aggregated stats for a project.
+type AgentsQueryReq struct {
+	Filters      *AgentsQueryFilters `json:"filters,omitempty"`
+	IncludeCosts *bool               `json:"include_costs,omitempty"`
+	Limit        *int                `json:"limit,omitempty"`
+	Offset       *int                `json:"offset,omitempty"`
+	ProjectId    string              `json:"project_id"`
+	SortBy       *[]AgentSortBy      `json:"sort_by,omitempty"`
+}
+
+// AgentsQueryRes Response containing aggregated agent stats.
+type AgentsQueryRes struct {
+	Agents     []AgentSchema `json:"agents"`
+	TotalCount int           `json:"total_count"`
+}
+
+// AggregationType Aggregation functions supported by feedback and call stats metrics.
 type AggregationType string
+
+// AliasesListRes defines model for AliasesListRes.
+type AliasesListRes struct {
+	Aliases []string `json:"aliases"`
+}
 
 // AndOperation Logical AND. All conditions must evaluate to true.
 //
@@ -358,7 +2491,12 @@ type AggregationType string
 //	}
 //	```
 type AndOperation struct {
-	And []Operation `json:"$and"`
+	And []AndOperation_And_Item `json:"$and"`
+}
+
+// AndOperation_And_Item defines model for AndOperation.$and.Item.
+type AndOperation_And_Item struct {
+	union json.RawMessage
 }
 
 // AnnotationQueueAddCallsBody Request body for adding calls to an annotation queue (queue_id comes from path).
@@ -402,6 +2540,12 @@ type AnnotationQueueCreateReq struct {
 // AnnotationQueueCreateRes Response from creating an annotation queue.
 type AnnotationQueueCreateRes struct {
 	Id string `json:"id"`
+}
+
+// AnnotationQueueDeleteRes Response from deleting an annotation queue.
+type AnnotationQueueDeleteRes struct {
+	// Queue Schema for annotation queue responses.
+	Queue AnnotationQueueSchema `json:"queue"`
 }
 
 // AnnotationQueueItemProgressUpdateBody Request body for updating annotation progress (queue_id and item_id come from path).
@@ -461,6 +2605,9 @@ type AnnotationQueueItemsFilter struct {
 
 	// CallTraceId Filter by exact trace ID
 	CallTraceId *string `json:"call_trace_id,omitempty"`
+
+	// Id Filter by exact queue item ID
+	Id *string `json:"id,omitempty"`
 }
 
 // AnnotationQueueItemsFilterAnnotationStates defines model for AnnotationQueueItemsFilter.AnnotationStates.
@@ -525,6 +2672,29 @@ type AnnotationQueueStatsSchema struct {
 	TotalItems int `json:"total_items"`
 }
 
+// AnnotationQueueUpdateBody Request body for updating an annotation queue (queue_id comes from path).
+//
+// All fields except project_id are optional - only provided fields will be updated.
+type AnnotationQueueUpdateBody struct {
+	// Description Examples: Updated description
+	Description *string `json:"description,omitempty"`
+
+	// Name Examples: Updated Queue Name
+	Name *string `json:"name,omitempty"`
+
+	// ProjectId Examples: entity/project
+	ProjectId string `json:"project_id"`
+
+	// ScorerRefs Examples: ["weave:///entity/project/scorer/error_severity:abc123","weave:///entity/project/scorer/resolution_quality:def456"]
+	ScorerRefs *[]string `json:"scorer_refs,omitempty"`
+}
+
+// AnnotationQueueUpdateRes Response from updating an annotation queue.
+type AnnotationQueueUpdateRes struct {
+	// Queue Schema for annotation queue responses.
+	Queue AnnotationQueueSchema `json:"queue"`
+}
+
 // AnnotationQueuesQueryReq Request to query annotation queues for a project.
 type AnnotationQueuesQueryReq struct {
 	// Limit Examples: 10
@@ -569,8 +2739,9 @@ type AnnotatorQueueItemsProgressUpdateRes struct {
 
 // BodyFileCreateFileCreatePost defines model for Body_file_create_file_create_post.
 type BodyFileCreateFileCreatePost struct {
-	File      openapi_types.File `json:"file"`
-	ProjectId string             `json:"project_id"`
+	ExpectedDigest *string            `json:"expected_digest,omitempty"`
+	File           openapi_types.File `json:"file"`
+	ProjectId      string             `json:"project_id"`
 }
 
 // CallBatchEndMode defines model for CallBatchEndMode.
@@ -644,11 +2815,14 @@ type CallReadRes struct {
 
 // CallSchema defines model for CallSchema.
 type CallSchema struct {
-	Attributes            map[string]interface{}  `json:"attributes"`
-	DeletedAt             *time.Time              `json:"deleted_at,omitempty"`
-	DisplayName           *string                 `json:"display_name,omitempty"`
-	EndedAt               *time.Time              `json:"ended_at,omitempty"`
-	Exception             *string                 `json:"exception,omitempty"`
+	Attributes  map[string]interface{} `json:"attributes"`
+	DeletedAt   *time.Time             `json:"deleted_at,omitempty"`
+	DisplayName *string                `json:"display_name,omitempty"`
+	EndedAt     *time.Time             `json:"ended_at,omitempty"`
+	Exception   *string                `json:"exception,omitempty"`
+
+	// ExpireAt Expiration timestamp for this call. None = no TTL configured for the project (the row will not be expired).
+	ExpireAt              *time.Time              `json:"expire_at,omitempty"`
 	Id                    string                  `json:"id"`
 	Inputs                map[string]interface{}  `json:"inputs"`
 	OpName                string                  `json:"op_name"`
@@ -666,6 +2840,7 @@ type CallSchema struct {
 	WbRunStep             *int                    `json:"wb_run_step,omitempty"`
 	WbRunStepEnd          *int                    `json:"wb_run_step_end,omitempty"`
 	WbUserId              *string                 `json:"wb_user_id,omitempty"`
+	WbUsername            *string                 `json:"wb_username,omitempty"`
 }
 
 // CallStartReq defines model for CallStartReq.
@@ -786,11 +2961,17 @@ type CallsQueryReq struct {
 	IncludeStorageSize *bool `json:"include_storage_size,omitempty"`
 
 	// IncludeTotalStorageSize Beta, subject to change. If true, the response will include the total storage size for a trace.
-	IncludeTotalStorageSize *bool  `json:"include_total_storage_size,omitempty"`
-	Limit                   *int   `json:"limit,omitempty"`
-	Offset                  *int   `json:"offset,omitempty"`
-	ProjectId               string `json:"project_id"`
-	Query                   *Query `json:"query,omitempty"`
+	IncludeTotalStorageSize *bool `json:"include_total_storage_size,omitempty"`
+
+	// IncludeUsernames If true, the response will attempt to resolve each call's wb_user_id to a username for the duration of this request.
+	IncludeUsernames *bool `json:"include_usernames,omitempty"`
+
+	// LatestOnly If true, collapse multiple physical versions of each call before applying filters. This provides current logical-row semantics for calls_complete reads while ReplacingMergeTree merges are pending.
+	LatestOnly *bool  `json:"latest_only,omitempty"`
+	Limit      *int   `json:"limit,omitempty"`
+	Offset     *int   `json:"offset,omitempty"`
+	ProjectId  string `json:"project_id"`
+	Query      *Query `json:"query,omitempty"`
 
 	// ReturnExpandedColumnValues If true, the response will include raw values for expanded columns. If false, the response expand_columns will only be used for filtering and ordering. This is useful for clients that want to resolve refs themselves, e.g. for performance reasons.
 	ReturnExpandedColumnValues *bool     `json:"return_expanded_column_values,omitempty"`
@@ -812,18 +2993,43 @@ type CallsQueryStatsReq struct {
 
 // CallsQueryStatsRes defines model for CallsQueryStatsRes.
 type CallsQueryStatsRes struct {
-	Count                 int  `json:"count"`
-	TotalStorageSizeBytes *int `json:"total_storage_size_bytes,omitempty"`
+	Count                 int   `json:"count"`
+	HasMore               *bool `json:"has_more,omitempty"`
+	TotalStorageSizeBytes *int  `json:"total_storage_size_bytes,omitempty"`
 }
 
-// CallsUsageReq Request to compute aggregated usage for multiple root calls.
+// CallsScoreReq Request to enqueue scoring jobs for a list of calls.
 //
-// This endpoint returns usage metrics for each requested root call, where each
-// root's metrics include the sum of its own usage plus all descendants' usage.
+// Scoring is performed asynchronously by the call_scoring_worker, which
+// consumes messages from Kafka and applies each scorer_ref to each call_id.
+type CallsScoreReq struct {
+	// CallIds List of call IDs to score
+	CallIds   []string `json:"call_ids"`
+	ProjectId string   `json:"project_id"`
+
+	// ScorerRefs List of scorer refs to apply
+	ScorerRefs []string `json:"scorer_refs"`
+
+	// WbUserId Do not set directly. Server will automatically populate this field.
+	WbUserId *string `json:"wb_user_id,omitempty"`
+}
+
+// CallsScoreRes Empty response for calls_score.
 //
-// Note: All matching calls are loaded into memory for aggregation. For very large
-// result sets (>10k calls), consider batching root call IDs or using narrower
-// filters at the application layer.
+// Defined as a model (rather than returning None) to follow the convention
+// used throughout this interface and to allow fields to be added later
+// without a breaking change.
+type CallsScoreRes = map[string]interface{}
+
+// CallsUpsertCompleteReq Request for upserting a batch of completed calls.
+type CallsUpsertCompleteReq struct {
+	Batch []CompletedCallSchemaForInsert `json:"batch"`
+}
+
+// CallsUpsertCompleteRes Response for upserting a batch of completed calls.
+type CallsUpsertCompleteRes = map[string]interface{}
+
+// CallsUsageReq Request complete descendant usage for calls in bounded trace batches.
 type CallsUsageReq struct {
 	// CallIds Root call IDs to aggregate. Each result key corresponds to one input call ID.
 	CallIds []string `json:"call_ids"`
@@ -831,14 +3037,76 @@ type CallsUsageReq struct {
 	// IncludeCosts If true, include cost calculations in the usage.
 	IncludeCosts *bool `json:"include_costs,omitempty"`
 
-	// Limit Maximum number of calls to process across all traces. Acts as a safety limit to prevent unbounded memory usage.
+	// Limit Maximum calls per aggregation batch. Larger batches are split by trace; a single trace exceeding this limit returns an error, never partial usage.
 	Limit     *int   `json:"limit,omitempty"`
 	ProjectId string `json:"project_id"`
 }
 
 // CallsUsageRes Response with aggregated usage metrics per root call.
 type CallsUsageRes struct {
-	CallUsage *map[string]map[string]LLMAggregatedUsage `json:"call_usage,omitempty"`
+	CallUsage         map[string]map[string]LLMAggregatedUsage `json:"call_usage"`
+	UnfinishedCallIds []string                                 `json:"unfinished_call_ids"`
+}
+
+// CatalogModelsRes defines model for CatalogModelsRes.
+type CatalogModelsRes struct {
+	Models []LLMModelDetails `json:"models"`
+}
+
+// CompletedCallSchemaForInsert Schema for inserting a completed call directly.
+//
+// This represents a call that is already finished at insertion time, with both
+// start and end information provided together. Used by the calls_complete endpoint.
+type CompletedCallSchemaForInsert struct {
+	Attributes   map[string]interface{}  `json:"attributes"`
+	DisplayName  *string                 `json:"display_name,omitempty"`
+	EndedAt      time.Time               `json:"ended_at"`
+	Exception    *string                 `json:"exception,omitempty"`
+	Id           string                  `json:"id"`
+	Inputs       map[string]interface{}  `json:"inputs"`
+	OpName       string                  `json:"op_name"`
+	OtelDump     *map[string]interface{} `json:"otel_dump,omitempty"`
+	Output       interface{}             `json:"output,omitempty"`
+	ParentId     *string                 `json:"parent_id,omitempty"`
+	ProjectId    string                  `json:"project_id"`
+	StartedAt    time.Time               `json:"started_at"`
+	Summary      SummaryInsertMap        `json:"summary"`
+	ThreadId     *string                 `json:"thread_id,omitempty"`
+	TraceId      string                  `json:"trace_id"`
+	TurnId       *string                 `json:"turn_id,omitempty"`
+	WbRunId      *string                 `json:"wb_run_id,omitempty"`
+	WbRunStep    *int                    `json:"wb_run_step,omitempty"`
+	WbRunStepEnd *int                    `json:"wb_run_step_end,omitempty"`
+
+	// WbUserId Do not set directly. Server will automatically populate this field.
+	WbUserId *string `json:"wb_user_id,omitempty"`
+}
+
+// CompletionsCreateReq defines model for CompletionsCreateReq.
+type CompletionsCreateReq struct {
+	// ConversationId Conversation ID to group related completions into a multi-turn conversation
+	ConversationId *string `json:"conversation_id,omitempty"`
+
+	// ConversationName Human-readable conversation name
+	ConversationName *string                        `json:"conversation_name,omitempty"`
+	InferenceRoute   *DedicatedInferenceRoute       `json:"inference_route,omitempty"`
+	Inputs           CompletionsCreateRequestInputs `json:"inputs"`
+
+	// ParentId Parent call ID to nest this LLM call under
+	ParentId  *string `json:"parent_id,omitempty"`
+	ProjectId string  `json:"project_id"`
+
+	// Source Source of the completion request (e.g. 'playground', 'signals')
+	Source *string `json:"source,omitempty"`
+
+	// TraceId Trace ID to use for the LLM call (for nesting under a parent)
+	TraceId *string `json:"trace_id,omitempty"`
+
+	// TrackLlmCall Whether to track this LLM call in the trace server
+	TrackLlmCall *bool `json:"track_llm_call,omitempty"`
+
+	// WbUserId Do not set directly. Server will automatically populate this field.
+	WbUserId *string `json:"wb_user_id,omitempty"`
 }
 
 // CompletionsCreateRequestInputs defines model for CompletionsCreateRequestInputs.
@@ -860,12 +3128,13 @@ type CompletionsCreateRequestInputs struct {
 	PresencePenalty     *float64                `json:"presence_penalty,omitempty"`
 
 	// Prompt Reference to a Weave Prompt object (e.g., 'weave:///entity/project/object/prompt_name:version'). If provided, the messages from this prompt will be prepended to the messages in this request. Template variables in the prompt messages can be substituted using the template_vars parameter.
-	Prompt         *string                                        `json:"prompt,omitempty"`
-	ResponseFormat *CompletionsCreateRequestInputs_ResponseFormat `json:"response_format,omitempty"`
-	Seed           *int                                           `json:"seed,omitempty"`
-	Stop           *CompletionsCreateRequestInputs_Stop           `json:"stop,omitempty"`
-	Stream         *bool                                          `json:"stream,omitempty"`
-	Temperature    *float64                                       `json:"temperature,omitempty"`
+	Prompt          *string                                        `json:"prompt,omitempty"`
+	ReasoningEffort *string                                        `json:"reasoning_effort,omitempty"`
+	ResponseFormat  *CompletionsCreateRequestInputs_ResponseFormat `json:"response_format,omitempty"`
+	Seed            *int                                           `json:"seed,omitempty"`
+	Stop            *CompletionsCreateRequestInputs_Stop           `json:"stop,omitempty"`
+	Stream          *bool                                          `json:"stream,omitempty"`
+	Temperature     *float64                                       `json:"temperature,omitempty"`
 
 	// TemplateVars Dictionary of template variables to substitute in prompt messages. Variables in messages like '{variable_name}' will be replaced with the corresponding values. Applied to both prompt messages (if prompt is provided) and regular messages.
 	TemplateVars *map[string]interface{}                    `json:"template_vars,omitempty"`
@@ -875,6 +3144,9 @@ type CompletionsCreateRequestInputs struct {
 	TopLogprobs  *int                                       `json:"top_logprobs,omitempty"`
 	TopP         *float64                                   `json:"top_p,omitempty"`
 	User         *string                                    `json:"user,omitempty"`
+
+	// VertexCredentials JSON string of Vertex AI service account credentials. When provided for vertex_ai models (e.g. vertex_ai/gemini-2.5-pro), used for authentication instead of api_key. Not persisted in trace storage.
+	VertexCredentials *string `json:"vertex_credentials,omitempty"`
 }
 
 // CompletionsCreateRequestInputsResponseFormat0 defines model for CompletionsCreateRequestInputs.ResponseFormat.0.
@@ -921,6 +3193,34 @@ type CompletionsCreateRequestInputs_ToolChoice struct {
 	union json.RawMessage
 }
 
+// CompletionsCreateRes defines model for CompletionsCreateRes.
+type CompletionsCreateRes struct {
+	ConversationId *string                `json:"conversation_id,omitempty"`
+	Response       map[string]interface{} `json:"response"`
+	SpanId         *string                `json:"span_id,omitempty"`
+	TraceId        *string                `json:"trace_id,omitempty"`
+	WeaveCallId    *string                `json:"weave_call_id,omitempty"`
+}
+
+// CompletionsCreateStreamChunk One NDJSON line of the completions stream.
+//
+// A tracked call opens with the identifiers, a failure produces `error`, and
+// every other line is a provider chunk passed through as it arrived, which is
+// why anything else is allowed.
+type CompletionsCreateStreamChunk struct {
+	UnderscoreMeta       *CompletionsCreateStreamMeta `json:"_meta,omitempty"`
+	Error                *string                      `json:"error,omitempty"`
+	AdditionalProperties map[string]interface{}       `json:"-"`
+}
+
+// CompletionsCreateStreamMeta Identifiers of the call the stream is recorded into.
+type CompletionsCreateStreamMeta struct {
+	ConversationId *string `json:"conversation_id,omitempty"`
+	SpanId         *string `json:"span_id,omitempty"`
+	TraceId        *string `json:"trace_id,omitempty"`
+	WeaveCallId    *string `json:"weave_call_id,omitempty"`
+}
+
 // ContainsOperation Case-insensitive substring match.
 //
 // Not part of MongoDB. Weave-specific addition.
@@ -951,9 +3251,19 @@ type ContainsOperation struct {
 // - `substr`: The substring to search for.
 // - `case_insensitive`: If true, match is case-insensitive.
 type ContainsSpec struct {
-	CaseInsensitive *bool     `json:"case_insensitive,omitempty"`
-	Input           Operation `json:"input"`
-	Substr          Operation `json:"substr"`
+	CaseInsensitive *bool               `json:"case_insensitive,omitempty"`
+	Input           ContainsSpec_Input  `json:"input"`
+	Substr          ContainsSpec_Substr `json:"substr"`
+}
+
+// ContainsSpec_Input defines model for ContainsSpec.Input.
+type ContainsSpec_Input struct {
+	union json.RawMessage
+}
+
+// ContainsSpec_Substr defines model for ContainsSpec.Substr.
+type ContainsSpec_Substr struct {
+	union json.RawMessage
 }
 
 // ConvertOperation Convert the input value to a specific type (e.g., `int`, `bool`, `string`).
@@ -981,16 +3291,47 @@ type ConvertOperation struct {
 // - `input`: The operand to convert.
 // - `to`: The type to convert to.
 type ConvertSpec struct {
-	Input Operation     `json:"input"`
-	To    ConvertSpecTo `json:"to"`
+	Input ConvertSpec_Input `json:"input"`
+	To    ConvertSpecTo     `json:"to"`
+}
+
+// ConvertSpec_Input defines model for ConvertSpec.Input.
+type ConvertSpec_Input struct {
+	union json.RawMessage
 }
 
 // ConvertSpecTo defines model for ConvertSpec.To.
 type ConvertSpecTo string
 
+// Cost Costs are expressed in USD per million tokens.
+type Cost struct {
+	// CacheRead Cost per million cached read tokens (USD).
+	CacheRead *float64 `json:"cache_read,omitempty"`
+
+	// CacheWrite Cost per million cached write tokens (USD).
+	CacheWrite *float64 `json:"cache_write,omitempty"`
+
+	// Input Cost per million input tokens (USD).
+	Input float64 `json:"input"`
+
+	// InputAudio Cost per million audio input tokens (USD).
+	InputAudio *float64 `json:"input_audio,omitempty"`
+
+	// Output Cost per million output tokens (USD).
+	Output float64 `json:"output"`
+
+	// OutputAudio Cost per million audio output tokens (USD).
+	OutputAudio *float64 `json:"output_audio,omitempty"`
+
+	// Reasoning Cost per million reasoning tokens (USD).
+	Reasoning *float64 `json:"reasoning,omitempty"`
+}
+
 // CostCreateInput defines model for CostCreateInput.
 type CostCreateInput struct {
-	CompletionTokenCost float64 `json:"completion_token_cost"`
+	CacheCreationInputTokenCost *float64 `json:"cache_creation_input_token_cost,omitempty"`
+	CacheReadInputTokenCost     *float64 `json:"cache_read_input_token_cost,omitempty"`
+	CompletionTokenCost         float64  `json:"completion_token_cost"`
 
 	// CompletionTokenCostUnit The unit of the cost for the completion tokens
 	CompletionTokenCostUnit *string `json:"completion_token_cost_unit,omitempty"`
@@ -1034,6 +3375,12 @@ type CostPurgeRes = map[string]interface{}
 
 // CostQueryOutput defines model for CostQueryOutput.
 type CostQueryOutput struct {
+	// CacheCreationInputTokenCost Examples: 1
+	CacheCreationInputTokenCost *float64 `json:"cache_creation_input_token_cost,omitempty"`
+
+	// CacheReadInputTokenCost Examples: 1
+	CacheReadInputTokenCost *float64 `json:"cache_read_input_token_cost,omitempty"`
+
 	// CompletionTokenCost Examples: 1
 	CompletionTokenCost *float64 `json:"completion_token_cost,omitempty"`
 
@@ -1079,6 +3426,70 @@ type CostQueryReq struct {
 // CostQueryRes defines model for CostQueryRes.
 type CostQueryRes struct {
 	Results []CostQueryOutput `json:"results"`
+}
+
+// CreateAndLinkPayload defines model for CreateAndLinkPayload.
+type CreateAndLinkPayload struct {
+	Aliases *[]string           `json:"aliases,omitempty"`
+	Ref     string              `json:"ref"`
+	Target  CreateAndLinkTarget `json:"target"`
+}
+
+// CreateAndLinkTarget defines model for CreateAndLinkTarget.
+type CreateAndLinkTarget struct {
+	EntityName    string `json:"entity_name"`
+	PortfolioName string `json:"portfolio_name"`
+	ProjectName   string `json:"project_name"`
+}
+
+// CreateAndLinkWeaveAssetRes defines model for CreateAndLinkWeaveAssetRes.
+type CreateAndLinkWeaveAssetRes struct {
+	VersionIndex *int `json:"version_index,omitempty"`
+}
+
+// CustomRuntimeApplyBody defines model for CustomRuntimeApplyBody.
+type CustomRuntimeApplyBody struct {
+	// ApiKeySecret Team secret name used as the endpoint API key; never the secret value
+	ApiKeySecret *string `json:"api_key_secret,omitempty"`
+
+	// BaseUrl Public OpenAI-compatible endpoint base URL
+	BaseUrl string `json:"base_url"`
+
+	// Headers Literal headers forwarded to the endpoint
+	Headers *map[string]string `json:"headers,omitempty"`
+
+	// RuntimeIds Complete desired list of IDs exposed by the endpoint
+	RuntimeIds []CustomRuntimeID `json:"runtime_ids"`
+}
+
+// CustomRuntimeApplyRes defines model for CustomRuntimeApplyRes.
+type CustomRuntimeApplyRes struct {
+	ApiKeySecret *string           `json:"api_key_secret"`
+	BaseUrl      string            `json:"base_url"`
+	Headers      map[string]string `json:"headers"`
+
+	// Name Stable custom runtime name
+	Name       string               `json:"name"`
+	RuntimeIds []CustomRuntimeIDRes `json:"runtime_ids"`
+}
+
+// CustomRuntimeID defines model for CustomRuntimeID.
+type CustomRuntimeID struct {
+	// Id Value sent in the OpenAI-compatible request model field
+	Id string `json:"id"`
+
+	// MaxTokens Maximum tokens supported by this runtime ID
+	MaxTokens *int `json:"max_tokens,omitempty"`
+}
+
+// CustomRuntimeIDRes defines model for CustomRuntimeIDRes.
+type CustomRuntimeIDRes struct {
+	// Id Value sent in the OpenAI-compatible request model field
+	Id string `json:"id"`
+
+	// MaxTokens Maximum tokens supported by this runtime ID
+	MaxTokens    int    `json:"max_tokens"`
+	PlaygroundId string `json:"playground_id"`
 }
 
 // Datacenter defines model for Datacenter.
@@ -1140,14 +3551,105 @@ type DatasetReadRes struct {
 	VersionIndex int `json:"version_index"`
 }
 
+// DatasetSourceLinkPayload A single dataset row and the sources to link to it.
+type DatasetSourceLinkPayload struct {
+	LinkMetadata *map[string]interface{} `json:"link_metadata,omitempty"`
+	RowDigest    string                  `json:"row_digest"`
+	Sources      []SourceRef             `json:"sources"`
+}
+
+// DatasetSourceLinkSchema Schema for a single dataset source link row.
+type DatasetSourceLinkSchema struct {
+	AddedBy           *string                 `json:"added_by"`
+	CreatedAt         time.Time               `json:"created_at"`
+	DeletedAt         *time.Time              `json:"deleted_at"`
+	Id                string                  `json:"id"`
+	LinkMetadata      *map[string]interface{} `json:"link_metadata"`
+	RowDigest         string                  `json:"row_digest"`
+	SourceDisplayName string                  `json:"source_display_name"`
+	SourceId          string                  `json:"source_id"`
+	SourceKind        SourceKind              `json:"source_kind"`
+	SourceStartedAt   time.Time               `json:"source_started_at"`
+	SourceTraceId     string                  `json:"source_trace_id"`
+	UpdatedAt         time.Time               `json:"updated_at"`
+}
+
+// DatasetSourcesLinkReq Request to link dataset rows to their provenance sources.
+type DatasetSourcesLinkReq struct {
+	DatasetDigest        string                     `json:"dataset_digest"`
+	DatasetObjectId      string                     `json:"dataset_object_id"`
+	IncludeCreatedStatus *bool                      `json:"include_created_status,omitempty"`
+	Links                []DatasetSourceLinkPayload `json:"links"`
+
+	// ProjectId Examples: entity/project
+	ProjectId string `json:"project_id"`
+
+	// WbUserId Do not set directly. Server will automatically populate this field.
+	WbUserId *string `json:"wb_user_id,omitempty"`
+}
+
+// DatasetSourcesLinkRes Response from linking dataset rows to sources.
+//
+// One entry per flattened (row_digest, source) tuple, in input order.
+type DatasetSourcesLinkRes struct {
+	Entries []DatasetSourcesLinkResEntry `json:"entries"`
+}
+
+// DatasetSourcesLinkResEntry Result for a single flattened (row_digest, source) link.
+type DatasetSourcesLinkResEntry struct {
+	Created *bool  `json:"created"`
+	LinkId  string `json:"link_id"`
+}
+
+// DatasetSourcesQueryReq Forward query: dataset -> sources.
+type DatasetSourcesQueryReq struct {
+	DatasetObjectId string `json:"dataset_object_id"`
+	IncludeDeleted  *bool  `json:"include_deleted,omitempty"`
+	Limit           *int   `json:"limit,omitempty"`
+	Offset          *int   `json:"offset,omitempty"`
+
+	// ProjectId Examples: entity/project
+	ProjectId   string        `json:"project_id"`
+	RowDigests  *[]string     `json:"row_digests,omitempty"`
+	SourceKinds *[]SourceKind `json:"source_kinds,omitempty"`
+
+	// WbUserId Do not set directly. Server will automatically populate this field.
+	WbUserId *string `json:"wb_user_id,omitempty"`
+}
+
+// DatasetSourcesQueryRes Response from the forward dataset -> sources query.
+type DatasetSourcesQueryRes struct {
+	Links []DatasetSourceLinkSchema `json:"links"`
+}
+
+// DedicatedInferenceRoute Server-side routing information for a dedicated inference deployment.
+type DedicatedInferenceRoute struct {
+	BaseUrl        string                                `json:"base_url"`
+	Connection     string                                `json:"connection"`
+	ConnectionType DedicatedInferenceRouteConnectionType `json:"connection_type"`
+}
+
+// DedicatedInferenceRouteConnectionType defines model for DedicatedInferenceRoute.ConnectionType.
+type DedicatedInferenceRouteConnectionType string
+
+// DeletedObjVersion defines model for DeletedObjVersion.
+type DeletedObjVersion struct {
+	BaseObjectClass *string `json:"base_object_class,omitempty"`
+	Digest          string  `json:"digest"`
+	LeafObjectClass *string `json:"leaf_object_class,omitempty"`
+}
+
 // EndedCallSchemaForInsert defines model for EndedCallSchemaForInsert.
 type EndedCallSchemaForInsert struct {
 	EndedAt      time.Time        `json:"ended_at"`
 	Exception    *string          `json:"exception,omitempty"`
 	Id           string           `json:"id"`
+	IsEval       *bool            `json:"is_eval,omitempty"`
 	Output       interface{}      `json:"output,omitempty"`
 	ProjectId    string           `json:"project_id"`
+	StartedAt    *time.Time       `json:"started_at,omitempty"`
 	Summary      SummaryInsertMap `json:"summary"`
+	TraceId      *string          `json:"trace_id,omitempty"`
 	WbRunStepEnd *int             `json:"wb_run_step_end,omitempty"`
 }
 
@@ -1162,6 +3664,165 @@ type EndedCallSchemaForInsert struct {
 //	```
 type EqOperation struct {
 	Eq []interface{} `json:"$eq"`
+}
+
+// EvalResultsEvaluationSummary defines model for EvalResultsEvaluationSummary.
+type EvalResultsEvaluationSummary struct {
+	DisplayName      *string `json:"display_name"`
+	EvaluationCallId string  `json:"evaluation_call_id"`
+	EvaluationRef    *string `json:"evaluation_ref"`
+	ModelRef         *string `json:"model_ref"`
+
+	// PredictTotalCost Sum of per-trial predict-only cost for this evaluation (the model's predict() cost only, excluding LLM-as-a-judge scorer cost); None when no trial reports cost.
+	PredictTotalCost *float64 `json:"predict_total_cost"`
+
+	// PredictTotalTokens Sum of per-trial predict-only token usage for this evaluation (the model's predict() tokens only, excluding LLM-as-a-judge scorer usage); None when no trial reports usage.
+	PredictTotalTokens *int                     `json:"predict_total_tokens"`
+	ScorerStats        []EvalResultsScorerStats `json:"scorer_stats"`
+	StartedAt          *string                  `json:"started_at"`
+	TraceId            *string                  `json:"trace_id"`
+	TrialCount         int                      `json:"trial_count"`
+}
+
+// EvalResultsFilter A filter scoped to an optional evaluation.
+type EvalResultsFilter struct {
+	// EvaluationCallId When set, filter fields are scoped to this evaluation's data.
+	EvaluationCallId *string `json:"evaluation_call_id,omitempty"`
+
+	// Query Filter expression. Supported field prefixes: scores.<name>, inputs.<path>, outputs.<path>.
+	Query Query `json:"query"`
+}
+
+// EvalResultsQueryBody defines model for EvalResultsQueryBody.
+type EvalResultsQueryBody struct {
+	// EvaluationCallIds Evaluation root call IDs to include.
+	EvaluationCallIds *[]string `json:"evaluation_call_ids,omitempty"`
+
+	// EvaluationRunIds Alias for evaluation call IDs from the Evaluation Runs API.
+	EvaluationRunIds *[]string `json:"evaluation_run_ids,omitempty"`
+
+	// FilterLogicOperator How to combine filters across evaluations: 'and' (Match All - row must match in ALL evals) or 'or' (Match Any - row must match in ANY eval). Defaults to 'or' (Match Any).
+	FilterLogicOperator *EvalResultsQueryBodyFilterLogicOperator `json:"filter_logic_operator,omitempty"`
+
+	// Filters Filters applied to grouped rows. Multiple filters are AND'd together.
+	Filters *[]EvalResultsFilter `json:"filters,omitempty"`
+
+	// IncludeCosts When true, price each trial's predict call so rows and summary report predict-only cost (`total_cost` / `predict_total_cost`); scorer costs are excluded. Opt-in: other callers skip the cost computation.
+	IncludeCosts *bool `json:"include_costs,omitempty"`
+
+	// IncludePredictAndScoreChildren When true (default), fetch child calls (predict/score) of each predict_and_score call to populate predict_call_id, scorer_call_ids, and more precise latency/token data. When false, these fields are derived from the predict_and_score call itself (predict_call_id and scorer_call_ids will be null/empty).
+	IncludePredictAndScoreChildren *bool `json:"include_predict_and_score_children,omitempty"`
+
+	// IncludeRawDataRows When true, populate raw_data_row on each result row. Inline rows are returned as their dict value; dataset-referenced rows are returned as the ref string unless resolve_row_refs is also true.
+	IncludeRawDataRows *bool `json:"include_raw_data_rows,omitempty"`
+
+	// IncludeRows When true, include grouped row/trial data in `rows` and compute `total_rows` for the requested row-level view.
+	IncludeRows *bool `json:"include_rows,omitempty"`
+
+	// IncludeSummary When true, include aggregated scorer/evaluation summary data in `summary`.
+	IncludeSummary *bool `json:"include_summary,omitempty"`
+
+	// Limit Optional row-level page size applied after grouping and intersection.
+	Limit *int `json:"limit,omitempty"`
+
+	// Offset Optional row-level page offset applied after grouping and intersection.
+	Offset *int `json:"offset,omitempty"`
+
+	// RequireIntersection When true, only include rows present in all requested evaluations.
+	RequireIntersection *bool `json:"require_intersection,omitempty"`
+
+	// ResolveRowRefs When true (requires include_raw_data_rows=True), resolve dataset-row reference strings to actual row data via a table lookup. When false, dataset-row refs are returned as-is.
+	ResolveRowRefs *bool `json:"resolve_row_refs,omitempty"`
+
+	// SortBy Sort specification for result rows. Supported field prefixes: scores.<name>, inputs.<path>, outputs.<path>. When null, rows are sorted by row_digest ASC.
+	SortBy *[]EvalResultsSortBy `json:"sort_by,omitempty"`
+
+	// SummaryRequireIntersection Optional intersection behavior for the summary section. When null, the value of `require_intersection` is used.
+	SummaryRequireIntersection *bool `json:"summary_require_intersection,omitempty"`
+}
+
+// EvalResultsQueryBodyFilterLogicOperator How to combine filters across evaluations: 'and' (Match All - row must match in ALL evals) or 'or' (Match Any - row must match in ANY eval). Defaults to 'or' (Match Any).
+type EvalResultsQueryBodyFilterLogicOperator string
+
+// EvalResultsQueryRes defines model for EvalResultsQueryRes.
+type EvalResultsQueryRes struct {
+	Rows      []EvalResultsRow       `json:"rows"`
+	Summary   *EvalResultsSummaryRes `json:"summary"`
+	TotalRows int                    `json:"total_rows"`
+
+	// Warnings Non-fatal warnings (e.g. failed to resolve dataset row refs).
+	Warnings []string `json:"warnings"`
+}
+
+// EvalResultsRow defines model for EvalResultsRow.
+type EvalResultsRow struct {
+	Evaluations []EvalResultsRowEvaluation `json:"evaluations"`
+	RawDataRow  interface{}                `json:"raw_data_row"`
+	RowDigest   string                     `json:"row_digest"`
+}
+
+// EvalResultsRowEvaluation defines model for EvalResultsRowEvaluation.
+type EvalResultsRowEvaluation struct {
+	EvaluationCallId string             `json:"evaluation_call_id"`
+	Trials           []EvalResultsTrial `json:"trials"`
+}
+
+// EvalResultsScorerStats Stats for a single flattened score dimension (scorer_key or scorer_key.path.to.leaf).
+type EvalResultsScorerStats struct {
+	NumericCount       int      `json:"numeric_count"`
+	NumericMean        *float64 `json:"numeric_mean"`
+	PassKnownCount     int      `json:"pass_known_count"`
+	PassRate           *float64 `json:"pass_rate"`
+	PassSignalCoverage *float64 `json:"pass_signal_coverage"`
+	PassTrueCount      int      `json:"pass_true_count"`
+
+	// Path Dot-joined subpath for nested dimensions, e.g. 'passed' for token_distance.passed. None for root-level scalar scorers.
+	Path       *string `json:"path"`
+	ScorerKey  string  `json:"scorer_key"`
+	TrialCount int     `json:"trial_count"`
+
+	// ValueType Type of the leaf value: binary (bool), continuous (number), or text (string).
+	ValueType *EvalResultsScorerStatsValueType `json:"value_type"`
+}
+
+// EvalResultsScorerStatsValueType defines model for EvalResultsScorerStats.ValueType.
+type EvalResultsScorerStatsValueType string
+
+// EvalResultsSortBy Sort specification for evaluation results, extending SortBy
+type EvalResultsSortBy struct {
+	Direction EvalResultsSortByDirection `json:"direction"`
+
+	// EvaluationCallId Scope the sort to a specific evaluation's scores.
+	EvaluationCallId *string `json:"evaluation_call_id,omitempty"`
+	Field            string  `json:"field"`
+
+	// Mode When 'value', sort by the field value for the specified evaluation. When 'difference', sort by max-min spread of the field across all evaluations (evaluation_call_id is ignored).
+	Mode *EvalResultsSortByMode `json:"mode,omitempty"`
+}
+
+// EvalResultsSortByDirection defines model for EvalResultsSortBy.Direction.
+type EvalResultsSortByDirection string
+
+// EvalResultsSortByMode When 'value', sort by the field value for the specified evaluation. When 'difference', sort by max-min spread of the field across all evaluations (evaluation_call_id is ignored).
+type EvalResultsSortByMode string
+
+// EvalResultsSummaryRes defines model for EvalResultsSummaryRes.
+type EvalResultsSummaryRes struct {
+	Evaluations []EvalResultsEvaluationSummary `json:"evaluations"`
+	RowCount    int                            `json:"row_count"`
+}
+
+// EvalResultsTrial defines model for EvalResultsTrial.
+type EvalResultsTrial struct {
+	GenaiSpanRef          *[]GenAISpanRef        `json:"genai_span_ref"`
+	ModelLatencySeconds   *float64               `json:"model_latency_seconds"`
+	ModelOutput           interface{}            `json:"model_output"`
+	PredictAndScoreCallId string                 `json:"predict_and_score_call_id"`
+	PredictCallId         *string                `json:"predict_call_id"`
+	ScorerCallIds         map[string]string      `json:"scorer_call_ids"`
+	Scores                map[string]interface{} `json:"scores"`
+	TotalCost             *float64               `json:"total_cost"`
+	TotalTokens           *int                   `json:"total_tokens"`
 }
 
 // EvaluateModelReq defines model for EvaluateModelReq.
@@ -1273,6 +3934,9 @@ type EvaluationRunCreateBody struct {
 
 	// Model Reference to the model (weave:// URI)
 	Model string `json:"model"`
+
+	// SourceEvaluationRunId Source evaluation run ID if this run was created by rescoring — provenance link
+	SourceEvaluationRunId *string `json:"source_evaluation_run_id,omitempty"`
 }
 
 // EvaluationRunCreateRes defines model for EvaluationRunCreateRes.
@@ -1315,6 +3979,9 @@ type EvaluationRunReadRes struct {
 	// Model Reference to the model (weave:// URI)
 	Model string `json:"model"`
 
+	// SourceEvaluationRunId Source evaluation run ID if this run was created by rescoring
+	SourceEvaluationRunId *string `json:"source_evaluation_run_id,omitempty"`
+
 	// StartedAt When the evaluation run started
 	StartedAt *time.Time `json:"started_at,omitempty"`
 
@@ -1327,8 +3994,8 @@ type EvaluationRunReadRes struct {
 
 // EvaluationStatusComplete defines model for EvaluationStatusComplete.
 type EvaluationStatusComplete struct {
-	Code   *EvaluationStatusCompleteCode `json:"code,omitempty"`
-	Output map[string]interface{}        `json:"output"`
+	Code   EvaluationStatusCompleteCode `json:"code"`
+	Output map[string]interface{}       `json:"output"`
 }
 
 // EvaluationStatusCompleteCode defines model for EvaluationStatusComplete.Code.
@@ -1336,8 +4003,8 @@ type EvaluationStatusCompleteCode string
 
 // EvaluationStatusFailed defines model for EvaluationStatusFailed.
 type EvaluationStatusFailed struct {
-	Code  *EvaluationStatusFailedCode `json:"code,omitempty"`
-	Error *string                     `json:"error,omitempty"`
+	Code  EvaluationStatusFailedCode `json:"code"`
+	Error *string                    `json:"error"`
 }
 
 // EvaluationStatusFailedCode defines model for EvaluationStatusFailed.Code.
@@ -1345,7 +4012,7 @@ type EvaluationStatusFailedCode string
 
 // EvaluationStatusNotFound defines model for EvaluationStatusNotFound.
 type EvaluationStatusNotFound struct {
-	Code *EvaluationStatusNotFoundCode `json:"code,omitempty"`
+	Code EvaluationStatusNotFoundCode `json:"code"`
 }
 
 // EvaluationStatusNotFoundCode defines model for EvaluationStatusNotFound.Code.
@@ -1369,17 +4036,97 @@ type EvaluationStatusRes_Status struct {
 
 // EvaluationStatusRunning defines model for EvaluationStatusRunning.
 type EvaluationStatusRunning struct {
-	Code          *EvaluationStatusRunningCode `json:"code,omitempty"`
-	CompletedRows int                          `json:"completed_rows"`
-	TotalRows     int                          `json:"total_rows"`
+	Code          EvaluationStatusRunningCode `json:"code"`
+	CompletedRows int                         `json:"completed_rows"`
+	TotalRows     int                         `json:"total_rows"`
 }
 
 // EvaluationStatusRunningCode defines model for EvaluationStatusRunning.Code.
 type EvaluationStatusRunningCode string
 
-// Expr defines model for Expr.
-type Expr struct {
-	union json.RawMessage
+// FeedbackAggregateBucket One (time bucket, group) row of aggregated scorer feedback.
+type FeedbackAggregateBucket struct {
+	// Group Group-by dimension values for this row (e.g. {'scorer_id': '...'}).
+	Group map[string]string `json:"group"`
+
+	// RatingCounts Number of rows carrying each rating key (e.g. '_rating_').
+	RatingCounts map[string]int `json:"rating_counts"`
+
+	// RatingSums Sum of each rating key's values; client derives avg = sum/count.
+	RatingSums map[string]float64 `json:"rating_sums"`
+
+	// ScoredCount Rows that emitted a score (at least one tag or rating). Excludes agent-monitor rows that scored nothing — use this for score volume.
+	ScoredCount int `json:"scored_count"`
+
+	// TagCounts Count of each scorer tag.
+	TagCounts map[string]int `json:"tag_counts"`
+
+	// TimeBucketStartMs Time bucket start, unix epoch ms (UTC). None when unbucketed.
+	TimeBucketStartMs *int `json:"time_bucket_start_ms"`
+
+	// TotalCount Number of feedback rows in this bucket/group.
+	TotalCount int `json:"total_count"`
+}
+
+// FeedbackAggregateReq Query for aggregate scores by time bucket and dimension.
+type FeedbackAggregateReq struct {
+	// AfterMs Inclusive lower bound on created_at (milliseconds since epoch).
+	AfterMs int `json:"after_ms"`
+
+	// BeforeMs Exclusive upper bound on created_at (milliseconds since epoch).
+	BeforeMs int `json:"before_ms"`
+
+	// FeedbackTypes Filter on feedback_type by prefix
+	FeedbackTypes *[]string `json:"feedback_types,omitempty"`
+
+	// GroupBy Allowed: ['scorer_id', 'span_agent_name', 'span_agent_version', 'span_status_code'].
+	GroupBy *[]FeedbackAggregateReqGroupBy `json:"group_by,omitempty"`
+
+	// MonitorIds Filter to these monitor ids (exact match; suffix with '*' for prefix match).
+	MonitorIds *[]string `json:"monitor_ids,omitempty"`
+
+	// ProjectId Examples: entity/project
+	ProjectId string `json:"project_id"`
+
+	// RatingMax Include only rows with a rating <= this value
+	RatingMax *float64 `json:"rating_max,omitempty"`
+
+	// RatingMin Include only rows with a rating >= this value
+	RatingMin *float64 `json:"rating_min,omitempty"`
+
+	// ScorerIds Filter to these scorer ids (exact match; suffix with '*' for prefix match).
+	ScorerIds *[]string `json:"scorer_ids,omitempty"`
+
+	// SpanAgentNames Filter to feedback whose span_agent_name matches any of these (exact).
+	SpanAgentNames *[]string `json:"span_agent_names,omitempty"`
+
+	// SpanTypes Filter by span type (turn vs conversation).
+	SpanTypes *[]FeedbackAggregateReqSpanTypes `json:"span_types,omitempty"`
+
+	// Tags Filter to feedback that includes any of the given tags
+	Tags *[]string `json:"tags,omitempty"`
+
+	// TimeBucketSeconds Time bucket size in seconds, e.g. 3600 for 1h buckets
+	TimeBucketSeconds *int `json:"time_bucket_seconds,omitempty"`
+}
+
+// FeedbackAggregateReqGroupBy defines model for FeedbackAggregateReq.GroupBy.
+type FeedbackAggregateReqGroupBy string
+
+// FeedbackAggregateReqSpanTypes defines model for FeedbackAggregateReq.SpanTypes.
+type FeedbackAggregateReqSpanTypes string
+
+// FeedbackAggregateRes Sparse time-series of aggregated scorer feedback (empty buckets omitted).
+type FeedbackAggregateRes struct {
+	// AfterMs Resolved inclusive lower bound, unix epoch ms (UTC).
+	AfterMs int `json:"after_ms"`
+
+	// BeforeMs Resolved exclusive upper bound, unix epoch ms (UTC).
+	BeforeMs int                       `json:"before_ms"`
+	Buckets  []FeedbackAggregateBucket `json:"buckets"`
+
+	// TimeBucketSeconds Time bucket size used (seconds). None when unbucketed.
+	TimeBucketSeconds *int `json:"time_bucket_seconds"`
 }
 
 // FeedbackCreateBatchReq defines model for FeedbackCreateBatchReq.
@@ -1417,8 +4164,67 @@ type FeedbackCreateReq struct {
 	// ProjectId Examples: entity/project
 	ProjectId string `json:"project_id"`
 
+	// QueueId The annotation queue ID this feedback was created from. References annotation_queues.id. NULL when feedback is created outside of queues.
+	//
+	// Examples: 018f1f2a-9c2b-7d3e-b5a1-8c9d2e4f6a7b
+	QueueId *string `json:"queue_id,omitempty"`
+
 	// RunnableRef Examples: weave:///entity/project/op/name:digest
 	RunnableRef *string `json:"runnable_ref,omitempty"`
+
+	// ScorerRatingConfidences confidence (0-1) per rating, keyed by rating name
+	//
+	// Examples: {"_rating_":0.92}
+	ScorerRatingConfidences *map[string]float64 `json:"scorer_rating_confidences,omitempty"`
+
+	// ScorerRatingReasons reason text per rating, keyed by rating name
+	//
+	// Examples: {"_rating_":"very confident response"}
+	ScorerRatingReasons *map[string]string `json:"scorer_rating_reasons,omitempty"`
+
+	// ScorerRatings numeric ratings (0-1) keyed by rating name
+	//
+	// Examples: {"_rating_":0.87}
+	ScorerRatings *map[string]float64 `json:"scorer_ratings,omitempty"`
+
+	// ScorerTagConfidences confidence (0-1) per tag, keyed by tag name
+	//
+	// Examples: {"nsfw":0.92}
+	ScorerTagConfidences *map[string]float64 `json:"scorer_tag_confidences,omitempty"`
+
+	// ScorerTagReasons reason text per tag, keyed by tag name
+	//
+	// Examples: {"nsfw":"Contains explicit language"}
+	ScorerTagReasons *map[string]string `json:"scorer_tag_reasons,omitempty"`
+
+	// ScorerTags Tags applied to the ref by a scorer
+	//
+	// Examples: ["nsfw","high-quality"]
+	ScorerTags *[]string `json:"scorer_tags,omitempty"`
+
+	// ScorerTraceId Trace of the scorer (judge) invocation that produced this feedback (spans.trace_id of the judge call). Distinct from span_trace_id, which is the scored turn. Lets signals price the invocation off the judge span without joining the calls model.
+	ScorerTraceId *string `json:"scorer_trace_id,omitempty"`
+
+	// SpanAgentName Display name of the scored agent (from spans.agent_name)
+	//
+	// Examples: midi-generator
+	SpanAgentName *string `json:"span_agent_name,omitempty"`
+
+	// SpanAgentVersion Version of the scored agent (from spans.agent_version)
+	//
+	// Examples: 1.2.0
+	SpanAgentVersion *string `json:"span_agent_version,omitempty"`
+
+	// SpanConversationId Conversation the feedback belongs to (from spans.conversation_id)
+	SpanConversationId *string `json:"span_conversation_id,omitempty"`
+
+	// SpanStatusCode Status of the scored turn (from spans.status_code)
+	//
+	// Examples: OK
+	SpanStatusCode *string `json:"span_status_code,omitempty"`
+
+	// SpanTraceId Turn the feedback belongs to (from spans.trace_id)
+	SpanTraceId *string `json:"span_trace_id,omitempty"`
 
 	// TriggerRef Examples: weave:///entity/project/object/name:digest
 	TriggerRef *string `json:"trigger_ref,omitempty"`
@@ -1436,6 +4242,61 @@ type FeedbackCreateRes struct {
 	Id        string                 `json:"id"`
 	Payload   map[string]interface{} `json:"payload"`
 	WbUserId  string                 `json:"wb_user_id"`
+}
+
+// FeedbackMetricSpec Specification for a feedback payload metric to aggregate.
+type FeedbackMetricSpec struct {
+	// Aggregations Aggregation functions to compute. If empty, defaults are chosen based on value_type: numeric->avg/min/max, boolean->count_true/count_false.
+	Aggregations *[]AggregationType `json:"aggregations,omitempty"`
+
+	// JsonPath Dot path into payload_dump (e.g. 'output', 'output.score').
+	JsonPath string `json:"json_path"`
+
+	// Percentiles Percentile values to compute (0–100), e.g. [5, 50, 95]. Only applicable for numeric value_type fields; ignored for boolean/categorical.
+	Percentiles *[]float64 `json:"percentiles,omitempty"`
+
+	// ValueType Type of value at path. numeric: avg/min/max; boolean: count_true/count_false.
+	ValueType *FeedbackMetricSpecValueType `json:"value_type,omitempty"`
+}
+
+// FeedbackMetricSpecValueType Type of value at path. numeric: avg/min/max; boolean: count_true/count_false.
+type FeedbackMetricSpecValueType string
+
+// FeedbackPayloadPath Discovered path in feedback payload with inferred type.
+type FeedbackPayloadPath struct {
+	// JsonPath Dot path into payload (e.g. 'output.score').
+	JsonPath string `json:"json_path"`
+
+	// ValueType Inferred type of value at path.
+	ValueType *FeedbackPayloadPathValueType `json:"value_type,omitempty"`
+}
+
+// FeedbackPayloadPathValueType Inferred type of value at path.
+type FeedbackPayloadPathValueType string
+
+// FeedbackPayloadSchemaReq Request for feedback payload schema discovery.
+type FeedbackPayloadSchemaReq struct {
+	// End Exclusive end time (UTC, ISO 8601). Defaults to now if omitted.
+	End *time.Time `json:"end,omitempty"`
+
+	// FeedbackType Filter by feedback_type.
+	FeedbackType *string `json:"feedback_type,omitempty"`
+	ProjectId    string  `json:"project_id"`
+
+	// SampleLimit Max distinct trigger_refs to sample when discovering the payload schema. Each distinct trigger_ref (monitor/source) typically has a fixed payload structure, so sampling one payload per ref is usually enough to see the full schema. 2 000 covers virtually all real-world projects while keeping the query fast; the hard cap of 5 000 prevents runaway scans.
+	SampleLimit *int `json:"sample_limit,omitempty"`
+
+	// Start Inclusive start time (UTC, ISO 8601).
+	Start time.Time `json:"start"`
+
+	// TriggerRef Filter by trigger_ref (exact or prefix match for all-versions).
+	TriggerRef *string `json:"trigger_ref,omitempty"`
+}
+
+// FeedbackPayloadSchemaRes Response with discovered feedback payload paths and types.
+type FeedbackPayloadSchemaRes struct {
+	// Paths Discovered leaf paths with inferred value types.
+	Paths *[]FeedbackPayloadPath `json:"paths,omitempty"`
 }
 
 // FeedbackPurgeReq defines model for FeedbackPurgeReq.
@@ -1467,7 +4328,8 @@ type FeedbackQueryReq struct {
 
 // FeedbackQueryRes defines model for FeedbackQueryRes.
 type FeedbackQueryRes struct {
-	Result []map[string]interface{} `json:"result"`
+	Result     []map[string]interface{} `json:"result"`
+	TotalCount int                      `json:"total_count"`
 }
 
 // FeedbackReplaceReq defines model for FeedbackReplaceReq.
@@ -1496,8 +4358,67 @@ type FeedbackReplaceReq struct {
 	// ProjectId Examples: entity/project
 	ProjectId string `json:"project_id"`
 
+	// QueueId The annotation queue ID this feedback was created from. References annotation_queues.id. NULL when feedback is created outside of queues.
+	//
+	// Examples: 018f1f2a-9c2b-7d3e-b5a1-8c9d2e4f6a7b
+	QueueId *string `json:"queue_id,omitempty"`
+
 	// RunnableRef Examples: weave:///entity/project/op/name:digest
 	RunnableRef *string `json:"runnable_ref,omitempty"`
+
+	// ScorerRatingConfidences confidence (0-1) per rating, keyed by rating name
+	//
+	// Examples: {"_rating_":0.92}
+	ScorerRatingConfidences *map[string]float64 `json:"scorer_rating_confidences,omitempty"`
+
+	// ScorerRatingReasons reason text per rating, keyed by rating name
+	//
+	// Examples: {"_rating_":"very confident response"}
+	ScorerRatingReasons *map[string]string `json:"scorer_rating_reasons,omitempty"`
+
+	// ScorerRatings numeric ratings (0-1) keyed by rating name
+	//
+	// Examples: {"_rating_":0.87}
+	ScorerRatings *map[string]float64 `json:"scorer_ratings,omitempty"`
+
+	// ScorerTagConfidences confidence (0-1) per tag, keyed by tag name
+	//
+	// Examples: {"nsfw":0.92}
+	ScorerTagConfidences *map[string]float64 `json:"scorer_tag_confidences,omitempty"`
+
+	// ScorerTagReasons reason text per tag, keyed by tag name
+	//
+	// Examples: {"nsfw":"Contains explicit language"}
+	ScorerTagReasons *map[string]string `json:"scorer_tag_reasons,omitempty"`
+
+	// ScorerTags Tags applied to the ref by a scorer
+	//
+	// Examples: ["nsfw","high-quality"]
+	ScorerTags *[]string `json:"scorer_tags,omitempty"`
+
+	// ScorerTraceId Trace of the scorer (judge) invocation that produced this feedback (spans.trace_id of the judge call). Distinct from span_trace_id, which is the scored turn. Lets signals price the invocation off the judge span without joining the calls model.
+	ScorerTraceId *string `json:"scorer_trace_id,omitempty"`
+
+	// SpanAgentName Display name of the scored agent (from spans.agent_name)
+	//
+	// Examples: midi-generator
+	SpanAgentName *string `json:"span_agent_name,omitempty"`
+
+	// SpanAgentVersion Version of the scored agent (from spans.agent_version)
+	//
+	// Examples: 1.2.0
+	SpanAgentVersion *string `json:"span_agent_version,omitempty"`
+
+	// SpanConversationId Conversation the feedback belongs to (from spans.conversation_id)
+	SpanConversationId *string `json:"span_conversation_id,omitempty"`
+
+	// SpanStatusCode Status of the scored turn (from spans.status_code)
+	//
+	// Examples: OK
+	SpanStatusCode *string `json:"span_status_code,omitempty"`
+
+	// SpanTraceId Turn the feedback belongs to (from spans.trace_id)
+	SpanTraceId *string `json:"span_trace_id,omitempty"`
 
 	// TriggerRef Examples: weave:///entity/project/object/name:digest
 	TriggerRef *string `json:"trigger_ref,omitempty"`
@@ -1517,6 +4438,52 @@ type FeedbackReplaceRes struct {
 	WbUserId  string                 `json:"wb_user_id"`
 }
 
+// FeedbackStatsReq Request for aggregated feedback statistics over time buckets.
+type FeedbackStatsReq struct {
+	// End Exclusive end time (UTC, ISO 8601). Defaults to now if omitted.
+	End *time.Time `json:"end,omitempty"`
+
+	// FeedbackType Filter by feedback_type.
+	FeedbackType *string `json:"feedback_type,omitempty"`
+
+	// Granularity Bucket size in seconds. If omitted, auto-selected based on time range.
+	Granularity *int `json:"granularity,omitempty"`
+
+	// Metrics Metrics to aggregate from payload_dump.
+	Metrics   *[]FeedbackMetricSpec `json:"metrics,omitempty"`
+	ProjectId string                `json:"project_id"`
+
+	// Start Inclusive start time (UTC, ISO 8601).
+	Start time.Time `json:"start"`
+
+	// Timezone IANA timezone for bucket alignment.
+	Timezone *string `json:"timezone,omitempty"`
+
+	// TriggerRef Filter by trigger_ref (exact or prefix match for all-versions).
+	TriggerRef *string `json:"trigger_ref,omitempty"`
+}
+
+// FeedbackStatsRes Response with time-series feedback statistics.
+type FeedbackStatsRes struct {
+	// Buckets Time-bucketed aggregations. Each dict has 'timestamp' (ISO string), 'count' (int), and '{agg}_{slug}' keys for each requested metric+aggregation.
+	Buckets *[]map[string]interface{} `json:"buckets,omitempty"`
+
+	// End Resolved end time (always UTC, regardless of the requested timezone).
+	End time.Time `json:"end"`
+
+	// Granularity Bucket size used (in seconds)
+	Granularity int `json:"granularity"`
+
+	// Start Resolved start time (always UTC, regardless of the requested timezone).
+	Start time.Time `json:"start"`
+
+	// Timezone Timezone used for bucket alignment
+	Timezone string `json:"timezone"`
+
+	// WindowStats Aggregations over the full query window, keyed by metric slug (e.g. 'output_score'). Each value maps agg name to result.
+	WindowStats *map[string]map[string]*float64 `json:"window_stats,omitempty"`
+}
+
 // FileContentReadReq defines model for FileContentReadReq.
 type FileContentReadReq struct {
 	Digest    string `json:"digest"`
@@ -1528,6 +4495,12 @@ type FileCreateRes struct {
 	Digest string `json:"digest"`
 }
 
+// FilesResolveUrlReq defines model for FilesResolveUrlReq.
+type FilesResolveUrlReq struct {
+	ProjectId string   `json:"project_id"`
+	Uris      []string `json:"uris"`
+}
+
 // FilesStatsReq defines model for FilesStatsReq.
 type FilesStatsReq struct {
 	ProjectId string `json:"project_id"`
@@ -1536,6 +4509,12 @@ type FilesStatsReq struct {
 // FilesStatsRes defines model for FilesStatsRes.
 type FilesStatsRes struct {
 	TotalSizeBytes int `json:"total_size_bytes"`
+}
+
+// GenAISpanRef defines model for GenAISpanRef.
+type GenAISpanRef struct {
+	SpanId  string `json:"span_id"`
+	TraceId string `json:"trace_id"`
 }
 
 // Geolocation defines model for Geolocation.
@@ -1637,7 +4616,7 @@ type ImageGenerationCreateReq struct {
 // ImageGenerationCreateRes defines model for ImageGenerationCreateRes.
 type ImageGenerationCreateRes struct {
 	Response    map[string]interface{} `json:"response"`
-	WeaveCallId *string                `json:"weave_call_id,omitempty"`
+	WeaveCallId *string                `json:"weave_call_id"`
 }
 
 // ImageGenerationRequestInputs defines model for ImageGenerationRequestInputs.
@@ -1665,25 +4644,113 @@ type InOperation struct {
 	In []interface{} `json:"$in"`
 }
 
-// LLMAggregatedUsage Aggregated usage metrics for a specific LLM.
-type LLMAggregatedUsage struct {
-	CompletionTokens          *int     `json:"completion_tokens,omitempty"`
-	CompletionTokensTotalCost *float64 `json:"completion_tokens_total_cost,omitempty"`
-	PromptTokens              *int     `json:"prompt_tokens,omitempty"`
-	PromptTokensTotalCost     *float64 `json:"prompt_tokens_total_cost,omitempty"`
-	Requests                  *int     `json:"requests,omitempty"`
-	TotalTokens               *int     `json:"total_tokens,omitempty"`
+// Interleaved Reasoning interleaving support details.
+type Interleaved struct {
+	// Field Format identifier for interleaved reasoning.
+	Field InterleavedField `json:"field"`
 }
+
+// InterleavedField Format identifier for interleaved reasoning.
+type InterleavedField string
+
+// LLMAggregatedUsage Aggregated usage metrics for a specific LLM.
+//
+// Constructor defaults stay for Python callers. Serialization JSON Schema
+// marks those fields required so OpenAPI matches the JSON FastAPI sends.
+type LLMAggregatedUsage struct {
+	CacheCreationInputTokens          int      `json:"cache_creation_input_tokens"`
+	CacheCreationInputTokensTotalCost *float64 `json:"cache_creation_input_tokens_total_cost"`
+	CacheReadInputTokens              int      `json:"cache_read_input_tokens"`
+	CacheReadInputTokensTotalCost     *float64 `json:"cache_read_input_tokens_total_cost"`
+	CompletionTokens                  int      `json:"completion_tokens"`
+	CompletionTokensTotalCost         *float64 `json:"completion_tokens_total_cost"`
+	PromptTokens                      int      `json:"prompt_tokens"`
+	PromptTokensTotalCost             *float64 `json:"prompt_tokens_total_cost"`
+	Requests                          int      `json:"requests"`
+	TotalTokens                       int      `json:"total_tokens"`
+}
+
+// LLMModelDetails defines model for LLMModelDetails.
+type LLMModelDetails struct {
+	ApiStyle                         string                             `json:"apiStyle"`
+	AvailableIn                      []LLMModelDetailsAvailableIn       `json:"availableIn"`
+	ContextWindow                    int                                `json:"contextWindow"`
+	DescriptionMedium                string                             `json:"descriptionMedium"`
+	DescriptionShort                 string                             `json:"descriptionShort"`
+	DownloadsHuggingFace             int                                `json:"downloadsHuggingFace"`
+	FeatureJsonMode                  bool                               `json:"featureJsonMode"`
+	FeatureLoRA                      bool                               `json:"featureLoRA"`
+	FeatureReasoning                 bool                               `json:"featureReasoning"`
+	FeatureStructuredOutput          bool                               `json:"featureStructuredOutput"`
+	FeatureToolCalling               bool                               `json:"featureToolCalling"`
+	FeatureTrainableServerlessRL     bool                               `json:"featureTrainableServerlessRL"`
+	Id                               string                             `json:"id"`
+	IdHuggingFace                    string                             `json:"idHuggingFace"`
+	IdPlayground                     string                             `json:"idPlayground"`
+	IsAvailableOpenRouter            bool                               `json:"isAvailableOpenRouter"`
+	Label                            string                             `json:"label"`
+	LabelOpenRouter                  string                             `json:"labelOpenRouter"`
+	LaunchDate                       string                             `json:"launchDate"`
+	LaunchedQuarter                  string                             `json:"launchedQuarter"`
+	License                          string                             `json:"license"`
+	LifecycleStage                   LLMModelDetailsLifecycleStage      `json:"lifecycleStage"`
+	LikesHuggingFace                 int                                `json:"likesHuggingFace"`
+	Modalities                       []string                           `json:"modalities"`
+	ModalitiesInput                  []string                           `json:"modalitiesInput"`
+	ModalitiesOutput                 []string                           `json:"modalitiesOutput"`
+	OpenRouterPermaslug              *string                            `json:"openRouterPermaslug,omitempty"`
+	ParameterCountActive             *int                               `json:"parameterCountActive,omitempty"`
+	ParameterCountTotal              int                                `json:"parameterCountTotal"`
+	PriceCentsPerBillionTokensCached int                                `json:"priceCentsPerBillionTokensCached"`
+	PriceCentsPerBillionTokensInput  int                                `json:"priceCentsPerBillionTokensInput"`
+	PriceCentsPerBillionTokensOutput int                                `json:"priceCentsPerBillionTokensOutput"`
+	Provider                         string                             `json:"provider"`
+	Quantization                     LLMModelDetailsQuantization        `json:"quantization"`
+	ReasoningArgument                *string                            `json:"reasoningArgument,omitempty"`
+	ReasoningEfforts                 *[]LLMModelDetailsReasoningEfforts `json:"reasoningEfforts,omitempty"`
+	ReasoningSupport                 *LLMModelDetailsReasoningSupport   `json:"reasoningSupport,omitempty"`
+	Status                           string                             `json:"status"`
+	Tags                             []string                           `json:"tags"`
+}
+
+// LLMModelDetailsAvailableIn defines model for LLMModelDetails.AvailableIn.
+type LLMModelDetailsAvailableIn string
+
+// LLMModelDetailsLifecycleStage defines model for LLMModelDetails.LifecycleStage.
+type LLMModelDetailsLifecycleStage string
+
+// LLMModelDetailsQuantization defines model for LLMModelDetails.Quantization.
+type LLMModelDetailsQuantization string
+
+// LLMModelDetailsReasoningEfforts defines model for LLMModelDetails.ReasoningEfforts.
+type LLMModelDetailsReasoningEfforts string
+
+// LLMModelDetailsReasoningSupport defines model for LLMModelDetails.ReasoningSupport.
+type LLMModelDetailsReasoningSupport string
 
 // LLMUsageSchema defines model for LLMUsageSchema.
 type LLMUsageSchema struct {
-	CompletionTokens     *int                   `json:"completion_tokens,omitempty"`
-	InputTokens          *int                   `json:"input_tokens,omitempty"`
-	OutputTokens         *int                   `json:"output_tokens,omitempty"`
-	PromptTokens         *int                   `json:"prompt_tokens,omitempty"`
-	Requests             *int                   `json:"requests,omitempty"`
-	TotalTokens          *int                   `json:"total_tokens,omitempty"`
-	AdditionalProperties map[string]interface{} `json:"-"`
+	CacheCreationInputTokens *int                   `json:"cache_creation_input_tokens,omitempty"`
+	CacheReadInputTokens     *int                   `json:"cache_read_input_tokens,omitempty"`
+	CompletionTokens         *int                   `json:"completion_tokens,omitempty"`
+	InputTokens              *int                   `json:"input_tokens,omitempty"`
+	OutputTokens             *int                   `json:"output_tokens,omitempty"`
+	PromptTokens             *int                   `json:"prompt_tokens,omitempty"`
+	Requests                 *int                   `json:"requests,omitempty"`
+	TotalTokens              *int                   `json:"total_tokens,omitempty"`
+	AdditionalProperties     map[string]interface{} `json:"-"`
+}
+
+// Limit Token limits for a model.
+type Limit struct {
+	// Context Maximum context window in tokens.
+	Context int `json:"context"`
+
+	// Input Maximum input tokens.
+	Input int `json:"input"`
+
+	// Output Maximum output tokens.
+	Output int `json:"output"`
 }
 
 // LiteralOperation Represents a constant value in the query language.
@@ -1720,6 +4787,41 @@ type LiteralOperationLiteral5 = []LiteralOperation
 // LiteralOperation_Literal defines model for LiteralOperation.Literal.
 type LiteralOperation_Literal struct {
 	union json.RawMessage
+}
+
+// LtOperation Less than comparison.
+//
+// Example:
+//
+//	```
+//	{
+//	    "$lt": [{"$getField": "summary.usage.tokens"}, {"$literal": 100}]
+//	}
+//	```
+type LtOperation struct {
+	Lt []interface{} `json:"$lt"`
+}
+
+// LteOperation Less than or equal comparison.
+//
+// Example:
+//
+//	```
+//	{
+//	    "$lte": [{"$getField": "summary.usage.tokens"}, {"$literal": 100}]
+//	}
+//	```
+type LteOperation struct {
+	Lte []interface{} `json:"$lte"`
+}
+
+// Modalities Supported input and output modalities.
+type Modalities struct {
+	// Input Supported input types (e.g. text, image, audio, video, pdf).
+	Input []string `json:"input"`
+
+	// Output Supported output types.
+	Output []string `json:"output"`
 }
 
 // ModelCreateBody defines model for ModelCreateBody.
@@ -1785,6 +4887,121 @@ type ModelReadRes struct {
 	VersionIndex int `json:"version_index"`
 }
 
+// ModelsDevModel A single model entry in the models.dev schema.
+type ModelsDevModel struct {
+	// Attachment File attachment support.
+	Attachment bool `json:"attachment"`
+
+	// Cost Pricing information.
+	Cost *Cost `json:"cost,omitempty"`
+
+	// Description Human-readable description of the model.
+	Description *string `json:"description,omitempty"`
+
+	// Id Model identifier used by the AI SDK.
+	Id string `json:"id"`
+
+	// Interleaved Reasoning interleaving support.
+	Interleaved *ModelsDevModel_Interleaved `json:"interleaved,omitempty"`
+
+	// Knowledge Knowledge cutoff in YYYY-MM or YYYY-MM-DD format.
+	Knowledge *string `json:"knowledge,omitempty"`
+
+	// LastUpdated Most recent update date (YYYY-MM-DD).
+	LastUpdated string `json:"last_updated"`
+
+	// Limit Token limits.
+	Limit *Limit `json:"limit,omitempty"`
+
+	// Modalities Supported input and output modalities.
+	Modalities *Modalities `json:"modalities,omitempty"`
+
+	// Name Display name.
+	Name string `json:"name"`
+
+	// OpenWeights Public weights availability.
+	OpenWeights bool `json:"open_weights"`
+
+	// Reasoning Chain-of-thought reasoning support.
+	Reasoning bool `json:"reasoning"`
+
+	// ReasoningOptions How reasoning is controlled. Set (possibly to an empty list, meaning always-on) when reasoning is supported; omitted otherwise.
+	ReasoningOptions *[]ModelsDevModel_ReasoningOptions_Item `json:"reasoning_options,omitempty"`
+
+	// ReleaseDate First public release date (YYYY-MM-DD).
+	ReleaseDate string `json:"release_date"`
+
+	// Status Lifecycle status of the model.
+	Status *ModelsDevModelStatus `json:"status,omitempty"`
+
+	// StructuredOutput Dedicated structured output feature.
+	StructuredOutput *bool `json:"structured_output,omitempty"`
+
+	// Temperature Temperature control support.
+	Temperature *bool `json:"temperature,omitempty"`
+
+	// ToolCall Tool calling support.
+	ToolCall bool `json:"tool_call"`
+}
+
+// ModelsDevModelInterleaved0 defines model for ModelsDevModel.Interleaved.0.
+type ModelsDevModelInterleaved0 = bool
+
+// ModelsDevModel_Interleaved Reasoning interleaving support.
+type ModelsDevModel_Interleaved struct {
+	union json.RawMessage
+}
+
+// ModelsDevModel_ReasoningOptions_Item defines model for ModelsDevModel.reasoning_options.Item.
+type ModelsDevModel_ReasoningOptions_Item struct {
+	union json.RawMessage
+}
+
+// ModelsDevModelStatus defines model for ModelsDevModel.Status.
+type ModelsDevModelStatus string
+
+// ModelsDevProvider A provider entry in the models.dev schema.
+type ModelsDevProvider struct {
+	// Api OpenAI-compatible API endpoint. Required only when using @ai-sdk/openai-compatible.
+	Api *string `json:"api,omitempty"`
+
+	// Doc Link to provider documentation.
+	Doc string `json:"doc"`
+
+	// Env Environment variable keys for authentication.
+	Env []string `json:"env"`
+
+	// Id Provider identifier, derived from the folder name.
+	Id string `json:"id"`
+
+	// Models Mapping of model id -> model.
+	Models *map[string]ModelsDevModel `json:"models,omitempty"`
+
+	// Name Display name of the provider.
+	Name string `json:"name"`
+
+	// Npm AI SDK package name.
+	Npm string `json:"npm"`
+}
+
+// NormalizedMessage A single message normalized from any provider format.
+//
+// Maps to ClickHouse “Tuple(role String, content String, finish_reason String)“.
+//
+//   - role: message role (user, assistant, tool, system)
+//   - content: plain text for simple messages, or JSON-serialized parts
+//     array for multimodal/structured messages
+//   - finish_reason: per-message finish reason (output messages only)
+//
+// Serialization JSON Schema marks defaulted fields required. In the public
+// OpenAPI document this class appears only as an AgentSpanSchema message
+// element. Ingest validation is unchanged.
+type NormalizedMessage struct {
+	Content      string `json:"content"`
+	FinishReason string `json:"finish_reason"`
+	Role         string `json:"role"`
+}
+
 // NotOperation Logical NOT. Inverts the condition.
 //
 // Example:
@@ -1799,6 +5016,29 @@ type ModelReadRes struct {
 type NotOperation struct {
 	Not []interface{} `json:"$not"`
 }
+
+// NvidiaHardwareOption defines model for NvidiaHardwareOption.
+type NvidiaHardwareOption struct {
+	Id      string                  `json:"id"`
+	Name    string                  `json:"name"`
+	Pricing NvidiaServerlessPricing `json:"pricing"`
+	Specs   *map[string]string      `json:"specs,omitempty"`
+	Type    string                  `json:"type"`
+}
+
+// NvidiaHardwareRes defines model for NvidiaHardwareRes.
+type NvidiaHardwareRes struct {
+	Hardware []NvidiaHardwareOption `json:"hardware"`
+}
+
+// NvidiaServerlessPricing defines model for NvidiaServerlessPricing.
+type NvidiaServerlessPricing struct {
+	CentsPerMillionInputTokens  float64 `json:"cents_per_million_input_tokens"`
+	CentsPerMillionOutputTokens float64 `json:"cents_per_million_output_tokens"`
+}
+
+// ObjAddTagsRes defines model for ObjAddTagsRes.
+type ObjAddTagsRes = map[string]interface{}
 
 // ObjCreateReq defines model for ObjCreateReq.
 type ObjCreateReq struct {
@@ -1821,7 +5061,9 @@ type ObjDeleteReq struct {
 
 // ObjDeleteRes defines model for ObjDeleteRes.
 type ObjDeleteRes struct {
-	NumDeleted int `json:"num_deleted"`
+	// DeletedVersions Metadata for each deleted object version, with digest aliases resolved to content digests. None when the backing server does not report it.
+	DeletedVersions *[]DeletedObjVersion `json:"deleted_versions,omitempty"`
+	NumDeleted      int                  `json:"num_deleted"`
 }
 
 // ObjQueryReq defines model for ObjQueryReq.
@@ -1833,6 +5075,9 @@ type ObjQueryReq struct {
 
 	// IncludeStorageSize If true, the `size_bytes` column is returned.
 	IncludeStorageSize *bool `json:"include_storage_size,omitempty"`
+
+	// IncludeTagsAndAliases If true, tags and aliases are fetched and included in the response.
+	IncludeTagsAndAliases *bool `json:"include_tags_and_aliases,omitempty"`
 
 	// Limit Maximum number of results to return
 	//
@@ -1867,6 +5112,9 @@ type ObjQueryRes struct {
 type ObjReadReq struct {
 	Digest string `json:"digest"`
 
+	// IncludeTagsAndAliases If true, tags and aliases are fetched and included in the response.
+	IncludeTagsAndAliases *bool `json:"include_tags_and_aliases,omitempty"`
+
 	// MetadataOnly If true, the `val` column is not read from the database and is empty.All other fields are returned.
 	MetadataOnly *bool  `json:"metadata_only,omitempty"`
 	ObjectId     string `json:"object_id"`
@@ -1878,8 +5126,24 @@ type ObjReadRes struct {
 	Obj ObjSchema `json:"obj"`
 }
 
+// ObjRemoveAliasesBody Request body for removing aliases (object_id comes from path).
+type ObjRemoveAliasesBody struct {
+	// Aliases Examples: ["staging"]
+	Aliases []string `json:"aliases"`
+
+	// ProjectId Examples: entity/project
+	ProjectId string `json:"project_id"`
+}
+
+// ObjRemoveAliasesRes defines model for ObjRemoveAliasesRes.
+type ObjRemoveAliasesRes = map[string]interface{}
+
+// ObjRemoveTagsRes defines model for ObjRemoveTagsRes.
+type ObjRemoveTagsRes = map[string]interface{}
+
 // ObjSchema defines model for ObjSchema.
 type ObjSchema struct {
+	Aliases         *[]string   `json:"aliases,omitempty"`
 	BaseObjectClass *string     `json:"base_object_class"`
 	CreatedAt       time.Time   `json:"created_at"`
 	DeletedAt       *time.Time  `json:"deleted_at,omitempty"`
@@ -1890,6 +5154,7 @@ type ObjSchema struct {
 	ObjectId        string      `json:"object_id"`
 	ProjectId       string      `json:"project_id"`
 	SizeBytes       *int        `json:"size_bytes,omitempty"`
+	Tags            *[]string   `json:"tags,omitempty"`
 	Val             interface{} `json:"val"`
 	VersionIndex    int         `json:"version_index"`
 
@@ -1900,8 +5165,11 @@ type ObjSchema struct {
 // ObjSchemaForInsert defines model for ObjSchemaForInsert.
 type ObjSchemaForInsert struct {
 	BuiltinObjectClass *string `json:"builtin_object_class,omitempty"`
-	ObjectId           string  `json:"object_id"`
-	ProjectId          string  `json:"project_id"`
+
+	// ExpectedDigest Client-computed digest for server-side validation. If provided, the server will verify it matches the server-computed digest.
+	ExpectedDigest *string `json:"expected_digest,omitempty"`
+	ObjectId       string  `json:"object_id"`
+	ProjectId      string  `json:"project_id"`
 	// Deprecated: this property has been marked as deprecated upstream, but no `x-deprecated-reason` was set
 	SetBaseObjectClass *string     `json:"set_base_object_class,omitempty"`
 	Val                interface{} `json:"val"`
@@ -1910,8 +5178,35 @@ type ObjSchemaForInsert struct {
 	WbUserId *string `json:"wb_user_id,omitempty"`
 }
 
+// ObjSetAliasesBody Request body for setting aliases (object_id comes from path).
+type ObjSetAliasesBody struct {
+	// Aliases Examples: ["staging","v1-candidate"]
+	Aliases []string `json:"aliases"`
+
+	// Digest Examples: abc123def
+	Digest string `json:"digest"`
+
+	// ProjectId Examples: entity/project
+	ProjectId string `json:"project_id"`
+}
+
+// ObjSetAliasesRes defines model for ObjSetAliasesRes.
+type ObjSetAliasesRes = map[string]interface{}
+
+// ObjTagsBody Request body for adding/removing tags (object_id and digest come from path).
+type ObjTagsBody struct {
+	// ProjectId Examples: entity/project
+	ProjectId string `json:"project_id"`
+
+	// Tags Examples: ["production","reviewed"]
+	Tags []string `json:"tags"`
+}
+
 // ObjectVersionFilter defines model for ObjectVersionFilter.
 type ObjectVersionFilter struct {
+	// Aliases Filter objects that have any of the specified aliases
+	Aliases *[]string `json:"aliases,omitempty"`
+
 	// BaseObjectClasses Filter objects by their base classes
 	//
 	// Examples: ["Model"], ["Dataset"]
@@ -1941,6 +5236,9 @@ type ObjectVersionFilter struct {
 	//
 	// Examples: my_favorite_model, my_favorite_dataset
 	ObjectIds *[]string `json:"object_ids,omitempty"`
+
+	// Tags Filter object versions that have any of the specified tags
+	Tags *[]string `json:"tags,omitempty"`
 }
 
 // OpCreateBody Request body for creating an Op object via REST API.
@@ -1992,11 +5290,6 @@ type OpReadRes struct {
 	VersionIndex int `json:"version_index"`
 }
 
-// Operation defines model for Operation.
-type Operation struct {
-	union json.RawMessage
-}
-
 // OrOperation Logical OR. At least one condition must be true.
 //
 // Example:
@@ -2010,7 +5303,12 @@ type Operation struct {
 //	}
 //	```
 type OrOperation struct {
-	Or []Operation `json:"$or"`
+	Or []OrOperation_Or_Item `json:"$or"`
+}
+
+// OrOperation_Or_Item defines model for OrOperation.$or.Item.
+type OrOperation_Or_Item struct {
+	union json.RawMessage
 }
 
 // PredictionCreateBody Request body for creating a Prediction via REST API.
@@ -2019,6 +5317,9 @@ type OrOperation struct {
 type PredictionCreateBody struct {
 	// EvaluationRunId Optional evaluation run ID to link this prediction as a child call
 	EvaluationRunId *string `json:"evaluation_run_id,omitempty"`
+
+	// GenaiSpanRef Optional GenAI span reference(s) produced by this prediction.
+	GenaiSpanRef *[]GenAISpanRef `json:"genai_span_ref,omitempty"`
 
 	// Inputs The inputs to the prediction
 	Inputs map[string]interface{} `json:"inputs"`
@@ -2073,17 +5374,148 @@ type PredictionReadRes struct {
 //
 // Pricing fields are in string format to avoid floating point precision issues.
 type Pricing struct {
-	Completion       string `json:"completion"`
-	Image            string `json:"image"`
-	InputCacheReads  string `json:"input_cache_reads"`
-	InputCacheWrites string `json:"input_cache_writes"`
-	Prompt           string `json:"prompt"`
-	Request          string `json:"request"`
+	Completion     string `json:"completion"`
+	Image          string `json:"image"`
+	InputCacheRead string `json:"input_cache_read"`
+	Prompt         string `json:"prompt"`
+	Request        string `json:"request"`
+}
+
+// ProjectIngestSamplingSettingsReadReq defines model for ProjectIngestSamplingSettingsReadReq.
+type ProjectIngestSamplingSettingsReadReq struct {
+	ProjectId string `json:"project_id"`
+}
+
+// ProjectIngestSamplingSettingsReadRes defines model for ProjectIngestSamplingSettingsReadRes.
+type ProjectIngestSamplingSettingsReadRes struct {
+	DryRun     bool    `json:"dry_run"`
+	SampleRate float64 `json:"sample_rate"`
+}
+
+// ProjectSensitiveDataSettingsReadRes defines model for ProjectSensitiveDataSettingsReadRes.
+type ProjectSensitiveDataSettingsReadRes struct {
+	Policy SensitiveDataPolicy `json:"policy"`
+}
+
+// ProjectStatsReq defines model for ProjectStatsReq.
+type ProjectStatsReq struct {
+	IncludeFileStorageSize   *bool  `json:"include_file_storage_size,omitempty"`
+	IncludeObjectStorageSize *bool  `json:"include_object_storage_size,omitempty"`
+	IncludeTableStorageSize  *bool  `json:"include_table_storage_size,omitempty"`
+	IncludeTraceStorageSize  *bool  `json:"include_trace_storage_size,omitempty"`
+	ProjectId                string `json:"project_id"`
+}
+
+// ProjectStatsRes defines model for ProjectStatsRes.
+type ProjectStatsRes struct {
+	FilesStorageSizeBytes   int  `json:"files_storage_size_bytes"`
+	ObjectsStorageSizeBytes int  `json:"objects_storage_size_bytes"`
+	SpansStorageSizeBytes   *int `json:"spans_storage_size_bytes,omitempty"`
+	TablesStorageSizeBytes  int  `json:"tables_storage_size_bytes"`
+	TraceStorageSizeBytes   int  `json:"trace_storage_size_bytes"`
+}
+
+// ProjectTTLSettingsReadReq defines model for ProjectTTLSettingsReadReq.
+type ProjectTTLSettingsReadReq struct {
+	ProjectId string `json:"project_id"`
+}
+
+// ProjectTTLSettingsReadRes defines model for ProjectTTLSettingsReadRes.
+type ProjectTTLSettingsReadRes struct {
+	// RetentionDays None = no TTL (infinite retention)
+	RetentionDays *int `json:"retention_days"`
+}
+
+// ProjectTTLSettingsUpdateReq defines model for ProjectTTLSettingsUpdateReq.
+type ProjectTTLSettingsUpdateReq struct {
+	ProjectId string `json:"project_id"`
+
+	// RetentionDays None disables TTL; must be None or >= 1
+	RetentionDays *int    `json:"retention_days,omitempty"`
+	WbUserId      *string `json:"wb_user_id,omitempty"`
+}
+
+// ProjectTTLSettingsUpdateRes defines model for ProjectTTLSettingsUpdateRes.
+type ProjectTTLSettingsUpdateRes struct {
+	RetentionDays *int `json:"retention_days"`
+}
+
+// ProjectsInfoReq defines model for ProjectsInfoReq.
+type ProjectsInfoReq struct {
+	// ProjectIds External project IDs in 'entity/project' format.
+	//
+	// Examples: ["entity-a/project-a","entity-b/project-b"]
+	ProjectIds []string `json:"project_ids"`
+}
+
+// ProjectsInfoRes defines model for ProjectsInfoRes.
+type ProjectsInfoRes struct {
+	// ExternalProjectId External project ID in 'entity/project' format.
+	ExternalProjectId string `json:"external_project_id"`
+
+	// InternalProjectId Internal project ID.
+	InternalProjectId string `json:"internal_project_id"`
 }
 
 // Query defines model for Query.
 type Query struct {
-	Expr Expr `json:"$expr"`
+	Expr Query_Expr `json:"$expr"`
+}
+
+// Query_Expr defines model for Query.Expr.
+type Query_Expr struct {
+	union json.RawMessage
+}
+
+// RatingCondition defines model for RatingCondition.
+type RatingCondition struct {
+	Op        RatingConditionOp `json:"op"`
+	ScorerKey string            `json:"scorer_key"`
+	Value     float64           `json:"value"`
+}
+
+// RatingConditionOp defines model for RatingCondition.Op.
+type RatingConditionOp string
+
+// ReasoningBudgetTokens Reasoning is controlled via a token budget.
+type ReasoningBudgetTokens struct {
+	// Max Maximum reasoning budget.
+	Max *int `json:"max,omitempty"`
+
+	// Min Minimum reasoning budget.
+	Min  *int                       `json:"min,omitempty"`
+	Type *ReasoningBudgetTokensType `json:"type,omitempty"`
+}
+
+// ReasoningBudgetTokensType defines model for ReasoningBudgetTokens.Type.
+type ReasoningBudgetTokensType string
+
+// ReasoningEffortOption Reasoning effort can be selected from a set of levels.
+type ReasoningEffortOption struct {
+	Type *ReasoningEffortOptionType `json:"type,omitempty"`
+
+	// Values Accepted effort levels (null denotes an implicit default).
+	Values []*ReasoningEffortOptionValues `json:"values"`
+}
+
+// ReasoningEffortOptionType defines model for ReasoningEffortOption.Type.
+type ReasoningEffortOptionType string
+
+// ReasoningEffortOptionValues defines model for ReasoningEffortOption.Values.
+type ReasoningEffortOptionValues string
+
+// ReasoningToggle Reasoning can be turned on or off.
+type ReasoningToggle struct {
+	Type *ReasoningToggleType `json:"type,omitempty"`
+}
+
+// ReasoningToggleType defines model for ReasoningToggle.Type.
+type ReasoningToggleType string
+
+// ReferenceResolveRes defines model for ReferenceResolveRes.
+type ReferenceResolveRes struct {
+	DownloadUrls []string `json:"download_urls"`
+	ExpiresAt    *string  `json:"expires_at"`
 }
 
 // RefsReadBatchReq defines model for RefsReadBatchReq.
@@ -2096,16 +5528,43 @@ type RefsReadBatchRes struct {
 	Vals []interface{} `json:"vals"`
 }
 
+// RescoreReq Full rescore request including server-set fields.
+type RescoreReq struct {
+	ProjectId string `json:"project_id"`
+
+	// ScorerRefs Scorer references (weave:// URIs) to apply; must be non-empty
+	ScorerRefs []string `json:"scorer_refs"`
+
+	// SourceEvaluationRunId The evaluation run whose predictions will be rescored
+	SourceEvaluationRunId string `json:"source_evaluation_run_id"`
+
+	// WbUserId Do not set directly. Server will automatically populate this field.
+	WbUserId *string `json:"wb_user_id,omitempty"`
+}
+
+// RescoreRes Response for a rescore request.
+type RescoreRes struct {
+	// CallId Call ID for /evaluations/status polling
+	CallId string `json:"call_id"`
+
+	// EvaluationRunId The newly created EvaluationRun ID
+	EvaluationRunId string `json:"evaluation_run_id"`
+}
+
 // RouterOpenRouterModel defines model for RouterOpenRouterModel.
 type RouterOpenRouterModel struct {
-	ContextLength    int          `json:"context_length"`
-	Created          int          `json:"created"`
-	Datacenters      []Datacenter `json:"datacenters"`
-	Id               string       `json:"id"`
-	InputModalities  []string     `json:"input_modalities"`
-	MaxOutputLength  int          `json:"max_output_length"`
-	Name             string       `json:"name"`
-	OutputModalities []string     `json:"output_modalities"`
+	ContextLength int          `json:"context_length"`
+	Created       int          `json:"created"`
+	Datacenters   []Datacenter `json:"datacenters"`
+
+	// DeprecationDate Date when the model is deprecated (YYYY-MM-DD). Omitted from output if not set.
+	DeprecationDate  *string  `json:"deprecation_date,omitempty"`
+	HuggingFaceId    string   `json:"hugging_face_id"`
+	Id               string   `json:"id"`
+	InputModalities  []string `json:"input_modalities"`
+	MaxOutputLength  int      `json:"max_output_length"`
+	Name             string   `json:"name"`
+	OutputModalities []string `json:"output_modalities"`
 
 	// Pricing All pricing values are in USD per 1 token.
 	//
@@ -2143,8 +5602,8 @@ type ScoreCreateBody struct {
 	// Scorer The scorer reference (weave:// URI)
 	Scorer string `json:"scorer"`
 
-	// Value The value of the score
-	Value float64 `json:"value"`
+	// Value The raw output of the scorer
+	Value interface{} `json:"value"`
 }
 
 // ScoreCreateRes defines model for ScoreCreateRes.
@@ -2170,8 +5629,8 @@ type ScoreReadRes struct {
 	// Scorer The scorer reference (weave:// URI)
 	Scorer string `json:"scorer"`
 
-	// Value The value of the score
-	Value float64 `json:"value"`
+	// Value The raw output of the scorer
+	Value interface{} `json:"value"`
 
 	// WbUserId Do not set directly. Server will automatically populate this field.
 	WbUserId *string `json:"wb_user_id,omitempty"`
@@ -2234,10 +5693,29 @@ type ScorerReadRes struct {
 	VersionIndex int `json:"version_index"`
 }
 
+// SensitiveDataPolicy defines model for SensitiveDataPolicy.
+type SensitiveDataPolicy string
+
 // ServerInfoRes defines model for ServerInfoRes.
 type ServerInfoRes struct {
 	MinRequiredWeavePythonVersion string `json:"min_required_weave_python_version"`
 	TraceServerVersion            string `json:"trace_server_version"`
+}
+
+// SizeOperation Return the number of elements in a collection or characters in a string.
+//
+// Example:
+//
+//	```
+//	{"$size": {"$getField": "scorer_tags"}}
+//	```
+type SizeOperation struct {
+	Size SizeOperation_Size `json:"$size"`
+}
+
+// SizeOperation_Size defines model for SizeOperation.Size.
+type SizeOperation_Size struct {
+	union json.RawMessage
 }
 
 // SortBy defines model for SortBy.
@@ -2248,6 +5726,46 @@ type SortBy struct {
 
 // SortByDirection defines model for SortBy.Direction.
 type SortByDirection string
+
+// SourceDatasetMembership Membership of a single (source, dataset) pair in the reverse query.
+type SourceDatasetMembership struct {
+	DatasetObjectId      string     `json:"dataset_object_id"`
+	FirstSeenAt          time.Time  `json:"first_seen_at"`
+	RowDigests           []string   `json:"row_digests"`
+	RowDigestsTotalCount int        `json:"row_digests_total_count"`
+	RowDigestsTruncated  bool       `json:"row_digests_truncated"`
+	SourceId             string     `json:"source_id"`
+	SourceKind           SourceKind `json:"source_kind"`
+	SourceTraceId        string     `json:"source_trace_id"`
+}
+
+// SourceDatasetsQueryReq Reverse query: sources -> datasets.
+type SourceDatasetsQueryReq struct {
+	IncludeDeleted *bool `json:"include_deleted,omitempty"`
+
+	// ProjectId Examples: entity/project
+	ProjectId string      `json:"project_id"`
+	Sources   []SourceRef `json:"sources"`
+
+	// WbUserId Do not set directly. Server will automatically populate this field.
+	WbUserId *string `json:"wb_user_id,omitempty"`
+}
+
+// SourceDatasetsQueryRes Response from the reverse sources -> datasets query.
+type SourceDatasetsQueryRes struct {
+	Memberships []SourceDatasetMembership `json:"memberships"`
+}
+
+// SourceKind defines model for SourceKind.
+type SourceKind string
+
+// SourceRef Reference to a provenance source (a call, an agent span, or a
+// conversation).
+type SourceRef struct {
+	SourceId      string     `json:"source_id"`
+	SourceKind    SourceKind `json:"source_kind"`
+	SourceTraceId string     `json:"source_trace_id"`
+}
 
 // StartedCallSchemaForInsert defines model for StartedCallSchemaForInsert.
 type StartedCallSchemaForInsert struct {
@@ -2289,8 +5807,10 @@ type TableAppendSpecPayload struct {
 
 // TableCreateFromDigestsReq defines model for TableCreateFromDigestsReq.
 type TableCreateFromDigestsReq struct {
-	ProjectId  string   `json:"project_id"`
-	RowDigests []string `json:"row_digests"`
+	// ExpectedDigest Client-computed table digest for server-side validation.
+	ExpectedDigest *string  `json:"expected_digest,omitempty"`
+	ProjectId      string   `json:"project_id"`
+	RowDigests     []string `json:"row_digests"`
 }
 
 // TableCreateFromDigestsRes defines model for TableCreateFromDigestsRes.
@@ -2424,8 +5944,10 @@ type TableRowSchema struct {
 
 // TableSchemaForInsert defines model for TableSchemaForInsert.
 type TableSchemaForInsert struct {
-	ProjectId string                   `json:"project_id"`
-	Rows      []map[string]interface{} `json:"rows"`
+	// ExpectedDigest Client-computed table digest for server-side validation.
+	ExpectedDigest *string                  `json:"expected_digest,omitempty"`
+	ProjectId      string                   `json:"project_id"`
+	Rows           []map[string]interface{} `json:"rows"`
 }
 
 // TableStatsRow defines model for TableStatsRow.
@@ -2453,6 +5975,36 @@ type TableUpdateRes struct {
 
 	// UpdatedRowDigests The digests of the rows that were updated
 	UpdatedRowDigests *[]string `json:"updated_row_digests,omitempty"`
+}
+
+// TagsListRes defines model for TagsListRes.
+type TagsListRes struct {
+	Tags []string `json:"tags"`
+}
+
+// ThreadSchema defines model for ThreadSchema.
+type ThreadSchema struct {
+	// FirstTurnId Turn ID of the first turn in this thread (earliest start_time)
+	FirstTurnId *string `json:"first_turn_id"`
+
+	// LastTurnId Turn ID of the latest turn in this thread (latest end_time)
+	LastTurnId *string `json:"last_turn_id"`
+
+	// LastUpdated Latest end time of turn calls in this thread
+	LastUpdated time.Time `json:"last_updated"`
+
+	// P50TurnDurationMs 50th percentile (median) of turn durations in milliseconds within this thread
+	P50TurnDurationMs *float64 `json:"p50_turn_duration_ms"`
+
+	// P99TurnDurationMs 99th percentile of turn durations in milliseconds within this thread
+	P99TurnDurationMs *float64 `json:"p99_turn_duration_ms"`
+
+	// StartTime Earliest start time of turn calls in this thread
+	StartTime time.Time `json:"start_time"`
+	ThreadId  string    `json:"thread_id"`
+
+	// TurnCount Number of turn calls in this thread
+	TurnCount int `json:"turn_count"`
 }
 
 // ThreadsQueryFilter defines model for ThreadsQueryFilter.
@@ -2525,7 +6077,8 @@ type TraceUsageReq struct {
 
 // TraceUsageRes Response with per-call usage metrics (each includes descendant contributions).
 type TraceUsageRes struct {
-	CallUsage *map[string]map[string]LLMAggregatedUsage `json:"call_usage,omitempty"`
+	CallUsage         map[string]map[string]LLMAggregatedUsage `json:"call_usage"`
+	UnfinishedCallIds []string                                 `json:"unfinished_call_ids"`
 }
 
 // UsageMetricSpec Specification for a usage metric to aggregate (grouped by model).
@@ -2545,9 +6098,11 @@ type UsageMetricSpecMetric string
 
 // ValidationError defines model for ValidationError.
 type ValidationError struct {
-	Loc  []ValidationError_Loc_Item `json:"loc"`
-	Msg  string                     `json:"msg"`
-	Type string                     `json:"type"`
+	Ctx   *map[string]interface{}    `json:"ctx,omitempty"`
+	Input interface{}                `json:"input,omitempty"`
+	Loc   []ValidationError_Loc_Item `json:"loc"`
+	Msg   string                     `json:"msg"`
+	Type  string                     `json:"type"`
 }
 
 // ValidationErrorLoc0 defines model for ValidationError.Loc.0.
@@ -2559,6 +6114,16 @@ type ValidationErrorLoc1 = int
 // ValidationError_Loc_Item defines model for ValidationError.loc.Item.
 type ValidationError_Loc_Item struct {
 	union json.RawMessage
+}
+
+// AliasesListAliasesGetParams defines parameters for AliasesListAliasesGet.
+type AliasesListAliasesGetParams struct {
+	ProjectId string `form:"project_id" json:"project_id"`
+}
+
+// AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteParams defines parameters for AnnotationQueueDeleteAnnotationQueuesQueueIdDelete.
+type AnnotationQueueDeleteAnnotationQueuesQueueIdDeleteParams struct {
+	ProjectId string `form:"project_id" json:"project_id"`
 }
 
 // AnnotationQueueReadAnnotationQueuesQueueIdGetParams defines parameters for AnnotationQueueReadAnnotationQueuesQueueIdGet.
@@ -2575,6 +6140,22 @@ type CallsQueryStreamCallsStreamQueryPostParams struct {
 type GetCallerLocationGeolocateGetParams struct {
 	// Ip IP address to geolocate, defaults to client IP address
 	Ip *string `form:"ip,omitempty" json:"ip,omitempty"`
+}
+
+// NvidiaHardwareInferenceNvidiaV2HardwareGetParams defines parameters for NvidiaHardwareInferenceNvidiaV2HardwareGet.
+type NvidiaHardwareInferenceNvidiaV2HardwareGetParams struct {
+	// Model Model name without the publisher prefix
+	Model string `form:"model" json:"model"`
+}
+
+// ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetParams defines parameters for ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGet.
+type ProjectSensitiveDataSettingsReadProjectSensitiveDataSettingsGetParams struct {
+	ProjectId string `form:"project_id" json:"project_id"`
+}
+
+// TagsListTagsGetParams defines parameters for TagsListTagsGet.
+type TagsListTagsGetParams struct {
+	ProjectId string `form:"project_id" json:"project_id"`
 }
 
 // DatasetListV2EntityProjectDatasetsGetParams defines parameters for DatasetListV2EntityProjectDatasetsGet.
@@ -2613,6 +6194,15 @@ type EvaluationRunListV2EntityProjectEvaluationRunsGetParams struct {
 	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
 
 	// Offset Number of evaluation runs to skip
+	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
+// EvaluationListV2EntityProjectEvaluationsGetParams defines parameters for EvaluationListV2EntityProjectEvaluationsGet.
+type EvaluationListV2EntityProjectEvaluationsGetParams struct {
+	// Limit Maximum number of evaluations to return
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Offset Number of evaluations to skip
 	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
 }
 
@@ -2676,6 +6266,15 @@ type PredictionListV2EntityProjectPredictionsGetParams struct {
 	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
 }
 
+// ScorerListV2EntityProjectScorersGetParams defines parameters for ScorerListV2EntityProjectScorersGet.
+type ScorerListV2EntityProjectScorersGetParams struct {
+	// Limit Maximum number of scorers to return
+	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
+
+	// Offset Number of scorers to skip
+	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
+}
+
 // ScorerDeleteV2EntityProjectScorersObjectIdDeleteParams defines parameters for ScorerDeleteV2EntityProjectScorersObjectIdDelete.
 type ScorerDeleteV2EntityProjectScorersObjectIdDeleteParams struct {
 	// Digests List of digests to delete. If not provided, all digests for the scorer will be deleted.
@@ -2700,6 +6299,33 @@ type ScoreListV2EntityProjectScoresGetParams struct {
 	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
 }
 
+// GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostJSONRequestBody defines body for GenaiAgentVersionsQueryAgentsAgentVersionsQueryPost for application/json ContentType.
+type GenaiAgentVersionsQueryAgentsAgentVersionsQueryPostJSONRequestBody = AgentVersionsQueryReq
+
+// GenaiConversationChatAgentsConversationsChatPostJSONRequestBody defines body for GenaiConversationChatAgentsConversationsChatPost for application/json ContentType.
+type GenaiConversationChatAgentsConversationsChatPostJSONRequestBody = AgentConversationChatReq
+
+// GenaiConversationSpansAgentsConversationsSpansPostJSONRequestBody defines body for GenaiConversationSpansAgentsConversationsSpansPost for application/json ContentType.
+type GenaiConversationSpansAgentsConversationsSpansPostJSONRequestBody = AgentConversationSpansReq
+
+// GenaiAgentsQueryAgentsQueryPostJSONRequestBody defines body for GenaiAgentsQueryAgentsQueryPost for application/json ContentType.
+type GenaiAgentsQueryAgentsQueryPostJSONRequestBody = AgentsQueryReq
+
+// GenaiSearchAgentsSearchPostJSONRequestBody defines body for GenaiSearchAgentsSearchPost for application/json ContentType.
+type GenaiSearchAgentsSearchPostJSONRequestBody = AgentSearchReq
+
+// GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody defines body for GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost for application/json ContentType.
+type GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody = AgentCustomAttrsSchemaReq
+
+// GenaiSpansQueryAgentsSpansQueryPostJSONRequestBody defines body for GenaiSpansQueryAgentsSpansQueryPost for application/json ContentType.
+type GenaiSpansQueryAgentsSpansQueryPostJSONRequestBody = AgentSpansQueryReq
+
+// GenaiSpansStatsAgentsSpansStatsPostJSONRequestBody defines body for GenaiSpansStatsAgentsSpansStatsPost for application/json ContentType.
+type GenaiSpansStatsAgentsSpansStatsPostJSONRequestBody = AgentSpanStatsReq
+
+// GenaiTracesChatAgentsTracesChatPostJSONRequestBody defines body for GenaiTracesChatAgentsTracesChatPost for application/json ContentType.
+type GenaiTracesChatAgentsTracesChatPostJSONRequestBody = AgentTraceChatReq
+
 // AnnotationQueueCreateAnnotationQueuesPostJSONRequestBody defines body for AnnotationQueueCreateAnnotationQueuesPost for application/json ContentType.
 type AnnotationQueueCreateAnnotationQueuesPostJSONRequestBody = AnnotationQueueCreateReq
 
@@ -2708,6 +6334,9 @@ type AnnotationQueuesQueryStreamAnnotationQueuesQueryPostJSONRequestBody = Annot
 
 // AnnotationQueuesStatsAnnotationQueuesStatsPostJSONRequestBody defines body for AnnotationQueuesStatsAnnotationQueuesStatsPost for application/json ContentType.
 type AnnotationQueuesStatsAnnotationQueuesStatsPostJSONRequestBody = AnnotationQueuesStatsReq
+
+// AnnotationQueueUpdateAnnotationQueuesQueueIdPutJSONRequestBody defines body for AnnotationQueueUpdateAnnotationQueuesQueueIdPut for application/json ContentType.
+type AnnotationQueueUpdateAnnotationQueuesQueueIdPutJSONRequestBody = AnnotationQueueUpdateBody
 
 // AnnotationQueueAddCallsAnnotationQueuesQueueIdItemsPostJSONRequestBody defines body for AnnotationQueueAddCallsAnnotationQueuesQueueIdItemsPost for application/json ContentType.
 type AnnotationQueueAddCallsAnnotationQueuesQueueIdItemsPostJSONRequestBody = AnnotationQueueAddCallsBody
@@ -2739,6 +6368,9 @@ type CallsDeleteCallsDeletePostJSONRequestBody = CallsDeleteReq
 // CallsQueryStatsCallsQueryStatsPostJSONRequestBody defines body for CallsQueryStatsCallsQueryStatsPost for application/json ContentType.
 type CallsQueryStatsCallsQueryStatsPostJSONRequestBody = CallsQueryStatsReq
 
+// CallsScoreCallsScorePostJSONRequestBody defines body for CallsScoreCallsScorePost for application/json ContentType.
+type CallsScoreCallsScorePostJSONRequestBody = CallsScoreReq
+
 // CallStatsCallsStatsPostJSONRequestBody defines body for CallStatsCallsStatsPost for application/json ContentType.
 type CallStatsCallsStatsPostJSONRequestBody = CallStatsReq
 
@@ -2747,6 +6379,12 @@ type CallsQueryStreamCallsStreamQueryPostJSONRequestBody = CallsQueryReq
 
 // CallsUsageCallsUsagePostJSONRequestBody defines body for CallsUsageCallsUsagePost for application/json ContentType.
 type CallsUsageCallsUsagePostJSONRequestBody = CallsUsageReq
+
+// CompletionsCreateCompletionsCreatePostJSONRequestBody defines body for CompletionsCreateCompletionsCreatePost for application/json ContentType.
+type CompletionsCreateCompletionsCreatePostJSONRequestBody = CompletionsCreateReq
+
+// CompletionsCreateStreamCompletionsCreateStreamPostJSONRequestBody defines body for CompletionsCreateStreamCompletionsCreateStreamPost for application/json ContentType.
+type CompletionsCreateStreamCompletionsCreateStreamPostJSONRequestBody = CompletionsCreateReq
 
 // CostCreateCostCreatePostJSONRequestBody defines body for CostCreateCostCreatePost for application/json ContentType.
 type CostCreateCostCreatePostJSONRequestBody = CostCreateReq
@@ -2757,17 +6395,35 @@ type CostPurgeCostPurgePostJSONRequestBody = CostPurgeReq
 // CostQueryCostQueryPostJSONRequestBody defines body for CostQueryCostQueryPost for application/json ContentType.
 type CostQueryCostQueryPostJSONRequestBody = CostQueryReq
 
+// DatasetSourcesLinkDatasetSourcesLinkPostJSONRequestBody defines body for DatasetSourcesLinkDatasetSourcesLinkPost for application/json ContentType.
+type DatasetSourcesLinkDatasetSourcesLinkPostJSONRequestBody = DatasetSourcesLinkReq
+
+// DatasetSourcesQueryDatasetSourcesQueryPostJSONRequestBody defines body for DatasetSourcesQueryDatasetSourcesQueryPost for application/json ContentType.
+type DatasetSourcesQueryDatasetSourcesQueryPostJSONRequestBody = DatasetSourcesQueryReq
+
+// SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostJSONRequestBody defines body for SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPost for application/json ContentType.
+type SourceDatasetsQueryDatasetSourcesSourceDatasetsQueryPostJSONRequestBody = SourceDatasetsQueryReq
+
 // EvaluateModelEvaluationsEvaluateModelPostJSONRequestBody defines body for EvaluateModelEvaluationsEvaluateModelPost for application/json ContentType.
 type EvaluateModelEvaluationsEvaluateModelPostJSONRequestBody = EvaluateModelReq
 
+// RescoreEvaluationEvaluationsRescorePostJSONRequestBody defines body for RescoreEvaluationEvaluationsRescorePost for application/json ContentType.
+type RescoreEvaluationEvaluationsRescorePostJSONRequestBody = RescoreReq
+
 // EvaluationStatusEvaluationsStatusPostJSONRequestBody defines body for EvaluationStatusEvaluationsStatusPost for application/json ContentType.
 type EvaluationStatusEvaluationsStatusPostJSONRequestBody = EvaluationStatusReq
+
+// FeedbackAggregateFeedbackAggregatePostJSONRequestBody defines body for FeedbackAggregateFeedbackAggregatePost for application/json ContentType.
+type FeedbackAggregateFeedbackAggregatePostJSONRequestBody = FeedbackAggregateReq
 
 // FeedbackCreateBatchFeedbackBatchCreatePostJSONRequestBody defines body for FeedbackCreateBatchFeedbackBatchCreatePost for application/json ContentType.
 type FeedbackCreateBatchFeedbackBatchCreatePostJSONRequestBody = FeedbackCreateBatchReq
 
 // FeedbackCreateFeedbackCreatePostJSONRequestBody defines body for FeedbackCreateFeedbackCreatePost for application/json ContentType.
 type FeedbackCreateFeedbackCreatePostJSONRequestBody = FeedbackCreateReq
+
+// FeedbackPayloadSchemaFeedbackPayloadSchemaPostJSONRequestBody defines body for FeedbackPayloadSchemaFeedbackPayloadSchemaPost for application/json ContentType.
+type FeedbackPayloadSchemaFeedbackPayloadSchemaPostJSONRequestBody = FeedbackPayloadSchemaReq
 
 // FeedbackPurgeFeedbackPurgePostJSONRequestBody defines body for FeedbackPurgeFeedbackPurgePost for application/json ContentType.
 type FeedbackPurgeFeedbackPurgePostJSONRequestBody = FeedbackPurgeReq
@@ -2778,6 +6434,9 @@ type FeedbackQueryFeedbackQueryPostJSONRequestBody = FeedbackQueryReq
 // FeedbackReplaceFeedbackReplacePostJSONRequestBody defines body for FeedbackReplaceFeedbackReplacePost for application/json ContentType.
 type FeedbackReplaceFeedbackReplacePostJSONRequestBody = FeedbackReplaceReq
 
+// FeedbackStatsFeedbackStatsPostJSONRequestBody defines body for FeedbackStatsFeedbackStatsPost for application/json ContentType.
+type FeedbackStatsFeedbackStatsPostJSONRequestBody = FeedbackStatsReq
+
 // FileContentFileContentPostJSONRequestBody defines body for FileContentFileContentPost for application/json ContentType.
 type FileContentFileContentPostJSONRequestBody = FileContentReadReq
 
@@ -2787,11 +6446,14 @@ type FileCreateFileCreatePostMultipartRequestBody = BodyFileCreateFileCreatePost
 // FilesStatsFilesQueryStatsPostJSONRequestBody defines body for FilesStatsFilesQueryStatsPost for application/json ContentType.
 type FilesStatsFilesQueryStatsPostJSONRequestBody = FilesStatsReq
 
+// FilesResolveUrlFilesResolveUrlPostJSONRequestBody defines body for FilesResolveUrlFilesResolveUrlPost for application/json ContentType.
+type FilesResolveUrlFilesResolveUrlPostJSONRequestBody = FilesResolveUrlReq
+
 // ImageCreateImageCreatePostJSONRequestBody defines body for ImageCreateImageCreatePost for application/json ContentType.
 type ImageCreateImageCreatePostJSONRequestBody = ImageGenerationCreateReq
 
-// InferencePostInferenceV1PathPostJSONRequestBody defines body for InferencePostInferenceV1PathPost for application/json ContentType.
-type InferencePostInferenceV1PathPostJSONRequestBody = CompletionsCreateRequestInputs
+// LinkToRegistryLinkToRegistryPostJSONRequestBody defines body for LinkToRegistryLinkToRegistryPost for application/json ContentType.
+type LinkToRegistryLinkToRegistryPostJSONRequestBody = CreateAndLinkPayload
 
 // ObjCreateObjCreatePostJSONRequestBody defines body for ObjCreateObjCreatePost for application/json ContentType.
 type ObjCreateObjCreatePostJSONRequestBody = ObjCreateReq
@@ -2805,8 +6467,35 @@ type ObjReadObjReadPostJSONRequestBody = ObjReadReq
 // ObjsQueryObjsQueryPostJSONRequestBody defines body for ObjsQueryObjsQueryPost for application/json ContentType.
 type ObjsQueryObjsQueryPostJSONRequestBody = ObjQueryReq
 
+// ObjSetAliasesObjsObjectIdAliasesPutJSONRequestBody defines body for ObjSetAliasesObjsObjectIdAliasesPut for application/json ContentType.
+type ObjSetAliasesObjsObjectIdAliasesPutJSONRequestBody = ObjSetAliasesBody
+
+// ObjRemoveAliasesObjsObjectIdAliasesRemovePostJSONRequestBody defines body for ObjRemoveAliasesObjsObjectIdAliasesRemovePost for application/json ContentType.
+type ObjRemoveAliasesObjsObjectIdAliasesRemovePostJSONRequestBody = ObjRemoveAliasesBody
+
+// ObjAddTagsObjsObjectIdVersionsDigestTagsPutJSONRequestBody defines body for ObjAddTagsObjsObjectIdVersionsDigestTagsPut for application/json ContentType.
+type ObjAddTagsObjsObjectIdVersionsDigestTagsPutJSONRequestBody = ObjTagsBody
+
+// ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostJSONRequestBody defines body for ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePost for application/json ContentType.
+type ObjRemoveTagsObjsObjectIdVersionsDigestTagsRemovePostJSONRequestBody = ObjTagsBody
+
+// ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostJSONRequestBody defines body for ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPost for application/json ContentType.
+type ProjectIngestSamplingSettingsReadProjectIngestSamplingSettingsReadPostJSONRequestBody = ProjectIngestSamplingSettingsReadReq
+
+// ProjectStatsProjectStatsPostJSONRequestBody defines body for ProjectStatsProjectStatsPost for application/json ContentType.
+type ProjectStatsProjectStatsPostJSONRequestBody = ProjectStatsReq
+
+// ProjectTtlSettingsReadProjectTtlSettingsReadPostJSONRequestBody defines body for ProjectTtlSettingsReadProjectTtlSettingsReadPost for application/json ContentType.
+type ProjectTtlSettingsReadProjectTtlSettingsReadPostJSONRequestBody = ProjectTTLSettingsReadReq
+
+// ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostJSONRequestBody defines body for ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePost for application/json ContentType.
+type ProjectTtlSettingsUpdateProjectTtlSettingsUpdatePostJSONRequestBody = ProjectTTLSettingsUpdateReq
+
 // RefsReadBatchRefsReadBatchPostJSONRequestBody defines body for RefsReadBatchRefsReadBatchPost for application/json ContentType.
 type RefsReadBatchRefsReadBatchPostJSONRequestBody = RefsReadBatchReq
+
+// ProjectsInfoServiceProjectsInfoPostJSONRequestBody defines body for ProjectsInfoServiceProjectsInfoPost for application/json ContentType.
+type ProjectsInfoServiceProjectsInfoPostJSONRequestBody = ProjectsInfoReq
 
 // TableCreateTableCreatePostJSONRequestBody defines body for TableCreateTableCreatePost for application/json ContentType.
 type TableCreateTableCreatePostJSONRequestBody = TableCreateReq
@@ -2832,8 +6521,14 @@ type ThreadsQueryStreamThreadsStreamQueryPostJSONRequestBody = ThreadsQueryReq
 // TraceUsageTraceUsagePostJSONRequestBody defines body for TraceUsageTraceUsagePost for application/json ContentType.
 type TraceUsageTraceUsagePostJSONRequestBody = TraceUsageReq
 
+// CallsCompleteV2EntityProjectCallsCompletePostJSONRequestBody defines body for CallsCompleteV2EntityProjectCallsCompletePost for application/json ContentType.
+type CallsCompleteV2EntityProjectCallsCompletePostJSONRequestBody = CallsUpsertCompleteReq
+
 // DatasetCreateV2EntityProjectDatasetsPostJSONRequestBody defines body for DatasetCreateV2EntityProjectDatasetsPost for application/json ContentType.
 type DatasetCreateV2EntityProjectDatasetsPostJSONRequestBody = DatasetCreateBody
+
+// EvalResultsQueryV2EntityProjectEvalResultsQueryPostJSONRequestBody defines body for EvalResultsQueryV2EntityProjectEvalResultsQueryPost for application/json ContentType.
+type EvalResultsQueryV2EntityProjectEvalResultsQueryPostJSONRequestBody = EvalResultsQueryBody
 
 // EvaluationRunCreateV2EntityProjectEvaluationRunsPostJSONRequestBody defines body for EvaluationRunCreateV2EntityProjectEvaluationRunsPost for application/json ContentType.
 type EvaluationRunCreateV2EntityProjectEvaluationRunsPostJSONRequestBody = EvaluationRunCreateBody
@@ -2853,11 +6548,97 @@ type OpCreateV2EntityProjectOpsPostJSONRequestBody = OpCreateBody
 // PredictionCreateV2EntityProjectPredictionsPostJSONRequestBody defines body for PredictionCreateV2EntityProjectPredictionsPost for application/json ContentType.
 type PredictionCreateV2EntityProjectPredictionsPostJSONRequestBody = PredictionCreateBody
 
+// CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutJSONRequestBody defines body for CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePut for application/json ContentType.
+type CustomRuntimeApplyV2EntityProjectRuntimesRuntimeNamePutJSONRequestBody = CustomRuntimeApplyBody
+
 // ScorerCreateV2EntityProjectScorersPostJSONRequestBody defines body for ScorerCreateV2EntityProjectScorersPost for application/json ContentType.
 type ScorerCreateV2EntityProjectScorersPostJSONRequestBody = ScorerCreateBody
 
 // ScoreCreateV2EntityProjectScoresPostJSONRequestBody defines body for ScoreCreateV2EntityProjectScoresPost for application/json ContentType.
 type ScoreCreateV2EntityProjectScoresPostJSONRequestBody = ScoreCreateBody
+
+// Getter for additional properties for CompletionsCreateStreamChunk. Returns the specified
+// element and whether it was found
+func (a CompletionsCreateStreamChunk) Get(fieldName string) (value interface{}, found bool) {
+	if a.AdditionalProperties != nil {
+		value, found = a.AdditionalProperties[fieldName]
+	}
+	return
+}
+
+// Setter for additional properties for CompletionsCreateStreamChunk
+func (a *CompletionsCreateStreamChunk) Set(fieldName string, value interface{}) {
+	if a.AdditionalProperties == nil {
+		a.AdditionalProperties = make(map[string]interface{})
+	}
+	a.AdditionalProperties[fieldName] = value
+}
+
+// Override default JSON handling for CompletionsCreateStreamChunk to handle AdditionalProperties
+func (a *CompletionsCreateStreamChunk) UnmarshalJSON(b []byte) error {
+	object := make(map[string]json.RawMessage)
+	err := json.Unmarshal(b, &object)
+	if err != nil {
+		return err
+	}
+
+	if raw, found := object["_meta"]; found {
+		err = json.Unmarshal(raw, &a.UnderscoreMeta)
+		if err != nil {
+			return fmt.Errorf("error reading '_meta': %w", err)
+		}
+		delete(object, "_meta")
+	}
+
+	if raw, found := object["error"]; found {
+		err = json.Unmarshal(raw, &a.Error)
+		if err != nil {
+			return fmt.Errorf("error reading 'error': %w", err)
+		}
+		delete(object, "error")
+	}
+
+	if len(object) != 0 {
+		a.AdditionalProperties = make(map[string]interface{})
+		for fieldName, fieldBuf := range object {
+			var fieldVal interface{}
+			err := json.Unmarshal(fieldBuf, &fieldVal)
+			if err != nil {
+				return fmt.Errorf("error unmarshaling field %s: %w", fieldName, err)
+			}
+			a.AdditionalProperties[fieldName] = fieldVal
+		}
+	}
+	return nil
+}
+
+// Override default JSON handling for CompletionsCreateStreamChunk to handle AdditionalProperties
+func (a CompletionsCreateStreamChunk) MarshalJSON() ([]byte, error) {
+	var err error
+	object := make(map[string]json.RawMessage)
+
+	if a.UnderscoreMeta != nil {
+		object["_meta"], err = json.Marshal(a.UnderscoreMeta)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '_meta': %w", err)
+		}
+	}
+
+	if a.Error != nil {
+		object["error"], err = json.Marshal(a.Error)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'error': %w", err)
+		}
+	}
+
+	for fieldName, field := range a.AdditionalProperties {
+		object[fieldName], err = json.Marshal(field)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling '%s': %w", fieldName, err)
+		}
+	}
+	return json.Marshal(object)
+}
 
 // Getter for additional properties for LLMUsageSchema. Returns the specified
 // element and whether it was found
@@ -2882,6 +6663,22 @@ func (a *LLMUsageSchema) UnmarshalJSON(b []byte) error {
 	err := json.Unmarshal(b, &object)
 	if err != nil {
 		return err
+	}
+
+	if raw, found := object["cache_creation_input_tokens"]; found {
+		err = json.Unmarshal(raw, &a.CacheCreationInputTokens)
+		if err != nil {
+			return fmt.Errorf("error reading 'cache_creation_input_tokens': %w", err)
+		}
+		delete(object, "cache_creation_input_tokens")
+	}
+
+	if raw, found := object["cache_read_input_tokens"]; found {
+		err = json.Unmarshal(raw, &a.CacheReadInputTokens)
+		if err != nil {
+			return fmt.Errorf("error reading 'cache_read_input_tokens': %w", err)
+		}
+		delete(object, "cache_read_input_tokens")
 	}
 
 	if raw, found := object["completion_tokens"]; found {
@@ -2950,6 +6747,20 @@ func (a *LLMUsageSchema) UnmarshalJSON(b []byte) error {
 func (a LLMUsageSchema) MarshalJSON() ([]byte, error) {
 	var err error
 	object := make(map[string]json.RawMessage)
+
+	if a.CacheCreationInputTokens != nil {
+		object["cache_creation_input_tokens"], err = json.Marshal(a.CacheCreationInputTokens)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'cache_creation_input_tokens': %w", err)
+		}
+	}
+
+	if a.CacheReadInputTokens != nil {
+		object["cache_read_input_tokens"], err = json.Marshal(a.CacheReadInputTokens)
+		if err != nil {
+			return nil, fmt.Errorf("error marshaling 'cache_read_input_tokens': %w", err)
+		}
+	}
 
 	if a.CompletionTokens != nil {
 		object["completion_tokens"], err = json.Marshal(a.CompletionTokens)
@@ -3083,6 +6894,960 @@ func (a SummaryInsertMap) MarshalJSON() ([]byte, error) {
 		}
 	}
 	return json.Marshal(object)
+}
+
+// AsAgentSearchMatchedMessageRole0 returns the union data inside the AgentSearchMatchedMessage_Role as a AgentSearchMatchedMessageRole0
+func (t AgentSearchMatchedMessage_Role) AsAgentSearchMatchedMessageRole0() (AgentSearchMatchedMessageRole0, error) {
+	var body AgentSearchMatchedMessageRole0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSearchMatchedMessageRole0 overwrites any union data inside the AgentSearchMatchedMessage_Role as the provided AgentSearchMatchedMessageRole0
+func (t *AgentSearchMatchedMessage_Role) FromAgentSearchMatchedMessageRole0(v AgentSearchMatchedMessageRole0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSearchMatchedMessageRole0 performs a merge with any union data inside the AgentSearchMatchedMessage_Role, using the provided AgentSearchMatchedMessageRole0
+func (t *AgentSearchMatchedMessage_Role) MergeAgentSearchMatchedMessageRole0(v AgentSearchMatchedMessageRole0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSearchMatchedMessageRole1 returns the union data inside the AgentSearchMatchedMessage_Role as a AgentSearchMatchedMessageRole1
+func (t AgentSearchMatchedMessage_Role) AsAgentSearchMatchedMessageRole1() (AgentSearchMatchedMessageRole1, error) {
+	var body AgentSearchMatchedMessageRole1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSearchMatchedMessageRole1 overwrites any union data inside the AgentSearchMatchedMessage_Role as the provided AgentSearchMatchedMessageRole1
+func (t *AgentSearchMatchedMessage_Role) FromAgentSearchMatchedMessageRole1(v AgentSearchMatchedMessageRole1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSearchMatchedMessageRole1 performs a merge with any union data inside the AgentSearchMatchedMessage_Role, using the provided AgentSearchMatchedMessageRole1
+func (t *AgentSearchMatchedMessage_Role) MergeAgentSearchMatchedMessageRole1(v AgentSearchMatchedMessageRole1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AgentSearchMatchedMessage_Role) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AgentSearchMatchedMessage_Role) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAgentSpanGroupFilterMax0 returns the union data inside the AgentSpanGroupFilter_Max as a AgentSpanGroupFilterMax0
+func (t AgentSpanGroupFilter_Max) AsAgentSpanGroupFilterMax0() (AgentSpanGroupFilterMax0, error) {
+	var body AgentSpanGroupFilterMax0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupFilterMax0 overwrites any union data inside the AgentSpanGroupFilter_Max as the provided AgentSpanGroupFilterMax0
+func (t *AgentSpanGroupFilter_Max) FromAgentSpanGroupFilterMax0(v AgentSpanGroupFilterMax0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupFilterMax0 performs a merge with any union data inside the AgentSpanGroupFilter_Max, using the provided AgentSpanGroupFilterMax0
+func (t *AgentSpanGroupFilter_Max) MergeAgentSpanGroupFilterMax0(v AgentSpanGroupFilterMax0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanGroupFilterMax1 returns the union data inside the AgentSpanGroupFilter_Max as a AgentSpanGroupFilterMax1
+func (t AgentSpanGroupFilter_Max) AsAgentSpanGroupFilterMax1() (AgentSpanGroupFilterMax1, error) {
+	var body AgentSpanGroupFilterMax1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupFilterMax1 overwrites any union data inside the AgentSpanGroupFilter_Max as the provided AgentSpanGroupFilterMax1
+func (t *AgentSpanGroupFilter_Max) FromAgentSpanGroupFilterMax1(v AgentSpanGroupFilterMax1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupFilterMax1 performs a merge with any union data inside the AgentSpanGroupFilter_Max, using the provided AgentSpanGroupFilterMax1
+func (t *AgentSpanGroupFilter_Max) MergeAgentSpanGroupFilterMax1(v AgentSpanGroupFilterMax1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AgentSpanGroupFilter_Max) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AgentSpanGroupFilter_Max) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAgentSpanGroupFilterMin0 returns the union data inside the AgentSpanGroupFilter_Min as a AgentSpanGroupFilterMin0
+func (t AgentSpanGroupFilter_Min) AsAgentSpanGroupFilterMin0() (AgentSpanGroupFilterMin0, error) {
+	var body AgentSpanGroupFilterMin0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupFilterMin0 overwrites any union data inside the AgentSpanGroupFilter_Min as the provided AgentSpanGroupFilterMin0
+func (t *AgentSpanGroupFilter_Min) FromAgentSpanGroupFilterMin0(v AgentSpanGroupFilterMin0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupFilterMin0 performs a merge with any union data inside the AgentSpanGroupFilter_Min, using the provided AgentSpanGroupFilterMin0
+func (t *AgentSpanGroupFilter_Min) MergeAgentSpanGroupFilterMin0(v AgentSpanGroupFilterMin0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanGroupFilterMin1 returns the union data inside the AgentSpanGroupFilter_Min as a AgentSpanGroupFilterMin1
+func (t AgentSpanGroupFilter_Min) AsAgentSpanGroupFilterMin1() (AgentSpanGroupFilterMin1, error) {
+	var body AgentSpanGroupFilterMin1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupFilterMin1 overwrites any union data inside the AgentSpanGroupFilter_Min as the provided AgentSpanGroupFilterMin1
+func (t *AgentSpanGroupFilter_Min) FromAgentSpanGroupFilterMin1(v AgentSpanGroupFilterMin1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupFilterMin1 performs a merge with any union data inside the AgentSpanGroupFilter_Min, using the provided AgentSpanGroupFilterMin1
+func (t *AgentSpanGroupFilter_Min) MergeAgentSpanGroupFilterMin1(v AgentSpanGroupFilterMin1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AgentSpanGroupFilter_Min) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AgentSpanGroupFilter_Min) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAgentSpanGroupRowGroupKeys0 returns the union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties as a AgentSpanGroupRowGroupKeys0
+func (t AgentSpanGroupRow_GroupKeys_AdditionalProperties) AsAgentSpanGroupRowGroupKeys0() (AgentSpanGroupRowGroupKeys0, error) {
+	var body AgentSpanGroupRowGroupKeys0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupRowGroupKeys0 overwrites any union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties as the provided AgentSpanGroupRowGroupKeys0
+func (t *AgentSpanGroupRow_GroupKeys_AdditionalProperties) FromAgentSpanGroupRowGroupKeys0(v AgentSpanGroupRowGroupKeys0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupRowGroupKeys0 performs a merge with any union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties, using the provided AgentSpanGroupRowGroupKeys0
+func (t *AgentSpanGroupRow_GroupKeys_AdditionalProperties) MergeAgentSpanGroupRowGroupKeys0(v AgentSpanGroupRowGroupKeys0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanGroupRowGroupKeys1 returns the union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties as a AgentSpanGroupRowGroupKeys1
+func (t AgentSpanGroupRow_GroupKeys_AdditionalProperties) AsAgentSpanGroupRowGroupKeys1() (AgentSpanGroupRowGroupKeys1, error) {
+	var body AgentSpanGroupRowGroupKeys1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupRowGroupKeys1 overwrites any union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties as the provided AgentSpanGroupRowGroupKeys1
+func (t *AgentSpanGroupRow_GroupKeys_AdditionalProperties) FromAgentSpanGroupRowGroupKeys1(v AgentSpanGroupRowGroupKeys1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupRowGroupKeys1 performs a merge with any union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties, using the provided AgentSpanGroupRowGroupKeys1
+func (t *AgentSpanGroupRow_GroupKeys_AdditionalProperties) MergeAgentSpanGroupRowGroupKeys1(v AgentSpanGroupRowGroupKeys1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanGroupRowGroupKeys2 returns the union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties as a AgentSpanGroupRowGroupKeys2
+func (t AgentSpanGroupRow_GroupKeys_AdditionalProperties) AsAgentSpanGroupRowGroupKeys2() (AgentSpanGroupRowGroupKeys2, error) {
+	var body AgentSpanGroupRowGroupKeys2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupRowGroupKeys2 overwrites any union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties as the provided AgentSpanGroupRowGroupKeys2
+func (t *AgentSpanGroupRow_GroupKeys_AdditionalProperties) FromAgentSpanGroupRowGroupKeys2(v AgentSpanGroupRowGroupKeys2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupRowGroupKeys2 performs a merge with any union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties, using the provided AgentSpanGroupRowGroupKeys2
+func (t *AgentSpanGroupRow_GroupKeys_AdditionalProperties) MergeAgentSpanGroupRowGroupKeys2(v AgentSpanGroupRowGroupKeys2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanGroupRowGroupKeys3 returns the union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties as a AgentSpanGroupRowGroupKeys3
+func (t AgentSpanGroupRow_GroupKeys_AdditionalProperties) AsAgentSpanGroupRowGroupKeys3() (AgentSpanGroupRowGroupKeys3, error) {
+	var body AgentSpanGroupRowGroupKeys3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupRowGroupKeys3 overwrites any union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties as the provided AgentSpanGroupRowGroupKeys3
+func (t *AgentSpanGroupRow_GroupKeys_AdditionalProperties) FromAgentSpanGroupRowGroupKeys3(v AgentSpanGroupRowGroupKeys3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupRowGroupKeys3 performs a merge with any union data inside the AgentSpanGroupRow_GroupKeys_AdditionalProperties, using the provided AgentSpanGroupRowGroupKeys3
+func (t *AgentSpanGroupRow_GroupKeys_AdditionalProperties) MergeAgentSpanGroupRowGroupKeys3(v AgentSpanGroupRowGroupKeys3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AgentSpanGroupRow_GroupKeys_AdditionalProperties) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AgentSpanGroupRow_GroupKeys_AdditionalProperties) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAgentSpanGroupRowMetrics0 returns the union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties as a AgentSpanGroupRowMetrics0
+func (t AgentSpanGroupRow_Metrics_AdditionalProperties) AsAgentSpanGroupRowMetrics0() (AgentSpanGroupRowMetrics0, error) {
+	var body AgentSpanGroupRowMetrics0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupRowMetrics0 overwrites any union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties as the provided AgentSpanGroupRowMetrics0
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) FromAgentSpanGroupRowMetrics0(v AgentSpanGroupRowMetrics0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupRowMetrics0 performs a merge with any union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties, using the provided AgentSpanGroupRowMetrics0
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) MergeAgentSpanGroupRowMetrics0(v AgentSpanGroupRowMetrics0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanGroupRowMetrics1 returns the union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties as a AgentSpanGroupRowMetrics1
+func (t AgentSpanGroupRow_Metrics_AdditionalProperties) AsAgentSpanGroupRowMetrics1() (AgentSpanGroupRowMetrics1, error) {
+	var body AgentSpanGroupRowMetrics1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupRowMetrics1 overwrites any union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties as the provided AgentSpanGroupRowMetrics1
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) FromAgentSpanGroupRowMetrics1(v AgentSpanGroupRowMetrics1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupRowMetrics1 performs a merge with any union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties, using the provided AgentSpanGroupRowMetrics1
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) MergeAgentSpanGroupRowMetrics1(v AgentSpanGroupRowMetrics1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanGroupRowMetrics2 returns the union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties as a AgentSpanGroupRowMetrics2
+func (t AgentSpanGroupRow_Metrics_AdditionalProperties) AsAgentSpanGroupRowMetrics2() (AgentSpanGroupRowMetrics2, error) {
+	var body AgentSpanGroupRowMetrics2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupRowMetrics2 overwrites any union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties as the provided AgentSpanGroupRowMetrics2
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) FromAgentSpanGroupRowMetrics2(v AgentSpanGroupRowMetrics2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupRowMetrics2 performs a merge with any union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties, using the provided AgentSpanGroupRowMetrics2
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) MergeAgentSpanGroupRowMetrics2(v AgentSpanGroupRowMetrics2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanGroupRowMetrics3 returns the union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties as a AgentSpanGroupRowMetrics3
+func (t AgentSpanGroupRow_Metrics_AdditionalProperties) AsAgentSpanGroupRowMetrics3() (AgentSpanGroupRowMetrics3, error) {
+	var body AgentSpanGroupRowMetrics3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupRowMetrics3 overwrites any union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties as the provided AgentSpanGroupRowMetrics3
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) FromAgentSpanGroupRowMetrics3(v AgentSpanGroupRowMetrics3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupRowMetrics3 performs a merge with any union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties, using the provided AgentSpanGroupRowMetrics3
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) MergeAgentSpanGroupRowMetrics3(v AgentSpanGroupRowMetrics3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanGroupRowMetrics4 returns the union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties as a AgentSpanGroupRowMetrics4
+func (t AgentSpanGroupRow_Metrics_AdditionalProperties) AsAgentSpanGroupRowMetrics4() (AgentSpanGroupRowMetrics4, error) {
+	var body AgentSpanGroupRowMetrics4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanGroupRowMetrics4 overwrites any union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties as the provided AgentSpanGroupRowMetrics4
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) FromAgentSpanGroupRowMetrics4(v AgentSpanGroupRowMetrics4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanGroupRowMetrics4 performs a merge with any union data inside the AgentSpanGroupRow_Metrics_AdditionalProperties, using the provided AgentSpanGroupRowMetrics4
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) MergeAgentSpanGroupRowMetrics4(v AgentSpanGroupRowMetrics4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AgentSpanGroupRow_Metrics_AdditionalProperties) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AgentSpanGroupRow_Metrics_AdditionalProperties) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAgentSpanStatsResRows0 returns the union data inside the AgentSpanStatsRes_Rows_AdditionalProperties as a AgentSpanStatsResRows0
+func (t AgentSpanStatsRes_Rows_AdditionalProperties) AsAgentSpanStatsResRows0() (AgentSpanStatsResRows0, error) {
+	var body AgentSpanStatsResRows0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanStatsResRows0 overwrites any union data inside the AgentSpanStatsRes_Rows_AdditionalProperties as the provided AgentSpanStatsResRows0
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) FromAgentSpanStatsResRows0(v AgentSpanStatsResRows0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanStatsResRows0 performs a merge with any union data inside the AgentSpanStatsRes_Rows_AdditionalProperties, using the provided AgentSpanStatsResRows0
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) MergeAgentSpanStatsResRows0(v AgentSpanStatsResRows0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanStatsResRows1 returns the union data inside the AgentSpanStatsRes_Rows_AdditionalProperties as a AgentSpanStatsResRows1
+func (t AgentSpanStatsRes_Rows_AdditionalProperties) AsAgentSpanStatsResRows1() (AgentSpanStatsResRows1, error) {
+	var body AgentSpanStatsResRows1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanStatsResRows1 overwrites any union data inside the AgentSpanStatsRes_Rows_AdditionalProperties as the provided AgentSpanStatsResRows1
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) FromAgentSpanStatsResRows1(v AgentSpanStatsResRows1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanStatsResRows1 performs a merge with any union data inside the AgentSpanStatsRes_Rows_AdditionalProperties, using the provided AgentSpanStatsResRows1
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) MergeAgentSpanStatsResRows1(v AgentSpanStatsResRows1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanStatsResRows2 returns the union data inside the AgentSpanStatsRes_Rows_AdditionalProperties as a AgentSpanStatsResRows2
+func (t AgentSpanStatsRes_Rows_AdditionalProperties) AsAgentSpanStatsResRows2() (AgentSpanStatsResRows2, error) {
+	var body AgentSpanStatsResRows2
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanStatsResRows2 overwrites any union data inside the AgentSpanStatsRes_Rows_AdditionalProperties as the provided AgentSpanStatsResRows2
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) FromAgentSpanStatsResRows2(v AgentSpanStatsResRows2) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanStatsResRows2 performs a merge with any union data inside the AgentSpanStatsRes_Rows_AdditionalProperties, using the provided AgentSpanStatsResRows2
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) MergeAgentSpanStatsResRows2(v AgentSpanStatsResRows2) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanStatsResRows3 returns the union data inside the AgentSpanStatsRes_Rows_AdditionalProperties as a AgentSpanStatsResRows3
+func (t AgentSpanStatsRes_Rows_AdditionalProperties) AsAgentSpanStatsResRows3() (AgentSpanStatsResRows3, error) {
+	var body AgentSpanStatsResRows3
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanStatsResRows3 overwrites any union data inside the AgentSpanStatsRes_Rows_AdditionalProperties as the provided AgentSpanStatsResRows3
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) FromAgentSpanStatsResRows3(v AgentSpanStatsResRows3) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanStatsResRows3 performs a merge with any union data inside the AgentSpanStatsRes_Rows_AdditionalProperties, using the provided AgentSpanStatsResRows3
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) MergeAgentSpanStatsResRows3(v AgentSpanStatsResRows3) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAgentSpanStatsResRows4 returns the union data inside the AgentSpanStatsRes_Rows_AdditionalProperties as a AgentSpanStatsResRows4
+func (t AgentSpanStatsRes_Rows_AdditionalProperties) AsAgentSpanStatsResRows4() (AgentSpanStatsResRows4, error) {
+	var body AgentSpanStatsResRows4
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAgentSpanStatsResRows4 overwrites any union data inside the AgentSpanStatsRes_Rows_AdditionalProperties as the provided AgentSpanStatsResRows4
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) FromAgentSpanStatsResRows4(v AgentSpanStatsResRows4) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAgentSpanStatsResRows4 performs a merge with any union data inside the AgentSpanStatsRes_Rows_AdditionalProperties, using the provided AgentSpanStatsResRows4
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) MergeAgentSpanStatsResRows4(v AgentSpanStatsResRows4) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AgentSpanStatsRes_Rows_AdditionalProperties) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AgentSpanStatsRes_Rows_AdditionalProperties) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiteralOperation returns the union data inside the AndOperation_And_Item as a LiteralOperation
+func (t AndOperation_And_Item) AsLiteralOperation() (LiteralOperation, error) {
+	var body LiteralOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiteralOperation overwrites any union data inside the AndOperation_And_Item as the provided LiteralOperation
+func (t *AndOperation_And_Item) FromLiteralOperation(v LiteralOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiteralOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided LiteralOperation
+func (t *AndOperation_And_Item) MergeLiteralOperation(v LiteralOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetFieldOperator returns the union data inside the AndOperation_And_Item as a GetFieldOperator
+func (t AndOperation_And_Item) AsGetFieldOperator() (GetFieldOperator, error) {
+	var body GetFieldOperator
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetFieldOperator overwrites any union data inside the AndOperation_And_Item as the provided GetFieldOperator
+func (t *AndOperation_And_Item) FromGetFieldOperator(v GetFieldOperator) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetFieldOperator performs a merge with any union data inside the AndOperation_And_Item, using the provided GetFieldOperator
+func (t *AndOperation_And_Item) MergeGetFieldOperator(v GetFieldOperator) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsConvertOperation returns the union data inside the AndOperation_And_Item as a ConvertOperation
+func (t AndOperation_And_Item) AsConvertOperation() (ConvertOperation, error) {
+	var body ConvertOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromConvertOperation overwrites any union data inside the AndOperation_And_Item as the provided ConvertOperation
+func (t *AndOperation_And_Item) FromConvertOperation(v ConvertOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeConvertOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided ConvertOperation
+func (t *AndOperation_And_Item) MergeConvertOperation(v ConvertOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSizeOperation returns the union data inside the AndOperation_And_Item as a SizeOperation
+func (t AndOperation_And_Item) AsSizeOperation() (SizeOperation, error) {
+	var body SizeOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSizeOperation overwrites any union data inside the AndOperation_And_Item as the provided SizeOperation
+func (t *AndOperation_And_Item) FromSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSizeOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided SizeOperation
+func (t *AndOperation_And_Item) MergeSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAndOperation returns the union data inside the AndOperation_And_Item as a AndOperation
+func (t AndOperation_And_Item) AsAndOperation() (AndOperation, error) {
+	var body AndOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAndOperation overwrites any union data inside the AndOperation_And_Item as the provided AndOperation
+func (t *AndOperation_And_Item) FromAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAndOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided AndOperation
+func (t *AndOperation_And_Item) MergeAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsOrOperation returns the union data inside the AndOperation_And_Item as a OrOperation
+func (t AndOperation_And_Item) AsOrOperation() (OrOperation, error) {
+	var body OrOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrOperation overwrites any union data inside the AndOperation_And_Item as the provided OrOperation
+func (t *AndOperation_And_Item) FromOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided OrOperation
+func (t *AndOperation_And_Item) MergeOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNotOperation returns the union data inside the AndOperation_And_Item as a NotOperation
+func (t AndOperation_And_Item) AsNotOperation() (NotOperation, error) {
+	var body NotOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNotOperation overwrites any union data inside the AndOperation_And_Item as the provided NotOperation
+func (t *AndOperation_And_Item) FromNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNotOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided NotOperation
+func (t *AndOperation_And_Item) MergeNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsEqOperation returns the union data inside the AndOperation_And_Item as a EqOperation
+func (t AndOperation_And_Item) AsEqOperation() (EqOperation, error) {
+	var body EqOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromEqOperation overwrites any union data inside the AndOperation_And_Item as the provided EqOperation
+func (t *AndOperation_And_Item) FromEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeEqOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided EqOperation
+func (t *AndOperation_And_Item) MergeEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGtOperation returns the union data inside the AndOperation_And_Item as a GtOperation
+func (t AndOperation_And_Item) AsGtOperation() (GtOperation, error) {
+	var body GtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGtOperation overwrites any union data inside the AndOperation_And_Item as the provided GtOperation
+func (t *AndOperation_And_Item) FromGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGtOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided GtOperation
+func (t *AndOperation_And_Item) MergeGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLtOperation returns the union data inside the AndOperation_And_Item as a LtOperation
+func (t AndOperation_And_Item) AsLtOperation() (LtOperation, error) {
+	var body LtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLtOperation overwrites any union data inside the AndOperation_And_Item as the provided LtOperation
+func (t *AndOperation_And_Item) FromLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLtOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided LtOperation
+func (t *AndOperation_And_Item) MergeLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGteOperation returns the union data inside the AndOperation_And_Item as a GteOperation
+func (t AndOperation_And_Item) AsGteOperation() (GteOperation, error) {
+	var body GteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGteOperation overwrites any union data inside the AndOperation_And_Item as the provided GteOperation
+func (t *AndOperation_And_Item) FromGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGteOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided GteOperation
+func (t *AndOperation_And_Item) MergeGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLteOperation returns the union data inside the AndOperation_And_Item as a LteOperation
+func (t AndOperation_And_Item) AsLteOperation() (LteOperation, error) {
+	var body LteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLteOperation overwrites any union data inside the AndOperation_And_Item as the provided LteOperation
+func (t *AndOperation_And_Item) FromLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLteOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided LteOperation
+func (t *AndOperation_And_Item) MergeLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInOperation returns the union data inside the AndOperation_And_Item as a InOperation
+func (t AndOperation_And_Item) AsInOperation() (InOperation, error) {
+	var body InOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInOperation overwrites any union data inside the AndOperation_And_Item as the provided InOperation
+func (t *AndOperation_And_Item) FromInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided InOperation
+func (t *AndOperation_And_Item) MergeInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsContainsOperation returns the union data inside the AndOperation_And_Item as a ContainsOperation
+func (t AndOperation_And_Item) AsContainsOperation() (ContainsOperation, error) {
+	var body ContainsOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromContainsOperation overwrites any union data inside the AndOperation_And_Item as the provided ContainsOperation
+func (t *AndOperation_And_Item) FromContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeContainsOperation performs a merge with any union data inside the AndOperation_And_Item, using the provided ContainsOperation
+func (t *AndOperation_And_Item) MergeContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t AndOperation_And_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *AndOperation_And_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
 }
 
 // AsCallBatchStartMode returns the union data inside the CallCreateBatchReq_Batch_Item as a CallBatchStartMode
@@ -3457,6 +8222,1128 @@ func (t *CompletionsCreateRequestInputs_ToolChoice) UnmarshalJSON(b []byte) erro
 	return err
 }
 
+// AsLiteralOperation returns the union data inside the ContainsSpec_Input as a LiteralOperation
+func (t ContainsSpec_Input) AsLiteralOperation() (LiteralOperation, error) {
+	var body LiteralOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiteralOperation overwrites any union data inside the ContainsSpec_Input as the provided LiteralOperation
+func (t *ContainsSpec_Input) FromLiteralOperation(v LiteralOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiteralOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided LiteralOperation
+func (t *ContainsSpec_Input) MergeLiteralOperation(v LiteralOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetFieldOperator returns the union data inside the ContainsSpec_Input as a GetFieldOperator
+func (t ContainsSpec_Input) AsGetFieldOperator() (GetFieldOperator, error) {
+	var body GetFieldOperator
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetFieldOperator overwrites any union data inside the ContainsSpec_Input as the provided GetFieldOperator
+func (t *ContainsSpec_Input) FromGetFieldOperator(v GetFieldOperator) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetFieldOperator performs a merge with any union data inside the ContainsSpec_Input, using the provided GetFieldOperator
+func (t *ContainsSpec_Input) MergeGetFieldOperator(v GetFieldOperator) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsConvertOperation returns the union data inside the ContainsSpec_Input as a ConvertOperation
+func (t ContainsSpec_Input) AsConvertOperation() (ConvertOperation, error) {
+	var body ConvertOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromConvertOperation overwrites any union data inside the ContainsSpec_Input as the provided ConvertOperation
+func (t *ContainsSpec_Input) FromConvertOperation(v ConvertOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeConvertOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided ConvertOperation
+func (t *ContainsSpec_Input) MergeConvertOperation(v ConvertOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSizeOperation returns the union data inside the ContainsSpec_Input as a SizeOperation
+func (t ContainsSpec_Input) AsSizeOperation() (SizeOperation, error) {
+	var body SizeOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSizeOperation overwrites any union data inside the ContainsSpec_Input as the provided SizeOperation
+func (t *ContainsSpec_Input) FromSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSizeOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided SizeOperation
+func (t *ContainsSpec_Input) MergeSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAndOperation returns the union data inside the ContainsSpec_Input as a AndOperation
+func (t ContainsSpec_Input) AsAndOperation() (AndOperation, error) {
+	var body AndOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAndOperation overwrites any union data inside the ContainsSpec_Input as the provided AndOperation
+func (t *ContainsSpec_Input) FromAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAndOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided AndOperation
+func (t *ContainsSpec_Input) MergeAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsOrOperation returns the union data inside the ContainsSpec_Input as a OrOperation
+func (t ContainsSpec_Input) AsOrOperation() (OrOperation, error) {
+	var body OrOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrOperation overwrites any union data inside the ContainsSpec_Input as the provided OrOperation
+func (t *ContainsSpec_Input) FromOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided OrOperation
+func (t *ContainsSpec_Input) MergeOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNotOperation returns the union data inside the ContainsSpec_Input as a NotOperation
+func (t ContainsSpec_Input) AsNotOperation() (NotOperation, error) {
+	var body NotOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNotOperation overwrites any union data inside the ContainsSpec_Input as the provided NotOperation
+func (t *ContainsSpec_Input) FromNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNotOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided NotOperation
+func (t *ContainsSpec_Input) MergeNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsEqOperation returns the union data inside the ContainsSpec_Input as a EqOperation
+func (t ContainsSpec_Input) AsEqOperation() (EqOperation, error) {
+	var body EqOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromEqOperation overwrites any union data inside the ContainsSpec_Input as the provided EqOperation
+func (t *ContainsSpec_Input) FromEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeEqOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided EqOperation
+func (t *ContainsSpec_Input) MergeEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGtOperation returns the union data inside the ContainsSpec_Input as a GtOperation
+func (t ContainsSpec_Input) AsGtOperation() (GtOperation, error) {
+	var body GtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGtOperation overwrites any union data inside the ContainsSpec_Input as the provided GtOperation
+func (t *ContainsSpec_Input) FromGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGtOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided GtOperation
+func (t *ContainsSpec_Input) MergeGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLtOperation returns the union data inside the ContainsSpec_Input as a LtOperation
+func (t ContainsSpec_Input) AsLtOperation() (LtOperation, error) {
+	var body LtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLtOperation overwrites any union data inside the ContainsSpec_Input as the provided LtOperation
+func (t *ContainsSpec_Input) FromLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLtOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided LtOperation
+func (t *ContainsSpec_Input) MergeLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGteOperation returns the union data inside the ContainsSpec_Input as a GteOperation
+func (t ContainsSpec_Input) AsGteOperation() (GteOperation, error) {
+	var body GteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGteOperation overwrites any union data inside the ContainsSpec_Input as the provided GteOperation
+func (t *ContainsSpec_Input) FromGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGteOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided GteOperation
+func (t *ContainsSpec_Input) MergeGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLteOperation returns the union data inside the ContainsSpec_Input as a LteOperation
+func (t ContainsSpec_Input) AsLteOperation() (LteOperation, error) {
+	var body LteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLteOperation overwrites any union data inside the ContainsSpec_Input as the provided LteOperation
+func (t *ContainsSpec_Input) FromLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLteOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided LteOperation
+func (t *ContainsSpec_Input) MergeLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInOperation returns the union data inside the ContainsSpec_Input as a InOperation
+func (t ContainsSpec_Input) AsInOperation() (InOperation, error) {
+	var body InOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInOperation overwrites any union data inside the ContainsSpec_Input as the provided InOperation
+func (t *ContainsSpec_Input) FromInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided InOperation
+func (t *ContainsSpec_Input) MergeInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsContainsOperation returns the union data inside the ContainsSpec_Input as a ContainsOperation
+func (t ContainsSpec_Input) AsContainsOperation() (ContainsOperation, error) {
+	var body ContainsOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromContainsOperation overwrites any union data inside the ContainsSpec_Input as the provided ContainsOperation
+func (t *ContainsSpec_Input) FromContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeContainsOperation performs a merge with any union data inside the ContainsSpec_Input, using the provided ContainsOperation
+func (t *ContainsSpec_Input) MergeContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ContainsSpec_Input) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ContainsSpec_Input) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiteralOperation returns the union data inside the ContainsSpec_Substr as a LiteralOperation
+func (t ContainsSpec_Substr) AsLiteralOperation() (LiteralOperation, error) {
+	var body LiteralOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiteralOperation overwrites any union data inside the ContainsSpec_Substr as the provided LiteralOperation
+func (t *ContainsSpec_Substr) FromLiteralOperation(v LiteralOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiteralOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided LiteralOperation
+func (t *ContainsSpec_Substr) MergeLiteralOperation(v LiteralOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetFieldOperator returns the union data inside the ContainsSpec_Substr as a GetFieldOperator
+func (t ContainsSpec_Substr) AsGetFieldOperator() (GetFieldOperator, error) {
+	var body GetFieldOperator
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetFieldOperator overwrites any union data inside the ContainsSpec_Substr as the provided GetFieldOperator
+func (t *ContainsSpec_Substr) FromGetFieldOperator(v GetFieldOperator) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetFieldOperator performs a merge with any union data inside the ContainsSpec_Substr, using the provided GetFieldOperator
+func (t *ContainsSpec_Substr) MergeGetFieldOperator(v GetFieldOperator) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsConvertOperation returns the union data inside the ContainsSpec_Substr as a ConvertOperation
+func (t ContainsSpec_Substr) AsConvertOperation() (ConvertOperation, error) {
+	var body ConvertOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromConvertOperation overwrites any union data inside the ContainsSpec_Substr as the provided ConvertOperation
+func (t *ContainsSpec_Substr) FromConvertOperation(v ConvertOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeConvertOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided ConvertOperation
+func (t *ContainsSpec_Substr) MergeConvertOperation(v ConvertOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSizeOperation returns the union data inside the ContainsSpec_Substr as a SizeOperation
+func (t ContainsSpec_Substr) AsSizeOperation() (SizeOperation, error) {
+	var body SizeOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSizeOperation overwrites any union data inside the ContainsSpec_Substr as the provided SizeOperation
+func (t *ContainsSpec_Substr) FromSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSizeOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided SizeOperation
+func (t *ContainsSpec_Substr) MergeSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAndOperation returns the union data inside the ContainsSpec_Substr as a AndOperation
+func (t ContainsSpec_Substr) AsAndOperation() (AndOperation, error) {
+	var body AndOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAndOperation overwrites any union data inside the ContainsSpec_Substr as the provided AndOperation
+func (t *ContainsSpec_Substr) FromAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAndOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided AndOperation
+func (t *ContainsSpec_Substr) MergeAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsOrOperation returns the union data inside the ContainsSpec_Substr as a OrOperation
+func (t ContainsSpec_Substr) AsOrOperation() (OrOperation, error) {
+	var body OrOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrOperation overwrites any union data inside the ContainsSpec_Substr as the provided OrOperation
+func (t *ContainsSpec_Substr) FromOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided OrOperation
+func (t *ContainsSpec_Substr) MergeOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNotOperation returns the union data inside the ContainsSpec_Substr as a NotOperation
+func (t ContainsSpec_Substr) AsNotOperation() (NotOperation, error) {
+	var body NotOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNotOperation overwrites any union data inside the ContainsSpec_Substr as the provided NotOperation
+func (t *ContainsSpec_Substr) FromNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNotOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided NotOperation
+func (t *ContainsSpec_Substr) MergeNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsEqOperation returns the union data inside the ContainsSpec_Substr as a EqOperation
+func (t ContainsSpec_Substr) AsEqOperation() (EqOperation, error) {
+	var body EqOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromEqOperation overwrites any union data inside the ContainsSpec_Substr as the provided EqOperation
+func (t *ContainsSpec_Substr) FromEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeEqOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided EqOperation
+func (t *ContainsSpec_Substr) MergeEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGtOperation returns the union data inside the ContainsSpec_Substr as a GtOperation
+func (t ContainsSpec_Substr) AsGtOperation() (GtOperation, error) {
+	var body GtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGtOperation overwrites any union data inside the ContainsSpec_Substr as the provided GtOperation
+func (t *ContainsSpec_Substr) FromGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGtOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided GtOperation
+func (t *ContainsSpec_Substr) MergeGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLtOperation returns the union data inside the ContainsSpec_Substr as a LtOperation
+func (t ContainsSpec_Substr) AsLtOperation() (LtOperation, error) {
+	var body LtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLtOperation overwrites any union data inside the ContainsSpec_Substr as the provided LtOperation
+func (t *ContainsSpec_Substr) FromLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLtOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided LtOperation
+func (t *ContainsSpec_Substr) MergeLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGteOperation returns the union data inside the ContainsSpec_Substr as a GteOperation
+func (t ContainsSpec_Substr) AsGteOperation() (GteOperation, error) {
+	var body GteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGteOperation overwrites any union data inside the ContainsSpec_Substr as the provided GteOperation
+func (t *ContainsSpec_Substr) FromGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGteOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided GteOperation
+func (t *ContainsSpec_Substr) MergeGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLteOperation returns the union data inside the ContainsSpec_Substr as a LteOperation
+func (t ContainsSpec_Substr) AsLteOperation() (LteOperation, error) {
+	var body LteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLteOperation overwrites any union data inside the ContainsSpec_Substr as the provided LteOperation
+func (t *ContainsSpec_Substr) FromLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLteOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided LteOperation
+func (t *ContainsSpec_Substr) MergeLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInOperation returns the union data inside the ContainsSpec_Substr as a InOperation
+func (t ContainsSpec_Substr) AsInOperation() (InOperation, error) {
+	var body InOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInOperation overwrites any union data inside the ContainsSpec_Substr as the provided InOperation
+func (t *ContainsSpec_Substr) FromInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided InOperation
+func (t *ContainsSpec_Substr) MergeInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsContainsOperation returns the union data inside the ContainsSpec_Substr as a ContainsOperation
+func (t ContainsSpec_Substr) AsContainsOperation() (ContainsOperation, error) {
+	var body ContainsOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromContainsOperation overwrites any union data inside the ContainsSpec_Substr as the provided ContainsOperation
+func (t *ContainsSpec_Substr) FromContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeContainsOperation performs a merge with any union data inside the ContainsSpec_Substr, using the provided ContainsOperation
+func (t *ContainsSpec_Substr) MergeContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ContainsSpec_Substr) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ContainsSpec_Substr) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiteralOperation returns the union data inside the ConvertSpec_Input as a LiteralOperation
+func (t ConvertSpec_Input) AsLiteralOperation() (LiteralOperation, error) {
+	var body LiteralOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiteralOperation overwrites any union data inside the ConvertSpec_Input as the provided LiteralOperation
+func (t *ConvertSpec_Input) FromLiteralOperation(v LiteralOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiteralOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided LiteralOperation
+func (t *ConvertSpec_Input) MergeLiteralOperation(v LiteralOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetFieldOperator returns the union data inside the ConvertSpec_Input as a GetFieldOperator
+func (t ConvertSpec_Input) AsGetFieldOperator() (GetFieldOperator, error) {
+	var body GetFieldOperator
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetFieldOperator overwrites any union data inside the ConvertSpec_Input as the provided GetFieldOperator
+func (t *ConvertSpec_Input) FromGetFieldOperator(v GetFieldOperator) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetFieldOperator performs a merge with any union data inside the ConvertSpec_Input, using the provided GetFieldOperator
+func (t *ConvertSpec_Input) MergeGetFieldOperator(v GetFieldOperator) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsConvertOperation returns the union data inside the ConvertSpec_Input as a ConvertOperation
+func (t ConvertSpec_Input) AsConvertOperation() (ConvertOperation, error) {
+	var body ConvertOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromConvertOperation overwrites any union data inside the ConvertSpec_Input as the provided ConvertOperation
+func (t *ConvertSpec_Input) FromConvertOperation(v ConvertOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeConvertOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided ConvertOperation
+func (t *ConvertSpec_Input) MergeConvertOperation(v ConvertOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSizeOperation returns the union data inside the ConvertSpec_Input as a SizeOperation
+func (t ConvertSpec_Input) AsSizeOperation() (SizeOperation, error) {
+	var body SizeOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSizeOperation overwrites any union data inside the ConvertSpec_Input as the provided SizeOperation
+func (t *ConvertSpec_Input) FromSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSizeOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided SizeOperation
+func (t *ConvertSpec_Input) MergeSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAndOperation returns the union data inside the ConvertSpec_Input as a AndOperation
+func (t ConvertSpec_Input) AsAndOperation() (AndOperation, error) {
+	var body AndOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAndOperation overwrites any union data inside the ConvertSpec_Input as the provided AndOperation
+func (t *ConvertSpec_Input) FromAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAndOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided AndOperation
+func (t *ConvertSpec_Input) MergeAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsOrOperation returns the union data inside the ConvertSpec_Input as a OrOperation
+func (t ConvertSpec_Input) AsOrOperation() (OrOperation, error) {
+	var body OrOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrOperation overwrites any union data inside the ConvertSpec_Input as the provided OrOperation
+func (t *ConvertSpec_Input) FromOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided OrOperation
+func (t *ConvertSpec_Input) MergeOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNotOperation returns the union data inside the ConvertSpec_Input as a NotOperation
+func (t ConvertSpec_Input) AsNotOperation() (NotOperation, error) {
+	var body NotOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNotOperation overwrites any union data inside the ConvertSpec_Input as the provided NotOperation
+func (t *ConvertSpec_Input) FromNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNotOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided NotOperation
+func (t *ConvertSpec_Input) MergeNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsEqOperation returns the union data inside the ConvertSpec_Input as a EqOperation
+func (t ConvertSpec_Input) AsEqOperation() (EqOperation, error) {
+	var body EqOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromEqOperation overwrites any union data inside the ConvertSpec_Input as the provided EqOperation
+func (t *ConvertSpec_Input) FromEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeEqOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided EqOperation
+func (t *ConvertSpec_Input) MergeEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGtOperation returns the union data inside the ConvertSpec_Input as a GtOperation
+func (t ConvertSpec_Input) AsGtOperation() (GtOperation, error) {
+	var body GtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGtOperation overwrites any union data inside the ConvertSpec_Input as the provided GtOperation
+func (t *ConvertSpec_Input) FromGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGtOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided GtOperation
+func (t *ConvertSpec_Input) MergeGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLtOperation returns the union data inside the ConvertSpec_Input as a LtOperation
+func (t ConvertSpec_Input) AsLtOperation() (LtOperation, error) {
+	var body LtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLtOperation overwrites any union data inside the ConvertSpec_Input as the provided LtOperation
+func (t *ConvertSpec_Input) FromLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLtOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided LtOperation
+func (t *ConvertSpec_Input) MergeLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGteOperation returns the union data inside the ConvertSpec_Input as a GteOperation
+func (t ConvertSpec_Input) AsGteOperation() (GteOperation, error) {
+	var body GteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGteOperation overwrites any union data inside the ConvertSpec_Input as the provided GteOperation
+func (t *ConvertSpec_Input) FromGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGteOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided GteOperation
+func (t *ConvertSpec_Input) MergeGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLteOperation returns the union data inside the ConvertSpec_Input as a LteOperation
+func (t ConvertSpec_Input) AsLteOperation() (LteOperation, error) {
+	var body LteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLteOperation overwrites any union data inside the ConvertSpec_Input as the provided LteOperation
+func (t *ConvertSpec_Input) FromLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLteOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided LteOperation
+func (t *ConvertSpec_Input) MergeLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInOperation returns the union data inside the ConvertSpec_Input as a InOperation
+func (t ConvertSpec_Input) AsInOperation() (InOperation, error) {
+	var body InOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInOperation overwrites any union data inside the ConvertSpec_Input as the provided InOperation
+func (t *ConvertSpec_Input) FromInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided InOperation
+func (t *ConvertSpec_Input) MergeInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsContainsOperation returns the union data inside the ConvertSpec_Input as a ContainsOperation
+func (t ConvertSpec_Input) AsContainsOperation() (ContainsOperation, error) {
+	var body ContainsOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromContainsOperation overwrites any union data inside the ConvertSpec_Input as the provided ContainsOperation
+func (t *ConvertSpec_Input) FromContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeContainsOperation performs a merge with any union data inside the ConvertSpec_Input, using the provided ContainsOperation
+func (t *ConvertSpec_Input) MergeContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ConvertSpec_Input) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ConvertSpec_Input) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsEvaluationStatusNotFound returns the union data inside the EvaluationStatusRes_Status as a EvaluationStatusNotFound
 func (t EvaluationStatusRes_Status) AsEvaluationStatusNotFound() (EvaluationStatusNotFound, error) {
 	var body EvaluationStatusNotFound
@@ -3567,224 +9454,6 @@ func (t EvaluationStatusRes_Status) MarshalJSON() ([]byte, error) {
 }
 
 func (t *EvaluationStatusRes_Status) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsAndOperation returns the union data inside the Expr as a AndOperation
-func (t Expr) AsAndOperation() (AndOperation, error) {
-	var body AndOperation
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromAndOperation overwrites any union data inside the Expr as the provided AndOperation
-func (t *Expr) FromAndOperation(v AndOperation) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeAndOperation performs a merge with any union data inside the Expr, using the provided AndOperation
-func (t *Expr) MergeAndOperation(v AndOperation) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsOrOperation returns the union data inside the Expr as a OrOperation
-func (t Expr) AsOrOperation() (OrOperation, error) {
-	var body OrOperation
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromOrOperation overwrites any union data inside the Expr as the provided OrOperation
-func (t *Expr) FromOrOperation(v OrOperation) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeOrOperation performs a merge with any union data inside the Expr, using the provided OrOperation
-func (t *Expr) MergeOrOperation(v OrOperation) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsNotOperation returns the union data inside the Expr as a NotOperation
-func (t Expr) AsNotOperation() (NotOperation, error) {
-	var body NotOperation
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromNotOperation overwrites any union data inside the Expr as the provided NotOperation
-func (t *Expr) FromNotOperation(v NotOperation) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeNotOperation performs a merge with any union data inside the Expr, using the provided NotOperation
-func (t *Expr) MergeNotOperation(v NotOperation) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsEqOperation returns the union data inside the Expr as a EqOperation
-func (t Expr) AsEqOperation() (EqOperation, error) {
-	var body EqOperation
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromEqOperation overwrites any union data inside the Expr as the provided EqOperation
-func (t *Expr) FromEqOperation(v EqOperation) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeEqOperation performs a merge with any union data inside the Expr, using the provided EqOperation
-func (t *Expr) MergeEqOperation(v EqOperation) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGtOperation returns the union data inside the Expr as a GtOperation
-func (t Expr) AsGtOperation() (GtOperation, error) {
-	var body GtOperation
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGtOperation overwrites any union data inside the Expr as the provided GtOperation
-func (t *Expr) FromGtOperation(v GtOperation) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGtOperation performs a merge with any union data inside the Expr, using the provided GtOperation
-func (t *Expr) MergeGtOperation(v GtOperation) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGteOperation returns the union data inside the Expr as a GteOperation
-func (t Expr) AsGteOperation() (GteOperation, error) {
-	var body GteOperation
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGteOperation overwrites any union data inside the Expr as the provided GteOperation
-func (t *Expr) FromGteOperation(v GteOperation) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGteOperation performs a merge with any union data inside the Expr, using the provided GteOperation
-func (t *Expr) MergeGteOperation(v GteOperation) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsInOperation returns the union data inside the Expr as a InOperation
-func (t Expr) AsInOperation() (InOperation, error) {
-	var body InOperation
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromInOperation overwrites any union data inside the Expr as the provided InOperation
-func (t *Expr) FromInOperation(v InOperation) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeInOperation performs a merge with any union data inside the Expr, using the provided InOperation
-func (t *Expr) MergeInOperation(v InOperation) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsContainsOperation returns the union data inside the Expr as a ContainsOperation
-func (t Expr) AsContainsOperation() (ContainsOperation, error) {
-	var body ContainsOperation
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromContainsOperation overwrites any union data inside the Expr as the provided ContainsOperation
-func (t *Expr) FromContainsOperation(v ContainsOperation) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeContainsOperation performs a merge with any union data inside the Expr, using the provided ContainsOperation
-func (t *Expr) MergeContainsOperation(v ContainsOperation) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t Expr) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *Expr) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -3955,22 +9624,172 @@ func (t *LiteralOperation_Literal) UnmarshalJSON(b []byte) error {
 	return err
 }
 
-// AsLiteralOperation returns the union data inside the Operation as a LiteralOperation
-func (t Operation) AsLiteralOperation() (LiteralOperation, error) {
+// AsModelsDevModelInterleaved0 returns the union data inside the ModelsDevModel_Interleaved as a ModelsDevModelInterleaved0
+func (t ModelsDevModel_Interleaved) AsModelsDevModelInterleaved0() (ModelsDevModelInterleaved0, error) {
+	var body ModelsDevModelInterleaved0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromModelsDevModelInterleaved0 overwrites any union data inside the ModelsDevModel_Interleaved as the provided ModelsDevModelInterleaved0
+func (t *ModelsDevModel_Interleaved) FromModelsDevModelInterleaved0(v ModelsDevModelInterleaved0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeModelsDevModelInterleaved0 performs a merge with any union data inside the ModelsDevModel_Interleaved, using the provided ModelsDevModelInterleaved0
+func (t *ModelsDevModel_Interleaved) MergeModelsDevModelInterleaved0(v ModelsDevModelInterleaved0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInterleaved returns the union data inside the ModelsDevModel_Interleaved as a Interleaved
+func (t ModelsDevModel_Interleaved) AsInterleaved() (Interleaved, error) {
+	var body Interleaved
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInterleaved overwrites any union data inside the ModelsDevModel_Interleaved as the provided Interleaved
+func (t *ModelsDevModel_Interleaved) FromInterleaved(v Interleaved) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInterleaved performs a merge with any union data inside the ModelsDevModel_Interleaved, using the provided Interleaved
+func (t *ModelsDevModel_Interleaved) MergeInterleaved(v Interleaved) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ModelsDevModel_Interleaved) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ModelsDevModel_Interleaved) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsReasoningToggle returns the union data inside the ModelsDevModel_ReasoningOptions_Item as a ReasoningToggle
+func (t ModelsDevModel_ReasoningOptions_Item) AsReasoningToggle() (ReasoningToggle, error) {
+	var body ReasoningToggle
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromReasoningToggle overwrites any union data inside the ModelsDevModel_ReasoningOptions_Item as the provided ReasoningToggle
+func (t *ModelsDevModel_ReasoningOptions_Item) FromReasoningToggle(v ReasoningToggle) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeReasoningToggle performs a merge with any union data inside the ModelsDevModel_ReasoningOptions_Item, using the provided ReasoningToggle
+func (t *ModelsDevModel_ReasoningOptions_Item) MergeReasoningToggle(v ReasoningToggle) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsReasoningEffortOption returns the union data inside the ModelsDevModel_ReasoningOptions_Item as a ReasoningEffortOption
+func (t ModelsDevModel_ReasoningOptions_Item) AsReasoningEffortOption() (ReasoningEffortOption, error) {
+	var body ReasoningEffortOption
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromReasoningEffortOption overwrites any union data inside the ModelsDevModel_ReasoningOptions_Item as the provided ReasoningEffortOption
+func (t *ModelsDevModel_ReasoningOptions_Item) FromReasoningEffortOption(v ReasoningEffortOption) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeReasoningEffortOption performs a merge with any union data inside the ModelsDevModel_ReasoningOptions_Item, using the provided ReasoningEffortOption
+func (t *ModelsDevModel_ReasoningOptions_Item) MergeReasoningEffortOption(v ReasoningEffortOption) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsReasoningBudgetTokens returns the union data inside the ModelsDevModel_ReasoningOptions_Item as a ReasoningBudgetTokens
+func (t ModelsDevModel_ReasoningOptions_Item) AsReasoningBudgetTokens() (ReasoningBudgetTokens, error) {
+	var body ReasoningBudgetTokens
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromReasoningBudgetTokens overwrites any union data inside the ModelsDevModel_ReasoningOptions_Item as the provided ReasoningBudgetTokens
+func (t *ModelsDevModel_ReasoningOptions_Item) FromReasoningBudgetTokens(v ReasoningBudgetTokens) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeReasoningBudgetTokens performs a merge with any union data inside the ModelsDevModel_ReasoningOptions_Item, using the provided ReasoningBudgetTokens
+func (t *ModelsDevModel_ReasoningOptions_Item) MergeReasoningBudgetTokens(v ReasoningBudgetTokens) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ModelsDevModel_ReasoningOptions_Item) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ModelsDevModel_ReasoningOptions_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiteralOperation returns the union data inside the OrOperation_Or_Item as a LiteralOperation
+func (t OrOperation_Or_Item) AsLiteralOperation() (LiteralOperation, error) {
 	var body LiteralOperation
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromLiteralOperation overwrites any union data inside the Operation as the provided LiteralOperation
-func (t *Operation) FromLiteralOperation(v LiteralOperation) error {
+// FromLiteralOperation overwrites any union data inside the OrOperation_Or_Item as the provided LiteralOperation
+func (t *OrOperation_Or_Item) FromLiteralOperation(v LiteralOperation) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeLiteralOperation performs a merge with any union data inside the Operation, using the provided LiteralOperation
-func (t *Operation) MergeLiteralOperation(v LiteralOperation) error {
+// MergeLiteralOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided LiteralOperation
+func (t *OrOperation_Or_Item) MergeLiteralOperation(v LiteralOperation) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -3981,22 +9800,22 @@ func (t *Operation) MergeLiteralOperation(v LiteralOperation) error {
 	return err
 }
 
-// AsGetFieldOperator returns the union data inside the Operation as a GetFieldOperator
-func (t Operation) AsGetFieldOperator() (GetFieldOperator, error) {
+// AsGetFieldOperator returns the union data inside the OrOperation_Or_Item as a GetFieldOperator
+func (t OrOperation_Or_Item) AsGetFieldOperator() (GetFieldOperator, error) {
 	var body GetFieldOperator
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromGetFieldOperator overwrites any union data inside the Operation as the provided GetFieldOperator
-func (t *Operation) FromGetFieldOperator(v GetFieldOperator) error {
+// FromGetFieldOperator overwrites any union data inside the OrOperation_Or_Item as the provided GetFieldOperator
+func (t *OrOperation_Or_Item) FromGetFieldOperator(v GetFieldOperator) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeGetFieldOperator performs a merge with any union data inside the Operation, using the provided GetFieldOperator
-func (t *Operation) MergeGetFieldOperator(v GetFieldOperator) error {
+// MergeGetFieldOperator performs a merge with any union data inside the OrOperation_Or_Item, using the provided GetFieldOperator
+func (t *OrOperation_Or_Item) MergeGetFieldOperator(v GetFieldOperator) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -4007,22 +9826,22 @@ func (t *Operation) MergeGetFieldOperator(v GetFieldOperator) error {
 	return err
 }
 
-// AsConvertOperation returns the union data inside the Operation as a ConvertOperation
-func (t Operation) AsConvertOperation() (ConvertOperation, error) {
+// AsConvertOperation returns the union data inside the OrOperation_Or_Item as a ConvertOperation
+func (t OrOperation_Or_Item) AsConvertOperation() (ConvertOperation, error) {
 	var body ConvertOperation
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromConvertOperation overwrites any union data inside the Operation as the provided ConvertOperation
-func (t *Operation) FromConvertOperation(v ConvertOperation) error {
+// FromConvertOperation overwrites any union data inside the OrOperation_Or_Item as the provided ConvertOperation
+func (t *OrOperation_Or_Item) FromConvertOperation(v ConvertOperation) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeConvertOperation performs a merge with any union data inside the Operation, using the provided ConvertOperation
-func (t *Operation) MergeConvertOperation(v ConvertOperation) error {
+// MergeConvertOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided ConvertOperation
+func (t *OrOperation_Or_Item) MergeConvertOperation(v ConvertOperation) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -4033,22 +9852,48 @@ func (t *Operation) MergeConvertOperation(v ConvertOperation) error {
 	return err
 }
 
-// AsAndOperation returns the union data inside the Operation as a AndOperation
-func (t Operation) AsAndOperation() (AndOperation, error) {
+// AsSizeOperation returns the union data inside the OrOperation_Or_Item as a SizeOperation
+func (t OrOperation_Or_Item) AsSizeOperation() (SizeOperation, error) {
+	var body SizeOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSizeOperation overwrites any union data inside the OrOperation_Or_Item as the provided SizeOperation
+func (t *OrOperation_Or_Item) FromSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSizeOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided SizeOperation
+func (t *OrOperation_Or_Item) MergeSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAndOperation returns the union data inside the OrOperation_Or_Item as a AndOperation
+func (t OrOperation_Or_Item) AsAndOperation() (AndOperation, error) {
 	var body AndOperation
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromAndOperation overwrites any union data inside the Operation as the provided AndOperation
-func (t *Operation) FromAndOperation(v AndOperation) error {
+// FromAndOperation overwrites any union data inside the OrOperation_Or_Item as the provided AndOperation
+func (t *OrOperation_Or_Item) FromAndOperation(v AndOperation) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeAndOperation performs a merge with any union data inside the Operation, using the provided AndOperation
-func (t *Operation) MergeAndOperation(v AndOperation) error {
+// MergeAndOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided AndOperation
+func (t *OrOperation_Or_Item) MergeAndOperation(v AndOperation) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -4059,22 +9904,22 @@ func (t *Operation) MergeAndOperation(v AndOperation) error {
 	return err
 }
 
-// AsOrOperation returns the union data inside the Operation as a OrOperation
-func (t Operation) AsOrOperation() (OrOperation, error) {
+// AsOrOperation returns the union data inside the OrOperation_Or_Item as a OrOperation
+func (t OrOperation_Or_Item) AsOrOperation() (OrOperation, error) {
 	var body OrOperation
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromOrOperation overwrites any union data inside the Operation as the provided OrOperation
-func (t *Operation) FromOrOperation(v OrOperation) error {
+// FromOrOperation overwrites any union data inside the OrOperation_Or_Item as the provided OrOperation
+func (t *OrOperation_Or_Item) FromOrOperation(v OrOperation) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeOrOperation performs a merge with any union data inside the Operation, using the provided OrOperation
-func (t *Operation) MergeOrOperation(v OrOperation) error {
+// MergeOrOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided OrOperation
+func (t *OrOperation_Or_Item) MergeOrOperation(v OrOperation) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -4085,22 +9930,22 @@ func (t *Operation) MergeOrOperation(v OrOperation) error {
 	return err
 }
 
-// AsNotOperation returns the union data inside the Operation as a NotOperation
-func (t Operation) AsNotOperation() (NotOperation, error) {
+// AsNotOperation returns the union data inside the OrOperation_Or_Item as a NotOperation
+func (t OrOperation_Or_Item) AsNotOperation() (NotOperation, error) {
 	var body NotOperation
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromNotOperation overwrites any union data inside the Operation as the provided NotOperation
-func (t *Operation) FromNotOperation(v NotOperation) error {
+// FromNotOperation overwrites any union data inside the OrOperation_Or_Item as the provided NotOperation
+func (t *OrOperation_Or_Item) FromNotOperation(v NotOperation) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeNotOperation performs a merge with any union data inside the Operation, using the provided NotOperation
-func (t *Operation) MergeNotOperation(v NotOperation) error {
+// MergeNotOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided NotOperation
+func (t *OrOperation_Or_Item) MergeNotOperation(v NotOperation) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -4111,22 +9956,22 @@ func (t *Operation) MergeNotOperation(v NotOperation) error {
 	return err
 }
 
-// AsEqOperation returns the union data inside the Operation as a EqOperation
-func (t Operation) AsEqOperation() (EqOperation, error) {
+// AsEqOperation returns the union data inside the OrOperation_Or_Item as a EqOperation
+func (t OrOperation_Or_Item) AsEqOperation() (EqOperation, error) {
 	var body EqOperation
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromEqOperation overwrites any union data inside the Operation as the provided EqOperation
-func (t *Operation) FromEqOperation(v EqOperation) error {
+// FromEqOperation overwrites any union data inside the OrOperation_Or_Item as the provided EqOperation
+func (t *OrOperation_Or_Item) FromEqOperation(v EqOperation) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeEqOperation performs a merge with any union data inside the Operation, using the provided EqOperation
-func (t *Operation) MergeEqOperation(v EqOperation) error {
+// MergeEqOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided EqOperation
+func (t *OrOperation_Or_Item) MergeEqOperation(v EqOperation) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -4137,22 +9982,22 @@ func (t *Operation) MergeEqOperation(v EqOperation) error {
 	return err
 }
 
-// AsGtOperation returns the union data inside the Operation as a GtOperation
-func (t Operation) AsGtOperation() (GtOperation, error) {
+// AsGtOperation returns the union data inside the OrOperation_Or_Item as a GtOperation
+func (t OrOperation_Or_Item) AsGtOperation() (GtOperation, error) {
 	var body GtOperation
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromGtOperation overwrites any union data inside the Operation as the provided GtOperation
-func (t *Operation) FromGtOperation(v GtOperation) error {
+// FromGtOperation overwrites any union data inside the OrOperation_Or_Item as the provided GtOperation
+func (t *OrOperation_Or_Item) FromGtOperation(v GtOperation) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeGtOperation performs a merge with any union data inside the Operation, using the provided GtOperation
-func (t *Operation) MergeGtOperation(v GtOperation) error {
+// MergeGtOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided GtOperation
+func (t *OrOperation_Or_Item) MergeGtOperation(v GtOperation) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -4163,22 +10008,48 @@ func (t *Operation) MergeGtOperation(v GtOperation) error {
 	return err
 }
 
-// AsGteOperation returns the union data inside the Operation as a GteOperation
-func (t Operation) AsGteOperation() (GteOperation, error) {
+// AsLtOperation returns the union data inside the OrOperation_Or_Item as a LtOperation
+func (t OrOperation_Or_Item) AsLtOperation() (LtOperation, error) {
+	var body LtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLtOperation overwrites any union data inside the OrOperation_Or_Item as the provided LtOperation
+func (t *OrOperation_Or_Item) FromLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLtOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided LtOperation
+func (t *OrOperation_Or_Item) MergeLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGteOperation returns the union data inside the OrOperation_Or_Item as a GteOperation
+func (t OrOperation_Or_Item) AsGteOperation() (GteOperation, error) {
 	var body GteOperation
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromGteOperation overwrites any union data inside the Operation as the provided GteOperation
-func (t *Operation) FromGteOperation(v GteOperation) error {
+// FromGteOperation overwrites any union data inside the OrOperation_Or_Item as the provided GteOperation
+func (t *OrOperation_Or_Item) FromGteOperation(v GteOperation) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeGteOperation performs a merge with any union data inside the Operation, using the provided GteOperation
-func (t *Operation) MergeGteOperation(v GteOperation) error {
+// MergeGteOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided GteOperation
+func (t *OrOperation_Or_Item) MergeGteOperation(v GteOperation) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -4189,22 +10060,48 @@ func (t *Operation) MergeGteOperation(v GteOperation) error {
 	return err
 }
 
-// AsInOperation returns the union data inside the Operation as a InOperation
-func (t Operation) AsInOperation() (InOperation, error) {
+// AsLteOperation returns the union data inside the OrOperation_Or_Item as a LteOperation
+func (t OrOperation_Or_Item) AsLteOperation() (LteOperation, error) {
+	var body LteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLteOperation overwrites any union data inside the OrOperation_Or_Item as the provided LteOperation
+func (t *OrOperation_Or_Item) FromLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLteOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided LteOperation
+func (t *OrOperation_Or_Item) MergeLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInOperation returns the union data inside the OrOperation_Or_Item as a InOperation
+func (t OrOperation_Or_Item) AsInOperation() (InOperation, error) {
 	var body InOperation
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromInOperation overwrites any union data inside the Operation as the provided InOperation
-func (t *Operation) FromInOperation(v InOperation) error {
+// FromInOperation overwrites any union data inside the OrOperation_Or_Item as the provided InOperation
+func (t *OrOperation_Or_Item) FromInOperation(v InOperation) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeInOperation performs a merge with any union data inside the Operation, using the provided InOperation
-func (t *Operation) MergeInOperation(v InOperation) error {
+// MergeInOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided InOperation
+func (t *OrOperation_Or_Item) MergeInOperation(v InOperation) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -4215,22 +10112,22 @@ func (t *Operation) MergeInOperation(v InOperation) error {
 	return err
 }
 
-// AsContainsOperation returns the union data inside the Operation as a ContainsOperation
-func (t Operation) AsContainsOperation() (ContainsOperation, error) {
+// AsContainsOperation returns the union data inside the OrOperation_Or_Item as a ContainsOperation
+func (t OrOperation_Or_Item) AsContainsOperation() (ContainsOperation, error) {
 	var body ContainsOperation
 	err := json.Unmarshal(t.union, &body)
 	return body, err
 }
 
-// FromContainsOperation overwrites any union data inside the Operation as the provided ContainsOperation
-func (t *Operation) FromContainsOperation(v ContainsOperation) error {
+// FromContainsOperation overwrites any union data inside the OrOperation_Or_Item as the provided ContainsOperation
+func (t *OrOperation_Or_Item) FromContainsOperation(v ContainsOperation) error {
 	b, err := json.Marshal(v)
 	t.union = b
 	return err
 }
 
-// MergeContainsOperation performs a merge with any union data inside the Operation, using the provided ContainsOperation
-func (t *Operation) MergeContainsOperation(v ContainsOperation) error {
+// MergeContainsOperation performs a merge with any union data inside the OrOperation_Or_Item, using the provided ContainsOperation
+func (t *OrOperation_Or_Item) MergeContainsOperation(v ContainsOperation) error {
 	b, err := json.Marshal(v)
 	if err != nil {
 		return err
@@ -4241,12 +10138,656 @@ func (t *Operation) MergeContainsOperation(v ContainsOperation) error {
 	return err
 }
 
-func (t Operation) MarshalJSON() ([]byte, error) {
+func (t OrOperation_Or_Item) MarshalJSON() ([]byte, error) {
 	b, err := t.union.MarshalJSON()
 	return b, err
 }
 
-func (t *Operation) UnmarshalJSON(b []byte) error {
+func (t *OrOperation_Or_Item) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsAndOperation returns the union data inside the Query_Expr as a AndOperation
+func (t Query_Expr) AsAndOperation() (AndOperation, error) {
+	var body AndOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAndOperation overwrites any union data inside the Query_Expr as the provided AndOperation
+func (t *Query_Expr) FromAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAndOperation performs a merge with any union data inside the Query_Expr, using the provided AndOperation
+func (t *Query_Expr) MergeAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsOrOperation returns the union data inside the Query_Expr as a OrOperation
+func (t Query_Expr) AsOrOperation() (OrOperation, error) {
+	var body OrOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrOperation overwrites any union data inside the Query_Expr as the provided OrOperation
+func (t *Query_Expr) FromOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrOperation performs a merge with any union data inside the Query_Expr, using the provided OrOperation
+func (t *Query_Expr) MergeOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNotOperation returns the union data inside the Query_Expr as a NotOperation
+func (t Query_Expr) AsNotOperation() (NotOperation, error) {
+	var body NotOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNotOperation overwrites any union data inside the Query_Expr as the provided NotOperation
+func (t *Query_Expr) FromNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNotOperation performs a merge with any union data inside the Query_Expr, using the provided NotOperation
+func (t *Query_Expr) MergeNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsEqOperation returns the union data inside the Query_Expr as a EqOperation
+func (t Query_Expr) AsEqOperation() (EqOperation, error) {
+	var body EqOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromEqOperation overwrites any union data inside the Query_Expr as the provided EqOperation
+func (t *Query_Expr) FromEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeEqOperation performs a merge with any union data inside the Query_Expr, using the provided EqOperation
+func (t *Query_Expr) MergeEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGtOperation returns the union data inside the Query_Expr as a GtOperation
+func (t Query_Expr) AsGtOperation() (GtOperation, error) {
+	var body GtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGtOperation overwrites any union data inside the Query_Expr as the provided GtOperation
+func (t *Query_Expr) FromGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGtOperation performs a merge with any union data inside the Query_Expr, using the provided GtOperation
+func (t *Query_Expr) MergeGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLtOperation returns the union data inside the Query_Expr as a LtOperation
+func (t Query_Expr) AsLtOperation() (LtOperation, error) {
+	var body LtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLtOperation overwrites any union data inside the Query_Expr as the provided LtOperation
+func (t *Query_Expr) FromLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLtOperation performs a merge with any union data inside the Query_Expr, using the provided LtOperation
+func (t *Query_Expr) MergeLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGteOperation returns the union data inside the Query_Expr as a GteOperation
+func (t Query_Expr) AsGteOperation() (GteOperation, error) {
+	var body GteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGteOperation overwrites any union data inside the Query_Expr as the provided GteOperation
+func (t *Query_Expr) FromGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGteOperation performs a merge with any union data inside the Query_Expr, using the provided GteOperation
+func (t *Query_Expr) MergeGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLteOperation returns the union data inside the Query_Expr as a LteOperation
+func (t Query_Expr) AsLteOperation() (LteOperation, error) {
+	var body LteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLteOperation overwrites any union data inside the Query_Expr as the provided LteOperation
+func (t *Query_Expr) FromLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLteOperation performs a merge with any union data inside the Query_Expr, using the provided LteOperation
+func (t *Query_Expr) MergeLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInOperation returns the union data inside the Query_Expr as a InOperation
+func (t Query_Expr) AsInOperation() (InOperation, error) {
+	var body InOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInOperation overwrites any union data inside the Query_Expr as the provided InOperation
+func (t *Query_Expr) FromInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInOperation performs a merge with any union data inside the Query_Expr, using the provided InOperation
+func (t *Query_Expr) MergeInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsContainsOperation returns the union data inside the Query_Expr as a ContainsOperation
+func (t Query_Expr) AsContainsOperation() (ContainsOperation, error) {
+	var body ContainsOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromContainsOperation overwrites any union data inside the Query_Expr as the provided ContainsOperation
+func (t *Query_Expr) FromContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeContainsOperation performs a merge with any union data inside the Query_Expr, using the provided ContainsOperation
+func (t *Query_Expr) MergeContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t Query_Expr) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *Query_Expr) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsLiteralOperation returns the union data inside the SizeOperation_Size as a LiteralOperation
+func (t SizeOperation_Size) AsLiteralOperation() (LiteralOperation, error) {
+	var body LiteralOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLiteralOperation overwrites any union data inside the SizeOperation_Size as the provided LiteralOperation
+func (t *SizeOperation_Size) FromLiteralOperation(v LiteralOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLiteralOperation performs a merge with any union data inside the SizeOperation_Size, using the provided LiteralOperation
+func (t *SizeOperation_Size) MergeLiteralOperation(v LiteralOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetFieldOperator returns the union data inside the SizeOperation_Size as a GetFieldOperator
+func (t SizeOperation_Size) AsGetFieldOperator() (GetFieldOperator, error) {
+	var body GetFieldOperator
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetFieldOperator overwrites any union data inside the SizeOperation_Size as the provided GetFieldOperator
+func (t *SizeOperation_Size) FromGetFieldOperator(v GetFieldOperator) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetFieldOperator performs a merge with any union data inside the SizeOperation_Size, using the provided GetFieldOperator
+func (t *SizeOperation_Size) MergeGetFieldOperator(v GetFieldOperator) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsConvertOperation returns the union data inside the SizeOperation_Size as a ConvertOperation
+func (t SizeOperation_Size) AsConvertOperation() (ConvertOperation, error) {
+	var body ConvertOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromConvertOperation overwrites any union data inside the SizeOperation_Size as the provided ConvertOperation
+func (t *SizeOperation_Size) FromConvertOperation(v ConvertOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeConvertOperation performs a merge with any union data inside the SizeOperation_Size, using the provided ConvertOperation
+func (t *SizeOperation_Size) MergeConvertOperation(v ConvertOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSizeOperation returns the union data inside the SizeOperation_Size as a SizeOperation
+func (t SizeOperation_Size) AsSizeOperation() (SizeOperation, error) {
+	var body SizeOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSizeOperation overwrites any union data inside the SizeOperation_Size as the provided SizeOperation
+func (t *SizeOperation_Size) FromSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSizeOperation performs a merge with any union data inside the SizeOperation_Size, using the provided SizeOperation
+func (t *SizeOperation_Size) MergeSizeOperation(v SizeOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsAndOperation returns the union data inside the SizeOperation_Size as a AndOperation
+func (t SizeOperation_Size) AsAndOperation() (AndOperation, error) {
+	var body AndOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromAndOperation overwrites any union data inside the SizeOperation_Size as the provided AndOperation
+func (t *SizeOperation_Size) FromAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeAndOperation performs a merge with any union data inside the SizeOperation_Size, using the provided AndOperation
+func (t *SizeOperation_Size) MergeAndOperation(v AndOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsOrOperation returns the union data inside the SizeOperation_Size as a OrOperation
+func (t SizeOperation_Size) AsOrOperation() (OrOperation, error) {
+	var body OrOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromOrOperation overwrites any union data inside the SizeOperation_Size as the provided OrOperation
+func (t *SizeOperation_Size) FromOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeOrOperation performs a merge with any union data inside the SizeOperation_Size, using the provided OrOperation
+func (t *SizeOperation_Size) MergeOrOperation(v OrOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNotOperation returns the union data inside the SizeOperation_Size as a NotOperation
+func (t SizeOperation_Size) AsNotOperation() (NotOperation, error) {
+	var body NotOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNotOperation overwrites any union data inside the SizeOperation_Size as the provided NotOperation
+func (t *SizeOperation_Size) FromNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNotOperation performs a merge with any union data inside the SizeOperation_Size, using the provided NotOperation
+func (t *SizeOperation_Size) MergeNotOperation(v NotOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsEqOperation returns the union data inside the SizeOperation_Size as a EqOperation
+func (t SizeOperation_Size) AsEqOperation() (EqOperation, error) {
+	var body EqOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromEqOperation overwrites any union data inside the SizeOperation_Size as the provided EqOperation
+func (t *SizeOperation_Size) FromEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeEqOperation performs a merge with any union data inside the SizeOperation_Size, using the provided EqOperation
+func (t *SizeOperation_Size) MergeEqOperation(v EqOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGtOperation returns the union data inside the SizeOperation_Size as a GtOperation
+func (t SizeOperation_Size) AsGtOperation() (GtOperation, error) {
+	var body GtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGtOperation overwrites any union data inside the SizeOperation_Size as the provided GtOperation
+func (t *SizeOperation_Size) FromGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGtOperation performs a merge with any union data inside the SizeOperation_Size, using the provided GtOperation
+func (t *SizeOperation_Size) MergeGtOperation(v GtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLtOperation returns the union data inside the SizeOperation_Size as a LtOperation
+func (t SizeOperation_Size) AsLtOperation() (LtOperation, error) {
+	var body LtOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLtOperation overwrites any union data inside the SizeOperation_Size as the provided LtOperation
+func (t *SizeOperation_Size) FromLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLtOperation performs a merge with any union data inside the SizeOperation_Size, using the provided LtOperation
+func (t *SizeOperation_Size) MergeLtOperation(v LtOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGteOperation returns the union data inside the SizeOperation_Size as a GteOperation
+func (t SizeOperation_Size) AsGteOperation() (GteOperation, error) {
+	var body GteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGteOperation overwrites any union data inside the SizeOperation_Size as the provided GteOperation
+func (t *SizeOperation_Size) FromGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGteOperation performs a merge with any union data inside the SizeOperation_Size, using the provided GteOperation
+func (t *SizeOperation_Size) MergeGteOperation(v GteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsLteOperation returns the union data inside the SizeOperation_Size as a LteOperation
+func (t SizeOperation_Size) AsLteOperation() (LteOperation, error) {
+	var body LteOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromLteOperation overwrites any union data inside the SizeOperation_Size as the provided LteOperation
+func (t *SizeOperation_Size) FromLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeLteOperation performs a merge with any union data inside the SizeOperation_Size, using the provided LteOperation
+func (t *SizeOperation_Size) MergeLteOperation(v LteOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsInOperation returns the union data inside the SizeOperation_Size as a InOperation
+func (t SizeOperation_Size) AsInOperation() (InOperation, error) {
+	var body InOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromInOperation overwrites any union data inside the SizeOperation_Size as the provided InOperation
+func (t *SizeOperation_Size) FromInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeInOperation performs a merge with any union data inside the SizeOperation_Size, using the provided InOperation
+func (t *SizeOperation_Size) MergeInOperation(v InOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsContainsOperation returns the union data inside the SizeOperation_Size as a ContainsOperation
+func (t SizeOperation_Size) AsContainsOperation() (ContainsOperation, error) {
+	var body ContainsOperation
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromContainsOperation overwrites any union data inside the SizeOperation_Size as the provided ContainsOperation
+func (t *SizeOperation_Size) FromContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeContainsOperation performs a merge with any union data inside the SizeOperation_Size, using the provided ContainsOperation
+func (t *SizeOperation_Size) MergeContainsOperation(v ContainsOperation) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t SizeOperation_Size) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *SizeOperation_Size) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }

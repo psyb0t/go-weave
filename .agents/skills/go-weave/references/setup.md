@@ -21,7 +21,7 @@ import "github.com/psyb0t/go-weave"
 ## Client
 
 - `weave.NewClientWithResponses(server string, opts ...weave.ClientOption)` builds the typed client. `server` is the trace server base URL: `https://trace.wandb.ai` for W&B's hosted service, the default of the official SDK, or the trace server URL of a dedicated or self-hosted instance.
-- `weave.WithRequestEditorFn(fn)` runs `fn` on every request. Set HTTP Basic auth there with `req.SetBasicAuth(username, apiKey)`, the scheme the official SDK uses. The spec also lists HTTP Bearer.
+- `weave.WithRequestEditorFn(fn)` runs `fn` on every request. Set HTTP Basic auth there with `req.SetBasicAuth(username, apiKey)`, the scheme the official SDK uses. The spec itself lists HTTP Bearer.
 - `weave.WithHTTPClient(c)` swaps in your own `*http.Client`, for timeouts or a proxy.
 - Every method also takes trailing `reqEditors ...weave.RequestEditorFn` for per-call headers.
 
@@ -41,6 +41,8 @@ The generated code is split in two files: the models in `types.gen.go`, the clie
 | Annotation queues | `/annotation_queues/*` | `AnnotationQueueReadAnnotationQueuesQueueIdGetWithResponse` |
 | Evaluations | `/evaluations/*` | `EvaluationStatusEvaluationsStatusPostWithResponse` |
 | OTel | `/otel/v1/traces` | `ExportTraceOtelV1TracesPostWithResponse` |
+| Agents | `/agents/*` | `GenaiAgentsQueryAgentsQueryPostWithResponse` |
+| Completions and images | `/completions/create`, `/completions/create_stream`, `/image/create` | `CompletionsCreateCompletionsCreatePostWithResponse` |
 | v2 resources | `/v2/{entity}/{project}/...` | `DatasetListV2EntityProjectDatasetsGetWithResponse` |
 | Service | `/health`, `/version`, `/server_info`, `/geolocate` | `ServerInfoServerInfoGetWithResponse` |
 
@@ -48,7 +50,7 @@ The v2 methods take `entity` and `project` as path arguments instead of a `Proje
 
 ## Streaming responses
 
-`POST /calls/stream_query` and the v2 list endpoints for evaluation runs, predictions and scores answer with `application/jsonl`, one JSON object per line. The generated wrapper has no typed field for it. Read `Body` and decode it line by line with a `json.Decoder`, or use the plain `Client` method (no `WithResponse` suffix) to get the `*http.Response` and stream its body yourself.
+`POST /calls/stream_query`, `POST /threads/stream_query`, `POST /annotation_queues/query`, `POST /completions/create_stream` and the v2 list endpoints (datasets, evaluations, evaluation runs, models, ops, predictions, scorers, scores) answer with JSONL (`application/jsonl` or `application/x-ndjson`), one JSON object per line. The generated wrapper has no typed field for it. Read `Body` and decode it line by line with a `json.Decoder`, or use the plain `Client` method (no `WithResponse` suffix) to get the `*http.Response` and stream its body yourself.
 
 ## Errors
 
