@@ -14,6 +14,7 @@ import (
 	"strings"
 
 	"github.com/oapi-codegen/runtime"
+	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
 // RequestEditorFn is the function signature for the RequestEditor callback function
@@ -1344,6 +1345,31 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /trace/usage (the `TraceUsageTraceUsagePost` operationId).
 	TraceUsageTraceUsagePost(ctx context.Context, body TraceUsageTraceUsagePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetProjectExport Get Status
+	//
+	// Read a known export job. Partial output is never returned.
+	//
+	// Corresponds with GET /v1/entities/{entity}/projects/{project}/exports/{job_id} (the `GetProjectExport` operationId).
+	GetProjectExport(ctx context.Context, entity string, project string, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ExportProjectDataWithBody Start
+	//
+	// Start one project's export. Save the job ID to look up its status.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /v1/entities/{entity}/projects/{project}:export (the `ExportProjectData` operationId).
+	ExportProjectDataWithBody(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// ExportProjectData Start
+	//
+	// Start one project's export. Save the job ID to look up its status.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /v1/entities/{entity}/projects/{project}:export (the `ExportProjectData` operationId).
+	ExportProjectData(ctx context.Context, entity string, project string, body ExportProjectDataJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CallsCompleteV2EntityProjectCallsCompletePostWithBody Calls Complete
 	//
@@ -4613,6 +4639,61 @@ func (c *Client) TraceUsageTraceUsagePostWithBody(ctx context.Context, contentTy
 // Corresponds with POST /trace/usage (the `TraceUsageTraceUsagePost` operationId).
 func (c *Client) TraceUsageTraceUsagePost(ctx context.Context, body TraceUsageTraceUsagePostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewTraceUsageTraceUsagePostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetProjectExport Get Status
+//
+// Read a known export job. Partial output is never returned.
+//
+// Corresponds with GET /v1/entities/{entity}/projects/{project}/exports/{job_id} (the `GetProjectExport` operationId).
+func (c *Client) GetProjectExport(ctx context.Context, entity string, project string, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetProjectExportRequest(c.Server, entity, project, jobId)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ExportProjectDataWithBody Start
+//
+// Start one project's export. Save the job ID to look up its status.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /v1/entities/{entity}/projects/{project}:export (the `ExportProjectData` operationId).
+func (c *Client) ExportProjectDataWithBody(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewExportProjectDataRequestWithBody(c.Server, entity, project, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// ExportProjectData Start
+//
+// Start one project's export. Save the job ID to look up its status.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /v1/entities/{entity}/projects/{project}:export (the `ExportProjectData` operationId).
+func (c *Client) ExportProjectData(ctx context.Context, entity string, project string, body ExportProjectDataJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewExportProjectDataRequest(c.Server, entity, project, body)
 	if err != nil {
 		return nil, err
 	}
@@ -9150,6 +9231,108 @@ func NewTraceUsageTraceUsagePostRequestWithBody(server string, contentType strin
 	return req, nil
 }
 
+// NewGetProjectExportRequest constructs an http.Request for the GetProjectExport method
+func NewGetProjectExportRequest(server string, entity string, project string, jobId openapi_types.UUID) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "entity", entity, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "project", project, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "job_id", jobId, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "uuid"})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/entities/%s/projects/%s/exports/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewExportProjectDataRequest calls the generic ExportProjectData builder with application/json body
+func NewExportProjectDataRequest(server string, entity string, project string, body ExportProjectDataJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewExportProjectDataRequestWithBody(server, entity, project, "application/json", bodyReader)
+}
+
+// NewExportProjectDataRequestWithBody constructs an http.Request for the ExportProjectData method, with any body, and a specified content type
+func NewExportProjectDataRequestWithBody(server string, entity string, project string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "entity", entity, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "project", project, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/v1/entities/%s/projects/%s:export", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewCallsCompleteV2EntityProjectCallsCompletePostRequest calls the generic CallsCompleteV2EntityProjectCallsCompletePost builder with application/json body
 func NewCallsCompleteV2EntityProjectCallsCompletePostRequest(server string, entity string, project string, body CallsCompleteV2EntityProjectCallsCompletePostJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -12940,6 +13123,33 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /trace/usage (the `TraceUsageTraceUsagePost` operationId).
 	TraceUsageTraceUsagePostWithResponse(ctx context.Context, body TraceUsageTraceUsagePostJSONRequestBody, reqEditors ...RequestEditorFn) (*TraceUsageTraceUsagePostResponse, error)
+
+	// GetProjectExportWithResponse Get Status
+	//
+	// Read a known export job. Partial output is never returned.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /v1/entities/{entity}/projects/{project}/exports/{job_id} (the `GetProjectExport` operationId).
+	GetProjectExportWithResponse(ctx context.Context, entity string, project string, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetProjectExportResponse, error)
+
+	// ExportProjectDataWithBodyWithResponse Start
+	//
+	// Start one project's export. Save the job ID to look up its status.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/entities/{entity}/projects/{project}:export (the `ExportProjectData` operationId).
+	ExportProjectDataWithBodyWithResponse(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ExportProjectDataResponse, error)
+
+	// ExportProjectDataWithResponse Start
+	//
+	// Start one project's export. Save the job ID to look up its status.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /v1/entities/{entity}/projects/{project}:export (the `ExportProjectData` operationId).
+	ExportProjectDataWithResponse(ctx context.Context, entity string, project string, body ExportProjectDataJSONRequestBody, reqEditors ...RequestEditorFn) (*ExportProjectDataResponse, error)
 
 	// CallsCompleteV2EntityProjectCallsCompletePostWithBodyWithResponse Calls Complete
 	//
@@ -17584,6 +17794,193 @@ func (r TraceUsageTraceUsagePostResponse) ContentType() string {
 	return ""
 }
 
+type GetProjectExportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *ExportStatusResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ExportErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ExportAuthorizationErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ExportAuthorizationErrorResponse
+	// JSON404 the response for an HTTP 404 `application/json` response
+	JSON404 *ExportErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ExportErrorResponse
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+	// JSON501 the response for an HTTP 501 `application/json` response
+	JSON501 *ExportErrorResponse
+	// JSON503 the response for an HTTP 503 `application/json` response
+	JSON503 *ExportErrorResponse
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetProjectExportResponse) GetJSON200() *ExportStatusResponse {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetProjectExportResponse) GetJSON400() *ExportErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetProjectExportResponse) GetJSON401() *ExportAuthorizationErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r GetProjectExportResponse) GetJSON403() *ExportAuthorizationErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON404 returns the response for an HTTP 404 `application/json` response
+func (r GetProjectExportResponse) GetJSON404() *ExportErrorResponse {
+	return r.JSON404
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r GetProjectExportResponse) GetJSON409() *ExportErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GetProjectExportResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetJSON501 returns the response for an HTTP 501 `application/json` response
+func (r GetProjectExportResponse) GetJSON501() *ExportErrorResponse {
+	return r.JSON501
+}
+
+// GetJSON503 returns the response for an HTTP 503 `application/json` response
+func (r GetProjectExportResponse) GetJSON503() *ExportErrorResponse {
+	return r.JSON503
+}
+
+// GetBody returns the raw response body bytes
+func (r GetProjectExportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetProjectExportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetProjectExportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetProjectExportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type ExportProjectDataResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON202 the response for an HTTP 202 `application/json` response
+	JSON202 *ExportStartedResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ExportErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ExportAuthorizationErrorResponse
+	// JSON403 the response for an HTTP 403 `application/json` response
+	JSON403 *ExportAuthorizationErrorResponse
+	// JSON409 the response for an HTTP 409 `application/json` response
+	JSON409 *ExportErrorResponse
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+	// JSON501 the response for an HTTP 501 `application/json` response
+	JSON501 *ExportErrorResponse
+	// JSON503 the response for an HTTP 503 `application/json` response
+	JSON503 *ExportErrorResponse
+}
+
+// GetJSON202 returns the response for an HTTP 202 `application/json` response
+func (r ExportProjectDataResponse) GetJSON202() *ExportStartedResponse {
+	return r.JSON202
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r ExportProjectDataResponse) GetJSON400() *ExportErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r ExportProjectDataResponse) GetJSON401() *ExportAuthorizationErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON403 returns the response for an HTTP 403 `application/json` response
+func (r ExportProjectDataResponse) GetJSON403() *ExportAuthorizationErrorResponse {
+	return r.JSON403
+}
+
+// GetJSON409 returns the response for an HTTP 409 `application/json` response
+func (r ExportProjectDataResponse) GetJSON409() *ExportErrorResponse {
+	return r.JSON409
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r ExportProjectDataResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetJSON501 returns the response for an HTTP 501 `application/json` response
+func (r ExportProjectDataResponse) GetJSON501() *ExportErrorResponse {
+	return r.JSON501
+}
+
+// GetJSON503 returns the response for an HTTP 503 `application/json` response
+func (r ExportProjectDataResponse) GetJSON503() *ExportErrorResponse {
+	return r.JSON503
+}
+
+// GetBody returns the raw response body bytes
+func (r ExportProjectDataResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r ExportProjectDataResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ExportProjectDataResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ExportProjectDataResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type CallsCompleteV2EntityProjectCallsCompletePostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -21602,6 +21999,51 @@ func (c *ClientWithResponses) TraceUsageTraceUsagePostWithResponse(ctx context.C
 	return ParseTraceUsageTraceUsagePostResponse(rsp)
 }
 
+// GetProjectExportWithResponse Get Status
+//
+// Read a known export job. Partial output is never returned.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /v1/entities/{entity}/projects/{project}/exports/{job_id} (the `GetProjectExport` operationId).
+func (c *ClientWithResponses) GetProjectExportWithResponse(ctx context.Context, entity string, project string, jobId openapi_types.UUID, reqEditors ...RequestEditorFn) (*GetProjectExportResponse, error) {
+	rsp, err := c.GetProjectExport(ctx, entity, project, jobId, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetProjectExportResponse(rsp)
+}
+
+// ExportProjectDataWithBodyWithResponse Start
+//
+// Start one project's export. Save the job ID to look up its status.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/entities/{entity}/projects/{project}:export (the `ExportProjectData` operationId).
+func (c *ClientWithResponses) ExportProjectDataWithBodyWithResponse(ctx context.Context, entity string, project string, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*ExportProjectDataResponse, error) {
+	rsp, err := c.ExportProjectDataWithBody(ctx, entity, project, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseExportProjectDataResponse(rsp)
+}
+
+// ExportProjectDataWithResponse Start
+//
+// Start one project's export. Save the job ID to look up its status.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /v1/entities/{entity}/projects/{project}:export (the `ExportProjectData` operationId).
+func (c *ClientWithResponses) ExportProjectDataWithResponse(ctx context.Context, entity string, project string, body ExportProjectDataJSONRequestBody, reqEditors ...RequestEditorFn) (*ExportProjectDataResponse, error) {
+	rsp, err := c.ExportProjectData(ctx, entity, project, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseExportProjectDataResponse(rsp)
+}
+
 // CallsCompleteV2EntityProjectCallsCompletePostWithBodyWithResponse Calls Complete
 //
 // Upsert a batch of completed calls directly to the calls_complete table.
@@ -25203,6 +25645,163 @@ func ParseTraceUsageTraceUsagePostResponse(rsp *http.Response) (*TraceUsageTrace
 			return nil, err
 		}
 		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetProjectExportResponse parses an HTTP response from a GetProjectExportWithResponse call
+func ParseGetProjectExportResponse(rsp *http.Response) (*GetProjectExportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetProjectExportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ExportStatusResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ExportErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ExportAuthorizationErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ExportAuthorizationErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ExportErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ExportErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 501:
+		var dest ExportErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON501 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest ExportErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseExportProjectDataResponse parses an HTTP response from a ExportProjectDataWithResponse call
+func ParseExportProjectDataResponse(rsp *http.Response) (*ExportProjectDataResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ExportProjectDataResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 202:
+		var dest ExportStartedResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON202 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ExportErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ExportAuthorizationErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 403:
+		var dest ExportAuthorizationErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON403 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 409:
+		var dest ExportErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON409 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 501:
+		var dest ExportErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON501 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 503:
+		var dest ExportErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON503 = &dest
 
 	}
 

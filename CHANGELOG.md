@@ -2,6 +2,13 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.2.1, 2026-11-02
+
+- Added the project export endpoints: `ExportProjectData` (`POST /v1/entities/{entity}/projects/{project}:export`, JSON body or `ExportProjectDataWithBody`) starts an export, and `GetProjectExport` (`GET /v1/entities/{entity}/projects/{project}/exports/{export}`) reads its status.
+- Added the matching `ExportProjectDataWithResponse`, `ExportProjectDataWithBodyWithResponse` and `GetProjectExportWithResponse` methods, the request builders `NewExportProjectDataRequest`, `NewExportProjectDataRequestWithBody` and `NewGetProjectExportRequest`, and the parsers `ParseExportProjectDataResponse` and `ParseGetProjectExportResponse`.
+- Added the request and response types `ExportBody`, `ExportBodyTargets`, `ExportProjectDataJSONRequestBody`, `ExportProjectDataResponse`, `GetProjectExportResponse`, `ExportStartedResponse`, `ExportStatusResponse`, `ExportStatusResponseState`, `ExportErrorResponse`, `ExportAuthorizationErrorResponse`, `JobArtifact` and `JobFailure`.
+- The new methods are also on `ClientInterface` and `ClientWithResponsesInterface`, so code that implements these interfaces itself, such as a mock, must add them. No existing method or type changed.
+
 ## v0.2.0, 2026-10-28
 
 - The client is generated from the spec the W&B Weave trace server publishes at `https://trace.wandb.ai/openapi.json`. The Stainless-hosted copy of the spec it used before is no longer publicly readable, so scheduled regeneration had stopped.

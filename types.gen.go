@@ -1020,6 +1020,48 @@ func (e EvaluationStatusRunningCode) Valid() bool {
 	}
 }
 
+// Defines values for ExportBodyTargets.
+const (
+	ExportBodyTargetsCalls    ExportBodyTargets = "calls"
+	ExportBodyTargetsFeedback ExportBodyTargets = "feedback"
+	ExportBodyTargetsObjects  ExportBodyTargets = "objects"
+)
+
+// Valid indicates whether the value is a known member of the ExportBodyTargets enum.
+func (e ExportBodyTargets) Valid() bool {
+	switch e {
+	case ExportBodyTargetsCalls:
+		return true
+	case ExportBodyTargetsFeedback:
+		return true
+	case ExportBodyTargetsObjects:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ExportStatusResponseState.
+const (
+	ExportStatusResponseStateFailed     ExportStatusResponseState = "failed"
+	ExportStatusResponseStateInProgress ExportStatusResponseState = "in_progress"
+	ExportStatusResponseStateSucceeded  ExportStatusResponseState = "succeeded"
+)
+
+// Valid indicates whether the value is a known member of the ExportStatusResponseState enum.
+func (e ExportStatusResponseState) Valid() bool {
+	switch e {
+	case ExportStatusResponseStateFailed:
+		return true
+	case ExportStatusResponseStateInProgress:
+		return true
+	case ExportStatusResponseStateSucceeded:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for FeedbackAggregateReqGroupBy.
 const (
 	FeedbackAggregateReqGroupByScorerId         FeedbackAggregateReqGroupBy = "scorer_id"
@@ -4044,6 +4086,49 @@ type EvaluationStatusRunning struct {
 // EvaluationStatusRunningCode defines model for EvaluationStatusRunning.Code.
 type EvaluationStatusRunningCode string
 
+// ExportAuthorizationErrorResponse defines model for ExportAuthorizationErrorResponse.
+type ExportAuthorizationErrorResponse struct {
+	Detail string `json:"detail"`
+}
+
+// ExportBody defines model for ExportBody.
+type ExportBody struct {
+	Targets []ExportBodyTargets `json:"targets"`
+}
+
+// ExportBodyTargets defines model for ExportBody.Targets.
+type ExportBodyTargets string
+
+// ExportErrorResponse defines model for ExportErrorResponse.
+type ExportErrorResponse struct {
+	Detail JobFailure `json:"detail"`
+}
+
+// ExportStartedResponse defines model for ExportStartedResponse.
+type ExportStartedResponse struct {
+	CreatedAt time.Time          `json:"created_at"`
+	JobId     openapi_types.UUID `json:"job_id"`
+
+	// Name Project-scoped export resource name.
+	Name string `json:"name"`
+}
+
+// ExportStatusResponse defines model for ExportStatusResponse.
+type ExportStatusResponse struct {
+	Artifacts []JobArtifact      `json:"artifacts"`
+	CreatedAt time.Time          `json:"created_at"`
+	Failure   *JobFailure        `json:"failure"`
+	JobId     openapi_types.UUID `json:"job_id"`
+
+	// Name Project-scoped export resource name.
+	Name      string                    `json:"name"`
+	State     ExportStatusResponseState `json:"state"`
+	UpdatedAt time.Time                 `json:"updated_at"`
+}
+
+// ExportStatusResponseState defines model for ExportStatusResponse.State.
+type ExportStatusResponseState string
+
 // FeedbackAggregateBucket One (time bucket, group) row of aggregated scorer feedback.
 type FeedbackAggregateBucket struct {
 	// Group Group-by dimension values for this row (e.g. {'scorer_id': '...'}).
@@ -4652,6 +4737,20 @@ type Interleaved struct {
 
 // InterleavedField Format identifier for interleaved reasoning.
 type InterleavedField string
+
+// JobArtifact defines model for JobArtifact.
+type JobArtifact struct {
+	ExpectedRows int    `json:"expected_rows"`
+	Target       string `json:"target"`
+	Uri          string `json:"uri"`
+	WrittenRows  int    `json:"written_rows"`
+}
+
+// JobFailure defines model for JobFailure.
+type JobFailure struct {
+	Code    string `json:"code"`
+	Message string `json:"message"`
+}
 
 // LLMAggregatedUsage Aggregated usage metrics for a specific LLM.
 //
@@ -6520,6 +6619,9 @@ type ThreadsQueryStreamThreadsStreamQueryPostJSONRequestBody = ThreadsQueryReq
 
 // TraceUsageTraceUsagePostJSONRequestBody defines body for TraceUsageTraceUsagePost for application/json ContentType.
 type TraceUsageTraceUsagePostJSONRequestBody = TraceUsageReq
+
+// ExportProjectDataJSONRequestBody defines body for ExportProjectData for application/json ContentType.
+type ExportProjectDataJSONRequestBody = ExportBody
 
 // CallsCompleteV2EntityProjectCallsCompletePostJSONRequestBody defines body for CallsCompleteV2EntityProjectCallsCompletePost for application/json ContentType.
 type CallsCompleteV2EntityProjectCallsCompletePostJSONRequestBody = CallsUpsertCompleteReq
