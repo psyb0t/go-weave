@@ -2,6 +2,13 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.2.2, 2026-11-04
+
+- Added the `GenaiSpansExistsAgentsSpansExistsPost` endpoint (`POST /agents/spans/exists`, JSON body or `GenaiSpansExistsAgentsSpansExistsPostWithBody`). It checks whether any span matches project-scoped filters.
+- Added the matching `GenaiSpansExistsAgentsSpansExistsPostWithResponse` and `GenaiSpansExistsAgentsSpansExistsPostWithBodyWithResponse` methods, the request builders `NewGenaiSpansExistsAgentsSpansExistsPostRequest` and `NewGenaiSpansExistsAgentsSpansExistsPostRequestWithBody`, and the parser `ParseGenaiSpansExistsAgentsSpansExistsPostResponse`.
+- Added the types `AgentSpansExistsReq` (`ProjectId`, `Query`, `StartedAfter`, `StartedBefore`), `AgentSpansExistsRes` (`Exists`), `GenaiSpansExistsAgentsSpansExistsPostJSONRequestBody` and `GenaiSpansExistsAgentsSpansExistsPostResponse`.
+- The new methods are also on `ClientInterface` and `ClientWithResponsesInterface`, so code that implements these interfaces itself, such as a mock, must add them. No existing method or type changed.
+
 ## v0.2.1, 2026-11-02
 
 - Added the project export endpoints: `ExportProjectData` (`POST /v1/entities/{entity}/projects/{project}:export`, JSON body or `ExportProjectDataWithBody`) starts an export, and `GetProjectExport` (`GET /v1/entities/{entity}/projects/{project}/exports/{export}`) reads its status.

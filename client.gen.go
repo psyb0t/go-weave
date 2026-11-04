@@ -186,6 +186,24 @@ type ClientInterface interface {
 	// Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
 	GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost(ctx context.Context, body GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GenaiSpansExistsAgentsSpansExistsPostWithBody Genai Spans Exists
+	//
+	// Check whether a project has any matching agent spans.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /agents/spans/exists (the `GenaiSpansExistsAgentsSpansExistsPost` operationId).
+	GenaiSpansExistsAgentsSpansExistsPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenaiSpansExistsAgentsSpansExistsPost Genai Spans Exists
+	//
+	// Check whether a project has any matching agent spans.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /agents/spans/exists (the `GenaiSpansExistsAgentsSpansExistsPost` operationId).
+	GenaiSpansExistsAgentsSpansExistsPost(ctx context.Context, body GenaiSpansExistsAgentsSpansExistsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GenaiSpansQueryAgentsSpansQueryPostWithBody Genai Spans Query
 	//
 	// Query agent spans, either as raw rows or grouped aggregates.
@@ -1989,6 +2007,44 @@ func (c *Client) GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithBody(
 // Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
 func (c *Client) GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost(ctx context.Context, body GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostRequest(c.Server, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiSpansExistsAgentsSpansExistsPostWithBody Genai Spans Exists
+//
+// Check whether a project has any matching agent spans.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /agents/spans/exists (the `GenaiSpansExistsAgentsSpansExistsPost` operationId).
+func (c *Client) GenaiSpansExistsAgentsSpansExistsPostWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiSpansExistsAgentsSpansExistsPostRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenaiSpansExistsAgentsSpansExistsPost Genai Spans Exists
+//
+// Check whether a project has any matching agent spans.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /agents/spans/exists (the `GenaiSpansExistsAgentsSpansExistsPost` operationId).
+func (c *Client) GenaiSpansExistsAgentsSpansExistsPost(ctx context.Context, body GenaiSpansExistsAgentsSpansExistsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenaiSpansExistsAgentsSpansExistsPostRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -5854,6 +5910,46 @@ func NewGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostRequestWithBody(se
 	}
 
 	operationPath := fmt.Sprintf("/agents/spans/custom-attrs/schema")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenaiSpansExistsAgentsSpansExistsPostRequest calls the generic GenaiSpansExistsAgentsSpansExistsPost builder with application/json body
+func NewGenaiSpansExistsAgentsSpansExistsPostRequest(server string, body GenaiSpansExistsAgentsSpansExistsPostJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenaiSpansExistsAgentsSpansExistsPostRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGenaiSpansExistsAgentsSpansExistsPostRequestWithBody constructs an http.Request for the GenaiSpansExistsAgentsSpansExistsPost method, with any body, and a specified content type
+func NewGenaiSpansExistsAgentsSpansExistsPostRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/agents/spans/exists")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -11936,6 +12032,24 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /agents/spans/custom-attrs/schema (the `GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost` operationId).
 	GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostWithResponse(ctx context.Context, body GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse, error)
 
+	// GenaiSpansExistsAgentsSpansExistsPostWithBodyWithResponse Genai Spans Exists
+	//
+	// Check whether a project has any matching agent spans.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/spans/exists (the `GenaiSpansExistsAgentsSpansExistsPost` operationId).
+	GenaiSpansExistsAgentsSpansExistsPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiSpansExistsAgentsSpansExistsPostResponse, error)
+
+	// GenaiSpansExistsAgentsSpansExistsPostWithResponse Genai Spans Exists
+	//
+	// Check whether a project has any matching agent spans.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /agents/spans/exists (the `GenaiSpansExistsAgentsSpansExistsPost` operationId).
+	GenaiSpansExistsAgentsSpansExistsPostWithResponse(ctx context.Context, body GenaiSpansExistsAgentsSpansExistsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiSpansExistsAgentsSpansExistsPostResponse, error)
+
 	// GenaiSpansQueryAgentsSpansQueryPostWithBodyWithResponse Genai Spans Query
 	//
 	// Query agent spans, either as raw rows or grouped aggregates.
@@ -13929,6 +14043,54 @@ func (r GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse) StatusCo
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GenaiSpansExistsAgentsSpansExistsPostResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *AgentSpansExistsRes
+	// JSON422 the response for an HTTP 422 `application/json` response
+	JSON422 *HTTPValidationError
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenaiSpansExistsAgentsSpansExistsPostResponse) GetJSON200() *AgentSpansExistsRes {
+	return r.JSON200
+}
+
+// GetJSON422 returns the response for an HTTP 422 `application/json` response
+func (r GenaiSpansExistsAgentsSpansExistsPostResponse) GetJSON422() *HTTPValidationError {
+	return r.JSON422
+}
+
+// GetBody returns the raw response body bytes
+func (r GenaiSpansExistsAgentsSpansExistsPostResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenaiSpansExistsAgentsSpansExistsPostResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenaiSpansExistsAgentsSpansExistsPostResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenaiSpansExistsAgentsSpansExistsPostResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -19917,6 +20079,36 @@ func (c *ClientWithResponses) GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchema
 	return ParseGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse(rsp)
 }
 
+// GenaiSpansExistsAgentsSpansExistsPostWithBodyWithResponse Genai Spans Exists
+//
+// Check whether a project has any matching agent spans.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/spans/exists (the `GenaiSpansExistsAgentsSpansExistsPost` operationId).
+func (c *ClientWithResponses) GenaiSpansExistsAgentsSpansExistsPostWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenaiSpansExistsAgentsSpansExistsPostResponse, error) {
+	rsp, err := c.GenaiSpansExistsAgentsSpansExistsPostWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiSpansExistsAgentsSpansExistsPostResponse(rsp)
+}
+
+// GenaiSpansExistsAgentsSpansExistsPostWithResponse Genai Spans Exists
+//
+// Check whether a project has any matching agent spans.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /agents/spans/exists (the `GenaiSpansExistsAgentsSpansExistsPost` operationId).
+func (c *ClientWithResponses) GenaiSpansExistsAgentsSpansExistsPostWithResponse(ctx context.Context, body GenaiSpansExistsAgentsSpansExistsPostJSONRequestBody, reqEditors ...RequestEditorFn) (*GenaiSpansExistsAgentsSpansExistsPostResponse, error) {
+	rsp, err := c.GenaiSpansExistsAgentsSpansExistsPost(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenaiSpansExistsAgentsSpansExistsPostResponse(rsp)
+}
+
 // GenaiSpansQueryAgentsSpansQueryPostWithBodyWithResponse Genai Spans Query
 //
 // Query agent spans, either as raw rows or grouped aggregates.
@@ -23005,6 +23197,39 @@ func ParseGenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostResponse(rsp *ht
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest AgentCustomAttrsSchemaRes
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 422:
+		var dest HTTPValidationError
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON422 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGenaiSpansExistsAgentsSpansExistsPostResponse parses an HTTP response from a GenaiSpansExistsAgentsSpansExistsPostWithResponse call
+func ParseGenaiSpansExistsAgentsSpansExistsPostResponse(rsp *http.Response) (*GenaiSpansExistsAgentsSpansExistsPostResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenaiSpansExistsAgentsSpansExistsPostResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest AgentSpansExistsRes
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

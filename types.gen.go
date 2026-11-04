@@ -2387,6 +2387,19 @@ type AgentSpanValueRef struct {
 // AgentSpanValueRefSource defines model for AgentSpanValueRef.Source.
 type AgentSpanValueRefSource string
 
+// AgentSpansExistsReq Check whether any span matches project-scoped, attributed filters.
+type AgentSpansExistsReq struct {
+	ProjectId     string     `json:"project_id"`
+	Query         *Query     `json:"query,omitempty"`
+	StartedAfter  *time.Time `json:"started_after,omitempty"`
+	StartedBefore *time.Time `json:"started_before,omitempty"`
+}
+
+// AgentSpansExistsRes defines model for AgentSpansExistsRes.
+type AgentSpansExistsRes struct {
+	Exists bool `json:"exists"`
+}
+
 // AgentSpansQueryReq Request to query agent spans for a project.
 //
 // When `group_by` is empty (or omitted), returns raw span rows in the
@@ -6415,6 +6428,9 @@ type GenaiSearchAgentsSearchPostJSONRequestBody = AgentSearchReq
 
 // GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody defines body for GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPost for application/json ContentType.
 type GenaiCustomAttrsSchemaAgentsSpansCustomAttrsSchemaPostJSONRequestBody = AgentCustomAttrsSchemaReq
+
+// GenaiSpansExistsAgentsSpansExistsPostJSONRequestBody defines body for GenaiSpansExistsAgentsSpansExistsPost for application/json ContentType.
+type GenaiSpansExistsAgentsSpansExistsPostJSONRequestBody = AgentSpansExistsReq
 
 // GenaiSpansQueryAgentsSpansQueryPostJSONRequestBody defines body for GenaiSpansQueryAgentsSpansQueryPost for application/json ContentType.
 type GenaiSpansQueryAgentsSpansQueryPostJSONRequestBody = AgentSpansQueryReq
