@@ -2,6 +2,11 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.3.0, 2026-11-05
+
+- Breaking: removed the `JSON200` field and the `GetJSON200` method from `ExportGenaiTraceAgentsOtelV1TracesPostResponse`. The published spec no longer declares a JSON body for the 200 response of the OTel trace export endpoint (`POST /agents/otel/v1/traces`).
+- `ParseExportGenaiTraceAgentsOtelV1TracesPostResponse` no longer decodes the response body. Read the raw bytes from `Body` instead.
+
 ## v0.2.2, 2026-11-04
 
 - Added the `GenaiSpansExistsAgentsSpansExistsPost` endpoint (`POST /agents/spans/exists`, JSON body or `GenaiSpansExistsAgentsSpansExistsPostWithBody`). It checks whether any span matches project-scoped filters.

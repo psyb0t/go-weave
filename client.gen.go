@@ -13867,13 +13867,6 @@ func (r GenaiConversationSpansAgentsConversationsSpansPostResponse) ContentType(
 type ExportGenaiTraceAgentsOtelV1TracesPostResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	// JSON200 the response for an HTTP 200 `application/json` response
-	JSON200 *interface{}
-}
-
-// GetJSON200 returns the response for an HTTP 200 `application/json` response
-func (r ExportGenaiTraceAgentsOtelV1TracesPostResponse) GetJSON200() *interface{} {
-	return r.JSON200
 }
 
 // GetBody returns the raw response body bytes
@@ -23100,16 +23093,6 @@ func ParseExportGenaiTraceAgentsOtelV1TracesPostResponse(rsp *http.Response) (*E
 	response := &ExportGenaiTraceAgentsOtelV1TracesPostResponse{
 		Body:         bodyBytes,
 		HTTPResponse: rsp,
-	}
-
-	switch {
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest interface{}
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON200 = &dest
-
 	}
 
 	return response, nil
