@@ -2,6 +2,12 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.3.1, 2026-11-18
+
+- Added the `TrainingSequenceLimit` field (`*int`, JSON `trainingSequenceLimit`) to `LLMModelDetails`. No existing type or method changed.
+- Raised the minimum Go version in `go.mod` from 1.26.10 to 1.26.11, which fixes the `net/http` vulnerability GO-2026-6859 found by govulncheck.
+- Updated the development image to `golang:1.26.11-trixie`.
+
 ## v0.3.0, 2026-11-05
 
 - Breaking: removed the `JSON200` field and the `GetJSON200` method from `ExportGenaiTraceAgentsOtelV1TracesPostResponse`. The published spec no longer declares a JSON body for the 200 response of the OTel trace export endpoint (`POST /agents/otel/v1/traces`).

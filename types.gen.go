@@ -4823,6 +4823,7 @@ type LLMModelDetails struct {
 	ReasoningSupport                 *LLMModelDetailsReasoningSupport   `json:"reasoningSupport,omitempty"`
 	Status                           string                             `json:"status"`
 	Tags                             []string                           `json:"tags"`
+	TrainingSequenceLimit            *int                               `json:"trainingSequenceLimit,omitempty"`
 }
 
 // LLMModelDetailsAvailableIn defines model for LLMModelDetails.AvailableIn.
