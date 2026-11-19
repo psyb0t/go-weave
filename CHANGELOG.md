@@ -2,6 +2,11 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.3.2, 2026-11-19
+
+- Added the `SortBy` field (`*[]AgentSortBy`, JSON `sort_by`) to `AgentConversationChatReq`. Only `started_at` is supported. When omitted, the endpoint still returns the most recent `limit` turns in ascending `started_at` order.
+- Updated the `Offset` field comment on `AgentConversationChatReq`: it now skips turns in the requested sort order. No existing type or method changed.
+
 ## v0.3.1, 2026-11-18
 
 - Added the `TrainingSequenceLimit` field (`*int`, JSON `trainingSequenceLimit`) to `LLMModelDetails`. No existing type or method changed.

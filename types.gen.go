@@ -1754,9 +1754,12 @@ type AgentConversationChatReq struct {
 	// Limit Maximum number of conversation turns to return.
 	Limit *int `json:"limit,omitempty"`
 
-	// Offset Number of most-recent turns to skip. Results are returned in chronological order within the selected page.
+	// Offset Number of turns to skip in the requested sort order. When `sort_by` is omitted, results are returned in chronological order within the selected page.
 	Offset    *int   `json:"offset,omitempty"`
 	ProjectId string `json:"project_id"`
+
+	// SortBy Controls how turns are sorted and paginated. Only `started_at` is supported. When omitted, the endpoint selects the most recent `limit` turns and returns them in ascending `started_at` order.
+	SortBy *[]AgentSortBy `json:"sort_by,omitempty"`
 }
 
 // AgentConversationChatRes Multi-turn chat view: an ordered list of per-turn chat responses.
