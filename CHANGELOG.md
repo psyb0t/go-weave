@@ -2,6 +2,11 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.3.3, 2026-11-20
+
+- Added the `AgentConversationTagFilter` type with `TagIds` (`[]openapi_types.UUID`, JSON `tag_ids`) and `Exclude` (`*bool`, JSON `exclude`). It filters conversations by live tag assignments: include any listed tag, or drop conversations with any listed tag when `Exclude` is true.
+- Added the `TagFilter` field (`*AgentConversationTagFilter`, JSON `tag_filter`) to `AgentSpansQueryReq`. No existing type or method changed.
+
 ## v0.3.2, 2026-11-19
 
 - Added the `SortBy` field (`*[]AgentSortBy`, JSON `sort_by`) to `AgentConversationChatReq`. Only `started_at` is supported. When omitted, the endpoint still returns the most recent `limit` turns in ascending `started_at` order.

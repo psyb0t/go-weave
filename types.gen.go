@@ -1864,6 +1864,15 @@ type AgentConversationSpansRes struct {
 	Conversations []AgentConversationSpans `json:"conversations"`
 }
 
+// AgentConversationTagFilter Filter conversations by live tag assignments.
+type AgentConversationTagFilter struct {
+	// Exclude Drop conversations with a live assignment of any listed tag.
+	Exclude *bool `json:"exclude,omitempty"`
+
+	// TagIds Include conversations with a live assignment of any listed tag.
+	TagIds []openapi_types.UUID `json:"tag_ids"`
+}
+
 // AgentCustomAttrSchemaItem One custom attribute key/type observed in the matching spans.
 type AgentCustomAttrSchemaItem struct {
 	Key       string                             `json:"key"`
@@ -2425,6 +2434,7 @@ type AgentSpansQueryReq struct {
 	SortBy             *[]AgentSortBy                    `json:"sort_by,omitempty"`
 	StartedAfter       *time.Time                        `json:"started_after,omitempty"`
 	StartedBefore      *time.Time                        `json:"started_before,omitempty"`
+	TagFilter          *AgentConversationTagFilter       `json:"tag_filter,omitempty"`
 }
 
 // AgentSpansQueryRes Response from a spans query.
