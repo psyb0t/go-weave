@@ -2,6 +2,10 @@
 
 All notable changes per release. Versions follow [semver](https://semver.org).
 
+## v0.3.4, 2026-11-24
+
+- Added the `RootOperationName` field (`*string`, JSON `root_operation_name`) to `AgentTraceChatRes`. No existing type or method changed.
+
 ## v0.3.3, 2026-11-20
 
 - Added the `AgentConversationTagFilter` type with `TagIds` (`[]openapi_types.UUID`, JSON `tag_ids`) and `Exclude` (`*bool`, JSON `exclude`). It filters conversations by live tag assignments: include any listed tag, or drop conversations with any listed tag when `Exclude` is true.

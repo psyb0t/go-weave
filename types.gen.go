@@ -2466,6 +2466,7 @@ type AgentTraceChatRes struct {
 	Feedback                      *[]AgentChatFeedback         `json:"feedback"`
 	Messages                      []AgentChatMessage           `json:"messages"`
 	Provider                      *string                      `json:"provider"`
+	RootOperationName             *string                      `json:"root_operation_name"`
 	RootSpanName                  *string                      `json:"root_span_name"`
 	StartedAt                     *time.Time                   `json:"started_at"`
 	StatusCode                    *AgentTraceChatResStatusCode `json:"status_code"`
